@@ -1,0 +1,37 @@
+version: '3'
+services:
+  annotation-postgres:
+    image: postgres:15.2
+    container_name: annotation-postgres
+    volumes:
+      - annotation-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=annotation
+      - POSTGRES_USER=annotation
+      - POSTGRES_PASSWORD=annotation
+
+  annotation-app:
+    build: ./annotation-app
+    container_name: annotation-app
+    environment:
+      - DB_SERVER=annotation-postgres
+      - POSTGRES_DB=annotation
+      - POSTGRES_USER=annotation
+      - POSTGRES_PASSWORD=annotation
+    ports:
+      - 8080:8080
+    links:
+      - annotation-postgres
+
+  annotation-ui:
+    build: ./annotation-ui
+    container_name: annotation-ui
+    ports:
+      - 80:80
+    links:
+      - annotation-app
+
+volumes:
+  annotation-data:
