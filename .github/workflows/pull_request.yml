@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install API Dependencies
+        run: cd annotation-app && pip install -r requirements-dev.txt
+      - name: Run API Tests
+        run: cd annotation-app && pytest
+      - name: Install GUI Dependencies
+        run: npm install --prefix annotation-ui
+      - name: Run GUI Tests
+        run: npm test --prefix annotation-ui

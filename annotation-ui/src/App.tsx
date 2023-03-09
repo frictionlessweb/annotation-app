@@ -2,18 +2,22 @@ import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
-function App() {
+export function App() {
   const [count, setCount] = useState(0);
   useEffect(() => {
     const checkApi = async () => {
-      let res = await window.fetch("/api/v1/heartbeat", { method: "GET" });
-      console.log(res);
-      let json = await res.json();
-      console.log(json);
-      res = await window.fetch('/api/v1/another_route', { method: 'GET' });
-      console.log(res);
-      json = await res.json();
-      console.log(json);
+      try {
+        let res = await window.fetch("/api/v1/heartbeat", { method: "GET" });
+        console.log(res);
+        let json = await res.json();
+        console.log(json);
+        res = await window.fetch("/api/v1/another_route", { method: "GET" });
+        console.log(res);
+        json = await res.json();
+        console.log(json);
+      } catch (err) {
+        ;
+      }
     };
     checkApi();
   }, []);
