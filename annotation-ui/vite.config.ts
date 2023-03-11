@@ -8,8 +8,8 @@ export default defineConfig({
   test: {
     environment: "happy-dom",
     deps: {
-      inline: ["@react-spectrum"]
-    }
+      inline: ["@react-spectrum"],
+    },
   },
   server: {
     proxy: {

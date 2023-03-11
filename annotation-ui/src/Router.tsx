@@ -1,6 +1,6 @@
 import { Route } from "wouter";
 import { LogIn } from "./LogIn";
-import { Annotations } from './Annotations';
+import { Annotations } from "./Annotations";
 
 export const Router = () => {
   return (

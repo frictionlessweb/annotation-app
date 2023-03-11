@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { App } from "./App";
 
@@ -8,12 +8,12 @@ describe("Our app component", () => {
   });
   test("If you enter your name, you get pushed to the annotation app", () => {
     const { getByTestId, queryByTestId } = render(<App />);
-    const input = getByTestId('NAME');
-    const button = getByTestId('GOTO_APP');
+    const input = getByTestId("NAME");
+    const button = getByTestId("GOTO_APP");
     fireEvent.click(button);
-    expect(queryByTestId('ANNOTATION_APP')).toBeNull();
-    fireEvent.change(input, { target: { value: 'test' } });
+    expect(queryByTestId("ANNOTATION_APP")).toBeNull();
+    fireEvent.change(input, { target: { value: "test" } });
     fireEvent.click(button);
-    expect(queryByTestId('ANNOTATION_APP')).not.toBeNull();
-  })
+    expect(queryByTestId("ANNOTATION_APP")).not.toBeNull();
+  });
 });

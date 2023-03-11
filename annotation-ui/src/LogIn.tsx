@@ -28,7 +28,12 @@ export const LogIn = () => {
           />
         </Flex>
         <Flex marginBottom="16px">
-          <Button data-testid="GOTO_APP" isDisabled={name === ""} variant="primary" onPress={gotoApp}>
+          <Button
+            data-testid="GOTO_APP"
+            isDisabled={name === ""}
+            variant="primary"
+            onPress={gotoApp}
+          >
             Begin Annotating
           </Button>
         </Flex>
