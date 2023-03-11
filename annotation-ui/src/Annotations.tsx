@@ -19,7 +19,7 @@ const PDF = () => {
       const config = {
         content: {
           location: {
-            url: "/01_GENZ.pdf",
+            url: "/api/v1/static/01_GENZ.pdf",
           },
         },
         metaData: {
