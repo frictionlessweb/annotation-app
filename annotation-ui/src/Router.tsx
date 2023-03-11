@@ -1,5 +1,6 @@
 import { Route } from "wouter";
 import { LogIn } from "./LogIn";
+import { Annotations } from './Annotations';
 
 export const Router = () => {
   return (
@@ -8,7 +9,7 @@ export const Router = () => {
         <LogIn />
       </Route>
       <Route path="/:name">
-        <p>Hello, John!</p>
+        <Annotations />
       </Route>
     </>
   );
