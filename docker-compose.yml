@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   annotation-postgres:
     image: postgres:15.2

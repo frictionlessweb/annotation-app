@@ -3,6 +3,7 @@
 A simple application for judging annotations and highlights.
 
 ## Deploying
+
 If you have Docker installed, the only thing you should need to do is clone this repository and run:
 
 ```sh

@@ -1,0 +1,14 @@
+{
+  "pdf_url": "/api/v1/static/02_ROMEO_AND_JULIET.pdf",
+  "title": "Romeo and Juliet",
+  "topics": [
+    {
+      "name": "Romeo",
+      "annotations": []
+    },
+    {
+      "name": "Juliet",
+      "annotations": []
+    }
+  ]
+}
