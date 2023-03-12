@@ -1,0 +1,2 @@
+CREATE DATABASE annotation;
+CREATE USER annotation WITH PASSWORD 'annotation' SUPERUSER;

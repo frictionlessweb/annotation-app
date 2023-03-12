@@ -4,9 +4,31 @@ on:
   pull_request:
     branches: [main]
 
+
+env:
+  POSTGRES_USER: annotation
+  POSTGRES_PASSWORD: annotation
+  POSTGRES_DB: annotation
+  POSTGRES_HOST: localhost
+  POSTGRES_PORT: 5432
+
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: annotation
+          POSTGRES_PASSWORD: annotation
+          POSTGRES_DB: annotation
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -15,7 +37,7 @@ jobs:
       - name: Install API Dependencies
         run: cd annotation-app && pip install -r requirements-dev.txt
       - name: Run API Tests
-        run: cd annotation-app && pytest
+        run: cd annotation-app && alembic upgrade head && pytest
       - name: Install GUI Dependencies
         run: npm install --prefix annotation-ui
       - name: Run GUI Tests

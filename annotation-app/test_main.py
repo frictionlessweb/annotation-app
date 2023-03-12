@@ -30,3 +30,10 @@ def test_static_files():
         pdf_url = response_json[name]["pdf_url"].replace("/api/v1", "")
         expected_pdf = client.get(pdf_url)
         assert expected_pdf.status_code == 200
+
+
+def test_save_items():
+    response = client.post(
+        "/save-session", json={"user_name": "Jill", "annotations": {"key": True}}
+    )
+    assert response.status_code == 200
