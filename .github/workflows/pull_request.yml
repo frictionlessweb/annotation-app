@@ -4,6 +4,11 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  POSTGRES_USER: annotation
+  POSTGRES_PASSWORD: annotation
+  POSTGRES_DB: annotation
+
 jobs:
   build:
     runs-on: ubuntu-latest
