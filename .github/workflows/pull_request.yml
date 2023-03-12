@@ -8,6 +8,8 @@ env:
   POSTGRES_USER: annotation
   POSTGRES_PASSWORD: annotation
   POSTGRES_DB: annotation
+  POSTGRES_HOST: postgres
+  POSTGRES_PORT: 5432
 
 jobs:
   build:
