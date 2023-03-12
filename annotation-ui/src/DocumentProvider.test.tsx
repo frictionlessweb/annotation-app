@@ -20,24 +20,23 @@ describe("Annotation response analysis", () => {
         },
       },
     });
-    console.log(actualResponse);
     const expectedResponse = {
       DocumentOne: {
-        topics: {
-          "1": [{ id: "1234", liked: null }],
-          "2": [
-            { id: "3456", liked: null },
-            { id: "7899", liked: null },
-          ],
+        "1": {
+          "1234": null,
+        },
+        "2": {
+          "3456": null,
+          "7899": null,
         },
       },
       DocumentTwo: {
-        topics: {
-          "1": [{ id: "22341", liked: null }],
-          "2": [
-            { id: "1512", liked: null },
-            { id: "1231", liked: null },
-          ],
+        1: {
+          22341: null,
+        },
+        2: {
+          1512: null,
+          1231: null,
         },
       },
     };

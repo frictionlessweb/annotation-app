@@ -17,7 +17,17 @@ export interface AdobeApiHandler {
   ) => Promise<void>;
 }
 
-type TopicResponses = Record<TopicId, AnnotationResponse[]>;
+type TopicId = string;
+
+type DocumentId = string;
+
+type AnnotationId = string;
+
+type AnnotationRecord = Record<AnnotationId, boolean | null>;
+
+type TopicResponses = Record<TopicId, AnnotationRecord>;
+
+type AnnotationResponseCollection = Record<DocumentId, TopicResponses>;
 
 interface HasId {
   id: string;
@@ -32,16 +42,6 @@ interface Document {
 
 type DocumentCollection = Record<string, Document>;
 
-interface AnnotationResponse {
-  id: string;
-  liked: boolean | null;
-}
-
-type TopicId = string;
-
-type DocumentId = string;
-
-type AnnotationResponseCollection = Record<DocumentId, TopicResponses>;
 
 export const documentsToAnnotationResponse = (
   documents: DocumentCollection
@@ -49,17 +49,15 @@ export const documentsToAnnotationResponse = (
   const response: AnnotationResponseCollection = {};
   for (const key of Object.keys(documents)) {
     const documentObject = documents[key];
-    const newObject: Record<TopicId, AnnotationResponse[]> = {};
+    const topics: Record<TopicId, AnnotationRecord> = {};
     for (const topicKey of Object.keys(documentObject.topics)) {
-      newObject[topicKey] = Array.isArray(newObject[topicKey])
-        ? newObject[topicKey]
-        : [];
+      const topicMap: Record<string, boolean | null> = {};
+      topics[topicKey] = topicMap;
       for (const annotation of documentObject.topics[topicKey]) {
-        newObject[topicKey].push({ id: annotation.id, liked: null });
+        topicMap[annotation.id] = null;
       }
     }
-    // @ts-ignore
-    response[key] = { topics: newObject };
+    response[key] = topics;
   }
   return response;
 };
