@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 from documents import DOCUMENTS
 from typing import Any
 
@@ -15,3 +16,13 @@ def read_root():
 @app.get("/documents")
 def another_route() -> dict[str, Any]:
     return DOCUMENTS
+
+
+class SessionState(BaseModel):
+    user_name: str
+    annotations: dict
+
+
+@app.post("/save-session")
+def save_session():
+    return {"message": "success"}

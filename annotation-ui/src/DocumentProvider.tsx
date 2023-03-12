@@ -10,11 +10,18 @@ declare global {
 }
 
 export interface AdobeApiHandler {
-  gotoLocation: (
-    page: number,
-    xCoordinate: number,
-    yCoordinate: number
-  ) => Promise<void>;
+  locationApis: {
+    gotoLocation: (
+      page: number,
+      xCoordinate: number,
+      yCoordinate: number
+    ) => Promise<void>;
+  };
+  annotationApis: {
+    getAnnotations: () => Promise<Array<unknown>>;
+    addAnnotations: (array: Array<any>) => Promise<void>;
+    deleteAnnotations: (array: Array<any>) => Promise<void>;
+  }
 }
 
 type TopicId = string;
@@ -42,6 +49,25 @@ interface Document {
 
 type DocumentCollection = Record<string, Document>;
 
+export const annotationsComplete = (annotations: AnnotationRecord): boolean => {
+  return Object.keys(annotations).every(
+    (id) => typeof annotations[id] === "boolean"
+  );
+};
+
+export const topicsComplete = (topics: TopicResponses): boolean => {
+  return Object.keys(topics).every((topicId) =>
+    annotationsComplete(topics[topicId])
+  );
+};
+
+export const documentsComplete = (
+  documents: AnnotationResponseCollection
+): boolean => {
+  return Object.keys(documents).every((documentId) => {
+    return topicsComplete(documents[documentId]);
+  });
+};
 
 export const documentsToAnnotationResponse = (
   documents: DocumentCollection
@@ -70,13 +96,26 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
 interface DocContext {
   documents: DocumentCollection;
   annotationResponses: AnnotationResponseCollection;
-  selectedDocument: null;
+  selectedDocument: null | string;
+  selectedTopic: null | string;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
 }
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
 
 const AdobeDocContext = React.createContext<DocContext | null>(null);
+
+const UpdateDocContext = React.createContext<React.Dispatch<
+  React.SetStateAction<DocContext>
+> | null>(null);
+
+export const useSetAdobeDoc = () => {
+  const ctx = React.useContext(UpdateDocContext);
+  if (ctx === null) {
+    throw new Error("Please use the setAdobeDoc inside of its provider.");
+  }
+  return ctx;
+};
 
 export const useAdobeDocContext = (): DocContext => {
   const ctx = React.useContext(AdobeDocContext);
@@ -93,6 +132,9 @@ interface AdobeDocProviderProps {
 export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
   const apisRef = React.useRef<AdobeApiHandler | null>(null);
   const [state, setState] = React.useState<DocumentState>("LOADING");
+  const setDocument = setState as React.Dispatch<
+    React.SetStateAction<DocContext>
+  >;
   React.useEffect(() => {
     const getDocuments = async () => {
       try {
@@ -101,6 +143,7 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           apis: apisRef,
           documents,
           selectedDocument: null,
+          selectedTopic: null,
           annotationResponses: {},
         });
       } catch (err) {
@@ -119,8 +162,10 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
     }
   }
   return (
-    <AdobeDocContext.Provider value={state}>
-      {children}
-    </AdobeDocContext.Provider>
+    <UpdateDocContext.Provider value={setDocument}>
+      <AdobeDocContext.Provider value={state}>
+        {children}
+      </AdobeDocContext.Provider>
+    </UpdateDocContext.Provider>
   );
 };
