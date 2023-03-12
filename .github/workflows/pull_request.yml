@@ -8,11 +8,11 @@ env:
   POSTGRES_USER: annotation
   POSTGRES_PASSWORD: annotation
   POSTGRES_DB: annotation
-  POSTGRES_HOST: localhost
+  POSTGRES_HOST: postgres
   POSTGRES_PORT: 5432
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     services:
       postgres:
