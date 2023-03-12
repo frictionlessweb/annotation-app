@@ -34,7 +34,7 @@ jobs:
           POSTGRES_USER: annotation
           POSTGRES_PASSWORD: annotation
           POSTGRES_DB: annotation
-          POSTGRES_HOST: postgres
+          POSTGRES_HOST: localhost
           POSTGRES_PORT: 5432
       - name: Install GUI Dependencies
         run: npm install --prefix annotation-ui
