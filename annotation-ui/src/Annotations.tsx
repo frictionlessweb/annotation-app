@@ -51,6 +51,22 @@ const AnnotationJudger = () => {
       <Heading level={3}>Annotations</Heading>
       {annotations.map((annotation) => {
         const page = annotation?.target?.selector?.node?.index + 1;
+        if (ctx.selectedDocument === null || ctx.selectedTopic === null)
+          return null;
+        const initVal =
+          ctx.annotationResponses[ctx.selectedDocument][ctx.selectedTopic][
+            annotation.id
+          ];
+        const currentValue = (() => {
+          switch (initVal) {
+            case true:
+              return "true";
+            case false:
+              return "false";
+            default:
+              return "";
+          }
+        })();
         return (
           <div
             key={annotation.id}
@@ -79,6 +95,7 @@ const AnnotationJudger = () => {
               isDisabled={page !== currentPage}
               label="Relevant?"
               orientation="horizontal"
+              value={currentValue}
               onChange={(value) => {
                 const newValue = value === "true" ? true : false;
                 setDoc((prevDoc) => {
