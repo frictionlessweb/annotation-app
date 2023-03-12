@@ -21,7 +21,7 @@ export interface AdobeApiHandler {
     getAnnotations: () => Promise<Array<unknown>>;
     addAnnotations: (array: Array<any>) => Promise<void>;
     removeAnnotationsFromPDF: () => Promise<void>;
-  }
+  };
 }
 
 type TopicId = string;
@@ -124,6 +124,25 @@ export const useAdobeDocContext = (): DocContext => {
     throw new Error("Please use useAdobeDocContext inside of its provider.");
   }
   return ctx;
+};
+
+export const messageFromDocContext = (ctx: DocContext): string | string[] => {
+  const pairs = [];
+  for (const documentId of Object.keys(ctx.annotationResponses)) {
+    const topicsForDocument = ctx.annotationResponses[documentId];
+    for (const topicId of Object.keys(topicsForDocument)) {
+      const annotations = topicsForDocument[topicId];
+      if (!annotationsComplete(annotations)) {
+        pairs.push({ documentId, topicId });
+      }
+    }
+  }
+  if (pairs.length === 0) {
+    return `Congratulations, you have finished the task!`;
+  }
+  return pairs.map(
+    (pair) => `Document ${pair.documentId} and Topic ${pair.topicId}`
+  );
 };
 
 interface AdobeDocProviderProps {

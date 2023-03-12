@@ -7,12 +7,11 @@ import {
   Heading,
   RadioGroup,
   Radio,
-  Button,
 } from "@adobe/react-spectrum";
 import {
   useAdobeDocContext,
   useSetAdobeDoc,
-  annotationsComplete,
+  messageFromDocContext,
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
@@ -40,13 +39,6 @@ const AnnotationJudger = () => {
   if (annotations.length <= 0) {
     return <Text>No annotations for this document and topic.</Text>;
   }
-  const currentResponses =
-    ctx.annotationResponses?.[ctx.selectedDocument as string]?.[
-      ctx.selectedTopic as string
-    ];
-
-  const isSaveDisabled =
-    !currentResponses || !annotationsComplete(currentResponses);
   return (
     <Flex direction="column">
       <Heading level={3}>Annotations</Heading>
@@ -125,41 +117,6 @@ const AnnotationJudger = () => {
           </div>
         );
       })}
-      <Flex>
-        <Button
-          isDisabled={isSaveDisabled}
-          variant="primary"
-          onPress={async () => {
-            try {
-              const user_name = window.location.pathname.split("/").pop();
-              const annotations = ctx.annotationResponses;
-              const requestBodyObject = { user_name, annotations };
-              const body = JSON.stringify(requestBodyObject);
-              const res = await window.fetch("/api/v1/save-session", {
-                method: "POST",
-                body,
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              });
-              if (res.ok) {
-                ToastQueue.positive("Saved progress successfully.", {
-                  timeout: 10,
-                });
-              } else {
-                throw new Error("REQUEST_FAILED");
-              }
-            } catch (err) {
-              ToastQueue.negative(
-                "An error occurred. Please refresh the page and try again.",
-                { timeout: 10 }
-              );
-            }
-          }}
-        >
-          Save
-        </Button>
-      </Flex>
     </Flex>
   );
 };
@@ -173,6 +130,58 @@ interface AdobeEvent {
   type: string;
   data: unknown;
 }
+
+const Suggestions = () => {
+  const ctx = useAdobeDocContext();
+  const message = messageFromDocContext(ctx);
+  React.useEffect(() => {
+    const handleMessageChange = async () => {
+      if (Array.isArray(message)) return;
+      try {
+        const user_name = window.location.pathname.split("/").pop();
+        const annotations = ctx.annotationResponses;
+        const requestBodyObject = { user_name, annotations };
+        const body = JSON.stringify(requestBodyObject);
+        const res = await window.fetch("/api/v1/save-session", {
+          method: "POST",
+          body,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (res.ok) {
+          ToastQueue.positive("Saved progress successfully.", {
+            timeout: 10,
+          });
+        } else {
+          throw new Error("REQUEST_FAILED");
+        }
+      } catch (err) {
+        ToastQueue.negative(
+          "An error occurred. Please refresh the page and try again.",
+          { timeout: 10 }
+        );
+      }
+    };
+    handleMessageChange();
+  }, [message, ctx]);
+  return (
+    <Flex justifyContent="center" marginStart="16px" direction="column">
+      {Array.isArray(message) ? (
+        <>
+          <Text marginY={0}>Please annotate: </Text>
+          <ul style={{ margin: 0 }}>
+            {message.map((msg) => {
+              return <li key={msg}>{msg}</li>;
+            })}
+          </ul>
+        </>
+      ) : (
+        <Text>{message}</Text>
+      )}
+    </Flex>
+  );
+};
 
 const DocumentPickers = () => {
   const ctx = useAdobeDocContext();
@@ -263,6 +272,7 @@ const DocumentPickers = () => {
               }
             )}
       </Picker>
+      <Suggestions />
     </Flex>
   );
 };
