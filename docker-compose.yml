@@ -8,6 +8,7 @@ services:
       - ./annotation-app/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - 5432:5432
+    restart: always
     environment:
       - POSTGRES_DB=annotation
       - POSTGRES_USER=annotation
@@ -17,13 +18,16 @@ services:
     build: ./annotation-app
     container_name: annotation-app
     environment:
-      - DB_SERVER=annotation-postgres
       - POSTGRES_DB=annotation
       - POSTGRES_USER=annotation
       - POSTGRES_PASSWORD=annotation
+      - POSTGRES_HOST=annotation-postgres
     ports:
       - 8080:8080
     links:
+      - annotation-postgres
+    entrypoint: ["bash", "-c", "sed -i 's/0.0.0.0/annotation-postgres/g' alembic.ini && alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8080"]
+    depends_on:
       - annotation-postgres
 
   annotation-ui:
@@ -32,6 +36,8 @@ services:
     ports:
       - 80:80
     links:
+      - annotation-app
+    depends_on:
       - annotation-app
 
 volumes:

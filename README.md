@@ -1,6 +1,10 @@
 # Highlight App
 
-A simple application for judging annotations and highlights.
+A simple application for judging annotations.
+
+## Introduction
+
+A person will use this application...
 
 ## Deploying
 
