@@ -21,7 +21,7 @@ def is_root_file(path: str) -> bool:
 
 ROOT_FILES = set(pathlib.Path(file).stem for file in ASSET_FILES if is_root_file(file))
 
-print(f"Copying assets for {', '.join(ROOT_FILES)}...")
+print(f"Copying assets...")
 
 for file in ROOT_FILES:
     old_pdf_path = os.path.join(ASSETS_DIRECTORY, f"{file}.pdf")
