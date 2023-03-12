@@ -1,6 +1,6 @@
 import React from "react";
 import { Flex, Picker, Item } from "@adobe/react-spectrum";
-import { AdobeDocProvider, AdobeApiHandler } from "./DocumentProvider";
+import { AdobeApiHandler, useAdobeDocContext } from "./DocumentProvider";
 
 const DEFAULT_VIEW_CONFIG = {
   embedMode: "FULL_WINDOW",
@@ -13,7 +13,7 @@ const PDF = () => {
   React.useEffect(() => {
     const render = async () => {
       const view = new window.AdobeDC.View({
-        clientId: import.meta.env.VITE_PUBLIC_ADOBE_CLIENT_ID,
+        clientId: process.env.VITE_PUBLIC_ADOBE_CLIENT_ID,
         divId: "PDF_DOCUMENT",
       });
       const config = {
@@ -36,11 +36,11 @@ const PDF = () => {
 };
 
 export const Annotations = () => {
+  const ctx = useAdobeDocContext();
   return (
-    <AdobeDocProvider>
+    <>
       <Flex
         direction="column"
-        data-testid="ANNOTATION_APP"
         marginX="32px"
         UNSAFE_style={{ paddingTop: "16px", paddingBottom: "16px" }}
       >
@@ -59,6 +59,6 @@ export const Annotations = () => {
           </Flex>
         </Flex>
       </Flex>
-    </AdobeDocProvider>
+    </>
   );
 };

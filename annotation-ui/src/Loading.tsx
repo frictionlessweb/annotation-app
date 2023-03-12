@@ -8,7 +8,7 @@ export const Loading = () => {
       justifyContent="center"
       UNSAFE_style={{ paddingTop: "32px", paddingBottom: "32px" }}
     >
-      <ProgressCircle size="L" isIndeterminate />
+      <ProgressCircle size="L" isIndeterminate aria-label="Loading..." />
     </Flex>
   );
 };
