@@ -1,5 +1,5 @@
 import {
-  documentsToAnnotationResponse,
+  documentsToAnnotationResponses,
   annotationsComplete,
   topicsComplete,
   documentsComplete,
@@ -7,7 +7,7 @@ import {
 
 describe("Annotation response analysis", () => {
   test("We can go from documents to annotation responses", () => {
-    const actualResponse = documentsToAnnotationResponse({
+    const actualResponse = documentsToAnnotationResponses({
       DocumentOne: {
         pdf_url: "https://google.com",
         title: "Test",

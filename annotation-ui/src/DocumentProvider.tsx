@@ -20,7 +20,7 @@ export interface AdobeApiHandler {
   annotationApis: {
     getAnnotations: () => Promise<Array<unknown>>;
     addAnnotations: (array: Array<any>) => Promise<void>;
-    deleteAnnotations: (array: Array<any>) => Promise<void>;
+    removeAnnotationsFromPDF: () => Promise<void>;
   }
 }
 
@@ -69,7 +69,7 @@ export const documentsComplete = (
   });
 };
 
-export const documentsToAnnotationResponse = (
+export const documentsToAnnotationResponses = (
   documents: DocumentCollection
 ): AnnotationResponseCollection => {
   const response: AnnotationResponseCollection = {};
@@ -99,6 +99,7 @@ interface DocContext {
   selectedDocument: null | string;
   selectedTopic: null | string;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
+  currentPage: number;
 }
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
@@ -144,7 +145,8 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           documents,
           selectedDocument: null,
           selectedTopic: null,
-          annotationResponses: {},
+          annotationResponses: documentsToAnnotationResponses(documents),
+          currentPage: 1,
         });
       } catch (err) {
         setState("FAILURE");
