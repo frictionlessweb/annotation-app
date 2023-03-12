@@ -169,7 +169,7 @@ const Suggestions = () => {
     <Flex justifyContent="center" marginStart="16px" direction="column">
       {Array.isArray(message) ? (
         <>
-          <Text marginY={0}>Please annotate: </Text>
+          <Text marginY={0}>Please judge these annotations: </Text>
           <ul style={{ margin: 0 }}>
             {message.map((msg) => {
               return <li key={msg}>{msg}</li>;
