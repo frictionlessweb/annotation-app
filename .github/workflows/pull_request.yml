@@ -17,10 +17,6 @@ jobs:
     services:
       postgres:
         image: postgres
-        env:
-          POSTGRES_USER: annotation
-          POSTGRES_PASSWORD: annotation
-          POSTGRES_DB: annotation
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
