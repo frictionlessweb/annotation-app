@@ -16,6 +16,7 @@ import {
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
+import { ToastQueue } from "@react-spectrum/toast";
 
 const DEFAULT_VIEW_CONFIG = {
   embedMode: "FULL_WINDOW",
@@ -125,7 +126,37 @@ const AnnotationJudger = () => {
         );
       })}
       <Flex>
-        <Button isDisabled={isSaveDisabled} variant="primary">
+        <Button
+          isDisabled={isSaveDisabled}
+          variant="primary"
+          onPress={async () => {
+            try {
+              const user_name = window.location.pathname.split("/").pop();
+              const annotations = ctx.annotationResponses;
+              const requestBodyObject = { user_name, annotations };
+              const body = JSON.stringify(requestBodyObject);
+              const res = await window.fetch("/api/v1/save-session", {
+                method: "POST",
+                body,
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+              if (res.ok) {
+                ToastQueue.positive("Saved progress successfully.", {
+                  timeout: 10,
+                });
+              } else {
+                throw new Error("REQUEST_FAILED");
+              }
+            } catch (err) {
+              ToastQueue.negative(
+                "An error occurred. Please refresh the page and try again.",
+                { timeout: 10 }
+              );
+            }
+          }}
+        >
           Save
         </Button>
       </Flex>
