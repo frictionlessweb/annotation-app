@@ -4,11 +4,40 @@ A simple application for judging annotations.
 
 ## Introduction
 
-A person will use this application...
+Our app concerns the following data:
+
+- A document is a PDF file that has several associated _topics_ with it.
+- A _topic_ has several associated _annotations_ that must be judged by a user.
+
+We want to judge how good the annotations asssociated with each document/topic pair are.
+
+To create a system that will allow you to do so, first obtain the PDF that you would like to analyze. Copy it into the `assets` folder at the root of the project. Next, create a JSON file that describes the document's topics and annotations which looks like so:
+
+```
+{
+  "title": "DocumentTitle",
+    "topics": {
+       "topicOne": [/* A list of annotations goes here... */],
+       "topicTwo": [/* A list of annotations goes here... */]
+    }
+}
+```
+
+The stem of this JSON file name and the stem of the PDF should be the same. That is,
+if the `PDF` is called `01_MY_DOCUMENT.pdf`, the JSON should be named `01_MY_DOCUMENT.json`
+respectively.
+
+Once you've copied the files you would like into the project, you should then run:
+
+```sh
+python ./assets/copy_assets.py
+```
+
+That will analyze the files you've added to the project and copied them into the right place such that one can use them with the project.
 
 ## Deploying
 
-If you have Docker installed, the only thing you should need to do is clone this repository and run:
+If you have Docker installed, the only thing you should need to do after completing the steps above is run:
 
 ```sh
 docker-compose up
@@ -17,7 +46,9 @@ docker-compose up
 That will start all of the requisite services with all necessary environment variables.
 
 ## Developing
+
 You will need to install:
+
 - Node 18
 - Python 3.11.2
 - PostgreSQL 15
