@@ -36,7 +36,7 @@ type TopicResponses = Record<TopicId, AnnotationRecord>;
 
 type AnnotationResponseCollection = Record<DocumentId, TopicResponses>;
 
-interface HasId {
+export interface HasId {
   id: string;
   [otherVar: string | number]: any;
 }

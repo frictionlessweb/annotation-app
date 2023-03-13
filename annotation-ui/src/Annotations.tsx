@@ -12,6 +12,7 @@ import {
   useAdobeDocContext,
   useSetAdobeDoc,
   messageFromDocContext,
+  HasId,
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
@@ -28,6 +29,12 @@ const DEFAULT_VIEW_CONFIG = {
 
 const PDF_ID = "PDF_DOCUMENT";
 
+const sortAnnotations = (a: HasId, b: HasId): number => {
+  const aPage: number = a?.target?.selector?.node?.index;
+  const bPage: number = b?.target?.selector?.node?.index;
+  return aPage < bPage ? -1 : 1;
+};
+
 const AnnotationJudger = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
@@ -42,7 +49,7 @@ const AnnotationJudger = () => {
   return (
     <Flex direction="column">
       <Heading level={3}>Annotations</Heading>
-      {annotations.map((annotation) => {
+      {annotations.sort(sortAnnotations).map((annotation) => {
         const page = annotation?.target?.selector?.node?.index + 1;
         if (ctx.selectedDocument === null || ctx.selectedTopic === null)
           return null;
@@ -124,6 +131,11 @@ const AnnotationJudger = () => {
 interface AdobePageEvent {
   type: "PAGE_VIEW";
   data: { pageNumber: number };
+}
+
+interface AdobeAnnotationAddedEvent {
+  type: "ANNOTATION_ADDED";
+  data: { id: string };
 }
 
 interface AdobeEvent {
@@ -215,16 +227,47 @@ const DocumentPickers = () => {
           await view.registerCallback(
             window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
             (event: AdobePageEvent | AdobeEvent) => {
-              if (event.type !== "PAGE_VIEW") return;
-              const pageEvent = event as AdobePageEvent;
-              setDoc((prevDoc) => {
-                return {
-                  ...prevDoc,
-                  currentPage: pageEvent.data.pageNumber,
-                };
-              });
+              switch (event.type) {
+                case "PAGE_VIEW": {
+                  const pageEvent = event as AdobePageEvent;
+                  setDoc((prevDoc) => {
+                    return {
+                      ...prevDoc,
+                      currentPage: pageEvent.data.pageNumber,
+                    };
+                  });
+                  return;
+                }
+                case "ANNOTATION_ADDED": {
+                  const annotationAdded = event as AdobeAnnotationAddedEvent;
+                  setDoc((prevDoc) => {
+                    const { selectedDocument, selectedTopic } = prevDoc;
+                    if (selectedDocument === null || selectedTopic === null)
+                      return prevDoc;
+                    const { id } = annotationAdded.data;
+                    const existingTopics =
+                      prevDoc.annotationResponses[selectedDocument][
+                        selectedTopic
+                      ];
+                    if (id in existingTopics) return prevDoc;
+                    const newDoc = { ...prevDoc };
+                    newDoc.documents[selectedDocument].topics[
+                      selectedTopic
+                    ].push(annotationAdded.data);
+                    newDoc.annotationResponses[selectedDocument][selectedTopic][
+                      id
+                    ] = null;
+                    return newDoc;
+                  });
+                  return;
+                }
+                default: {
+                  console.log(event);
+                  return;
+                }
+              }
             },
-            { enablePDFAnalytics: true }
+            { enablePDFAnalytics: true, enableAnnotationEvents: true }
           );
           const [manager, curApis] = await Promise.all([
             preview.getAnnotationManager(),
