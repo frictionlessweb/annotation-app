@@ -138,6 +138,11 @@ interface AdobeAnnotationAddedEvent {
   data: { id: string };
 }
 
+interface AdobeAnnotationDeletedEvent {
+  type: "ANNOTATION_DELETED";
+  data: { id: string };
+}
+
 interface AdobeEvent {
   type: string;
   data: unknown;
@@ -226,7 +231,7 @@ const DocumentPickers = () => {
           const preview = await view.previewFile(config, DEFAULT_VIEW_CONFIG);
           await view.registerCallback(
             window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-            (event: AdobePageEvent | AdobeEvent) => {
+            (event: AdobeEvent) => {
               switch (event.type) {
                 case "PAGE_VIEW": {
                   const pageEvent = event as AdobePageEvent;
@@ -261,8 +266,28 @@ const DocumentPickers = () => {
                   });
                   return;
                 }
+                case "ANNOTATION_DELETED": {
+                  const annotationDeleted =
+                    event as AdobeAnnotationDeletedEvent;
+                  setDoc((prevDoc) => {
+                    const { selectedDocument, selectedTopic } = prevDoc;
+                    if (selectedDocument === null || selectedTopic === null)
+                      return prevDoc;
+                    const { id } = annotationDeleted.data;
+                    const newDoc = { ...prevDoc };
+                    const withoutAnnotation = newDoc.documents[
+                      selectedDocument
+                    ].topics[selectedTopic].filter((x) => x.id !== id);
+                    newDoc.documents[selectedDocument].topics[selectedTopic] =
+                      withoutAnnotation;
+                    delete newDoc.annotationResponses[selectedDocument][
+                      selectedTopic
+                    ][id];
+                    return newDoc;
+                  });
+                  return;
+                }
                 default: {
-                  console.log(event);
                   return;
                 }
               }
