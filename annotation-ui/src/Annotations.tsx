@@ -134,9 +134,10 @@ interface AdobeEvent {
 const Suggestions = () => {
   const ctx = useAdobeDocContext();
   const message = messageFromDocContext(ctx);
+  const [saved, setSaved] = React.useState(false);
   React.useEffect(() => {
     const handleMessageChange = async () => {
-      if (Array.isArray(message)) return;
+      if (saved || Array.isArray(message)) return;
       try {
         const user_name = window.location.pathname.split("/").pop();
         const annotations = ctx.annotationResponses;
@@ -153,6 +154,7 @@ const Suggestions = () => {
           ToastQueue.positive("Saved progress successfully.", {
             timeout: 10,
           });
+          setSaved(true);
         } else {
           throw new Error("REQUEST_FAILED");
         }
