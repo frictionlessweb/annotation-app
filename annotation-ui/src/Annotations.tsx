@@ -1,20 +1,10 @@
 import React from "react";
-import {
-  Flex,
-  Picker,
-  Item,
-  Text,
-  Heading,
-  RadioGroup,
-  Radio,
-} from "@adobe/react-spectrum";
+import { Flex, Picker, Item, Text, Heading } from "@adobe/react-spectrum";
 import {
   useAdobeDocContext,
   useSetAdobeDoc,
   messageFromDocContext,
 } from "./DocumentProvider";
-import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
-import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import { ToastQueue } from "@react-spectrum/toast";
 
 const DEFAULT_VIEW_CONFIG = {
@@ -28,95 +18,10 @@ const DEFAULT_VIEW_CONFIG = {
 
 const PDF_ID = "PDF_DOCUMENT";
 
-const AnnotationJudger = () => {
-  const ctx = useAdobeDocContext();
-  const setDoc = useSetAdobeDoc();
-  const { apis, currentPage } = ctx;
-  const annotations =
-    ctx.selectedDocument === null || ctx.selectedTopic === null
-      ? []
-      : ctx.documents[ctx.selectedDocument].topics[ctx.selectedTopic];
-  if (annotations.length <= 0) {
-    return <Text>No annotations for this document and topic.</Text>;
-  }
+const AnnotationCollection = () => {
   return (
     <Flex direction="column">
       <Heading level={3}>Annotations</Heading>
-      {annotations.map((annotation) => {
-        const page = annotation?.target?.selector?.node?.index + 1;
-        if (ctx.selectedDocument === null || ctx.selectedTopic === null)
-          return null;
-        const initVal =
-          ctx.annotationResponses[ctx.selectedDocument][ctx.selectedTopic][
-            annotation.id
-          ];
-        const currentValue = (() => {
-          switch (initVal) {
-            case true:
-              return "true";
-            case false:
-              return "false";
-            default:
-              return "";
-          }
-        })();
-        return (
-          <div
-            key={annotation.id}
-            style={{
-              border: "2px solid grey",
-              padding: "8px",
-              marginBottom: "8px",
-              borderRadius: "8px",
-            }}
-          >
-            <p
-              style={{
-                margin: 0,
-                color: "blue",
-                textDecoration: "underline",
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                if (apis.current === null) return;
-                apis.current?.locationApis.gotoLocation(page, 0, 0);
-              }}
-            >
-              Page {page} - Annotation {annotation.id}
-            </p>
-            <RadioGroup
-              isDisabled={page !== currentPage}
-              label="Relevant?"
-              orientation="horizontal"
-              value={currentValue}
-              onChange={(value) => {
-                const newValue = value === "true" ? true : false;
-                setDoc((prevDoc) => {
-                  if (
-                    prevDoc.selectedDocument === null ||
-                    prevDoc.selectedTopic === null
-                  )
-                    return prevDoc;
-                  const newDoc = {
-                    ...prevDoc,
-                  };
-                  newDoc.annotationResponses[prevDoc.selectedDocument][
-                    prevDoc.selectedTopic
-                  ][annotation.id] = newValue;
-                  return newDoc;
-                });
-              }}
-            >
-              <Radio key="true" value="true">
-                <ThumbsUp />
-              </Radio>
-              <Radio key="false" value="false">
-                <ThumbsDown />
-              </Radio>
-            </RadioGroup>
-          </div>
-        );
-      })}
     </Flex>
   );
 };
@@ -303,7 +208,7 @@ export const Annotations = () => {
           </div>
         </Flex>
         <Flex width="50%" marginStart="16px">
-          <AnnotationJudger />
+          <AnnotationCollection />
         </Flex>
       </Flex>
     </Flex>
