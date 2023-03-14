@@ -5,8 +5,8 @@ import {
   Item,
   Text,
   Heading,
-  RadioGroup,
-  Radio,
+  ActionGroup,
+  View,
 } from "@adobe/react-spectrum";
 import {
   useAdobeDocContext,
@@ -43,87 +43,113 @@ const AnnotationJudger = () => {
     ctx.selectedDocument === null || ctx.selectedTopic === null
       ? []
       : ctx.documents[ctx.selectedDocument].topics[ctx.selectedTopic];
+
   if (annotations.length <= 0) {
     return <Text>No annotations for this document and topic.</Text>;
   }
   return (
     <Flex direction="column">
-      <Heading level={3}>Annotations</Heading>
-      {annotations.sort(sortAnnotations).map((annotation) => {
-        const page = annotation?.target?.selector?.node?.index + 1;
-        if (ctx.selectedDocument === null || ctx.selectedTopic === null)
-          return null;
-        const initVal =
-          ctx.annotationResponses[ctx.selectedDocument][ctx.selectedTopic][
-            annotation.id
-          ];
-        const currentValue = (() => {
-          switch (initVal) {
-            case true:
-              return "true";
-            case false:
-              return "false";
-            default:
-              return "";
-          }
-        })();
-        return (
-          <div
-            key={annotation.id}
-            style={{
-              border: "2px solid grey",
-              padding: "8px",
-              marginBottom: "8px",
-              borderRadius: "8px",
-            }}
-          >
-            <p
-              style={{
-                margin: 0,
-                color: "blue",
-                textDecoration: "underline",
-                cursor: "pointer",
-              }}
-              onClick={() => {
-                if (apis.current === null) return;
-                apis.current?.locationApis.gotoLocation(page, 0, 0);
-              }}
-            >
-              Page {page} - Annotation {annotation.id}
-            </p>
-            <RadioGroup
-              isDisabled={page !== currentPage}
-              label="Relevant?"
-              orientation="horizontal"
-              value={currentValue}
-              onChange={(value) => {
-                const newValue = value === "true" ? true : false;
-                setDoc((prevDoc) => {
-                  if (
-                    prevDoc.selectedDocument === null ||
-                    prevDoc.selectedTopic === null
-                  )
-                    return prevDoc;
-                  const newDoc = {
-                    ...prevDoc,
-                  };
-                  newDoc.annotationResponses[prevDoc.selectedDocument][
-                    prevDoc.selectedTopic
-                  ][annotation.id] = newValue;
-                  return newDoc;
-                });
-              }}
-            >
-              <Radio key="true" value="true">
-                <ThumbsUp />
-              </Radio>
-              <Radio key="false" value="false">
-                <ThumbsDown />
-              </Radio>
-            </RadioGroup>
-          </div>
-        );
-      })}
+      <Heading level={3} marginBottom="size-10">
+        Annotations
+      </Heading>
+
+      <p>Reminder instructions will go here</p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          overflowY: "scroll",
+        }}
+      >
+        {annotations.sort(sortAnnotations).map((annotation) => {
+          const page = annotation?.target?.selector?.node?.index + 1;
+          const isSelected = currentPage === page;
+          if (ctx.selectedDocument === null || ctx.selectedTopic === null)
+            return null;
+          const initVal =
+            ctx.annotationResponses[ctx.selectedDocument][ctx.selectedTopic][
+              annotation.id
+            ];
+          const currentValue = (() => {
+            switch (initVal) {
+              case true:
+                return "true";
+              case false:
+                return "false";
+              default:
+                return "";
+            }
+          })();
+          return (
+            <div key={annotation.id}>
+              <ul
+                className="annotations-container"
+                style={{
+                  listStyleType: "none",
+                  margin: 0,
+                  padding: 0,
+                }}
+              >
+                <li
+                  id={annotation.id}
+                  onClick={() => {
+                    if (apis.current === null) return;
+                    apis.current?.locationApis.gotoLocation(page, 0, 0);
+                  }}
+                >
+                  <View
+                    paddingX="size-100"
+                    paddingY="size-25"
+                    marginBottom="size-160"
+                    borderStartColor={isSelected ? "chartreuse-400" : undefined}
+                    borderStartWidth={isSelected ? "thick" : undefined}
+                  >
+                    <p>
+                      Annotation {annotation.id}
+                      {/* TODO: can replace with actual annot bodyValue? */}
+                    </p>
+                    <p>
+                      <small>Page {page}</small>
+                    </p>
+
+                    {isSelected && (
+                      <ActionGroup
+                        isQuiet
+                        selectionMode="single"
+                        onSelectionChange={(key) => {
+                          console.log(key);
+                          const newValue = key === "true" ? true : false;
+                          setDoc((prevDoc) => {
+                            if (
+                              prevDoc.selectedDocument === null ||
+                              prevDoc.selectedTopic === null
+                            )
+                              return prevDoc;
+                            const newDoc = {
+                              ...prevDoc,
+                            };
+                            newDoc.annotationResponses[
+                              prevDoc.selectedDocument
+                            ][prevDoc.selectedTopic][annotation.id] = newValue;
+                            return newDoc;
+                          });
+                        }}
+                      >
+                        <Item key="true">
+                          <ThumbsUp />
+                        </Item>
+                        <Item key="false">
+                          <ThumbsDown />
+                        </Item>
+                      </ActionGroup>
+                    )}
+                  </View>
+                </li>
+              </ul>
+            </div>
+          );
+        })}
+      </div>
     </Flex>
   );
 };
