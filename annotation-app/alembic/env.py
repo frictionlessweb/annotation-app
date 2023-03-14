@@ -80,3 +80,5 @@ else:
 
 if 'DATABASE_URL' in environ:
     config.set_main_option('sqlalchemy.url', environ['DATABASE_URL'])
+else:
+    print("Did not change sqlalchemy.url")
