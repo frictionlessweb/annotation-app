@@ -111,13 +111,12 @@ const AnnotationJudger = () => {
                     <p>
                       <small>Page {page}</small>
                     </p>
-
                     {isSelected && (
                       <ActionGroup
                         isQuiet
                         selectionMode="single"
-                        onSelectionChange={(key) => {
-                          console.log(key);
+                        selectedKeys={[currentValue]}
+                        onAction={(key) => {
                           const newValue = key === "true" ? true : false;
                           setDoc((prevDoc) => {
                             if (
