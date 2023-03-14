@@ -71,7 +71,16 @@ To set up all the required database tables, you can run:
 psql -f ./annotation-app/init.sql
 ```
 
-Then, you can start the API by going into the `annotation-app` directory and running:
+You will also need to set the following environment variables in your shell:
+
+```
+export POSTGRES_DB=annotation
+export POSTGRES_USER=annotation
+export POSTGRES_PASSWORD=annotation
+
+```
+
+From there, you can start the API by going into the `annotation-app` directory and running:
 
 ```sh
 alembic upgrade head && uvicorn --host 0.0.0.0 main:app --reload
