@@ -24,18 +24,6 @@ export interface AdobeApiHandler {
   };
 }
 
-type TopicId = string;
-
-type DocumentId = string;
-
-type AnnotationId = string;
-
-type AnnotationRecord = Record<AnnotationId, boolean | null>;
-
-type TopicResponses = Record<TopicId, AnnotationRecord>;
-
-type AnnotationResponseCollection = Record<DocumentId, TopicResponses>;
-
 interface HasId {
   id: string;
   [otherVar: string | number]: any;
@@ -44,49 +32,13 @@ interface HasId {
 interface Document {
   pdf_url: string;
   title: string;
-  topics: Record<TopicId, HasId[]>;
+  question: string;
+  extract_api: any;
 }
 
-type DocumentCollection = Record<string, Document>;
+type DocumentId = string;
 
-export const annotationsComplete = (annotations: AnnotationRecord): boolean => {
-  return Object.keys(annotations).every(
-    (id) => typeof annotations[id] === "boolean"
-  );
-};
-
-export const topicsComplete = (topics: TopicResponses): boolean => {
-  return Object.keys(topics).every((topicId) =>
-    annotationsComplete(topics[topicId])
-  );
-};
-
-export const documentsComplete = (
-  documents: AnnotationResponseCollection
-): boolean => {
-  return Object.keys(documents).every((documentId) => {
-    return topicsComplete(documents[documentId]);
-  });
-};
-
-export const documentsToAnnotationResponses = (
-  documents: DocumentCollection
-): AnnotationResponseCollection => {
-  const response: AnnotationResponseCollection = {};
-  for (const key of Object.keys(documents)) {
-    const documentObject = documents[key];
-    const topics: Record<TopicId, AnnotationRecord> = {};
-    for (const topicKey of Object.keys(documentObject.topics)) {
-      const topicMap: Record<string, boolean | null> = {};
-      topics[topicKey] = topicMap;
-      for (const annotation of documentObject.topics[topicKey]) {
-        topicMap[annotation.id] = null;
-      }
-    }
-    response[key] = topics;
-  }
-  return response;
-};
+type DocumentCollection = Record<DocumentId, Document>;
 
 const fetchDocuments = async (): Promise<DocumentCollection> => {
   const res = await window.fetch("/api/v1/documents", { method: "GET" });
@@ -95,9 +47,7 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
 
 interface DocContext {
   documents: DocumentCollection;
-  annotationResponses: AnnotationResponseCollection;
-  selectedDocument: null | string;
-  selectedTopic: null | string;
+  selectedDocument: DocumentId | null;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
 }
@@ -126,25 +76,6 @@ export const useAdobeDocContext = (): DocContext => {
   return ctx;
 };
 
-export const messageFromDocContext = (ctx: DocContext): string | string[] => {
-  const pairs = [];
-  for (const documentId of Object.keys(ctx.annotationResponses)) {
-    const topicsForDocument = ctx.annotationResponses[documentId];
-    for (const topicId of Object.keys(topicsForDocument)) {
-      const annotations = topicsForDocument[topicId];
-      if (!annotationsComplete(annotations)) {
-        pairs.push({ documentId, topicId });
-      }
-    }
-  }
-  if (pairs.length === 0) {
-    return `Congratulations, you have finished the task!`;
-  }
-  return pairs.map(
-    (pair) => `Document ${pair.documentId} and Topic ${pair.topicId}`
-  );
-};
-
 interface AdobeDocProviderProps {
   children: React.ReactNode;
 }
@@ -163,8 +94,6 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           apis: apisRef,
           documents,
           selectedDocument: null,
-          selectedTopic: null,
-          annotationResponses: documentsToAnnotationResponses(documents),
           currentPage: 1,
         });
       } catch (err) {

@@ -1,10 +1,6 @@
 import React from "react";
 import { Flex, Picker, Item, Text, Heading } from "@adobe/react-spectrum";
-import {
-  useAdobeDocContext,
-  useSetAdobeDoc,
-  messageFromDocContext,
-} from "./DocumentProvider";
+import { useAdobeDocContext, useSetAdobeDoc } from "./DocumentProvider";
 import { ToastQueue } from "@react-spectrum/toast";
 
 const DEFAULT_VIEW_CONFIG = {
@@ -36,56 +32,10 @@ interface AdobeEvent {
   data: unknown;
 }
 
-const Suggestions = () => {
-  const ctx = useAdobeDocContext();
-  const message = messageFromDocContext(ctx);
-  const [saved, setSaved] = React.useState(false);
-  React.useEffect(() => {
-    const handleMessageChange = async () => {
-      if (saved || Array.isArray(message)) return;
-      try {
-        const user_name = window.location.pathname.split("/").pop();
-        const annotations = ctx.annotationResponses;
-        const requestBodyObject = { user_name, annotations };
-        const body = JSON.stringify(requestBodyObject);
-        const res = await window.fetch("/api/v1/save-session", {
-          method: "POST",
-          body,
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        if (res.ok) {
-          ToastQueue.positive("Saved progress successfully.", {
-            timeout: 10,
-          });
-          setSaved(true);
-        } else {
-          throw new Error("REQUEST_FAILED");
-        }
-      } catch (err) {
-        ToastQueue.negative(
-          "An error occurred. Please refresh the page and try again.",
-          { timeout: 10 }
-        );
-      }
-    };
-    handleMessageChange();
-  }, [message, ctx]);
+const Instructions = () => {
   return (
     <Flex justifyContent="center" marginStart="16px" direction="column">
-      {Array.isArray(message) ? (
-        <>
-          <Text marginY={0}>Please judge these annotations: </Text>
-          <ul style={{ margin: 0 }}>
-            {message.map((msg) => {
-              return <li key={msg}>{msg}</li>;
-            })}
-          </ul>
-        </>
-      ) : (
-        <Text>{message}</Text>
-      )}
+      <p>Hi</p>
     </Flex>
   );
 };
@@ -152,34 +102,7 @@ const DocumentPickers = () => {
           return <Item key={doc}>{doc}</Item>;
         })}
       </Picker>
-      <Picker
-        label="Select a Topic"
-        isDisabled={ctx.selectedDocument === null}
-        onSelectionChange={async (key) => {
-          const { apis, selectedDocument } = ctx;
-          if (selectedDocument === null) return;
-          setDoc((prev) => {
-            return {
-              ...prev,
-              selectedTopic: key as string,
-            };
-          });
-          await apis.current?.annotationApis.removeAnnotationsFromPDF();
-          const annotations =
-            ctx.documents[selectedDocument].topics[key as string];
-          await apis.current?.annotationApis.addAnnotations(annotations);
-          await apis.current?.locationApis.gotoLocation(1, 0, 0);
-        }}
-      >
-        {ctx.selectedDocument === null
-          ? []
-          : Object.keys(ctx.documents[ctx.selectedDocument].topics).map(
-              (topic) => {
-                return <Item key={topic}>{topic}</Item>;
-              }
-            )}
-      </Picker>
-      <Suggestions />
+      <Instructions />
     </Flex>
   );
 };
