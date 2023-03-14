@@ -412,6 +412,7 @@ const DocumentPickers = () => {
                       draft.userAnnotations[selectedDocument][
                         selectedTopic
                       ].push(annotationAdded.data);
+                      draft.selectedAnnotation = annotationAdded.data.id;
                     });
                   });
                   return;
