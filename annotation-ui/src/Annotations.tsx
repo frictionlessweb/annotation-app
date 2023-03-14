@@ -99,10 +99,20 @@ const TaskAnnotations = () => {
                     borderStartColor={isSelected ? "chartreuse-400" : undefined}
                     borderStartWidth={isSelected ? "thick" : undefined}
                   >
-                    <p>Annotation {annotation.id}</p>
-                    <p>
-                      <small>Page {page}</small>
-                    </p>
+                    <Flex
+                      width="100%"
+                      justifyContent="space-between"
+                      alignItems="end"
+                    >
+                      <Flex direction="column">
+                        <p>Annotation {annotation.id}</p>
+                        <p>
+                          <small>Page {page}</small>
+                        </p>
+                      </Flex>
+                      {currentValue === "true" && <ThumbsUp />}
+                      {currentValue === "false" && <ThumbsDown />}
+                    </Flex>
                     {isSelected && (
                       <ActionGroup
                         isQuiet
