@@ -4,7 +4,7 @@ import { Router } from "./Router";
 
 export const App = () => {
   return (
-    <Provider theme={defaultTheme}>
+    <Provider theme={defaultTheme} colorScheme="light">
       <Router />
       <ToastContainer />
     </Provider>
