@@ -93,9 +93,12 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
   return res.json();
 };
 
+type UserAnnotations = Record<DocumentId, Record<TopicId, object[]>>;
+
 interface DocContext {
   documents: DocumentCollection;
   annotationResponses: AnnotationResponseCollection;
+  userAnnotations: UserAnnotations;
   selectedDocument: null | string;
   selectedTopic: null | string;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
@@ -124,6 +127,23 @@ export const useAdobeDocContext = (): DocContext => {
     throw new Error("Please use useAdobeDocContext inside of its provider.");
   }
   return ctx;
+};
+
+export const makeUserAnnotations = (
+  collection: DocumentCollection
+): UserAnnotations => {
+  const out: UserAnnotations = {};
+  const docIds = Object.keys(collection);
+  for (const docId of docIds) {
+    out[docId] = {};
+    const curDoc = out[docId];
+    const topics = collection[docId].topics;
+    const topicIds = Object.keys(topics);
+    for (const topicId of topicIds) {
+      curDoc[topicId] = [];
+    }
+  }
+  return out;
 };
 
 export const messageFromDocContext = (ctx: DocContext): string | string[] => {
@@ -165,6 +185,7 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           selectedDocument: null,
           selectedTopic: null,
           annotationResponses: documentsToAnnotationResponses(documents),
+          userAnnotations: makeUserAnnotations(documents),
           currentPage: 1,
         });
       } catch (err) {
