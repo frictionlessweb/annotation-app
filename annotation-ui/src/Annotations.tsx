@@ -28,6 +28,8 @@ const DEFAULT_VIEW_CONFIG = {
   showPrintPDF: false,
   enableAnnotationAPIs: true,
   includePDFAnnotations: true,
+  showCommentsPanel: false,
+  showToolsOnTextSelection: false,
 } as const;
 
 const PDF_ID = "PDF_DOCUMENT";
