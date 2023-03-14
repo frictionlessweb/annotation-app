@@ -15,6 +15,7 @@ import {
   useSetAdobeDoc,
   messageFromDocContext,
   HasId,
+  VIEW_TAB,
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
@@ -43,7 +44,7 @@ const sortAnnotations = (a: HasId, b: HasId): number => {
 const TaskAnnotations = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
-  const { apis, currentPage } = ctx;
+  const { apis } = ctx;
   const annotations =
     ctx.selectedDocument === null || ctx.selectedTopic === null
       ? []
@@ -60,7 +61,7 @@ const TaskAnnotations = () => {
       >
         {[...annotations].sort(sortAnnotations).map((annotation) => {
           const page = annotation?.target?.selector?.node?.index + 1;
-          const isSelected = currentPage === page;
+          const isSelected = ctx.selectedAnnotation === annotation.id;
           if (ctx.selectedDocument === null || ctx.selectedTopic === null)
             return null;
           const initVal =
@@ -92,6 +93,12 @@ const TaskAnnotations = () => {
                   onClick={() => {
                     if (apis.current === null) return;
                     apis.current?.locationApis.gotoLocation(page, 0, 0);
+                    setDoc((prevDoc) => {
+                      return {
+                        ...prevDoc,
+                        selectedAnnotation: annotation.id,
+                      };
+                    });
                   }}
                 >
                   <View
@@ -158,7 +165,8 @@ const TaskAnnotations = () => {
 
 const UserAnnotations = () => {
   const ctx = useAdobeDocContext();
-  const { apis, currentPage } = ctx;
+  const setDoc = useSetAdobeDoc();
+  const { apis } = ctx;
   const annotations =
     ctx.selectedDocument === null || ctx.selectedTopic === null
       ? []
@@ -174,7 +182,7 @@ const UserAnnotations = () => {
     <Flex direction="column" marginTop="16px">
       {[...annotations].sort(sortAnnotations).map((annotation) => {
         const page = annotation?.target?.selector?.node?.index + 1;
-        const isSelected = page === currentPage;
+        const isSelected = annotation.id === ctx.selectedAnnotation;
         return (
           <div key={annotation.id}>
             <ul
@@ -190,6 +198,12 @@ const UserAnnotations = () => {
                 onClick={() => {
                   if (apis.current === null) return;
                   apis.current?.locationApis.gotoLocation(page, 0, 0);
+                  setDoc((prevDoc) => {
+                    return {
+                      ...prevDoc,
+                      selectedAnnotation: annotation.id,
+                    };
+                  });
                 }}
               >
                 <View
@@ -213,11 +227,10 @@ const UserAnnotations = () => {
   );
 };
 
-type VIEW_TAB = "TASK_ANNOTATIONS" | "USER_ANNOTATIONS";
-
 const AnnotationJudger = () => {
   const ctx = useAdobeDocContext();
-  const [tab, setTab] = React.useState<VIEW_TAB>("TASK_ANNOTATIONS");
+  const { selectedTab: tab } = ctx;
+  const setDoc = useSetAdobeDoc();
   const annotations =
     ctx.selectedDocument === null || ctx.selectedTopic === null
       ? []
@@ -232,8 +245,14 @@ const AnnotationJudger = () => {
       </Heading>
       <Tabs
         aria-label="Annotations"
+        selectedKey={ctx.selectedTab}
         onSelectionChange={(key) => {
-          setTab(key as VIEW_TAB);
+          setDoc((prevDoc) => {
+            return {
+              ...prevDoc,
+              selectedTab: key as VIEW_TAB,
+            };
+          });
         }}
       >
         <TabList>
@@ -253,6 +272,11 @@ interface AdobePageEvent {
 }
 
 interface AdobeAnnotationAddedEvent {
+  type: "ANNOTATION_ADDED";
+  data: { id: string };
+}
+
+interface AdobeAnnotationSelectedEvent {
   type: "ANNOTATION_ADDED";
   data: { id: string };
 }
@@ -384,6 +408,7 @@ const DocumentPickers = () => {
                       ];
                     if (id in existingTopics) return prevDoc;
                     return produce(prevDoc, (draft) => {
+                      draft.selectedTab = "USER_ANNOTATIONS";
                       draft.userAnnotations[selectedDocument][
                         selectedTopic
                       ].push(annotationAdded.data);
@@ -422,6 +447,38 @@ const DocumentPickers = () => {
                           newAnnotations;
                       });
                     }
+                  });
+                  return;
+                }
+                case "ANNOTATION_SELECTED": {
+                  const annotationSelected =
+                    event as AdobeAnnotationSelectedEvent;
+                  setDoc((prevDoc) => {
+                    return produce(prevDoc, (draft) => {
+                      const { id } = annotationSelected.data;
+                      draft.selectedAnnotation = id;
+                      if (
+                        draft.selectedTab === null ||
+                        draft.selectedDocument === null ||
+                        draft.selectedTopic === null
+                      )
+                        return;
+                      draft.selectedAnnotation = id;
+                      const taskIds = new Set(
+                        draft.documents[draft.selectedDocument].topics[
+                          draft.selectedTopic
+                        ].map((x) => x.id)
+                      );
+                      const isTaskId = taskIds.has(id);
+                      const isInActiveTab = isTaskId
+                        ? draft.selectedTab === "TASK_ANNOTATIONS"
+                        : draft.selectedTab === "USER_ANNOTATIONS";
+                      if (isInActiveTab) return;
+                      draft.selectedTab =
+                        draft.selectedTab === "TASK_ANNOTATIONS"
+                          ? "USER_ANNOTATIONS"
+                          : "TASK_ANNOTATIONS";
+                    });
                   });
                   return;
                 }

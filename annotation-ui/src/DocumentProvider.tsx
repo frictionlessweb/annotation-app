@@ -36,6 +36,8 @@ type TopicResponses = Record<TopicId, AnnotationRecord>;
 
 type AnnotationResponseCollection = Record<DocumentId, TopicResponses>;
 
+export type VIEW_TAB = "TASK_ANNOTATIONS" | "USER_ANNOTATIONS";
+
 export interface HasId {
   id: string;
   [otherVar: string | number]: any;
@@ -101,6 +103,8 @@ interface DocContext {
   userAnnotations: UserAnnotations;
   selectedDocument: null | string;
   selectedTopic: null | string;
+  selectedAnnotation: null | string;
+  selectedTab: VIEW_TAB;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
 }
@@ -184,9 +188,11 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           documents,
           selectedDocument: null,
           selectedTopic: null,
+          selectedAnnotation: null,
           annotationResponses: documentsToAnnotationResponses(documents),
           userAnnotations: makeUserAnnotations(documents),
           currentPage: 1,
+          selectedTab: "TASK_ANNOTATIONS",
         });
       } catch (err) {
         setState("FAILURE");
