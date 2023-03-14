@@ -2,6 +2,8 @@ import React from "react";
 import {
   Flex,
   Picker,
+  Tabs,
+  TabList,
   Item,
   Text,
   Heading,
@@ -17,6 +19,7 @@ import {
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import { ToastQueue } from "@react-spectrum/toast";
+import produce from "immer";
 
 const DEFAULT_VIEW_CONFIG = {
   embedMode: "FULL_WINDOW",
@@ -35,7 +38,7 @@ const sortAnnotations = (a: HasId, b: HasId): number => {
   return aPage < bPage ? -1 : 1;
 };
 
-const AnnotationJudger = () => {
+const TaskAnnotations = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   const { apis, currentPage } = ctx;
@@ -43,16 +46,8 @@ const AnnotationJudger = () => {
     ctx.selectedDocument === null || ctx.selectedTopic === null
       ? []
       : ctx.documents[ctx.selectedDocument].topics[ctx.selectedTopic];
-
-  if (annotations.length <= 0) {
-    return <Text>No annotations for this document and topic.</Text>;
-  }
   return (
-    <Flex direction="column">
-      <Heading level={3} marginBottom="size-10">
-        Annotations
-      </Heading>
-
+    <>
       <p>Reminder instructions will go here</p>
       <div
         style={{
@@ -61,7 +56,7 @@ const AnnotationJudger = () => {
           overflowY: "scroll",
         }}
       >
-        {annotations.sort(sortAnnotations).map((annotation) => {
+        {[...annotations].sort(sortAnnotations).map((annotation) => {
           const page = annotation?.target?.selector?.node?.index + 1;
           const isSelected = currentPage === page;
           if (ctx.selectedDocument === null || ctx.selectedTopic === null)
@@ -104,10 +99,7 @@ const AnnotationJudger = () => {
                     borderStartColor={isSelected ? "chartreuse-400" : undefined}
                     borderStartWidth={isSelected ? "thick" : undefined}
                   >
-                    <p>
-                      Annotation {annotation.id}
-                      {/* TODO: can replace with actual annot bodyValue? */}
-                    </p>
+                    <p>Annotation {annotation.id}</p>
                     <p>
                       <small>Page {page}</small>
                     </p>
@@ -119,18 +111,17 @@ const AnnotationJudger = () => {
                         onAction={(key) => {
                           const newValue = key === "true" ? true : false;
                           setDoc((prevDoc) => {
-                            if (
-                              prevDoc.selectedDocument === null ||
-                              prevDoc.selectedTopic === null
-                            )
-                              return prevDoc;
-                            const newDoc = {
-                              ...prevDoc,
-                            };
-                            newDoc.annotationResponses[
-                              prevDoc.selectedDocument
-                            ][prevDoc.selectedTopic][annotation.id] = newValue;
-                            return newDoc;
+                            return produce(prevDoc, (newDoc) => {
+                              if (
+                                prevDoc.selectedDocument === null ||
+                                prevDoc.selectedTopic === null
+                              )
+                                return prevDoc;
+                              newDoc.annotationResponses[
+                                prevDoc.selectedDocument
+                              ][prevDoc.selectedTopic][annotation.id] =
+                                newValue;
+                            });
                           });
                         }}
                       >
@@ -149,6 +140,97 @@ const AnnotationJudger = () => {
           );
         })}
       </div>
+    </>
+  );
+};
+
+const UserAnnotations = () => {
+  const ctx = useAdobeDocContext();
+  const { apis, currentPage } = ctx;
+  const annotations =
+    ctx.selectedDocument === null || ctx.selectedTopic === null
+      ? []
+      : ctx.userAnnotations[ctx.selectedDocument][ctx.selectedTopic];
+  if (annotations.length <= 0) {
+    return (
+      <Flex direction="column" marginTop="16px">
+        <Text>You have not created any annotations.</Text>
+      </Flex>
+    );
+  }
+  return (
+    <Flex direction="column" marginTop="16px">
+      {[...annotations].sort(sortAnnotations).map((annotation) => {
+        const page = annotation?.target?.selector?.node?.index + 1;
+        const isSelected = page === currentPage;
+        return (
+          <div key={annotation.id}>
+            <ul
+              className="annotations-container"
+              style={{
+                listStyleType: "none",
+                margin: 0,
+                padding: 0,
+              }}
+            >
+              <li
+                id={annotation.id}
+                onClick={() => {
+                  if (apis.current === null) return;
+                  apis.current?.locationApis.gotoLocation(page, 0, 0);
+                }}
+              >
+                <View
+                  paddingX="size-100"
+                  paddingY="size-25"
+                  marginBottom="size-160"
+                  borderStartColor={isSelected ? "chartreuse-400" : undefined}
+                  borderStartWidth={isSelected ? "thick" : undefined}
+                >
+                  <p>Annotation {annotation.id}</p>
+                  <p>
+                    <small>Page {page}</small>
+                  </p>
+                </View>
+              </li>
+            </ul>
+          </div>
+        );
+      })}
+    </Flex>
+  );
+};
+
+type VIEW_TAB = "TASK_ANNOTATIONS" | "USER_ANNOTATIONS";
+
+const AnnotationJudger = () => {
+  const ctx = useAdobeDocContext();
+  const [tab, setTab] = React.useState<VIEW_TAB>("TASK_ANNOTATIONS");
+  const annotations =
+    ctx.selectedDocument === null || ctx.selectedTopic === null
+      ? []
+      : ctx.documents[ctx.selectedDocument].topics[ctx.selectedTopic];
+  if (annotations.length <= 0) {
+    return <Text>No annotations for this document and topic.</Text>;
+  }
+  return (
+    <Flex direction="column">
+      <Heading level={3} marginBottom="size-10">
+        Annotations
+      </Heading>
+      <Tabs
+        aria-label="Annotations"
+        onSelectionChange={(key) => {
+          setTab(key as VIEW_TAB);
+        }}
+      >
+        <TabList>
+          <Item key="TASK_ANNOTATIONS">Task Annotations</Item>
+          <Item key="USER_ANNOTATIONS">User Annotations</Item>
+        </TabList>
+      </Tabs>
+      {tab === "TASK_ANNOTATIONS" && <TaskAnnotations />}
+      {tab === "USER_ANNOTATIONS" && <UserAnnotations />}
     </Flex>
   );
 };
@@ -280,14 +362,11 @@ const DocumentPickers = () => {
                         selectedTopic
                       ];
                     if (id in existingTopics) return prevDoc;
-                    const newDoc = { ...prevDoc };
-                    newDoc.documents[selectedDocument].topics[
-                      selectedTopic
-                    ].push(annotationAdded.data);
-                    newDoc.annotationResponses[selectedDocument][selectedTopic][
-                      id
-                    ] = null;
-                    return newDoc;
+                    return produce(prevDoc, (draft) => {
+                      draft.userAnnotations[selectedDocument][
+                        selectedTopic
+                      ].push(annotationAdded.data);
+                    });
                   });
                   return;
                 }
@@ -299,16 +378,29 @@ const DocumentPickers = () => {
                     if (selectedDocument === null || selectedTopic === null)
                       return prevDoc;
                     const { id } = annotationDeleted.data;
-                    const newDoc = { ...prevDoc };
-                    const withoutAnnotation = newDoc.documents[
-                      selectedDocument
-                    ].topics[selectedTopic].filter((x) => x.id !== id);
-                    newDoc.documents[selectedDocument].topics[selectedTopic] =
-                      withoutAnnotation;
-                    delete newDoc.annotationResponses[selectedDocument][
-                      selectedTopic
-                    ][id];
-                    return newDoc;
+                    const existingTopics =
+                      prevDoc.annotationResponses[selectedDocument][
+                        selectedTopic
+                      ];
+                    if (id in existingTopics) {
+                      ToastQueue.negative(
+                        "Please do not delete an existing annotation. You have invalidated the task. Refresh the page and try again.",
+                        { timeout: 10 }
+                      );
+                      return prevDoc;
+                    } else {
+                      return produce(prevDoc, (draft) => {
+                        const theAnnotations =
+                          draft.userAnnotations[selectedDocument][
+                            selectedTopic
+                          ];
+                        const newAnnotations = theAnnotations.filter(
+                          (x) => x.id !== id
+                        );
+                        draft.userAnnotations[selectedDocument][selectedTopic] =
+                          newAnnotations;
+                      });
+                    }
                   });
                   return;
                 }

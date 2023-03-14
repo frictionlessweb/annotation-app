@@ -93,7 +93,7 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
   return res.json();
 };
 
-type UserAnnotations = Record<DocumentId, Record<TopicId, object[]>>;
+type UserAnnotations = Record<DocumentId, Record<TopicId, HasId[]>>;
 
 interface DocContext {
   documents: DocumentCollection;
