@@ -3,9 +3,42 @@ import {
   annotationsComplete,
   topicsComplete,
   documentsComplete,
+  makeUserAnnotations,
 } from "./DocumentProvider";
 
 describe("Annotation response analysis", () => {
+  test("We can make user annotations", () => {
+    const input = {
+      DocumentOne: {
+        pdf_url: "https://google.com",
+        title: "Test",
+        topics: {
+          "1": [{ id: "1234" }],
+          "2": [{ id: "3456" }, { id: "7899" }],
+        },
+      },
+      DocumentTwo: {
+        pdf_url: "https://google.com",
+        title: "Test",
+        topics: {
+          "1": [{ id: "22341", other: true }],
+          "2": [{ id: "1512" }, { id: "1231", this: "is a property" }],
+        },
+      },
+    };
+    const actual = makeUserAnnotations(input);
+    const expected = {
+      DocumentOne: {
+        1: [],
+        2: [],
+      },
+      DocumentTwo: {
+        1: [],
+        2: [],
+      }
+    }
+    expect(actual).toEqual(expected);
+  });
   test("We can go from documents to annotation responses", () => {
     const actualResponse = documentsToAnnotationResponses({
       DocumentOne: {
