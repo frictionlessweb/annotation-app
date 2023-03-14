@@ -11,7 +11,7 @@ export const Router = () => {
         <LogIn />
       </Route>
       <Route path="/:name">
-        <Flex width='100%' direction="column" data-testid="ANNOTATION_APP">
+        <Flex width='100%' direction="column" data-testid="ANNOTATION_APP" height="100%">
           <AdobeDocProvider>
             <Annotations />
           </AdobeDocProvider>

@@ -290,6 +290,15 @@ const Suggestions = () => {
           ToastQueue.positive("Saved progress successfully.", {
             timeout: 10,
           });
+          const element = document.createElement("a");
+          const textFile = new Blob([JSON.stringify(requestBodyObject)], {
+            type: "text/plain",
+          });
+          element.href = URL.createObjectURL(textFile);
+          element.download = "annotations.json";
+          document.body.appendChild(element);
+          element.click();
+          document.body.removeChild(element);
           setSaved(true);
         } else {
           throw new Error("REQUEST_FAILED");
@@ -302,7 +311,7 @@ const Suggestions = () => {
       }
     };
     handleMessageChange();
-  }, [message, ctx]);
+  }, [message, ctx, saved]);
   return (
     <Flex justifyContent="center" marginStart="16px" direction="column">
       {Array.isArray(message) ? (
@@ -483,11 +492,19 @@ export const Annotations = () => {
     <Flex
       direction="column"
       marginX="32px"
-      UNSAFE_style={{ paddingTop: "16px", paddingBottom: "16px" }}
+      UNSAFE_style={{
+        paddingTop: "16px",
+        paddingBottom: "16px",
+      }}
     >
       <DocumentPickers />
       <Flex width="100%">
-        <Flex width="75%" position="relative" height="500px" marginEnd="16px">
+        <Flex
+          width="75%"
+          position="relative"
+          height={window.innerHeight}
+          marginEnd="16px"
+        >
           <div
             ref={pdfRef}
             id={PDF_ID}
