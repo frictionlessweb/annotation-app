@@ -1,8 +1,6 @@
 import React from "react";
 import { Flex, Picker, Item, Text, Heading } from "@adobe/react-spectrum";
 import { useAdobeDocContext, useSetAdobeDoc } from "./DocumentProvider";
-import { analyzeElements } from "./analysis";
-import { ToastQueue } from "@react-spectrum/toast";
 
 const DEFAULT_VIEW_CONFIG = {
   embedMode: "FULL_WINDOW",
@@ -40,6 +38,8 @@ const Instructions = () => {
     </Flex>
   );
 };
+
+let CURRENT_SELECTION_TEXT: string = "";
 
 const DocumentPickers = () => {
   const ctx = useAdobeDocContext();
@@ -80,7 +80,23 @@ const DocumentPickers = () => {
                 };
               });
             },
-            { enablePDFAnalytics: true }
+            { enablePDFAnalytics: true, enableFilePreviewEvents: true }
+          );
+          await view.registerCallback(
+            window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+            (event: AdobePageEvent | AdobeEvent) => {
+              switch (event.type) {
+                case "PREVIEW_SELECTION_END": {
+                  console.log('read the text...')
+                  break;
+                }
+                case "ANNOTATION_ADDED": {
+                  console.log("grab the annotation!");
+                  break;
+                }
+              }
+            },
+            { enableAnnotationEvents: true }
           );
           const [manager, curApis] = await Promise.all([
             preview.getAnnotationManager(),
@@ -88,15 +104,12 @@ const DocumentPickers = () => {
           ]);
           apis.current = {
             annotationApis: manager,
-            locationApis: curApis,
+            genericApis: curApis,
           };
           setDoc((prev) => {
             return {
               ...prev,
               selectedDocument: key as string,
-              analyzedDocument: analyzeElements(
-                prev.documents[key].extract_api
-              ),
             };
           });
         }}

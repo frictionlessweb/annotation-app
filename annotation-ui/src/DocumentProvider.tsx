@@ -11,12 +11,13 @@ declare global {
 }
 
 export interface AdobeApiHandler {
-  locationApis: {
+  genericApis: {
     gotoLocation: (
       page: number,
       xCoordinate: number,
       yCoordinate: number
     ) => Promise<void>;
+    getSelectedContent: () => Promise<{ type: "text"; data: string }>;
   };
   annotationApis: {
     getAnnotations: () => Promise<Array<unknown>>;
@@ -41,23 +42,12 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
   return res.json();
 };
 
-interface DocContextBase {
+interface DocContext {
   documents: DocumentCollection;
+  selectedDocument: string;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
 }
-
-interface DocContextWithDocument extends DocContextBase {
-  selectedDocument: DocumentId;
-  analyzedDocument: AnalyzedDocument;
-}
-
-interface DocContextWithoutDocument extends DocContextBase {
-  selectedDocument: null;
-  analyzedDocument: null;
-}
-
-type DocContext = DocContextWithDocument | DocContextWithoutDocument;
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
 
