@@ -1,10 +1,10 @@
 import { Provider, defaultTheme } from "@adobe/react-spectrum";
-import { ToastContainer } from '@react-spectrum/toast';
+import { ToastContainer } from "@react-spectrum/toast";
 import { Router } from "./Router";
 
 export const App = () => {
   return (
-    <Provider theme={defaultTheme}>
+    <Provider theme={defaultTheme} colorScheme="light" height="100%">
       <Router />
       <ToastContainer />
     </Provider>
