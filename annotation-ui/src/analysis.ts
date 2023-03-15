@@ -60,7 +60,7 @@ export interface AnalyzedDocument {
 }
 
 export interface EmbedAnnotation {
-
+  id: string;
 }
 
 // PURE FUNCTIONS

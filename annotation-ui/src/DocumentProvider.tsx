@@ -1,6 +1,7 @@
 import React from "react";
 import { Loading } from "./Loading";
 import { FatalApiError } from "./FatalApiError";
+import { ExtractResult, AnalyzedDocument } from "./analysis";
 
 declare global {
   interface Window {
@@ -24,16 +25,11 @@ export interface AdobeApiHandler {
   };
 }
 
-interface HasId {
-  id: string;
-  [otherVar: string | number]: any;
-}
-
 interface Document {
   pdf_url: string;
   title: string;
   question: string;
-  extract_api: any;
+  extract_api: ExtractResult;
 }
 
 type DocumentId = string;
@@ -45,12 +41,23 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
   return res.json();
 };
 
-interface DocContext {
+interface DocContextBase {
   documents: DocumentCollection;
-  selectedDocument: DocumentId | null;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
 }
+
+interface DocContextWithDocument extends DocContextBase {
+  selectedDocument: DocumentId;
+  analyzedDocument: AnalyzedDocument;
+}
+
+interface DocContextWithoutDocument extends DocContextBase {
+  selectedDocument: null;
+  analyzedDocument: null;
+}
+
+type DocContext = DocContextWithDocument | DocContextWithoutDocument;
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
 
@@ -93,8 +100,9 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
         setState({
           apis: apisRef,
           documents,
-          selectedDocument: null,
           currentPage: 1,
+          selectedDocument: null,
+          analyzedDocument: null,
         });
       } catch (err) {
         setState("FAILURE");

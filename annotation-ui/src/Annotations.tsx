@@ -1,6 +1,7 @@
 import React from "react";
 import { Flex, Picker, Item, Text, Heading } from "@adobe/react-spectrum";
 import { useAdobeDocContext, useSetAdobeDoc } from "./DocumentProvider";
+import { analyzeElements } from "./analysis";
 import { ToastQueue } from "@react-spectrum/toast";
 
 const DEFAULT_VIEW_CONFIG = {
@@ -93,7 +94,9 @@ const DocumentPickers = () => {
             return {
               ...prev,
               selectedDocument: key as string,
-              selectedTopic: null,
+              analyzedDocument: analyzeElements(
+                prev.documents[key].extract_api
+              ),
             };
           });
         }}
