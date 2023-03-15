@@ -370,6 +370,7 @@ const DocumentPickers = () => {
       <Picker
         marginEnd="16px"
         label="Select a Document"
+        selectedKey={ctx.selectedDocument}
         onSelectionChange={async (key) => {
           changeDocumentId(ctx, key as string, setDoc);
         }}
