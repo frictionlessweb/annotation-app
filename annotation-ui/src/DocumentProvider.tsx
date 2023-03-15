@@ -55,6 +55,7 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
 interface DocContext {
   documents: DocumentCollection;
   selectedDocument: string | null;
+  selectedAnnotation: string | null;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
   annotations: Annotations;
@@ -112,6 +113,7 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           currentPage: 1,
           selectedDocument: null,
           annotations: toAnnotationMap(documents),
+          selectedAnnotation: null,
         });
       } catch (err) {
         setState("FAILURE");

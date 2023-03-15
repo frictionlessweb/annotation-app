@@ -1,9 +1,16 @@
 import React from "react";
-import { Flex, Picker, Item, Text, Heading } from "@adobe/react-spectrum";
+import {
+  Flex,
+  Picker,
+  Item,
+  Text,
+  Heading,
+  View,
+} from "@adobe/react-spectrum";
 import {
   useAdobeDocContext,
   useSetAdobeDoc,
-  Annotation,
+  Annotation as AnnotationObject,
 } from "./DocumentProvider";
 import produce from "immer";
 
@@ -19,12 +26,83 @@ const DEFAULT_VIEW_CONFIG = {
 const PDF_ID = "PDF_DOCUMENT";
 
 interface AnnotationListProps {
-  annotations: Annotation[];
+  annotations: AnnotationObject[];
 }
+
+const sortAnnotations = (a: AnnotationObject, b: AnnotationObject): number => {
+  const aPage: number = a.page;
+  const bPage: number = b.page;
+  return aPage < bPage ? -1 : 1;
+};
 
 const AnnotationList = (props: AnnotationListProps) => {
   const { annotations } = props;
-  return <p>Write this!</p>;
+  const ctx = useAdobeDocContext();
+  const setDoc = useSetAdobeDoc();
+  const { apis } = ctx;
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        overflowY: "scroll",
+        maxHeight: "550px",
+      }}
+    >
+      {[...annotations].sort(sortAnnotations).map((annotation) => {
+        const { page } = annotation;
+        const isSelected = ctx.selectedAnnotation === annotation.id;
+        return (
+          <div key={annotation.id}>
+            <ul
+              className="annotations-container"
+              style={{
+                listStyleType: "none",
+                margin: 0,
+                padding: 0,
+              }}
+            >
+              <li
+                id={annotation.id}
+                onClick={() => {
+                  if (apis.current === null) return;
+                  apis.current?.genericApis.gotoLocation(page, 0, 0);
+                  setDoc((prevDoc) => {
+                    return {
+                      ...prevDoc,
+                      selectedAnnotation: annotation.id,
+                    };
+                  });
+                }}
+              >
+                <View
+                  paddingX="size-100"
+                  paddingY="size-25"
+                  marginBottom="size-160"
+                  borderStartColor={isSelected ? "chartreuse-400" : undefined}
+                  borderStartWidth={isSelected ? "thick" : undefined}
+                >
+                  <Flex
+                    width="100%"
+                    justifyContent="space-between"
+                    alignItems="end"
+                  >
+                    <Flex direction="column">
+                      <p>Annotation {annotation.id}</p>
+                      <p>
+                        <small>Page {page}</small>
+                      </p>
+                      <p>{annotation.text}</p>
+                    </Flex>
+                  </Flex>
+                </View>
+              </li>
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+  );
 };
 
 const AnnotationRouter = () => {
@@ -75,6 +153,21 @@ interface AdobeAnnotationAddedEvent {
   };
 }
 
+interface AdobeAnnotationDeletedEvent {
+  type: "ANNOTATION_DELETED";
+  data: {
+    id: string;
+    target: {
+      selector: {
+        node: {
+          index: number;
+        };
+        quadPoints: Array<number>;
+      };
+    };
+  };
+}
+
 interface AdobeEvent {
   type: string;
   data: unknown;
@@ -103,7 +196,6 @@ const DocumentPickers = () => {
         marginEnd="16px"
         label="Select a Document"
         onSelectionChange={async (key) => {
-          const { apis } = ctx;
           const { pdf_url: url, title } = ctx.documents[key];
           const view = new window.AdobeDC.View({
             clientId: process.env.VITE_PUBLIC_ADOBE_CLIENT_ID,
@@ -160,12 +252,22 @@ const DocumentPickers = () => {
                       draft.annotations[draft.selectedDocument].push(
                         newAnnotation
                       );
+                      draft.selectedAnnotation = added.data.id;
                     });
                   });
                   break;
                 }
                 case "ANNOTATION_DELETED": {
-                  console.log(event);
+                  const deleted = event as AdobeAnnotationDeletedEvent;
+                  setDoc((prevDoc) => {
+                    return produce(prevDoc, (draft) => {
+                      if (draft.selectedDocument === null) return;
+                      draft.annotations[draft.selectedDocument] =
+                        draft.annotations[draft.selectedDocument].filter(
+                          (annotation) => annotation.id !== deleted.data.id
+                        );
+                    });
+                  });
                   break;
                 }
               }
@@ -180,14 +282,16 @@ const DocumentPickers = () => {
             preview.getAnnotationManager(),
             preview.getAPIs(),
           ]);
-          apis.current = {
-            annotationApis: manager,
-            genericApis: curApis,
-          };
           setDoc((prev) => {
             return {
               ...prev,
               selectedDocument: key as string,
+              apis: {
+                current: {
+                  annotationApis: manager,
+                  genericApis: curApis,
+                },
+              },
             };
           });
         }}
