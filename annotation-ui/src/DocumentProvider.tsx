@@ -52,6 +52,8 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
   return res.json();
 };
 
+type STAGE = "CREATING_ANNOTATIONS" | "SUMMARIZING_THOUGHTS";
+
 interface DocContext {
   documents: DocumentCollection;
   selectedDocument: string | null;
@@ -59,6 +61,8 @@ interface DocContext {
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
   annotations: Annotations;
+  stage: STAGE;
+  currentResponse: string;
 }
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
@@ -114,6 +118,8 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           selectedDocument: null,
           annotations: toAnnotationMap(documents),
           selectedAnnotation: null,
+          stage: 'CREATING_ANNOTATIONS',
+          currentResponse: '',
         });
       } catch (err) {
         setState("FAILURE");

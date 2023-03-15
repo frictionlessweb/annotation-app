@@ -6,6 +6,7 @@ import {
   Text,
   Heading,
   View,
+  Button,
 } from "@adobe/react-spectrum";
 import {
   useAdobeDocContext,
@@ -173,10 +174,77 @@ interface AdobeEvent {
   data: unknown;
 }
 
+const StageControls = () => {
+  const { stage } = useAdobeDocContext();
+  const setDoc = useSetAdobeDoc();
+  const gotoNextPhase = React.useCallback(() => {
+    setDoc((prevDoc) => {
+      return {
+        ...prevDoc,
+        stage: "SUMMARIZING_THOUGHTS",
+      };
+    });
+  }, [setDoc]);
+  const gotoPreviousPharse = React.useCallback(() => {
+    setDoc((prevDoc) => {
+      return {
+        ...prevDoc,
+        stage: "CREATING_ANNOTATIONS",
+      };
+    });
+  }, [setDoc]);
+  if (stage === "CREATING_ANNOTATIONS") {
+    return (
+      <Flex>
+        <Button onPress={gotoNextPhase} variant="primary">
+          Next
+        </Button>
+      </Flex>
+    );
+  }
+  return (
+    <Flex>
+      <Button onPress={gotoPreviousPharse} variant="primary">
+        Previous
+      </Button>
+    </Flex>
+  );
+};
+
 const Instructions = () => {
+  const { documents, selectedDocument, stage } = useAdobeDocContext();
+  if (selectedDocument === null) return null;
+  const curDoc = documents[selectedDocument];
+  if (stage === "CREATING_ANNOTATIONS") {
+    return (
+      <Flex justifyContent="center" marginStart="16px" direction="column">
+        <Text>Consider the following question:</Text>
+        <ul style={{ margin: 0 }}>
+          <li style={{ margin: 0 }}>
+            <b>{curDoc.question}</b>
+          </li>
+        </ul>
+        <Text UNSAFE_style={{ maxWidth: "600px" }}>
+          Highlight portions of the document that you think are relevant to it.
+          When you are ready to move on to the next portion of the text, click
+          next.
+        </Text>
+      </Flex>
+    );
+  }
   return (
     <Flex justifyContent="center" marginStart="16px" direction="column">
-      <p>Hi</p>
+      <Text>Consider the following question:</Text>
+      <ul style={{ margin: 0 }}>
+        <li style={{ margin: 0 }}>
+          <b>{curDoc.question}</b>
+        </li>
+      </ul>
+      <Text UNSAFE_style={{ maxWidth: "600px" }}>
+        Use your annotations to answer this question. When you are done, click
+        the Save button beneath the text editor to finish the task. To go back,
+        you can click the previous button.
+      </Text>
     </Flex>
   );
 };
@@ -301,13 +369,22 @@ const DocumentPickers = () => {
         })}
       </Picker>
       <Instructions />
+      <StageControls />
+    </Flex>
+  );
+};
+
+const QuestionResponse = () => {
+  return (
+    <Flex width="100%" direction="column" alignItems="center">
+      <Heading level={3}>Question Response</Heading>
     </Flex>
   );
 };
 
 export const Annotations = () => {
   const pdfRef = React.useRef<HTMLDivElement | null>(null);
-  const { selectedDocument } = useAdobeDocContext();
+  const { selectedDocument, stage } = useAdobeDocContext();
   return (
     <Flex
       direction="column"
@@ -327,6 +404,19 @@ export const Annotations = () => {
             id={PDF_ID}
             style={{ position: "absolute", zIndex: 2 }}
           />
+          {stage === "SUMMARIZING_THOUGHTS" && (
+            <div
+              style={{
+                position: "absolute",
+                zIndex: 3,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(248, 248, 248, 1)",
+              }}
+            >
+              <QuestionResponse />
+            </div>
+          )}
           <div style={{ position: "absolute", zIndex: 1 }}>
             {selectedDocument === null && (
               <Text>Please select a document to view a PDF.</Text>
