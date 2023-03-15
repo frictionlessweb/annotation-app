@@ -39,7 +39,11 @@ const Instructions = () => {
   );
 };
 
-let CURRENT_SELECTION_TEXT: string = "";
+const delay = (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+let CURRENT_SELECTION_TEXT = "";
 
 const DocumentPickers = () => {
   const ctx = useAdobeDocContext();
@@ -70,33 +74,40 @@ const DocumentPickers = () => {
           const preview = await view.previewFile(config, DEFAULT_VIEW_CONFIG);
           await view.registerCallback(
             window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-            (event: AdobePageEvent | AdobeEvent) => {
-              if (event.type !== "PAGE_VIEW") return;
-              const pageEvent = event as AdobePageEvent;
-              setDoc((prevDoc) => {
-                return {
-                  ...prevDoc,
-                  currentPage: pageEvent.data.pageNumber,
-                };
-              });
-            },
-            { enablePDFAnalytics: true, enableFilePreviewEvents: true }
-          );
-          await view.registerCallback(
-            window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-            (event: AdobePageEvent | AdobeEvent) => {
+            async (event: AdobePageEvent | AdobeEvent) => {
               switch (event.type) {
+                case "PAGE_VIEW": {
+                  const pageEvent = event as AdobePageEvent;
+                  setDoc((prevDoc) => {
+                    return {
+                      ...prevDoc,
+                      currentPage: pageEvent.data.pageNumber,
+                    };
+                  });
+                  break;
+                }
                 case "PREVIEW_SELECTION_END": {
-                  console.log('read the text...')
+                  const internalApis = await preview.getAPIs();
+                  /**
+                   * For reasons that remain mysterious to me, the little
+                   * pop up that lets you create an annotation doesn't
+                   * show up unless you delay by 50 milliseconds.
+                   */
+                  await delay(50);
+                  const res = await internalApis.getSelectedContent();
+                  CURRENT_SELECTION_TEXT = res.data;
                   break;
                 }
                 case "ANNOTATION_ADDED": {
-                  console.log("grab the annotation!");
-                  break;
+                  console.log("annotation text", CURRENT_SELECTION_TEXT);
                 }
               }
             },
-            { enableAnnotationEvents: true }
+            {
+              enablePDFAnalytics: true,
+              enableFilePreviewEvents: true,
+              enableAnnotationEvents: true,
+            }
           );
           const [manager, curApis] = await Promise.all([
             preview.getAnnotationManager(),
