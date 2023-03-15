@@ -1,3 +1,4 @@
+import React from 'react';
 import { Provider, defaultTheme } from "@adobe/react-spectrum";
 import { ToastContainer } from "@react-spectrum/toast";
 import { Router } from "./Router";

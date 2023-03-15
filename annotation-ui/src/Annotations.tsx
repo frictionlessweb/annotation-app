@@ -1,6 +1,11 @@
 import React from "react";
 import { Flex, Picker, Item, Text, Heading } from "@adobe/react-spectrum";
-import { useAdobeDocContext, useSetAdobeDoc } from "./DocumentProvider";
+import {
+  useAdobeDocContext,
+  useSetAdobeDoc,
+  Annotation,
+} from "./DocumentProvider";
+import produce from "immer";
 
 const DEFAULT_VIEW_CONFIG = {
   embedMode: "FULL_WINDOW",
@@ -13,10 +18,33 @@ const DEFAULT_VIEW_CONFIG = {
 
 const PDF_ID = "PDF_DOCUMENT";
 
+interface AnnotationListProps {
+  annotations: Annotation[];
+}
+
+const AnnotationList = (props: AnnotationListProps) => {
+  const { annotations } = props;
+  return <p>Write this!</p>;
+};
+
+const AnnotationRouter = () => {
+  const ctx = useAdobeDocContext();
+  const { selectedDocument, annotations } = ctx;
+  if (selectedDocument === null) {
+    return <Text>Please select a document in order to view annotations.</Text>;
+  }
+  const curAnnotations = annotations[selectedDocument];
+  if (curAnnotations.length <= 0) {
+    return <Text>Please create some annotations in order to view them.</Text>;
+  }
+  return <AnnotationList annotations={curAnnotations} />;
+};
+
 const AnnotationCollection = () => {
   return (
     <Flex direction="column">
       <Heading level={3}>Annotations</Heading>
+      <AnnotationRouter />
     </Flex>
   );
 };
@@ -24,6 +52,27 @@ const AnnotationCollection = () => {
 interface AdobePageEvent {
   type: "PAGE_VIEW";
   data: { pageNumber: number };
+}
+
+interface Annotation {
+  id: string;
+  text: string;
+  page: number;
+}
+
+interface AdobeAnnotationAddedEvent {
+  type: "ANNOTATION_ADDED";
+  data: {
+    id: string;
+    target: {
+      selector: {
+        node: {
+          index: number;
+        };
+        quadPoints: Array<number>;
+      };
+    };
+  };
 }
 
 interface AdobeEvent {
@@ -99,7 +148,25 @@ const DocumentPickers = () => {
                   break;
                 }
                 case "ANNOTATION_ADDED": {
-                  console.log("annotation text", CURRENT_SELECTION_TEXT);
+                  const added = event as AdobeAnnotationAddedEvent;
+                  setDoc((prevDoc) => {
+                    return produce(prevDoc, (draft) => {
+                      if (draft.selectedDocument === null) return;
+                      const newAnnotation: Annotation = {
+                        id: added.data.id,
+                        text: CURRENT_SELECTION_TEXT,
+                        page: added.data.target.selector.node.index + 1,
+                      };
+                      draft.annotations[draft.selectedDocument].push(
+                        newAnnotation
+                      );
+                    });
+                  });
+                  break;
+                }
+                case "ANNOTATION_DELETED": {
+                  console.log(event);
+                  break;
                 }
               }
             },

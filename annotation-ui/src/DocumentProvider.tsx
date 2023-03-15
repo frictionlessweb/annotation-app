@@ -35,6 +35,18 @@ type DocumentId = string;
 
 type DocumentCollection = Record<DocumentId, Document>;
 
+export interface EmbedAnnotation {
+  id: string;
+}
+
+export interface Annotation {
+  id: string;
+  text: string;
+  page: number;
+}
+
+type Annotations = Record<DocumentId, Annotation[]>;
+
 const fetchDocuments = async (): Promise<DocumentCollection> => {
   const res = await window.fetch("/api/v1/documents", { method: "GET" });
   return res.json();
@@ -45,6 +57,7 @@ interface DocContext {
   selectedDocument: string | null;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
+  annotations: Annotations;
 }
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
@@ -75,6 +88,14 @@ interface AdobeDocProviderProps {
   children: React.ReactNode;
 }
 
+const toAnnotationMap = (documents: DocumentCollection): Annotations => {
+  const res: Annotations = {};
+  for (const docId of Object.keys(documents)) {
+    res[docId] = [];
+  }
+  return res;
+};
+
 export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
   const apisRef = React.useRef<AdobeApiHandler | null>(null);
   const [state, setState] = React.useState<DocumentState>("LOADING");
@@ -90,6 +111,7 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           documents,
           currentPage: 1,
           selectedDocument: null,
+          annotations: toAnnotationMap(documents),
         });
       } catch (err) {
         setState("FAILURE");
