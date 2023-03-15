@@ -34,7 +34,7 @@ export const LogIn = () => {
             variant="primary"
             onPress={gotoApp}
           >
-            Begin Judging Annotations
+            Begin Task
           </Button>
         </Flex>
       </Flex>
