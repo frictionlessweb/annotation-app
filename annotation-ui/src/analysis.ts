@@ -244,5 +244,5 @@ export const analyzeElements = (extractApi: ExtractResult): AnalyzedDocument => 
 }
 
 export const annotationToString = (annotation: EmbedAnnotation, context: AnalyzedDocument): string => {
-  return ''
+  return 'Write me!';
 }

@@ -118,7 +118,12 @@ export const Annotations = () => {
     >
       <DocumentPickers />
       <Flex width="100%">
-        <Flex width="50%" position="relative" height="500px" marginEnd="16px">
+        <Flex
+          width="75%"
+          position="relative"
+          height={window.innerHeight}
+          marginEnd="16px"
+        >
           <div
             ref={pdfRef}
             id={PDF_ID}
@@ -130,7 +135,7 @@ export const Annotations = () => {
             )}
           </div>
         </Flex>
-        <Flex width="50%" marginStart="16px">
+        <Flex width="25%" marginStart="16px">
           <AnnotationCollection />
         </Flex>
       </Flex>
