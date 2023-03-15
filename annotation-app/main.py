@@ -23,7 +23,7 @@ def another_route() -> dict[str, Any]:
 
 class SessionState(BaseModel):
     user_name: str
-    annotations: dict
+    responses: dict
 
 
 def get_db():
@@ -36,7 +36,7 @@ def get_db():
 
 @app.post("/save-session")
 def save_session(state: SessionState, db: Session = Depends(get_db)):
-    db_annotation = Sessions(user_name=state.user_name, annotations=state.annotations)
+    db_annotation = Sessions(user_name=state.user_name, annotations=state.responses)
     db.add(db_annotation)
     db.commit()
     return {"message": "success"}

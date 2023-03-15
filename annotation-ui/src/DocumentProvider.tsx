@@ -47,6 +47,8 @@ export interface Annotation {
 
 type Annotations = Record<DocumentId, Annotation[]>;
 
+type ResponseMap = Record<DocumentId, string>;
+
 const fetchDocuments = async (): Promise<DocumentCollection> => {
   const res = await window.fetch("/api/v1/documents", { method: "GET" });
   return res.json();
@@ -54,7 +56,7 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
 
 type STAGE = "CREATING_ANNOTATIONS" | "SUMMARIZING_THOUGHTS";
 
-interface DocContext {
+export interface DocContext {
   documents: DocumentCollection;
   selectedDocument: string | null;
   selectedAnnotation: string | null;
@@ -62,7 +64,7 @@ interface DocContext {
   currentPage: number;
   annotations: Annotations;
   stage: STAGE;
-  currentResponse: string;
+  currentResponses: ResponseMap;
 }
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
@@ -101,6 +103,14 @@ const toAnnotationMap = (documents: DocumentCollection): Annotations => {
   return res;
 };
 
+const toResponseMap = (documents: DocumentCollection): ResponseMap => {
+  const res: ResponseMap = {};
+  for (const docId of Object.keys(documents)) {
+    res[docId] = '';
+  }
+  return res;
+};
+
 export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
   const apisRef = React.useRef<AdobeApiHandler | null>(null);
   const [state, setState] = React.useState<DocumentState>("LOADING");
@@ -119,7 +129,7 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           annotations: toAnnotationMap(documents),
           selectedAnnotation: null,
           stage: 'CREATING_ANNOTATIONS',
-          currentResponse: '',
+          currentResponses: toResponseMap(documents),
         });
       } catch (err) {
         setState("FAILURE");

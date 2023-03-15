@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
 import {
   Flex,
   Picker,
@@ -8,10 +8,12 @@ import {
   View,
   Button,
 } from "@adobe/react-spectrum";
+import { ToastQueue } from "@react-spectrum/toast";
 import {
   useAdobeDocContext,
   useSetAdobeDoc,
   Annotation as AnnotationObject,
+  DocContext,
 } from "./DocumentProvider";
 import produce from "immer";
 import Editor, { ContentEditableEvent } from "react-simple-wysiwyg";
@@ -228,7 +230,7 @@ const Instructions = () => {
         </ul>
         <Text UNSAFE_style={{ maxWidth: "600px" }}>
           Highlight portions of the document that you think are relevant to it.
-          When you are ready to move on to the next portion of the text, click
+          When you are ready to move on to the next portion of the task, click
           next.
         </Text>
       </Flex>
@@ -244,8 +246,8 @@ const Instructions = () => {
       </ul>
       <Text UNSAFE_style={{ maxWidth: "600px" }}>
         Use your annotations to answer this question. When you are done, click
-        the Save button beneath the text editor to finish the task. To go back,
-        you can click the previous button.
+        the Save button beneath the text editor to finish the task or move onto
+        its next portion. To go back, you can click the previous button.
       </Text>
     </Flex>
   );
@@ -257,6 +259,109 @@ const delay = (ms: number) => {
 
 let CURRENT_SELECTION_TEXT = "";
 
+const changeDocumentId = async (
+  ctx: DocContext,
+  id: string,
+  setDoc: React.Dispatch<React.SetStateAction<DocContext>>
+) => {
+  const { pdf_url: url, title } = ctx.documents[id];
+  const view = new window.AdobeDC.View({
+    clientId: process.env.VITE_PUBLIC_ADOBE_CLIENT_ID,
+    divId: "PDF_DOCUMENT",
+  });
+  const config = {
+    content: {
+      location: {
+        url: url,
+      },
+    },
+    metaData: {
+      fileName: title,
+      id: title,
+    },
+  };
+  const preview = await view.previewFile(config, DEFAULT_VIEW_CONFIG);
+  await view.registerCallback(
+    window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+    async (event: AdobePageEvent | AdobeEvent) => {
+      switch (event.type) {
+        case "PAGE_VIEW": {
+          const pageEvent = event as AdobePageEvent;
+          setDoc((prevDoc) => {
+            return {
+              ...prevDoc,
+              currentPage: pageEvent.data.pageNumber,
+            };
+          });
+          break;
+        }
+        case "PREVIEW_SELECTION_END": {
+          const internalApis = await preview.getAPIs();
+          /**
+           * For reasons that remain mysterious to me, the little
+           * pop up that lets you create an annotation doesn't
+           * show up unless you delay by 50 milliseconds.
+           */
+          await delay(50);
+          const res = await internalApis.getSelectedContent();
+          CURRENT_SELECTION_TEXT = res.data;
+          break;
+        }
+        case "ANNOTATION_ADDED": {
+          const added = event as AdobeAnnotationAddedEvent;
+          setDoc((prevDoc) => {
+            return produce(prevDoc, (draft) => {
+              if (draft.selectedDocument === null) return;
+              const newAnnotation: Annotation = {
+                id: added.data.id,
+                text: CURRENT_SELECTION_TEXT,
+                page: added.data.target.selector.node.index + 1,
+              };
+              draft.annotations[draft.selectedDocument].push(newAnnotation);
+              draft.selectedAnnotation = added.data.id;
+            });
+          });
+          break;
+        }
+        case "ANNOTATION_DELETED": {
+          const deleted = event as AdobeAnnotationDeletedEvent;
+          setDoc((prevDoc) => {
+            return produce(prevDoc, (draft) => {
+              if (draft.selectedDocument === null) return;
+              draft.annotations[draft.selectedDocument] = draft.annotations[
+                draft.selectedDocument
+              ].filter((annotation) => annotation.id !== deleted.data.id);
+            });
+          });
+          break;
+        }
+      }
+    },
+    {
+      enablePDFAnalytics: true,
+      enableFilePreviewEvents: true,
+      enableAnnotationEvents: true,
+    }
+  );
+  const [manager, curApis] = await Promise.all([
+    preview.getAnnotationManager(),
+    preview.getAPIs(),
+  ]);
+  setDoc((prev) => {
+    return {
+      ...prev,
+      selectedDocument: id as string,
+      stage: "CREATING_ANNOTATIONS",
+      apis: {
+        current: {
+          annotationApis: manager,
+          genericApis: curApis,
+        },
+      },
+    };
+  });
+};
+
 const DocumentPickers = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
@@ -266,105 +371,7 @@ const DocumentPickers = () => {
         marginEnd="16px"
         label="Select a Document"
         onSelectionChange={async (key) => {
-          const { pdf_url: url, title } = ctx.documents[key];
-          const view = new window.AdobeDC.View({
-            clientId: process.env.VITE_PUBLIC_ADOBE_CLIENT_ID,
-            divId: "PDF_DOCUMENT",
-          });
-          const config = {
-            content: {
-              location: {
-                url: url,
-              },
-            },
-            metaData: {
-              fileName: title,
-              id: title,
-            },
-          };
-          const preview = await view.previewFile(config, DEFAULT_VIEW_CONFIG);
-          await view.registerCallback(
-            window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-            async (event: AdobePageEvent | AdobeEvent) => {
-              switch (event.type) {
-                case "PAGE_VIEW": {
-                  const pageEvent = event as AdobePageEvent;
-                  setDoc((prevDoc) => {
-                    return {
-                      ...prevDoc,
-                      currentPage: pageEvent.data.pageNumber,
-                    };
-                  });
-                  break;
-                }
-                case "PREVIEW_SELECTION_END": {
-                  const internalApis = await preview.getAPIs();
-                  /**
-                   * For reasons that remain mysterious to me, the little
-                   * pop up that lets you create an annotation doesn't
-                   * show up unless you delay by 50 milliseconds.
-                   */
-                  await delay(50);
-                  const res = await internalApis.getSelectedContent();
-                  CURRENT_SELECTION_TEXT = res.data;
-                  break;
-                }
-                case "ANNOTATION_ADDED": {
-                  const added = event as AdobeAnnotationAddedEvent;
-                  setDoc((prevDoc) => {
-                    return produce(prevDoc, (draft) => {
-                      if (draft.selectedDocument === null) return;
-                      const newAnnotation: Annotation = {
-                        id: added.data.id,
-                        text: CURRENT_SELECTION_TEXT,
-                        page: added.data.target.selector.node.index + 1,
-                      };
-                      draft.annotations[draft.selectedDocument].push(
-                        newAnnotation
-                      );
-                      draft.selectedAnnotation = added.data.id;
-                    });
-                  });
-                  break;
-                }
-                case "ANNOTATION_DELETED": {
-                  const deleted = event as AdobeAnnotationDeletedEvent;
-                  setDoc((prevDoc) => {
-                    return produce(prevDoc, (draft) => {
-                      if (draft.selectedDocument === null) return;
-                      draft.annotations[draft.selectedDocument] =
-                        draft.annotations[draft.selectedDocument].filter(
-                          (annotation) => annotation.id !== deleted.data.id
-                        );
-                    });
-                  });
-                  break;
-                }
-              }
-            },
-            {
-              enablePDFAnalytics: true,
-              enableFilePreviewEvents: true,
-              enableAnnotationEvents: true,
-            }
-          );
-          const [manager, curApis] = await Promise.all([
-            preview.getAnnotationManager(),
-            preview.getAPIs(),
-          ]);
-          setDoc((prev) => {
-            return {
-              ...prev,
-              selectedDocument: key as string,
-              stage: "CREATING_ANNOTATIONS",
-              apis: {
-                current: {
-                  annotationApis: manager,
-                  genericApis: curApis,
-                },
-              },
-            };
-          });
+          changeDocumentId(ctx, key as string, setDoc);
         }}
       >
         {Object.keys(ctx.documents).map((doc) => {
@@ -378,19 +385,81 @@ const DocumentPickers = () => {
 };
 
 const QuestionResponse = () => {
-  const { currentResponse } = useAdobeDocContext();
+  const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   const updateResponse = React.useCallback(
     (e: ContentEditableEvent) => {
       setDoc((prevDoc) => {
-        return {
-          ...prevDoc,
-          currentResponse: e.target.value,
-        };
+        return produce(prevDoc, (draft) => {
+          if (draft.selectedDocument === null) return;
+          draft.currentResponses[draft.selectedDocument] = e.target.value;
+        });
       });
     },
     [setDoc]
   );
+  const { currentResponses, documents } = ctx;
+  const docIds = Object.keys(documents).sort();
+  const unfinishedDocuments = docIds.filter(
+    (id) => currentResponses[id] === ""
+  );
+  const saveState = React.useCallback(async () => {
+    const { currentResponses, annotations, documents } = ctx;
+    if (unfinishedDocuments.length > 0) {
+      const nextDoc = unfinishedDocuments[0];
+      changeDocumentId(ctx, nextDoc, setDoc);
+      return;
+    }
+    try {
+      const user_name = window.location.pathname.split("/").pop();
+      const requestBodyObject = {
+        user_name,
+        responses: {
+          documents,
+          annotations,
+          currentResponses,
+        },
+      };
+      const body = JSON.stringify(requestBodyObject);
+      const res = await window.fetch("/api/v1/save-session", {
+        method: "POST",
+        body,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (res.ok) {
+        ToastQueue.positive("Saved progress successfully.", {
+          timeout: 10,
+        });
+        const element = document.createElement("a");
+        const textFile = new Blob([JSON.stringify(requestBodyObject)], {
+          type: "text/plain",
+        });
+        element.href = URL.createObjectURL(textFile);
+        element.download = "annotations.json";
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      } else {
+        throw new Error("REQUEST_FAILED");
+      }
+    } catch (err) {
+      ToastQueue.negative(
+        "An error occurred. Please refresh the page and try again.",
+        { timeout: 10 }
+      );
+    }
+  }, [ctx, unfinishedDocuments, setDoc]);
+  if (ctx.selectedDocument === null) return null;
+  const currentResponse = ctx.currentResponses[ctx.selectedDocument];
+  let buttonText = "Next Task";
+  const allFinished = unfinishedDocuments.length === 0;
+  const onLastDocument =
+    unfinishedDocuments.length === 1 && currentResponse === "";
+  if (allFinished || onLastDocument) {
+    buttonText = "Save";
+  }
   return (
     <Flex width="100%" direction="column" alignItems="center">
       <Flex direction="column" UNSAFE_style={{ width: "100%" }}>
@@ -409,6 +478,15 @@ const QuestionResponse = () => {
             value={currentResponse}
             onChange={updateResponse}
           />
+        </Flex>
+        <Flex marginTop="16px">
+          <Button
+            isDisabled={currentResponse === ""}
+            variant="primary"
+            onPress={saveState}
+          >
+            {buttonText}
+          </Button>
         </Flex>
       </Flex>
     </Flex>
