@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import {
   Flex,
   Picker,
@@ -14,6 +14,7 @@ import {
   Annotation as AnnotationObject,
 } from "./DocumentProvider";
 import produce from "immer";
+import Editor, { ContentEditableEvent } from "react-simple-wysiwyg";
 
 const DEFAULT_VIEW_CONFIG = {
   embedMode: "FULL_WINDOW",
@@ -175,7 +176,7 @@ interface AdobeEvent {
 }
 
 const StageControls = () => {
-  const { stage } = useAdobeDocContext();
+  const { stage, selectedDocument } = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   const gotoNextPhase = React.useCallback(() => {
     setDoc((prevDoc) => {
@@ -193,6 +194,7 @@ const StageControls = () => {
       };
     });
   }, [setDoc]);
+  if (selectedDocument === null) return null;
   if (stage === "CREATING_ANNOTATIONS") {
     return (
       <Flex>
@@ -354,6 +356,7 @@ const DocumentPickers = () => {
             return {
               ...prev,
               selectedDocument: key as string,
+              stage: "CREATING_ANNOTATIONS",
               apis: {
                 current: {
                   annotationApis: manager,
@@ -375,9 +378,39 @@ const DocumentPickers = () => {
 };
 
 const QuestionResponse = () => {
+  const { currentResponse } = useAdobeDocContext();
+  const setDoc = useSetAdobeDoc();
+  const updateResponse = React.useCallback(
+    (e: ContentEditableEvent) => {
+      setDoc((prevDoc) => {
+        return {
+          ...prevDoc,
+          currentResponse: e.target.value,
+        };
+      });
+    },
+    [setDoc]
+  );
   return (
     <Flex width="100%" direction="column" alignItems="center">
-      <Heading level={3}>Question Response</Heading>
+      <Flex direction="column" UNSAFE_style={{ width: "100%" }}>
+        <Heading level={3}>Response</Heading>
+        <Flex
+          direction="column"
+          UNSAFE_style={{
+            backgroundColor: "white",
+            width: "100%",
+          }}
+        >
+          <Editor
+            containerProps={{
+              style: { resize: "vertical", minHeight: "400px", width: "100%" },
+            }}
+            value={currentResponse}
+            onChange={updateResponse}
+          />
+        </Flex>
+      </Flex>
     </Flex>
   );
 };
