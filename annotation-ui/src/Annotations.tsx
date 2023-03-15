@@ -57,6 +57,7 @@ const TaskAnnotations = () => {
           display: "flex",
           flexDirection: "column",
           overflowY: "scroll",
+          maxHeight: "550px",
         }}
       >
         {[...annotations].sort(sortAnnotations).map((annotation) => {
