@@ -23,6 +23,10 @@ ROOT_FILES = set(pathlib.Path(file).stem for file in ASSET_FILES if is_root_file
 
 print(f"Copying assets...")
 
+shutil.rmtree(API_ASSETS)
+
+os.makedirs(API_ASSETS, exist_ok=True)
+
 for file in ROOT_FILES:
     old_pdf_path = os.path.join(ASSETS_DIRECTORY, f"{file}.pdf")
     shutil.copy(old_pdf_path, API_ASSETS)

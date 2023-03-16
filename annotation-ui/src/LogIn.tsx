@@ -1,5 +1,12 @@
 import React from "react";
-import { Flex, TextField, Heading, Button } from "@adobe/react-spectrum";
+import {
+  Flex,
+  TextField,
+  Heading,
+  Button,
+  Picker,
+  Item,
+} from "@adobe/react-spectrum";
 import { useLocation } from "wouter";
 
 export const LogIn = () => {
@@ -21,11 +28,12 @@ export const LogIn = () => {
           <Heading level={1}>Enter Your Name</Heading>
         </Flex>
         <Flex marginBottom="32px">
-          <TextField
-            data-testid="NAME"
-            aria-label="Enter your name."
-            onChange={setName}
-          />
+          <Picker>
+            <Item key="Joe">Joe</Item>
+            <Item key="Nedim">Nedim</Item>
+            <Item key="Alex">Alexa</Item>
+            <Item key="Josh">Josh</Item>
+          </Picker>
         </Flex>
         <Flex marginBottom="16px">
           <Button

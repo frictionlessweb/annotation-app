@@ -43,10 +43,15 @@ export interface HasId {
   [otherVar: string | number]: any;
 }
 
+export interface ApiAnnotation {
+  text: string;
+  annotation: HasId,
+}
+
 interface Document {
   pdf_url: string;
   title: string;
-  topics: Record<TopicId, HasId[]>;
+  topics: Record<TopicId, ApiAnnotation[]>;
 }
 
 type DocumentCollection = Record<string, Document>;
@@ -82,7 +87,7 @@ export const documentsToAnnotationResponses = (
       const topicMap: Record<string, boolean | null> = {};
       topics[topicKey] = topicMap;
       for (const annotation of documentObject.topics[topicKey]) {
-        topicMap[annotation.id] = null;
+        topicMap[annotation.annotation.id] = null;
       }
     }
     response[key] = topics;
@@ -192,7 +197,7 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           annotationResponses: documentsToAnnotationResponses(documents),
           userAnnotations: makeUserAnnotations(documents),
           currentPage: 1,
-          selectedTab: "TASK_ANNOTATIONS",
+          selectedTab: "HIGHLIGHTS",
         });
       } catch (err) {
         setState("FAILURE");

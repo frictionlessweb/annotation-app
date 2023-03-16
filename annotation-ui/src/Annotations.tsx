@@ -14,8 +14,8 @@ import {
   useAdobeDocContext,
   useSetAdobeDoc,
   messageFromDocContext,
-  HasId,
   VIEW_TAB,
+  ApiAnnotation,
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
@@ -35,9 +35,9 @@ const DEFAULT_VIEW_CONFIG = {
 
 const PDF_ID = "PDF_DOCUMENT";
 
-const sortAnnotations = (a: HasId, b: HasId): number => {
-  const aPage: number = a?.target?.selector?.node?.index;
-  const bPage: number = b?.target?.selector?.node?.index;
+const sortAnnotations = (a: ApiAnnotation, b: ApiAnnotation): number => {
+  const aPage: number = a?.annotation.target?.selector?.node?.index;
+  const bPage: number = b?.annotation?.selector?.node?.index;
   return aPage < bPage ? -1 : 1;
 };
 
@@ -61,13 +61,14 @@ const Highlights = () => {
         }}
       >
         {[...annotations].sort(sortAnnotations).map((annotation) => {
-          const page = annotation?.target?.selector?.node?.index + 1;
-          const isSelected = ctx.selectedAnnotation === annotation.id;
+          const page = annotation?.annotation.target?.selector?.node?.index + 1;
+          const isSelected =
+            ctx.selectedAnnotation === annotation.annotation.id;
           if (ctx.selectedDocument === null || ctx.selectedTopic === null)
             return null;
           const initVal =
             ctx.annotationResponses[ctx.selectedDocument][ctx.selectedTopic][
-              annotation.id
+              annotation.annotation.id
             ];
           const currentValue = (() => {
             switch (initVal) {
@@ -80,7 +81,7 @@ const Highlights = () => {
             }
           })();
           return (
-            <div key={annotation.id}>
+            <div key={annotation.annotation.id}>
               <ul
                 className="annotations-container"
                 style={{
@@ -90,14 +91,14 @@ const Highlights = () => {
                 }}
               >
                 <li
-                  id={annotation.id}
+                  id={annotation.annotation.id}
                   onClick={() => {
                     if (apis.current === null) return;
                     apis.current?.locationApis.gotoLocation(page, 0, 0);
                     setDoc((prevDoc) => {
                       return {
                         ...prevDoc,
-                        selectedAnnotation: annotation.id,
+                        selectedAnnotation: annotation.annotation.id,
                       };
                     });
                   }}
@@ -115,9 +116,12 @@ const Highlights = () => {
                       alignItems="end"
                     >
                       <Flex direction="column">
-                        <p>Annotation {annotation.id}</p>
+                        <p>Annotation {annotation.annotation.id}</p>
                         <p>
                           <small>Page {page}</small>
+                        </p>
+                        <p>
+                          <small>{annotation.text}</small>
                         </p>
                       </Flex>
                       {currentValue === "true" && <ThumbsUp />}
@@ -139,8 +143,9 @@ const Highlights = () => {
                                 return prevDoc;
                               newDoc.annotationResponses[
                                 prevDoc.selectedDocument
-                              ][prevDoc.selectedTopic][annotation.id] =
-                                newValue;
+                              ][prevDoc.selectedTopic][
+                                annotation.annotation.id
+                              ] = newValue;
                             });
                           });
                         }}
@@ -172,58 +177,9 @@ const TopicSpecificHighlights = () => {
     ctx.selectedDocument === null || ctx.selectedTopic === null
       ? []
       : ctx.userAnnotations[ctx.selectedDocument][ctx.selectedTopic];
-  if (annotations.length <= 0) {
-    return (
-      <Flex direction="column" marginTop="16px">
-        <Text>You have not created any annotations.</Text>
-      </Flex>
-    );
-  }
   return (
     <Flex direction="column" marginTop="16px">
-      {[...annotations].sort(sortAnnotations).map((annotation) => {
-        const page = annotation?.target?.selector?.node?.index + 1;
-        const isSelected = annotation.id === ctx.selectedAnnotation;
-        return (
-          <div key={annotation.id}>
-            <ul
-              className="annotations-container"
-              style={{
-                listStyleType: "none",
-                margin: 0,
-                padding: 0,
-              }}
-            >
-              <li
-                id={annotation.id}
-                onClick={() => {
-                  if (apis.current === null) return;
-                  apis.current?.locationApis.gotoLocation(page, 0, 0);
-                  setDoc((prevDoc) => {
-                    return {
-                      ...prevDoc,
-                      selectedAnnotation: annotation.id,
-                    };
-                  });
-                }}
-              >
-                <View
-                  paddingX="size-100"
-                  paddingY="size-25"
-                  marginBottom="size-160"
-                  borderStartColor={isSelected ? "chartreuse-400" : undefined}
-                  borderStartWidth={isSelected ? "thick" : undefined}
-                >
-                  <p>Annotation {annotation.id}</p>
-                  <p>
-                    <small>Page {page}</small>
-                  </p>
-                </View>
-              </li>
-            </ul>
-          </div>
-        );
-      })}
+      <Text>You have not created any annotations.</Text>
     </Flex>
   );
 };
@@ -257,8 +213,8 @@ const AnnotationJudger = () => {
         }}
       >
         <TabList>
-          <Item key="TASK_ANNOTATIONS">Task Annotations</Item>
-          <Item key="USER_ANNOTATIONS">User Annotations</Item>
+          <Item key="HIGHLIGHTS">Highlights</Item>
+          <Item key="ATTRIBUTIONS">Attributions</Item>
         </TabList>
       </Tabs>
       {tab === "HIGHLIGHTS" && <Highlights />}
@@ -392,8 +348,11 @@ const DocumentPickers = () => {
             };
           });
           await apis.current?.annotationApis.removeAnnotationsFromPDF();
-          const annotations =
+          const apiAnnotations =
             ctx.documents[selectedDocument].topics[key as string];
+          const annotations = apiAnnotations.map(
+            (annotation) => annotation.annotation
+          );
           await apis.current?.annotationApis.addAnnotations(annotations);
           await apis.current?.locationApis.gotoLocation(1, 0, 0);
         }}
