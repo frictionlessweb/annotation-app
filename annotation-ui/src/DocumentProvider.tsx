@@ -36,7 +36,7 @@ type TopicResponses = Record<TopicId, AnnotationRecord>;
 
 type AnnotationResponseCollection = Record<DocumentId, TopicResponses>;
 
-export type VIEW_TAB = "TASK_ANNOTATIONS" | "USER_ANNOTATIONS";
+export type VIEW_TAB = "HIGHLIGHTS" | "ATTRIBUTIONS";
 
 export interface HasId {
   id: string;

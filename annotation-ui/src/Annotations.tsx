@@ -41,7 +41,7 @@ const sortAnnotations = (a: HasId, b: HasId): number => {
   return aPage < bPage ? -1 : 1;
 };
 
-const TaskAnnotations = () => {
+const Highlights = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   const { apis } = ctx;
@@ -164,7 +164,7 @@ const TaskAnnotations = () => {
   );
 };
 
-const UserAnnotations = () => {
+const TopicSpecificHighlights = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   const { apis } = ctx;
@@ -242,7 +242,7 @@ const AnnotationJudger = () => {
   return (
     <Flex direction="column">
       <Heading level={3} marginBottom="size-10">
-        Annotations
+        Reviewing Tasks
       </Heading>
       <Tabs
         aria-label="Annotations"
@@ -261,36 +261,11 @@ const AnnotationJudger = () => {
           <Item key="USER_ANNOTATIONS">User Annotations</Item>
         </TabList>
       </Tabs>
-      {tab === "TASK_ANNOTATIONS" && <TaskAnnotations />}
-      {tab === "USER_ANNOTATIONS" && <UserAnnotations />}
+      {tab === "HIGHLIGHTS" && <Highlights />}
+      {tab === "ATTRIBUTIONS" && <TopicSpecificHighlights />}
     </Flex>
   );
 };
-
-interface AdobePageEvent {
-  type: "PAGE_VIEW";
-  data: { pageNumber: number };
-}
-
-interface AdobeAnnotationAddedEvent {
-  type: "ANNOTATION_ADDED";
-  data: { id: string };
-}
-
-interface AdobeAnnotationSelectedEvent {
-  type: "ANNOTATION_ADDED";
-  data: { id: string };
-}
-
-interface AdobeAnnotationDeletedEvent {
-  type: "ANNOTATION_DELETED";
-  data: { id: string };
-}
-
-interface AdobeEvent {
-  type: string;
-  data: unknown;
-}
 
 const Suggestions = () => {
   const ctx = useAdobeDocContext();
@@ -364,7 +339,6 @@ const DocumentPickers = () => {
         marginEnd="16px"
         label="Select a Document"
         onSelectionChange={async (key) => {
-          const { apis } = ctx;
           const { pdf_url: url, title } = ctx.documents[key];
           const view = new window.AdobeDC.View({
             clientId: process.env.VITE_PUBLIC_ADOBE_CLIENT_ID,
@@ -382,128 +356,21 @@ const DocumentPickers = () => {
             },
           };
           const preview = await view.previewFile(config, DEFAULT_VIEW_CONFIG);
-          await view.registerCallback(
-            window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
-            (event: AdobeEvent) => {
-              switch (event.type) {
-                case "PAGE_VIEW": {
-                  const pageEvent = event as AdobePageEvent;
-                  setDoc((prevDoc) => {
-                    return {
-                      ...prevDoc,
-                      currentPage: pageEvent.data.pageNumber,
-                    };
-                  });
-                  return;
-                }
-                case "ANNOTATION_ADDED": {
-                  const annotationAdded = event as AdobeAnnotationAddedEvent;
-                  setDoc((prevDoc) => {
-                    const { selectedDocument, selectedTopic } = prevDoc;
-                    if (selectedDocument === null || selectedTopic === null)
-                      return prevDoc;
-                    const { id } = annotationAdded.data;
-                    const existingTopics =
-                      prevDoc.annotationResponses[selectedDocument][
-                        selectedTopic
-                      ];
-                    if (id in existingTopics) return prevDoc;
-                    return produce(prevDoc, (draft) => {
-                      draft.selectedTab = "USER_ANNOTATIONS";
-                      draft.userAnnotations[selectedDocument][
-                        selectedTopic
-                      ].push(annotationAdded.data);
-                      draft.selectedAnnotation = annotationAdded.data.id;
-                    });
-                  });
-                  return;
-                }
-                case "ANNOTATION_DELETED": {
-                  const annotationDeleted =
-                    event as AdobeAnnotationDeletedEvent;
-                  setDoc((prevDoc) => {
-                    const { selectedDocument, selectedTopic } = prevDoc;
-                    if (selectedDocument === null || selectedTopic === null)
-                      return prevDoc;
-                    const { id } = annotationDeleted.data;
-                    const existingTopics =
-                      prevDoc.annotationResponses[selectedDocument][
-                        selectedTopic
-                      ];
-                    if (id in existingTopics) {
-                      ToastQueue.negative(
-                        "Please do not delete an existing annotation. You have invalidated the task. Refresh the page and try again.",
-                        { timeout: 10 }
-                      );
-                      return prevDoc;
-                    } else {
-                      return produce(prevDoc, (draft) => {
-                        const theAnnotations =
-                          draft.userAnnotations[selectedDocument][
-                            selectedTopic
-                          ];
-                        const newAnnotations = theAnnotations.filter(
-                          (x) => x.id !== id
-                        );
-                        draft.userAnnotations[selectedDocument][selectedTopic] =
-                          newAnnotations;
-                      });
-                    }
-                  });
-                  return;
-                }
-                case "ANNOTATION_SELECTED": {
-                  const annotationSelected =
-                    event as AdobeAnnotationSelectedEvent;
-                  setDoc((prevDoc) => {
-                    return produce(prevDoc, (draft) => {
-                      const { id } = annotationSelected.data;
-                      draft.selectedAnnotation = id;
-                      if (
-                        draft.selectedTab === null ||
-                        draft.selectedDocument === null ||
-                        draft.selectedTopic === null
-                      )
-                        return;
-                      draft.selectedAnnotation = id;
-                      const taskIds = new Set(
-                        draft.documents[draft.selectedDocument].topics[
-                          draft.selectedTopic
-                        ].map((x) => x.id)
-                      );
-                      const isTaskId = taskIds.has(id);
-                      const isInActiveTab = isTaskId
-                        ? draft.selectedTab === "TASK_ANNOTATIONS"
-                        : draft.selectedTab === "USER_ANNOTATIONS";
-                      if (isInActiveTab) return;
-                      draft.selectedTab =
-                        draft.selectedTab === "TASK_ANNOTATIONS"
-                          ? "USER_ANNOTATIONS"
-                          : "TASK_ANNOTATIONS";
-                    });
-                  });
-                  return;
-                }
-                default: {
-                  return;
-                }
-              }
-            },
-            { enablePDFAnalytics: true, enableAnnotationEvents: true }
-          );
           const [manager, curApis] = await Promise.all([
             preview.getAnnotationManager(),
             preview.getAPIs(),
           ]);
-          apis.current = {
-            annotationApis: manager,
-            locationApis: curApis,
-          };
           setDoc((prev) => {
             return {
               ...prev,
               selectedDocument: key as string,
               selectedTopic: null,
+              apis: {
+                current: {
+                  annotationApis: manager,
+                  locationApis: curApis,
+                },
+              },
             };
           });
         }}
