@@ -16,6 +16,7 @@ import {
   messageFromDocContext,
   VIEW_TAB,
   ApiAnnotation,
+  HasId,
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
@@ -116,11 +117,13 @@ const Highlights = () => {
                       alignItems="end"
                     >
                       <Flex direction="column">
-                        <p>Annotation {annotation.annotation.id}</p>
-                        <p>
+                        <p style={{ margin: 0 }}>
+                          Annotation {annotation.annotation.id}
+                        </p>
+                        <p style={{ marginTop: 0 }}>
                           <small>Page {page}</small>
                         </p>
-                        <p>
+                        <p style={{ margin: 0 }}>
                           <small>{annotation.text}</small>
                         </p>
                       </Flex>
@@ -286,6 +289,21 @@ const Suggestions = () => {
   );
 };
 
+interface AdobeEvent {
+  type: string;
+  data: unknown;
+}
+
+interface AdobePageEvent {
+  type: "PAGE_VIEW";
+  data: HasId;
+}
+
+interface AdobeAnnotationSelectedEvent {
+  type: "ANNOTATION_SELECTED";
+  data: HasId;
+}
+
 const DocumentPickers = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
@@ -312,6 +330,59 @@ const DocumentPickers = () => {
             },
           };
           const preview = await view.previewFile(config, DEFAULT_VIEW_CONFIG);
+          await view.registerCallback(
+            window.AdobeDC.View.Enum.CallbackType.EVENT_LISTENER,
+            (event: AdobeEvent) => {
+              switch (event.type) {
+                case "PAGE_VIEW": {
+                  const pageEvent = event as AdobePageEvent;
+                  setDoc((prevDoc) => {
+                    return {
+                      ...prevDoc,
+                      currentPage: pageEvent.data.pageNumber,
+                    };
+                  });
+                  return;
+                }
+                case "ANNOTATION_SELECTED": {
+                  const annotationSelected =
+                    event as AdobeAnnotationSelectedEvent;
+                  setDoc((prevDoc) => {
+                    return produce(prevDoc, (draft) => {
+                      const { id } = annotationSelected.data;
+                      draft.selectedAnnotation = id;
+                      if (
+                        draft.selectedTab === null ||
+                        draft.selectedDocument === null ||
+                        draft.selectedTopic === null
+                      )
+                        return;
+                      draft.selectedAnnotation = id;
+                      const taskIds = new Set(
+                        draft.documents[draft.selectedDocument].topics[
+                          draft.selectedTopic
+                        ].map((x) => x.annotation.id)
+                      );
+                      const isTaskId = taskIds.has(id);
+                      const isInActiveTab = isTaskId
+                        ? draft.selectedTab === "HIGHLIGHTS"
+                        : draft.selectedTab === "ATTRIBUTIONS";
+                      if (isInActiveTab) return;
+                      draft.selectedTab =
+                        draft.selectedTab === "HIGHLIGHTS"
+                          ? "ATTRIBUTIONS"
+                          : "HIGHLIGHTS";
+                    });
+                  });
+                  return;
+                }
+                default: {
+                  return;
+                }
+              }
+            },
+            { enablePDFAnalytics: true, enableAnnotationEvents: true }
+          );
           const [manager, curApis] = await Promise.all([
             preview.getAnnotationManager(),
             preview.getAPIs(),
