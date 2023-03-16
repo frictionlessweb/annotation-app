@@ -45,76 +45,76 @@ export interface HasId {
 
 export interface ApiAnnotation {
   text: string;
-  annotation: HasId,
+  annotation: HasId;
 }
 
 interface Document {
   pdf_url: string;
   title: string;
-  topics: Record<TopicId, ApiAnnotation[]>;
+  highlights: Record<TopicId, ApiAnnotation[]>;
+  attributions: Record<
+    TopicId,
+    { statement: string; annotations: ApiAnnotation[] }
+  >;
 }
 
 type DocumentCollection = Record<string, Document>;
 
-export const annotationsComplete = (annotations: AnnotationRecord): boolean => {
-  return Object.keys(annotations).every(
-    (id) => typeof annotations[id] === "boolean"
-  );
-};
-
-export const topicsComplete = (topics: TopicResponses): boolean => {
-  return Object.keys(topics).every((topicId) =>
-    annotationsComplete(topics[topicId])
-  );
-};
-
-export const documentsComplete = (
-  documents: AnnotationResponseCollection
-): boolean => {
-  return Object.keys(documents).every((documentId) => {
-    return topicsComplete(documents[documentId]);
-  });
-};
-
-export const documentsToAnnotationResponses = (
-  documents: DocumentCollection
-): AnnotationResponseCollection => {
-  const response: AnnotationResponseCollection = {};
-  for (const key of Object.keys(documents)) {
-    const documentObject = documents[key];
-    const topics: Record<TopicId, AnnotationRecord> = {};
-    for (const topicKey of Object.keys(documentObject.topics)) {
-      const topicMap: Record<string, boolean | null> = {};
-      topics[topicKey] = topicMap;
-      for (const annotation of documentObject.topics[topicKey]) {
-        topicMap[annotation.annotation.id] = null;
-      }
-    }
-    response[key] = topics;
-  }
-  return response;
-};
+type UserResponses = Record<
+  DocumentId,
+  Record<TopicId, Record<AnnotationId, boolean | null>>
+>;
 
 const fetchDocuments = async (): Promise<DocumentCollection> => {
   const res = await window.fetch("/api/v1/documents", { method: "GET" });
   return res.json();
 };
 
-type UserAnnotations = Record<DocumentId, Record<TopicId, HasId[]>>;
+export const userResponsesFromDocuments = (
+  documents: DocumentCollection
+): UserResponses => {
+  const out: UserResponses = {};
+  const docIds = Object.keys(documents);
+  for (const docId of docIds) {
+    const topicMap: Record<TopicId, Record<AnnotationId, boolean | null>> = {};
+    const curDoc = documents[docId];
+
+    // Handle highlights.
+    const highlightTopicIds = Object.keys(curDoc.highlights);
+    for (const topicId of highlightTopicIds) {
+      const annotationMap: Record<AnnotationId, boolean | null> = {};
+      const curHighlightArray = curDoc.highlights[topicId];
+      for (const annotation of curHighlightArray) {
+        annotationMap[annotation.annotation.id] = null;
+      }
+      topicMap[topicId] = annotationMap;
+    }
+
+    // Handle attributions.
+    const attributionTopicIds = Object.keys(curDoc.attributions);
+    for (const topicId of attributionTopicIds) {
+      const annotationMap: Record<AnnotationId, boolean | null> = {};
+      const curAttributionMap = curDoc.attributions[topicId];
+      for (const annotation of curAttributionMap.annotations) {
+        annotationMap[annotation.annotation.id] = null;
+      }
+      topicMap[topicId] = annotationMap;
+    }
+    out[docId] = topicMap;
+  }
+  return out;
+};
 
 interface DocContext {
   documents: DocumentCollection;
-  annotationResponses: AnnotationResponseCollection;
-  userAnnotations: UserAnnotations;
-  selectedDocument: null | string;
-  selectedTopic: null | string;
-  selectedAnnotation: null | string;
   selectedTab: VIEW_TAB;
+  selectedAnnotation: null | string;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
+  selectedDocument: null | string;
+  selectedTopic: null | string;
+  userResponses: UserResponses;
 }
-
-type DocumentState = "LOADING" | "FAILURE" | DocContext;
 
 const AdobeDocContext = React.createContext<DocContext | null>(null);
 
@@ -138,45 +138,11 @@ export const useAdobeDocContext = (): DocContext => {
   return ctx;
 };
 
-export const makeUserAnnotations = (
-  collection: DocumentCollection
-): UserAnnotations => {
-  const out: UserAnnotations = {};
-  const docIds = Object.keys(collection);
-  for (const docId of docIds) {
-    out[docId] = {};
-    const curDoc = out[docId];
-    const topics = collection[docId].topics;
-    const topicIds = Object.keys(topics);
-    for (const topicId of topicIds) {
-      curDoc[topicId] = [];
-    }
-  }
-  return out;
-};
-
-export const messageFromDocContext = (ctx: DocContext): string | string[] => {
-  const pairs = [];
-  for (const documentId of Object.keys(ctx.annotationResponses)) {
-    const topicsForDocument = ctx.annotationResponses[documentId];
-    for (const topicId of Object.keys(topicsForDocument)) {
-      const annotations = topicsForDocument[topicId];
-      if (!annotationsComplete(annotations)) {
-        pairs.push({ documentId, topicId });
-      }
-    }
-  }
-  if (pairs.length === 0) {
-    return `Congratulations, you have finished the task!`;
-  }
-  return pairs.map(
-    (pair) => `Document ${pair.documentId} and Topic ${pair.topicId}`
-  );
-};
-
 interface AdobeDocProviderProps {
   children: React.ReactNode;
 }
+
+type DocumentState = "LOADING" | "FAILURE" | DocContext;
 
 export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
   const apisRef = React.useRef<AdobeApiHandler | null>(null);
@@ -194,10 +160,9 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           selectedDocument: null,
           selectedTopic: null,
           selectedAnnotation: null,
-          annotationResponses: documentsToAnnotationResponses(documents),
-          userAnnotations: makeUserAnnotations(documents),
           currentPage: 1,
           selectedTab: "HIGHLIGHTS",
+          userResponses: userResponsesFromDocuments(documents),
         });
       } catch (err) {
         setState("FAILURE");
