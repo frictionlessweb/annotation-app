@@ -153,6 +153,7 @@ export interface DocContext {
   currentPage: number;
   selectedDocument: null | string;
   selectedTopic: null | string;
+  missingAnnotations: Set<string>;
   userResponses: UserResponses;
 }
 
@@ -248,6 +249,7 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           currentPage: 1,
           selectedTab: "HIGHLIGHTS",
           userResponses: userResponsesFromDocuments(documents),
+          missingAnnotations: new Set(),
         });
       } catch (err) {
         setState("FAILURE");

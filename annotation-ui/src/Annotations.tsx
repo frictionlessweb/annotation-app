@@ -13,7 +13,6 @@ import {
 import {
   useAdobeDocContext,
   useSetAdobeDoc,
-  ApiAnnotation,
   HasId,
   topicsFromDocument,
   annotationsFromContext,
@@ -25,6 +24,7 @@ import {
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
+import Alert from "@spectrum-icons/workflow/Alert";
 import { ToastQueue } from "@react-spectrum/toast";
 import produce from "immer";
 
@@ -41,22 +41,21 @@ const DEFAULT_VIEW_CONFIG = {
 
 const PDF_ID = "PDF_DOCUMENT";
 
-const sortAnnotations = (a: ApiAnnotation, b: ApiAnnotation): number => {
-  const aPage: number = a?.annotation.target?.selector?.node?.index;
-  const bPage: number = b?.annotation?.selector?.node?.index;
-  if (aPage < bPage) return -1;
-  if (
-    a.annotation.target?.selector?.boundingBox[1] <
-    a.annotation.target?.selector?.boundingBox[1]
-  )
-    return -1;
-  if (
-    a.annotation.target?.selector?.boundingBox[0] <
-    a.annotation.target?.selector?.boundingBox[0]
-  )
-    return -1;
-  return 1;
-};
+function partition<T>(
+  elements: Array<T>,
+  predicate: (el: T) => boolean
+): [Array<T>, Array<T>] {
+  const yes: Array<T> = [];
+  const no: Array<T> = [];
+  for (const element of elements) {
+    if (predicate(element)) {
+      yes.push(element);
+    } else {
+      no.push(element);
+    }
+  }
+  return [yes, no];
+}
 
 const selectTopic = async (
   setDoc: React.Dispatch<React.SetStateAction<DocContext>>,
@@ -65,25 +64,35 @@ const selectTopic = async (
 ) => {
   if (ctx.selectedDocument === null) return;
   const { selectedDocument, apis } = ctx;
-  setDoc((prev) => {
-    return {
-      ...prev,
-      selectedTopic: key as string,
-      selectedTab: tabFromTopic(key as string, ctx.documents[selectedDocument]),
-    };
-  });
   await apis.current?.annotationApis.removeAnnotationsFromPDF();
   const apiAnnotations = annotationsFromContext({
     ...ctx,
     selectedTopic: key as string,
   });
   const annotations = apiAnnotations.map((annotation) => annotation.annotation);
+  const [annotationsInDocument, annotationsOutsideDocument] = partition(
+    annotations,
+    (annotation) => {
+      return annotation?.target?.source !== undefined;
+    }
+  );
+  const missingAnnotations = new Set<string>(
+    annotationsOutsideDocument.map((x) => x.id)
+  );
   try {
-    await apis.current?.annotationApis.addAnnotations(annotations);
+    await apis.current?.annotationApis.addAnnotations(annotationsInDocument);
     await apis.current?.locationApis.gotoLocation(1, 0, 0);
   } catch (err) {
     console.log(err);
   }
+  setDoc((prev) => {
+    return {
+      ...prev,
+      selectedTopic: key as string,
+      selectedTab: tabFromTopic(key as string, ctx.documents[selectedDocument]),
+      missingAnnotations,
+    };
+  });
 };
 
 const Instructions = () => {
@@ -144,7 +153,7 @@ const Highlights = () => {
           maxHeight: "550px",
         }}
       >
-        {[...annotations].sort(sortAnnotations).map((annotation) => {
+        {[...annotations].map((annotation) => {
           const page = annotation?.annotation.target?.selector?.node?.index + 1;
           const isSelected =
             ctx.selectedAnnotation === annotation.annotation.id;
@@ -164,6 +173,9 @@ const Highlights = () => {
                 return "";
             }
           })();
+          const isMissing = ctx.missingAnnotations.has(
+            annotation.annotation.id
+          );
           return (
             <div key={annotation.annotation.id}>
               <ul
@@ -181,12 +193,14 @@ const Highlights = () => {
                     if (ctx.currentPage !== page) {
                       apis.current?.locationApis.gotoLocation(page, 0, 0);
                     }
-                    try {
-                      await apis.current?.annotationApis?.selectAnnotation(
-                        annotation.annotation.id
-                      );
-                    } catch (err) {
-                      console.error(err);
+                    if (!isMissing) {
+                      try {
+                        await apis.current?.annotationApis?.selectAnnotation(
+                          annotation.annotation.id
+                        );
+                      } catch (err) {
+                        console.error(err);
+                      }
                     }
                     setDoc((prevDoc) => {
                       return {
@@ -194,6 +208,7 @@ const Highlights = () => {
                         selectedAnnotation: annotation.annotation.id,
                       };
                     });
+                    Alert;
                   }}
                 >
                   <View
@@ -216,9 +231,17 @@ const Highlights = () => {
                           <small>Page {page}</small>
                         </p>
                       </Flex>
-                      {currentValue === "true" && <ThumbsUp />}
-                      {currentValue === "false" && <ThumbsDown />}
+                      {currentValue === "true" ? <ThumbsUp /> : null}
+                      {currentValue === "false" ? <ThumbsDown /> : null}
                     </Flex>
+                    {isMissing ? (
+                      <Flex alignItems="center">
+                        <Alert size="S" marginEnd="16px" />
+                        <Text>
+                          We could not find this annotation in the PDF.
+                        </Text>
+                      </Flex>
+                    ) : null}
                     {isSelected && (
                       <ActionGroup
                         isQuiet
