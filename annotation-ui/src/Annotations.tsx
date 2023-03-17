@@ -141,7 +141,6 @@ const Highlights = () => {
           display: "flex",
           flexDirection: "column",
           overflowY: "scroll",
-          maxHeight: "550px",
           maxWidth: "400px",
         }}
       >
@@ -215,15 +214,9 @@ const Highlights = () => {
                       alignItems="end"
                     >
                       <Flex direction="column">
-                        <p style={{ margin: 0 }}>
-                          <small>{annotation.text}</small>
-                        </p>
-                        <p style={{ marginTop: 0 }}>
-                          <small>Page {page}</small>
-                        </p>
+                        <p style={{ margin: 0 }}>{annotation.text}</p>
+                        <p style={{ marginTop: 0 }}>Page {page}</p>
                       </Flex>
-                      {currentValue === "true" ? <ThumbsUp /> : null}
-                      {currentValue === "false" ? <ThumbsDown /> : null}
                     </Flex>
                     {isMissing ? (
                       <Flex alignItems="center">
@@ -235,37 +228,45 @@ const Highlights = () => {
                         </Text>
                       </Flex>
                     ) : null}
-                    {isSelected && (
-                      <ActionGroup
-                        isQuiet
-                        selectionMode="single"
-                        selectedKeys={[currentValue]}
-                        onAction={(key) => {
-                          const newValue = key === "true" ? true : false;
-                          setDoc((prevDoc) => {
-                            const result = produce(prevDoc, (newDoc) => {
-                              if (
-                                prevDoc.selectedDocument === null ||
-                                prevDoc.selectedTopic === null
-                              )
-                                return prevDoc;
-                              newDoc.userResponses[prevDoc.selectedDocument][
-                                prevDoc.selectedTopic
-                              ][annotation.annotation.id] = newValue;
+                    <Flex justifyContent={isSelected ? "space-between" : "end"}>
+                      {isSelected && (
+                        <ActionGroup
+                          isQuiet
+                          selectionMode="single"
+                          selectedKeys={[currentValue]}
+                          onAction={(key) => {
+                            const newValue = key === "true" ? true : false;
+                            setDoc((prevDoc) => {
+                              const result = produce(prevDoc, (newDoc) => {
+                                if (
+                                  prevDoc.selectedDocument === null ||
+                                  prevDoc.selectedTopic === null
+                                )
+                                  return prevDoc;
+                                newDoc.userResponses[prevDoc.selectedDocument][
+                                  prevDoc.selectedTopic
+                                ][annotation.annotation.id] = newValue;
+                              });
+                              saveToLocalStorage(result);
+                              return result;
                             });
-                            saveToLocalStorage(result);
-                            return result;
-                          });
-                        }}
-                      >
-                        <Item key="true">
-                          <ThumbsUp />
-                        </Item>
-                        <Item key="false">
-                          <ThumbsDown />
-                        </Item>
-                      </ActionGroup>
-                    )}
+                          }}
+                        >
+                          <Item key="true">
+                            <ThumbsUp />
+                          </Item>
+                          <Item key="false">
+                            <ThumbsDown />
+                          </Item>
+                        </ActionGroup>
+                      )}
+                      <Flex justifyContent="end">
+                        {currentValue === "true" ? <ThumbsUp size="M" /> : null}
+                        {currentValue === "false" ? (
+                          <ThumbsDown size="M" />
+                        ) : null}
+                      </Flex>
+                    </Flex>
                   </View>
                 </li>
               </ul>
@@ -285,7 +286,7 @@ const AnnotationJudger = () => {
     return <Text>No annotations for this document and topic.</Text>;
   }
   return (
-    <Flex direction="column">
+    <Flex direction="column" height={window.innerHeight}>
       <Heading level={3} marginBottom="size-10">
         Reviewing Tasks
       </Heading>
@@ -557,7 +558,7 @@ export const Annotations = () => {
             )}
           </div>
         </Flex>
-        <Flex width="25%" marginStart="16px">
+        <Flex width="25%" marginStart="16px" height="100%">
           <AnnotationJudger />
         </Flex>
       </Flex>
