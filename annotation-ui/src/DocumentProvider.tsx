@@ -228,6 +228,21 @@ export const progressFromContext = (ctx: DocContext): string => {
   return `${numCompleted}/${total} documents analyzed.`;
 };
 
+export const saveToLocalStorage = (ctx: DocContext) => {
+  const user_name = window.location.pathname.split("/").pop() || "";
+  const responses = { user_name, annotations: ctx.userResponses };
+  window.localStorage.setItem(user_name, JSON.stringify(responses));
+};
+
+const readFromLocalStorage = (): UserResponses | null => {
+  const userName = window.location.pathname.split("/").pop() || "";
+  const data = window.localStorage.getItem(userName);
+  if (typeof data === "string") {
+    return JSON.parse(data).annotations;
+  }
+  return null;
+};
+
 export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
   const apisRef = React.useRef<AdobeApiHandler | null>(null);
   const [state, setState] = React.useState<DocumentState>("LOADING");
@@ -248,7 +263,8 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           selectedAnnotation: null,
           currentPage: 1,
           selectedTab: "HIGHLIGHTS",
-          userResponses: userResponsesFromDocuments(documents),
+          userResponses:
+            readFromLocalStorage() || userResponsesFromDocuments(documents),
           missingAnnotations: new Set(),
         });
       } catch (err) {

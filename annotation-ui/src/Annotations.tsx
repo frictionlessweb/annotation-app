@@ -1,6 +1,7 @@
 import React from "react";
 import {
   Flex,
+  Button,
   Picker,
   Tabs,
   TabList,
@@ -21,6 +22,7 @@ import {
   DocContext,
   progressFromContext,
   PROGRESS_COMPLETE,
+  saveToLocalStorage,
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
@@ -208,7 +210,6 @@ const Highlights = () => {
                         selectedAnnotation: annotation.annotation.id,
                       };
                     });
-                    Alert;
                   }}
                 >
                   <View
@@ -252,7 +253,7 @@ const Highlights = () => {
                         onAction={(key) => {
                           const newValue = key === "true" ? true : false;
                           setDoc((prevDoc) => {
-                            return produce(prevDoc, (newDoc) => {
+                            const result = produce(prevDoc, (newDoc) => {
                               if (
                                 prevDoc.selectedDocument === null ||
                                 prevDoc.selectedTopic === null
@@ -262,6 +263,8 @@ const Highlights = () => {
                                 prevDoc.selectedTopic
                               ][annotation.annotation.id] = newValue;
                             });
+                            saveToLocalStorage(result);
+                            return result;
                           });
                         }}
                       >
@@ -315,6 +318,18 @@ const AnnotationJudger = () => {
   );
 };
 
+const downloadJson = (json: object) => {
+  const element = document.createElement("a");
+  const textFile = new Blob([JSON.stringify(json)], {
+    type: "text/plain",
+  });
+  element.href = URL.createObjectURL(textFile);
+  element.download = "annotations.json";
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+};
+
 const Progress = () => {
   const ctx = useAdobeDocContext();
   const [saved, setSaved] = React.useState(false);
@@ -338,15 +353,7 @@ const Progress = () => {
           ToastQueue.positive("Saved progress successfully.", {
             timeout: 10,
           });
-          const element = document.createElement("a");
-          const textFile = new Blob([JSON.stringify(requestBodyObject)], {
-            type: "text/plain",
-          });
-          element.href = URL.createObjectURL(textFile);
-          element.download = "annotations.json";
-          document.body.appendChild(element);
-          element.click();
-          document.body.removeChild(element);
+          downloadJson(requestBodyObject);
           setSaved(true);
         } else {
           console.log(res);
@@ -364,6 +371,18 @@ const Progress = () => {
   return (
     <Flex justifyContent="center" marginStart="16px" direction="column">
       <Text>{progress}</Text>
+      <Flex marginTop="8px">
+        <Button
+          onPress={() => {
+            saveToLocalStorage(ctx);
+            const user_name = window.location.pathname.split("/").pop();
+            downloadJson({ user_name, annotations: ctx.userResponses });
+          }}
+          variant="primary"
+        >
+          Save to JSON
+        </Button>
+      </Flex>
     </Flex>
   );
 };
