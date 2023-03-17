@@ -13,10 +13,15 @@ import {
 import {
   useAdobeDocContext,
   useSetAdobeDoc,
-  messageFromDocContext,
-  VIEW_TAB,
   ApiAnnotation,
   HasId,
+  topicsFromDocument,
+  annotationsFromContext,
+  tabFromAnnotationId,
+  tabFromTopic,
+  DocContext,
+  progressFromContext,
+  PROGRESS_COMPLETE,
 } from "./DocumentProvider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
@@ -39,20 +44,98 @@ const PDF_ID = "PDF_DOCUMENT";
 const sortAnnotations = (a: ApiAnnotation, b: ApiAnnotation): number => {
   const aPage: number = a?.annotation.target?.selector?.node?.index;
   const bPage: number = b?.annotation?.selector?.node?.index;
-  return aPage < bPage ? -1 : 1;
+  if (aPage < bPage) return -1;
+  if (
+    a.annotation.target?.selector?.boundingBox[1] <
+    a.annotation.target?.selector?.boundingBox[1]
+  )
+    return -1;
+  if (
+    a.annotation.target?.selector?.boundingBox[0] <
+    a.annotation.target?.selector?.boundingBox[0]
+  )
+    return -1;
+  return 1;
+};
+
+const selectTopic = async (
+  setDoc: React.Dispatch<React.SetStateAction<DocContext>>,
+  key: string,
+  ctx: DocContext
+) => {
+  if (ctx.selectedDocument === null) return;
+  const { selectedDocument, apis } = ctx;
+  setDoc((prev) => {
+    return {
+      ...prev,
+      selectedTopic: key as string,
+      selectedTab: tabFromTopic(key as string, ctx.documents[selectedDocument]),
+    };
+  });
+  await apis.current?.annotationApis.removeAnnotationsFromPDF();
+  const apiAnnotations = annotationsFromContext({
+    ...ctx,
+    selectedTopic: key as string,
+  });
+  const annotations = apiAnnotations.map((annotation) => annotation.annotation);
+  try {
+    await apis.current?.annotationApis.addAnnotations(annotations);
+    await apis.current?.locationApis.gotoLocation(1, 0, 0);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const Instructions = () => {
+  const ctx = useAdobeDocContext();
+  if (ctx.selectedTopic === null || ctx.selectedDocument === null) {
+    return null;
+  }
+  if (ctx.selectedTopic === "Generic Highlights") {
+    return (
+      <Text>
+        Does each highlight convey important information about the document?
+      </Text>
+    );
+  }
+  const tab = tabFromTopic(
+    ctx.selectedTopic,
+    ctx.documents[ctx.selectedDocument]
+  );
+  if (tab === "HIGHLIGHTS") {
+    return (
+      <Text>
+        Does each highlight convey important information about the <b>topic</b>{" "}
+        in the document?
+      </Text>
+    );
+  }
+  const { statement } =
+    ctx.documents[ctx.selectedDocument].attributions[ctx.selectedTopic];
+  return (
+    <>
+      <Text marginBottom="16px">
+        Does each highlight overlap with the statement?
+      </Text>
+      <Text>
+        {'"'}
+        {statement}
+        {'"'}
+      </Text>
+    </>
+  );
 };
 
 const Highlights = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   const { apis } = ctx;
-  const annotations =
-    ctx.selectedDocument === null || ctx.selectedTopic === null
-      ? []
-      : ctx.documents[ctx.selectedDocument].topics[ctx.selectedTopic];
+  const annotations = annotationsFromContext(ctx);
   return (
     <>
-      <p>Reminder instructions will go here</p>
+      <Flex marginY="16px" direction="column">
+        <Instructions />
+      </Flex>
       <div
         style={{
           display: "flex",
@@ -68,7 +151,7 @@ const Highlights = () => {
           if (ctx.selectedDocument === null || ctx.selectedTopic === null)
             return null;
           const initVal =
-            ctx.annotationResponses[ctx.selectedDocument][ctx.selectedTopic][
+            ctx.userResponses[ctx.selectedDocument][ctx.selectedTopic][
               annotation.annotation.id
             ];
           const currentValue = (() => {
@@ -93,9 +176,18 @@ const Highlights = () => {
               >
                 <li
                   id={annotation.annotation.id}
-                  onClick={() => {
+                  onClick={async () => {
                     if (apis.current === null) return;
-                    apis.current?.locationApis.gotoLocation(page, 0, 0);
+                    if (ctx.currentPage !== page) {
+                      apis.current?.locationApis.gotoLocation(page, 0, 0);
+                    }
+                    try {
+                      await apis.current?.annotationApis?.selectAnnotation(
+                        annotation.annotation.id
+                      );
+                    } catch (err) {
+                      console.error(err);
+                    }
                     setDoc((prevDoc) => {
                       return {
                         ...prevDoc,
@@ -118,13 +210,10 @@ const Highlights = () => {
                     >
                       <Flex direction="column">
                         <p style={{ margin: 0 }}>
-                          Annotation {annotation.annotation.id}
+                          <small>{annotation.text}</small>
                         </p>
                         <p style={{ marginTop: 0 }}>
                           <small>Page {page}</small>
-                        </p>
-                        <p style={{ margin: 0 }}>
-                          <small>{annotation.text}</small>
                         </p>
                       </Flex>
                       {currentValue === "true" && <ThumbsUp />}
@@ -144,11 +233,9 @@ const Highlights = () => {
                                 prevDoc.selectedTopic === null
                               )
                                 return prevDoc;
-                              newDoc.annotationResponses[
-                                prevDoc.selectedDocument
-                              ][prevDoc.selectedTopic][
-                                annotation.annotation.id
-                              ] = newValue;
+                              newDoc.userResponses[prevDoc.selectedDocument][
+                                prevDoc.selectedTopic
+                              ][annotation.annotation.id] = newValue;
                             });
                           });
                         }}
@@ -172,29 +259,10 @@ const Highlights = () => {
   );
 };
 
-const TopicSpecificHighlights = () => {
-  const ctx = useAdobeDocContext();
-  const setDoc = useSetAdobeDoc();
-  const { apis } = ctx;
-  const annotations =
-    ctx.selectedDocument === null || ctx.selectedTopic === null
-      ? []
-      : ctx.userAnnotations[ctx.selectedDocument][ctx.selectedTopic];
-  return (
-    <Flex direction="column" marginTop="16px">
-      <Text>You have not created any annotations.</Text>
-    </Flex>
-  );
-};
-
 const AnnotationJudger = () => {
   const ctx = useAdobeDocContext();
-  const { selectedTab: tab } = ctx;
   const setDoc = useSetAdobeDoc();
-  const annotations =
-    ctx.selectedDocument === null || ctx.selectedTopic === null
-      ? []
-      : ctx.documents[ctx.selectedDocument].topics[ctx.selectedTopic];
+  const annotations = annotationsFromContext(ctx);
   if (annotations.length <= 0) {
     return <Text>No annotations for this document and topic.</Text>;
   }
@@ -207,12 +275,9 @@ const AnnotationJudger = () => {
         aria-label="Annotations"
         selectedKey={ctx.selectedTab}
         onSelectionChange={(key) => {
-          setDoc((prevDoc) => {
-            return {
-              ...prevDoc,
-              selectedTab: key as VIEW_TAB,
-            };
-          });
+          const newTopic =
+            key === "HIGHLIGHTS" ? "Generic Highlights" : "Question 1";
+          selectTopic(setDoc, newTopic, ctx);
         }}
       >
         <TabList>
@@ -220,23 +285,22 @@ const AnnotationJudger = () => {
           <Item key="ATTRIBUTIONS">Attributions</Item>
         </TabList>
       </Tabs>
-      {tab === "HIGHLIGHTS" && <Highlights />}
-      {tab === "ATTRIBUTIONS" && <TopicSpecificHighlights />}
+      <Highlights />
     </Flex>
   );
 };
 
-const Suggestions = () => {
+const Progress = () => {
   const ctx = useAdobeDocContext();
-  const message = messageFromDocContext(ctx);
   const [saved, setSaved] = React.useState(false);
+  const progress = progressFromContext(ctx);
   React.useEffect(() => {
     const handleMessageChange = async () => {
-      if (saved || Array.isArray(message)) return;
+      if (saved || progress !== PROGRESS_COMPLETE) return;
       try {
         const user_name = window.location.pathname.split("/").pop();
-        const annotations = ctx.annotationResponses;
-        const requestBodyObject = { user_name, annotations };
+        const responses = ctx.userResponses;
+        const requestBodyObject = { user_name, annotations: responses };
         const body = JSON.stringify(requestBodyObject);
         const res = await window.fetch("/api/v1/save-session", {
           method: "POST",
@@ -260,6 +324,7 @@ const Suggestions = () => {
           document.body.removeChild(element);
           setSaved(true);
         } else {
+          console.log(res);
           throw new Error("REQUEST_FAILED");
         }
       } catch (err) {
@@ -270,21 +335,10 @@ const Suggestions = () => {
       }
     };
     handleMessageChange();
-  }, [message, ctx, saved]);
+  }, [ctx, progress, saved]);
   return (
     <Flex justifyContent="center" marginStart="16px" direction="column">
-      {Array.isArray(message) ? (
-        <>
-          <Text marginY={0}>Please judge these annotations: </Text>
-          <ul style={{ margin: 0 }}>
-            {message.map((msg) => {
-              return <li key={msg}>{msg}</li>;
-            })}
-          </ul>
-        </>
-      ) : (
-        <Text>{message}</Text>
-      )}
+      <Text>{progress}</Text>
     </Flex>
   );
 };
@@ -351,27 +405,10 @@ const DocumentPickers = () => {
                     return produce(prevDoc, (draft) => {
                       const { id } = annotationSelected.data;
                       draft.selectedAnnotation = id;
-                      if (
-                        draft.selectedTab === null ||
-                        draft.selectedDocument === null ||
-                        draft.selectedTopic === null
-                      )
-                        return;
-                      draft.selectedAnnotation = id;
-                      const taskIds = new Set(
-                        draft.documents[draft.selectedDocument].topics[
-                          draft.selectedTopic
-                        ].map((x) => x.annotation.id)
+                      draft.selectedTab = tabFromAnnotationId(
+                        id,
+                        ctx.documents
                       );
-                      const isTaskId = taskIds.has(id);
-                      const isInActiveTab = isTaskId
-                        ? draft.selectedTab === "HIGHLIGHTS"
-                        : draft.selectedTab === "ATTRIBUTIONS";
-                      if (isInActiveTab) return;
-                      draft.selectedTab =
-                        draft.selectedTab === "HIGHLIGHTS"
-                          ? "ATTRIBUTIONS"
-                          : "HIGHLIGHTS";
                     });
                   });
                   return;
@@ -391,7 +428,7 @@ const DocumentPickers = () => {
             return {
               ...prev,
               selectedDocument: key as string,
-              selectedTopic: null,
+              selectedTopic: "Generic Highlights",
               apis: {
                 current: {
                   annotationApis: manager,
@@ -399,6 +436,17 @@ const DocumentPickers = () => {
                 },
               },
             };
+          });
+          selectTopic(setDoc, "Generic Highlights", {
+            ...ctx,
+            selectedDocument: key as string,
+            selectedTopic: "Generic Highlights",
+            apis: {
+              current: {
+                annotationApis: manager,
+                locationApis: curApis,
+              },
+            },
           });
         }}
       >
@@ -408,35 +456,21 @@ const DocumentPickers = () => {
       </Picker>
       <Picker
         label="Select a Topic"
+        selectedKey={ctx.selectedTopic}
         isDisabled={ctx.selectedDocument === null}
         onSelectionChange={async (key) => {
-          const { apis, selectedDocument } = ctx;
-          if (selectedDocument === null) return;
-          setDoc((prev) => {
-            return {
-              ...prev,
-              selectedTopic: key as string,
-            };
-          });
-          await apis.current?.annotationApis.removeAnnotationsFromPDF();
-          const apiAnnotations =
-            ctx.documents[selectedDocument].topics[key as string];
-          const annotations = apiAnnotations.map(
-            (annotation) => annotation.annotation
-          );
-          await apis.current?.annotationApis.addAnnotations(annotations);
-          await apis.current?.locationApis.gotoLocation(1, 0, 0);
+          selectTopic(setDoc, key as string, ctx);
         }}
       >
         {ctx.selectedDocument === null
           ? []
-          : Object.keys(ctx.documents[ctx.selectedDocument].topics).map(
+          : topicsFromDocument(ctx.documents[ctx.selectedDocument]).map(
               (topic) => {
                 return <Item key={topic}>{topic}</Item>;
               }
             )}
       </Picker>
-      <Suggestions />
+      <Progress />
     </Flex>
   );
 };

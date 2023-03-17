@@ -1,6 +1,7 @@
 import React from "react";
 import { Loading } from "./Loading";
 import { FatalApiError } from "./FatalApiError";
+import assignments from "./assignments.json";
 
 declare global {
   interface Window {
@@ -20,6 +21,7 @@ export interface AdobeApiHandler {
   annotationApis: {
     getAnnotations: () => Promise<Array<unknown>>;
     addAnnotations: (array: Array<any>) => Promise<void>;
+    selectAnnotation: (annotation: any) => Promise<void>;
     removeAnnotationsFromPDF: () => Promise<void>;
   };
 }
@@ -31,10 +33,6 @@ type DocumentId = string;
 type AnnotationId = string;
 
 type AnnotationRecord = Record<AnnotationId, boolean | null>;
-
-type TopicResponses = Record<TopicId, AnnotationRecord>;
-
-type AnnotationResponseCollection = Record<DocumentId, TopicResponses>;
 
 export type VIEW_TAB = "HIGHLIGHTS" | "ATTRIBUTIONS";
 
@@ -67,7 +65,21 @@ type UserResponses = Record<
 
 const fetchDocuments = async (): Promise<DocumentCollection> => {
   const res = await window.fetch("/api/v1/documents", { method: "GET" });
-  return res.json();
+  const result = await res.json();
+  return result;
+};
+
+const findRelevantDocuments = (
+  user: string,
+  documents: DocumentCollection
+): DocumentCollection => {
+  const assignment = assignments.find((assignment) => assignment.user === user);
+  if (assignment === undefined) return documents;
+  const out: DocumentCollection = {};
+  for (const document of assignment.documents) {
+    out[document] = documents[document];
+  }
+  return out;
 };
 
 export const userResponsesFromDocuments = (
@@ -105,7 +117,35 @@ export const userResponsesFromDocuments = (
   return out;
 };
 
-interface DocContext {
+export const tabFromAnnotationId = (
+  id: string,
+  doc: DocumentCollection
+): VIEW_TAB => {
+  const annotationIds = Object.values(doc).flatMap((aDoc) =>
+    Object.values(aDoc.highlights).flatMap((aHighlightList) =>
+      aHighlightList.map((anAnnotation) => anAnnotation.annotation.id)
+    )
+  );
+  return new Set(annotationIds).has(id) ? "HIGHLIGHTS" : "ATTRIBUTIONS";
+};
+
+export const tabFromTopic = (topic: string, document: Document): VIEW_TAB => {
+  const highlightSet = new Set(Object.keys(document.highlights));
+  return highlightSet.has(topic) ? "HIGHLIGHTS" : "ATTRIBUTIONS";
+};
+
+export const topicsFromDocument = (document: Document): string[] => {
+  const unsortedResult = Object.keys(document.highlights).concat(
+    Object.keys(document.attributions)
+  );
+  return unsortedResult.sort((a, b) => {
+    if (a === "Generic Highlights") return -1;
+    if (a.includes("Question") && !b.includes("Question")) return 1;
+    return a < b ? -1 : 1;
+  });
+};
+
+export interface DocContext {
   documents: DocumentCollection;
   selectedTab: VIEW_TAB;
   selectedAnnotation: null | string;
@@ -144,6 +184,49 @@ interface AdobeDocProviderProps {
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
 
+export const annotationsFromContext = (
+  context: DocContext
+): ApiAnnotation[] => {
+  if (context.selectedDocument === null || context.selectedTopic === null)
+    return [];
+  const currentDoc = context.documents[context.selectedDocument];
+  if (context.selectedTopic in currentDoc.highlights) {
+    return currentDoc.highlights[context.selectedTopic];
+  } else {
+    return currentDoc.attributions[context.selectedTopic].annotations;
+  }
+};
+
+export const PROGRESS_COMPLETE = "Congratulations, you have finished the task!";
+
+export const progressFromContext = (ctx: DocContext): string => {
+  const documentIds = Object.keys(ctx.userResponses);
+  const total = documentIds.length;
+  let numCompleted = documentIds.length;
+  for (const docId of documentIds) {
+    const currentTopics = ctx.userResponses[docId];
+    const topicIds = Object.keys(currentTopics);
+    let topicFailed = false;
+    for (const topicId of topicIds) {
+      if (topicFailed) {
+        break;
+      }
+      const curResponses = ctx.userResponses[docId][topicId];
+      const responseIds = Object.keys(curResponses);
+      for (const responseId of responseIds) {
+        const res = ctx.userResponses[docId][topicId][responseId];
+        if (res === null) {
+          --numCompleted;
+          topicFailed = true;
+          break;
+        }
+      }
+    }
+  }
+  if (total === numCompleted) return PROGRESS_COMPLETE;
+  return `${numCompleted}/${total} documents analyzed.`;
+};
+
 export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
   const apisRef = React.useRef<AdobeApiHandler | null>(null);
   const [state, setState] = React.useState<DocumentState>("LOADING");
@@ -153,7 +236,9 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
   React.useEffect(() => {
     const getDocuments = async () => {
       try {
-        const documents = await fetchDocuments();
+        const rawDocuments = await fetchDocuments();
+        const userName = window.location.pathname.split("/").pop() || "";
+        const documents = findRelevantDocuments(userName, rawDocuments);
         setState({
           apis: apisRef,
           documents,

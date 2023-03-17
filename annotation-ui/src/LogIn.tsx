@@ -1,6 +1,7 @@
 import React from "react";
-import { Flex, TextField, Heading, Button } from "@adobe/react-spectrum";
+import { Flex, Heading, Button, Picker, Item } from "@adobe/react-spectrum";
 import { useLocation } from "wouter";
+import assignments from "./assignments.json";
 
 export const LogIn = () => {
   const [name, setName] = React.useState("");
@@ -21,11 +22,15 @@ export const LogIn = () => {
           <Heading level={1}>Enter Your Name</Heading>
         </Flex>
         <Flex marginBottom="32px">
-          <TextField
-            data-testid="NAME"
-            aria-label="Enter your name."
-            onChange={setName}
-          />
+          <Picker
+            onSelectionChange={(key) => {
+              setName(key as string);
+            }}
+          >
+            {assignments.map((assignment) => {
+              return <Item key={assignment.user}>{assignment.user}</Item>;
+            })}
+          </Picker>
         </Flex>
         <Flex marginBottom="16px">
           <Button
