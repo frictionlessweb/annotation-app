@@ -31,6 +31,10 @@ def test_static_files():
         expected_pdf = client.get(pdf_url)
         assert expected_pdf.status_code == 200
 
+def test_get_database():
+    response = client.get("/current-database")
+    assert response.status_code == 200
+
 
 def test_save_items():
     response = client.post(

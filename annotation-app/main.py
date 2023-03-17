@@ -3,8 +3,9 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from documents import DOCUMENTS
 from typing import Any
-from database import SessionLocal
+from database import SessionLocal, engine
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 from models import Sessions
 
 app = FastAPI(root_path="/api/v1")
@@ -32,6 +33,13 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+@app.get("/current-database")
+def current_database():
+    with engine.connect() as con:
+        result = list(con.execute(text("SELECT * FROM sessions")))
+        return [{"user": row[1], "annotations": row[2]} for row in result]
 
 
 @app.post("/save-session")
