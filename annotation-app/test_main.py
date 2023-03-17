@@ -31,8 +31,9 @@ def test_static_files():
         expected_pdf = client.get(pdf_url)
         assert expected_pdf.status_code == 200
 
+
 def test_get_database():
-    response = client.get("/current-database")
+    response = client.get("/responses?day=03-17-2023")
     assert response.status_code == 200
 
 

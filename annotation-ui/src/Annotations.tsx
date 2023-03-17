@@ -55,7 +55,11 @@ const selectTopic = async (
 ) => {
   if (ctx.selectedDocument === null) return;
   const { selectedDocument, apis } = ctx;
-  await apis.current?.annotationApis.removeAnnotationsFromPDF();
+  try {
+    await apis.current?.annotationApis.removeAnnotationsFromPDF();
+  } catch (err) {
+    console.error(err);
+  }
   const apiAnnotations = annotationsFromContext({
     ...ctx,
     selectedTopic: key as string,
