@@ -323,10 +323,11 @@ const downloadJson = (json: object) => {
 const Progress = () => {
   const ctx = useAdobeDocContext();
   const [saved, setSaved] = React.useState(false);
-  const progress = progressFromContext(ctx);
+  const currentProgress = progressFromContext(ctx);
+  const [oldProgress, setOldProgress] = React.useState(currentProgress);
   React.useEffect(() => {
     const handleMessageChange = async () => {
-      if (saved || progress !== PROGRESS_COMPLETE) return;
+      if (saved || currentProgress === oldProgress) return;
       try {
         const user_name = window.location.pathname.split("/").pop();
         const responses = ctx.userResponses;
@@ -355,12 +356,13 @@ const Progress = () => {
           { timeout: 10 }
         );
       }
+      setOldProgress(currentProgress);
     };
     handleMessageChange();
-  }, [ctx, progress, saved]);
+  }, [ctx, currentProgress, oldProgress, saved]);
   return (
     <Flex justifyContent="center" marginStart="16px" direction="column">
-      <Text>{progress}</Text>
+      <Text>{currentProgress}</Text>
       <Flex marginTop="8px">
         <Button
           onPress={() => {
