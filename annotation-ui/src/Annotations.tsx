@@ -369,7 +369,7 @@ const Progress = () => {
           }}
           variant="primary"
         >
-          Save to JSON
+          Save Progress as JSON
         </Button>
       </Flex>
     </Flex>
