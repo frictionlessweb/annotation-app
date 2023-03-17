@@ -142,6 +142,7 @@ const Highlights = () => {
           flexDirection: "column",
           overflowY: "scroll",
           maxHeight: "550px",
+          maxWidth: "400px",
         }}
       >
         {[...annotations].map((annotation) => {
