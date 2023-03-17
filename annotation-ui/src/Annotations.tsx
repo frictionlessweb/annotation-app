@@ -236,9 +236,11 @@ const Highlights = () => {
                     </Flex>
                     {isMissing ? (
                       <Flex alignItems="center">
-                        <Alert size="S" marginEnd="16px" />
+                        <Alert size="XS" marginEnd="8px" />
                         <Text>
-                          We could not find this annotation in the PDF.
+                          <small>
+                            We could not find this annotation in the PDF.
+                          </small>
                         </Text>
                       </Flex>
                     ) : null}
