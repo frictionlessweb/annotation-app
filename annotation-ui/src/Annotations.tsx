@@ -30,17 +30,6 @@ import Alert from "@spectrum-icons/workflow/Alert";
 import { ToastQueue } from "@react-spectrum/toast";
 import produce from "immer";
 
-const DEFAULT_VIEW_CONFIG = {
-  embedMode: "FULL_WINDOW",
-  showDownloadPDF: false,
-  showFullScreen: false,
-  showPrintPDF: false,
-  enableAnnotationAPIs: true,
-  includePDFAnnotations: true,
-  showCommentsPanel: false,
-  showToolsOnTextSelection: false,
-} as const;
-
 const PDF_ID = "PDF_DOCUMENT";
 
 function partition<T>(
@@ -402,6 +391,17 @@ interface AdobeAnnotationSelectedEvent {
   data: HasId;
 }
 
+const DEFAULT_VIEW_CONFIG = {
+  embedMode: "FULL_WINDOW",
+  showDownloadPDF: false,
+  showFullScreen: false,
+  showPrintPDF: false,
+  enableAnnotationAPIs: true,
+  includePDFAnnotations: true,
+  showCommentsPanel: false,
+  showToolsOnTextSelection: false,
+} as const;
+
 const DocumentPickers = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
@@ -468,6 +468,10 @@ const DocumentPickers = () => {
             preview.getAnnotationManager(),
             preview.getAPIs(),
           ]);
+          await manager.setConfig({
+            showCommentsPanel: false,
+            showToolsOnTextSelection: false,
+          });
           setDoc((prev) => {
             return {
               ...prev,
