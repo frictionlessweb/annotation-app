@@ -405,7 +405,6 @@ const DEFAULT_VIEW_CONFIG = {
   showFullScreen: false,
   showPrintPDF: false,
   enableAnnotationAPIs: true,
-  includePDFAnnotations: true,
   showCommentsPanel: false,
   showToolsOnTextSelection: false,
 } as const;
