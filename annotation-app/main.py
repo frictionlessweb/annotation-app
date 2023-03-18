@@ -68,8 +68,9 @@ def current_database(day: str, db: Session = Depends(get_db)):
 
     output = []
     for result in results:
-        if complete(result.annotations):
-            output.append(result)
+        output.append(result)
+        # if complete(result.annotations):
+        #     output.append(result)
     return output
 
 
