@@ -54,30 +54,23 @@ def complete(document_map):
     return True
 
 
-def day_matches(time: datetime, created_at: datetime | None):
-    if created_at is None:
-        return False
-    return (
-        time.day == created_at.day
-        and time.year == created_at.year
-        and time.month == created_at.month
-    )
-
-
 @app.get("/responses")
-def current_database(day: str):
+def current_database(day: str, db: Session = Depends(get_db)):
     time: datetime
     try:
         time = datetime.strptime(day, "%m-%d-%Y")
     except ValueError:
         return []
-    with engine.connect() as con:
-        result = list(con.execute(text("SELECT * FROM sessions")))
-        return [
-            {"user": row[1], "annotations": row[2]}
-            for row in result
-            if day_matches(time, row[3]) and complete(row[2])
-        ]
+
+    greater_than = f"{time.year}-{time.month}-{time.day - 1}"
+    less_than = f"{time.year}-{time.month}-{time.day + 1}"
+    results = db.query(Sessions).filter(Sessions.created_at < less_than, Sessions.created_at > greater_than)
+
+    output = []
+    for result in results:
+        if complete(result.annotations):
+            output.append(result)
+    return output
 
 
 @app.post("/save-session")
