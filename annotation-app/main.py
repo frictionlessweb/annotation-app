@@ -3,11 +3,11 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from documents import DOCUMENTS
 from typing import Any
-from database import SessionLocal, engine
+from database import SessionLocal
 from sqlalchemy.orm import Session
-from sqlalchemy import text
 from models import Sessions
 from datetime import datetime
+import json
 
 app = FastAPI(root_path="/api/v1")
 app.mount("/static", StaticFiles(directory="assets"), name="static")
@@ -40,6 +40,7 @@ def complete(document_map):
     """
     Determine if the document is finished or not.
     """
+    print(json.dumps(document_map, indent=1))
     for document in document_map:
         topics = document_map[document]
         if not isinstance(topics, dict):
@@ -63,7 +64,9 @@ def current_database(day: str, db: Session = Depends(get_db)):
         return []
     greater_than = f"{time.year}-{time.month}-{time.day - 1}"
     less_than = f"{time.year}-{time.month}-{time.day + 1}"
-    results = db.query(Sessions).filter(Sessions.created_at < less_than, Sessions.created_at > greater_than)
+    results = db.query(Sessions).filter(
+        Sessions.created_at < less_than, Sessions.created_at > greater_than
+    )
     print(results)
     output = []
     for result in results:
