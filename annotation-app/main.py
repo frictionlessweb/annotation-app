@@ -68,13 +68,7 @@ def current_database(day: str, db: Session = Depends(get_db)):
     results = db.query(Sessions).filter(
         Sessions.created_at < less_than, Sessions.created_at > greater_than
     )
-    output = []
-    for result in results:
-        print(f"{result.user_name}---")
-        if complete(result.annotations):
-            output.append(result)
-        print("-----")
-    return output
+    return results.all()
 
 
 @app.post("/save-session")
