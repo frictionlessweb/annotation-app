@@ -7,7 +7,6 @@ from database import SessionLocal
 from sqlalchemy.orm import Session
 from models import Sessions
 from datetime import datetime
-import json
 
 app = FastAPI(root_path="/api/v1")
 app.mount("/static", StaticFiles(directory="assets"), name="static")
@@ -50,8 +49,6 @@ def complete(document_map):
                 continue
             for annotation_id in annotations:
                 if not isinstance(annotations[annotation_id], bool):
-                    print(annotation_id)
-                    print(json.dumps(annotations))
                     return False
     return True
 
