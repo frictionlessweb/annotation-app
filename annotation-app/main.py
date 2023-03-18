@@ -40,7 +40,6 @@ def complete(document_map):
     """
     Determine if the document is finished or not.
     """
-    print(json.dumps(document_map, indent=1))
     for document in document_map:
         topics = document_map[document]
         if not isinstance(topics, dict):
@@ -50,7 +49,9 @@ def complete(document_map):
             if not isinstance(annotations, dict):
                 continue
             for annotation_id in annotations:
-                if annotations[annotation_id] is None:
+                if not isinstance(annotations[annotation_id], bool):
+                    print(annotation_id)
+                    print(json.dumps(annotations))
                     return False
     return True
 
@@ -67,11 +68,12 @@ def current_database(day: str, db: Session = Depends(get_db)):
     results = db.query(Sessions).filter(
         Sessions.created_at < less_than, Sessions.created_at > greater_than
     )
-    print(results)
     output = []
     for result in results:
+        print(f"{result.user_name}---")
         if complete(result.annotations):
             output.append(result)
+        print("-----")
     return output
 
 

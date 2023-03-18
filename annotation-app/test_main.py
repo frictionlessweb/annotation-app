@@ -1,8 +1,45 @@
 from fastapi.testclient import TestClient
-from main import app
+from main import app, complete
 
 
 client = TestClient(app)
+
+
+def test_complete():
+    assert complete({"document": {"topic": {"annotation": True}}})
+    assert complete(
+        {
+            "document": {
+                "topic": {
+                    "annotation": True,
+                    "another_annotation": True,
+                    "a_third_annotation": True,
+                },
+                "topic_two": {
+                    "a_fourth_annotation": True,
+                    "a_fifth_annotation": True,
+                    "a_sixth_annotation": False,
+                },
+            }
+        }
+    )
+    assert not complete({"document": {"topic": {"annotation": None}}})
+    assert not complete(
+        {
+            "document": {
+                "topic": {
+                    "annotation": True,
+                    "another_annotation": True,
+                    "a_third_annotation": True,
+                },
+                "topic_two": {
+                    "a_fourth_annotation": True,
+                    "a_fifth_annotation": None,
+                    "a_sixth_annotation": False,
+                },
+            }
+        }
+    )
 
 
 def test_heartbeat():
