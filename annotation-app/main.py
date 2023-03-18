@@ -65,7 +65,7 @@ def current_database(day: str, db: Session = Depends(get_db)):
     greater_than = f"{time.year}-{time.month}-{time.day - 1}"
     less_than = f"{time.year}-{time.month}-{time.day + 1}"
     results = db.query(Sessions).filter(Sessions.created_at < less_than, Sessions.created_at > greater_than)
-
+    print('results ', results.all())
     output = []
     for result in results:
         output.append(result)
