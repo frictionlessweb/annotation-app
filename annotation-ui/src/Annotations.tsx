@@ -31,6 +31,7 @@ const PDF_ID = "PDF_DOCUMENT";
 
 interface AnnotationListProps {
   annotations: AnnotationObject[];
+  divRef: React.MutableRefObject<HTMLDivElement | null>;
 }
 
 const sortAnnotations = (a: AnnotationObject, b: AnnotationObject): number => {
@@ -40,12 +41,13 @@ const sortAnnotations = (a: AnnotationObject, b: AnnotationObject): number => {
 };
 
 const AnnotationList = (props: AnnotationListProps) => {
-  const { annotations } = props;
+  const { annotations, divRef } = props;
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   const { apis } = ctx;
   return (
     <div
+      ref={divRef}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -109,7 +111,12 @@ const AnnotationList = (props: AnnotationListProps) => {
   );
 };
 
-const AnnotationRouter = () => {
+interface HasDivRef {
+  divRef: React.MutableRefObject<HTMLDivElement | null>;
+}
+
+const AnnotationRouter = (props: HasDivRef) => {
+  const { divRef } = props;
   const ctx = useAdobeDocContext();
   const { selectedDocument, annotations } = ctx;
   if (selectedDocument === null) {
@@ -119,14 +126,15 @@ const AnnotationRouter = () => {
   if (curAnnotations.length <= 0) {
     return <Text>Please create some annotations in order to view them.</Text>;
   }
-  return <AnnotationList annotations={curAnnotations} />;
+  return <AnnotationList divRef={divRef} annotations={curAnnotations} />;
 };
 
-const AnnotationCollection = () => {
+const AnnotationCollection = (props: HasDivRef) => {
+  const { divRef } = props;
   return (
     <Flex direction="column">
       <Heading level={3}>Annotations</Heading>
-      <AnnotationRouter />
+      <AnnotationRouter divRef={divRef} />
     </Flex>
   );
 };
@@ -262,7 +270,8 @@ let CURRENT_SELECTION_TEXT = "";
 const changeDocumentId = async (
   ctx: DocContext,
   id: string,
-  setDoc: React.Dispatch<React.SetStateAction<DocContext>>
+  setDoc: React.Dispatch<React.SetStateAction<DocContext>>,
+  divRef: React.MutableRefObject<HTMLDivElement | null>
 ) => {
   const { pdf_url: url, title } = ctx.documents[id];
   const view = new window.AdobeDC.View({
@@ -321,6 +330,10 @@ const changeDocumentId = async (
               draft.selectedAnnotation = added.data.id;
             });
           });
+          divRef.current?.scroll({
+            top: divRef.current?.scrollHeight,
+            behavior: "smooth",
+          });
           break;
         }
         case "ANNOTATION_DELETED": {
@@ -362,7 +375,8 @@ const changeDocumentId = async (
   });
 };
 
-const DocumentPickers = () => {
+const DocumentPickers = (props: HasDivRef) => {
+  const { divRef } = props;
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   return (
@@ -372,7 +386,7 @@ const DocumentPickers = () => {
         label="Select a Document"
         selectedKey={ctx.selectedDocument}
         onSelectionChange={async (key) => {
-          changeDocumentId(ctx, key as string, setDoc);
+          changeDocumentId(ctx, key as string, setDoc, divRef);
         }}
       >
         {Object.keys(ctx.documents).map((doc) => {
@@ -385,7 +399,8 @@ const DocumentPickers = () => {
   );
 };
 
-const QuestionResponse = () => {
+const QuestionResponse = (props: HasDivRef) => {
+  const { divRef } = props;
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
   const updateResponse = React.useCallback(
@@ -408,7 +423,7 @@ const QuestionResponse = () => {
     const { currentResponses, annotations, documents } = ctx;
     if (unfinishedDocuments.length > 0) {
       const nextDoc = unfinishedDocuments[0];
-      changeDocumentId(ctx, nextDoc, setDoc);
+      changeDocumentId(ctx, nextDoc, setDoc, divRef);
       return;
     }
     try {
@@ -451,7 +466,7 @@ const QuestionResponse = () => {
         { timeout: 10 }
       );
     }
-  }, [ctx, unfinishedDocuments, setDoc]);
+  }, [ctx, unfinishedDocuments, setDoc, divRef]);
   if (ctx.selectedDocument === null) return null;
   const currentResponse = ctx.currentResponses[ctx.selectedDocument];
   let buttonText = "Next Task";
@@ -497,13 +512,14 @@ const QuestionResponse = () => {
 export const Annotations = () => {
   const pdfRef = React.useRef<HTMLDivElement | null>(null);
   const { selectedDocument, stage } = useAdobeDocContext();
+  const divRef = React.useRef<HTMLDivElement | null>(null);
   return (
     <Flex
       direction="column"
       marginX="32px"
       UNSAFE_style={{ paddingTop: "16px", paddingBottom: "16px" }}
     >
-      <DocumentPickers />
+      <DocumentPickers divRef={divRef} />
       <Flex width="100%">
         <Flex
           width="75%"
@@ -526,7 +542,7 @@ export const Annotations = () => {
                 backgroundColor: "rgba(248, 248, 248, 1)",
               }}
             >
-              <QuestionResponse />
+              <QuestionResponse divRef={divRef} />
             </div>
           )}
           <div style={{ position: "absolute", zIndex: 1 }}>
@@ -536,7 +552,7 @@ export const Annotations = () => {
           </div>
         </Flex>
         <Flex width="25%" marginStart="16px">
-          <AnnotationCollection />
+          <AnnotationCollection divRef={divRef} />
         </Flex>
       </Flex>
     </Flex>
