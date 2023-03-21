@@ -1,0 +1,16 @@
+{
+  "name": "annotation-judgements",
+  "version": "1.0.0",
+  "description": "A simple application for judging annotations.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd annotation-app && uvicorn --host 0.0.0.0 main:app --reload\" \"npm run dev --prefix annotation-ui\"",
+    "test": "concurrently \"cd annotation-app && pytest-watch\" \"npm run test --prefix annotation-ui\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
