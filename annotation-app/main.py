@@ -18,7 +18,9 @@ def read_root():
 
 
 @app.get("/documents")
-def another_route() -> dict[str, Any]:
+def another_route(week: str = "") -> dict[str, Any]:
+    if week == "":
+        return DOCUMENTS
     return DOCUMENTS
 
 

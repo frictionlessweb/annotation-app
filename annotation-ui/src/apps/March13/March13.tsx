@@ -21,9 +21,8 @@ import {
   tabFromTopic,
   DocContext,
   progressFromContext,
-  PROGRESS_COMPLETE,
-  saveToLocalStorage,
-} from "./DocumentProvider";
+} from "./March13Provider";
+import { saveToLocalStorage } from '../util/util';
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import Alert from "@spectrum-icons/workflow/Alert";

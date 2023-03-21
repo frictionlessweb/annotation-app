@@ -1,7 +1,8 @@
 import React from "react";
-import { Loading } from "./Loading";
-import { FatalApiError } from "./FatalApiError";
-import assignments from "./assignments.json";
+import { Loading } from "../../components/Loading";
+import { FatalApiError } from "../../components/FatalApiError";
+import { readFromLocalStorage } from '../util/util';
+import assignments from "../../assignments.json";
 
 declare global {
   interface Window {
@@ -31,8 +32,6 @@ type TopicId = string;
 type DocumentId = string;
 
 type AnnotationId = string;
-
-type AnnotationRecord = Record<AnnotationId, boolean | null>;
 
 export type VIEW_TAB = "HIGHLIGHTS" | "ATTRIBUTIONS";
 
@@ -64,7 +63,13 @@ type UserResponses = Record<
 >;
 
 const fetchDocuments = async (): Promise<DocumentCollection> => {
-  const res = await window.fetch("/api/v1/documents", { method: "GET" });
+  const week: string | null = new URLSearchParams(window.location.search).get(
+    "week"
+  );
+  const res = await window.fetch(
+    `/api/v1/documents${week ? `?week=${week}` : ""}`,
+    { method: "GET" }
+  );
   const result = await res.json();
   return result;
 };
@@ -228,22 +233,7 @@ export const progressFromContext = (ctx: DocContext): string => {
   return `${numCompleted}/${total} documents analyzed.`;
 };
 
-export const saveToLocalStorage = (ctx: DocContext) => {
-  const user_name = window.location.pathname.split("/").pop() || "";
-  const responses = { user_name, annotations: ctx.userResponses };
-  window.localStorage.setItem(user_name, JSON.stringify(responses));
-};
-
-const readFromLocalStorage = (): UserResponses | null => {
-  const userName = window.location.pathname.split("/").pop() || "";
-  const data = window.localStorage.getItem(userName);
-  if (typeof data === "string") {
-    return JSON.parse(data).annotations;
-  }
-  return null;
-};
-
-export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
+export const March13Provider = (props: AdobeDocProviderProps) => {
   const apisRef = React.useRef<AdobeApiHandler | null>(null);
   const [state, setState] = React.useState<DocumentState>("LOADING");
   const setDocument = setState as React.Dispatch<

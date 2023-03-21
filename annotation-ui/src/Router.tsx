@@ -1,8 +1,8 @@
+import React from "react";
 import { Route } from "wouter";
 import { LogIn } from "./LogIn";
-import { AdobeDocProvider } from "./DocumentProvider";
-import { Annotations } from "./Annotations";
-import { Flex } from '@adobe/react-spectrum';
+import { AnnotationRouter } from "./apps";
+import { Flex } from "@adobe/react-spectrum";
 
 export const Router = () => {
   return (
@@ -11,10 +11,13 @@ export const Router = () => {
         <LogIn />
       </Route>
       <Route path="/:name">
-        <Flex width='100%' direction="column" data-testid="ANNOTATION_APP" height="100%">
-          <AdobeDocProvider>
-            <Annotations />
-          </AdobeDocProvider>
+        <Flex
+          width="100%"
+          direction="column"
+          data-testid="ANNOTATION_APP"
+          height="100%"
+        >
+          <AnnotationRouter />
         </Flex>
       </Route>
     </>

@@ -31,19 +31,6 @@ export const LogIn = () => {
         </Flex>
         <Flex marginBottom="32px">
           <Picker
-            selectedKey={name}
-            placeholder="Name..."
-            onSelectionChange={(key) => {
-              setName(key as string);
-            }}
-          >
-            {assignments.map((assignment) => {
-              return <Item key={assignment.user}>{assignment.user}</Item>;
-            })}
-          </Picker>
-        </Flex>
-        <Flex marginBottom="32px">
-          <Picker
             selectedKey={week}
             placeholder="Week..."
             onSelectionChange={(key) => {
@@ -52,6 +39,20 @@ export const LogIn = () => {
           >
             {Object.entries(WEEKS).map(([key, display]) => {
               return <Item key={key}>{display}</Item>;
+            })}
+          </Picker>
+        </Flex>
+        <Flex marginBottom="32px">
+          <Picker
+            isDisabled={week === ""}
+            selectedKey={name}
+            placeholder="Name..."
+            onSelectionChange={(key) => {
+              setName(key as string);
+            }}
+          >
+            {assignments.map((assignment) => {
+              return <Item key={assignment.user}>{assignment.user}</Item>;
             })}
           </Picker>
         </Flex>
