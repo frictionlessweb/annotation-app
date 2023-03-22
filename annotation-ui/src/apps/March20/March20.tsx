@@ -159,18 +159,6 @@ export const TaskPicker = () => {
 export const QaTask = () => {
   const ctx = useMarch20();
   const setCtx = useSetMarch20();
-  React.useEffect(() => {
-    setTimeout(() => {
-      setCtx((ctx) => {
-        return produce(ctx, (draft) => {
-          if (draft.selectedDocument === null) return;
-          draft.userResponses[draft.selectedDocument].qaTask.answers[
-            draft.documents[draft.selectedDocument].questions.qaTask[0].id
-          ].visited = true;
-        });
-      });
-    }, 1000);
-  }, [setCtx]);
   const { selectedDocument, documents, userResponses } = ctx;
   if (selectedDocument === null) return null;
   const questions = documents[selectedDocument].questions.qaTask;
@@ -181,6 +169,7 @@ export const QaTask = () => {
   ).filter((value) => value.visited === true).length;
   const currentAnswers =
     userResponses[selectedDocument].qaTask.answers[curQuestion.id].answers;
+  const onLastQuestion = curIndex === questions.length - 1;
   return (
     <Flex direction="column" marginY="16px">
       <Flex
@@ -202,12 +191,6 @@ export const QaTask = () => {
               setCtx((ctx) => {
                 return produce(ctx, (draft) => {
                   ++draft.userResponses[selectedDocument].qaTask.index;
-                  const i = draft.userResponses[selectedDocument].qaTask.index;
-                  const { answers } =
-                    draft.userResponses[selectedDocument].qaTask;
-                  const { id } =
-                    draft.documents[selectedDocument].questions.qaTask[i];
-                  answers[id].visited = true;
                 });
               });
             }}
@@ -251,6 +234,13 @@ export const QaTask = () => {
                       draft.userResponses[selectedDocument].qaTask.answers[
                         curQuestion.id
                       ].answers[answer.index] = change;
+                      const notOnLastQuestion =
+                        curQuestion.id !== questions[questions.length - 1].id;
+                      if (notOnLastQuestion) {
+                        draft.userResponses[selectedDocument].qaTask.answers[
+                          curQuestion.id
+                        ].visited = true;
+                      }
                     });
                     saveToLocalStorage(newCtx);
                     setCtx(newCtx);
@@ -262,6 +252,24 @@ export const QaTask = () => {
             );
           })}
         </Flex>
+        {onLastQuestion ? (
+          <Flex marginTop="16px" justifyContent="end">
+            <Button
+              onPress={() => {
+                const newCtx = produce(ctx, (draft) => {
+                  draft.userResponses[selectedDocument].qaTask.answers[
+                    curQuestion.id
+                  ].visited = true;
+                });
+                saveToLocalStorage(newCtx);
+                setCtx(newCtx);
+              }}
+              variant="primary"
+            >
+              Finish QA
+            </Button>
+          </Flex>
+        ) : null}
       </Flex>
     </Flex>
   );
