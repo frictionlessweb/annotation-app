@@ -8,17 +8,19 @@ import {
   Item,
   Divider,
   Button,
+  Checkbox,
 } from "@adobe/react-spectrum";
 import {
   useMarch20,
   useSetMarch20,
   SelectedTab,
   TASK_TAB_MAP,
+  QA_ANSWERS,
 } from "./March20Provider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import produce from "immer";
-import { DEFAULT_VIEW_CONFIG } from "../util/util";
+import { DEFAULT_VIEW_CONFIG, saveToLocalStorage } from "../util/util";
 
 const PDF_ID = "PDF_DOCUMENT";
 
@@ -94,9 +96,119 @@ export const TaskPicker = () => {
   );
 };
 
+export const QaTask = () => {
+  const ctx = useMarch20();
+  const setCtx = useSetMarch20();
+  React.useEffect(() => {
+    setTimeout(() => {
+      setCtx((ctx) => {
+        return produce(ctx, (draft) => {
+          if (draft.selectedDocument === null) return;
+          draft.userResponses[draft.selectedDocument].qaTask.answers[
+            draft.documents[draft.selectedDocument].questions.qaTask[0].id
+          ].visited = true;
+        });
+      });
+    }, 1000);
+  }, [setCtx]);
+  const { selectedDocument, documents, userResponses } = ctx;
+  if (selectedDocument === null) return null;
+  const questions = documents[selectedDocument].questions.qaTask;
+  const curIndex = userResponses[selectedDocument].qaTask.index;
+  const curQuestion = questions[curIndex];
+  const numCompleted = Object.values(
+    userResponses[selectedDocument].qaTask.answers
+  ).filter((value) => value.visited === true).length;
+  const currentAnswers =
+    userResponses[selectedDocument].qaTask.answers[curQuestion.id].answers;
+  return (
+    <Flex direction="column" marginY="16px">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        marginBottom="16px"
+      >
+        <Flex>
+          <Text>
+            {numCompleted}/{questions.length} completed
+          </Text>
+        </Flex>
+        <Flex>
+          <Button
+            isDisabled={curIndex === questions.length - 1}
+            variant="secondary"
+            marginEnd="16px"
+            onPress={() => {
+              setCtx((ctx) => {
+                return produce(ctx, (draft) => {
+                  ++draft.userResponses[selectedDocument].qaTask.index;
+                  const i = draft.userResponses[selectedDocument].qaTask.index;
+                  const { answers } =
+                    draft.userResponses[selectedDocument].qaTask;
+                  const { id } =
+                    draft.documents[selectedDocument].questions.qaTask[i];
+                  answers[id].visited = true;
+                });
+              });
+            }}
+          >
+            Next
+          </Button>
+          <Button
+            isDisabled={curIndex === 0}
+            onPress={() => {
+              setCtx((ctx) => {
+                return produce(ctx, (draft) => {
+                  --draft.userResponses[selectedDocument].qaTask.index;
+                });
+              });
+            }}
+            variant="secondary"
+          >
+            Previous
+          </Button>
+        </Flex>
+      </Flex>
+      <Flex direction="column">
+        <Text UNSAFE_style={{ fontWeight: "bold" }}>Question</Text>
+        <Text UNSAFE_style={{ marginBottom: "16px" }}>
+          {curQuestion.question}
+        </Text>
+        <Text UNSAFE_style={{ fontWeight: "bold" }}>Answer</Text>
+        <Text UNSAFE_style={{ marginBottom: "16px" }}>
+          {curQuestion.answer}
+        </Text>
+        <Text UNSAFE_style={{ fontWeight: "bold" }}>Choose All That Apply</Text>
+        <Flex direction="column">
+          {QA_ANSWERS.map((answer) => {
+            return (
+              <Flex key={answer.text} alignItems="center">
+                <Checkbox
+                  onChange={(change) => {
+                    const newCtx = produce(ctx, (draft) => {
+                      if (draft.selectedDocument === null) return;
+                      const { selectedDocument } = draft;
+                      draft.userResponses[selectedDocument].qaTask.answers[
+                        curQuestion.id
+                      ].answers[answer.index] = change;
+                    });
+                    saveToLocalStorage(newCtx);
+                    setCtx(newCtx);
+                  }}
+                  isSelected={currentAnswers[answer.index] === true}
+                />
+                <Text>{answer.text}</Text>
+              </Flex>
+            );
+          })}
+        </Flex>
+      </Flex>
+    </Flex>
+  );
+};
+
 export const TaskForTextAndId = () => {
   const ctx = useMarch20();
-  console.log(ctx);
   const { selectedTab, selectedDocument, documents, userResponses } = ctx;
   const setCtx = useSetMarch20();
   const questionTask = TASK_TAB_MAP[selectedTab].task as
@@ -106,14 +218,12 @@ export const TaskForTextAndId = () => {
   if (selectedDocument === null) return null;
   const questions = documents[selectedDocument].questions[questionTask];
   const curIndex = userResponses[selectedDocument][questionTask].index;
-  const curQuestion = userResponses[selectedDocument][questionTask].index;
+  const curQuestion = questions[curIndex];
   const numCompleted = Object.values(
     userResponses[selectedDocument][questionTask].answers
   ).filter((value) => value !== null).length;
   const value =
-    userResponses[selectedDocument][questionTask].answers[
-      questions[curQuestion].id
-    ];
+    userResponses[selectedDocument][questionTask].answers[curQuestion.id];
   return (
     <Flex direction="column" marginY="16px">
       <Flex
@@ -158,19 +268,19 @@ export const TaskForTextAndId = () => {
       </Flex>
       <Flex alignItems="center" justifyContent="space-between">
         <Flex>
-          <Text>{questions[curQuestion].text}</Text>
+          <Text>{curQuestion.text}</Text>
         </Flex>
         <Flex>
           <Flex marginEnd="16px">
             <Button
               onPress={() => {
-                setCtx((ctx) => {
-                  return produce(ctx, (draft) => {
-                    draft.userResponses[selectedDocument][questionTask].answers[
-                      questions[curQuestion].id
-                    ] = true;
-                  });
+                const nextCtx = produce(ctx, (draft) => {
+                  draft.userResponses[selectedDocument][questionTask].answers[
+                    curQuestion.id
+                  ] = true;
                 });
+                saveToLocalStorage(nextCtx);
+                setCtx(nextCtx);
               }}
               variant={value === true ? "primary" : "secondary"}
             >
@@ -180,13 +290,13 @@ export const TaskForTextAndId = () => {
           <Flex>
             <Button
               onPress={() => {
-                setCtx((ctx) => {
-                  return produce(ctx, (draft) => {
-                    draft.userResponses[selectedDocument][questionTask].answers[
-                      questions[curQuestion].id
-                    ] = false;
-                  });
+                const nextVal = produce(ctx, (draft) => {
+                  draft.userResponses[selectedDocument][questionTask].answers[
+                    curQuestion.id
+                  ] = false;
                 });
+                saveToLocalStorage(nextVal);
+                setCtx(nextVal);
               }}
               variant={value === false ? "primary" : "secondary"}
             >
@@ -207,7 +317,7 @@ export const TaskCore = () => {
   if (selectedTab !== "QA_TASK") {
     return <TaskForTextAndId />;
   }
-  return <p>Write me</p>;
+  return <QaTask />;
 };
 
 export const Tasks = () => {

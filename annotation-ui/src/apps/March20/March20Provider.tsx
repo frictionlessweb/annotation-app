@@ -214,6 +214,19 @@ const fetchDocumentsEffect: EffectThunk<Week20Context> = (setState) => () => {
 const { Provider, useSetValue, useValue } =
   generateProviders<Week20Context>(fetchDocumentsEffect);
 
+export const QA_ANSWERS = [
+  { text: "The answer does not answer the question", index: 0 },
+  {
+    text: "The answer contains information that is not in the document, without indicating that is the case",
+    index: 1,
+  },
+  {
+    text: "The answer contains made up content (not true, not in the document)",
+    index: 2,
+  },
+  { text: "The answer is good", index: 3 },
+];
+
 export const March20Provider = Provider;
 export const useSetMarch20 = useSetValue;
 export const useMarch20 = useValue;
