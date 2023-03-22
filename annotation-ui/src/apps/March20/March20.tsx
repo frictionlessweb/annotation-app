@@ -16,16 +16,37 @@ import {
   SelectedTab,
   TASK_TAB_MAP,
   QA_ANSWERS,
+  countCompletedDocuments,
 } from "./March20Provider";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import produce from "immer";
+import { ToastQueue } from "@react-spectrum/toast";
 import { DEFAULT_VIEW_CONFIG, saveToLocalStorage } from "../util/util";
 
 const PDF_ID = "PDF_DOCUMENT";
 
 const Progress = () => {
-  return <Text>Write me!</Text>;
+  const ctx = useMarch20();
+  const numDocuments = Object.keys(ctx.documents).length;
+  const completedDocumentCount: number = countCompletedDocuments(ctx);
+  React.useEffect(() => {
+    if (completedDocumentCount === 0) return;
+    try {
+      ToastQueue.positive("Progress saved successfully.");
+    } catch (err) {
+      ToastQueue.negative(
+        "An error occurred. Please refresh the page and try again."
+      );
+    }
+  }, [completedDocumentCount]);
+  return (
+    <Flex alignItems="end">
+      <Text>{`${countCompletedDocuments(
+        ctx
+      )} / ${numDocuments} documents complete.`}</Text>
+    </Flex>
+  );
 };
 
 const DocumentPickers = () => {

@@ -188,10 +188,6 @@ export interface Week20Context {
   userResponses: UserResponses;
 }
 
-interface ProviderProps {
-  children: React.ReactNode;
-}
-
 const fetchDocumentsEffect: EffectThunk<Week20Context> = (setState) => () => {
   const getDocuments = async () => {
     try {
@@ -230,3 +226,22 @@ export const QA_ANSWERS = [
 export const March20Provider = Provider;
 export const useSetMarch20 = useSetValue;
 export const useMarch20 = useValue;
+
+const isCompleteRecord = (record: ResponseRecord): boolean => {
+  return Object.values(record).every((value) => value !== null);
+};
+
+const allQuestionsSeen = (qaTask: QaQuestionResponse): boolean => {
+  return Object.values(qaTask.answers).every((val) => val.visited === true);
+};
+
+export const countCompletedDocuments = (ctx: Week20Context): number => {
+  const docIds = Object.keys(ctx.documents);
+  return docIds.filter((docId) => {
+    const userResponses = ctx.userResponses[docId];
+    if (!isCompleteRecord(userResponses.questionTask)) return false;
+    if (!isCompleteRecord(userResponses.statementsTask)) return false;
+    if (!isCompleteRecord(userResponses.topicTask)) return false;
+    return allQuestionsSeen(userResponses.qaTask);
+  }).length;
+};
