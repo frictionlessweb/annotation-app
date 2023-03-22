@@ -1,7 +1,9 @@
-import React from "react";
-import { Loading } from "../../components/Loading";
-import { FatalApiError } from "../../components/FatalApiError";
-import { readFromLocalStorage } from '../util/util';
+import {
+  fetchDocuments,
+  readFromLocalStorage,
+  GenericDocumentCollection,
+  generateProviders,
+} from "../util/util";
 import assignments from "../../assignments.json";
 
 declare global {
@@ -9,22 +11,6 @@ declare global {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     AdobeDC?: any;
   }
-}
-
-export interface AdobeApiHandler {
-  locationApis: {
-    gotoLocation: (
-      page: number,
-      xCoordinate: number,
-      yCoordinate: number
-    ) => Promise<void>;
-  };
-  annotationApis: {
-    getAnnotations: () => Promise<Array<unknown>>;
-    addAnnotations: (array: Array<any>) => Promise<void>;
-    selectAnnotation: (annotation: any) => Promise<void>;
-    removeAnnotationsFromPDF: () => Promise<void>;
-  };
 }
 
 type TopicId = string;
@@ -55,24 +41,12 @@ interface Document {
   >;
 }
 
-type DocumentCollection = Record<string, Document>;
+type DocumentCollection = GenericDocumentCollection<Document>;
 
 type UserResponses = Record<
   DocumentId,
   Record<TopicId, Record<AnnotationId, boolean | null>>
 >;
-
-const fetchDocuments = async (): Promise<DocumentCollection> => {
-  const week: string | null = new URLSearchParams(window.location.search).get(
-    "week"
-  );
-  const res = await window.fetch(
-    `/api/v1/documents${week ? `?week=${week}` : ""}`,
-    { method: "GET" }
-  );
-  const result = await res.json();
-  return result;
-};
 
 const findRelevantDocuments = (
   user: string,
@@ -154,41 +128,12 @@ export interface DocContext {
   documents: DocumentCollection;
   selectedTab: VIEW_TAB;
   selectedAnnotation: null | string;
-  apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
   selectedDocument: null | string;
   selectedTopic: null | string;
   missingAnnotations: Set<string>;
   userResponses: UserResponses;
 }
-
-const AdobeDocContext = React.createContext<DocContext | null>(null);
-
-const UpdateDocContext = React.createContext<React.Dispatch<
-  React.SetStateAction<DocContext>
-> | null>(null);
-
-export const useSetAdobeDoc = () => {
-  const ctx = React.useContext(UpdateDocContext);
-  if (ctx === null) {
-    throw new Error("Please use the setAdobeDoc inside of its provider.");
-  }
-  return ctx;
-};
-
-export const useAdobeDocContext = (): DocContext => {
-  const ctx = React.useContext(AdobeDocContext);
-  if (ctx === null) {
-    throw new Error("Please use useAdobeDocContext inside of its provider.");
-  }
-  return ctx;
-};
-
-interface AdobeDocProviderProps {
-  children: React.ReactNode;
-}
-
-type DocumentState = "LOADING" | "FAILURE" | DocContext;
 
 export const annotationsFromContext = (
   context: DocContext
@@ -233,20 +178,14 @@ export const progressFromContext = (ctx: DocContext): string => {
   return `${numCompleted}/${total} documents analyzed.`;
 };
 
-export const March13Provider = (props: AdobeDocProviderProps) => {
-  const apisRef = React.useRef<AdobeApiHandler | null>(null);
-  const [state, setState] = React.useState<DocumentState>("LOADING");
-  const setDocument = setState as React.Dispatch<
-    React.SetStateAction<DocContext>
-  >;
-  React.useEffect(() => {
+const fetchDocumentsEffect =
+  (setState: (doc: DocContext | "LOADING" | "FAILURE") => void) => () => {
     const getDocuments = async () => {
       try {
-        const rawDocuments = await fetchDocuments();
+        const rawDocuments = await fetchDocuments<Document>();
         const userName = window.location.pathname.split("/").pop() || "";
         const documents = findRelevantDocuments(userName, rawDocuments);
         setState({
-          apis: apisRef,
           documents,
           selectedDocument: null,
           selectedTopic: null,
@@ -262,21 +201,11 @@ export const March13Provider = (props: AdobeDocProviderProps) => {
       }
     };
     getDocuments();
-  }, [setState]);
-  const { children } = props;
-  switch (state) {
-    case "LOADING": {
-      return <Loading />;
-    }
-    case "FAILURE": {
-      return <FatalApiError />;
-    }
-  }
-  return (
-    <UpdateDocContext.Provider value={setDocument}>
-      <AdobeDocContext.Provider value={state}>
-        {children}
-      </AdobeDocContext.Provider>
-    </UpdateDocContext.Provider>
-  );
-};
+  };
+
+const { Provider, useSetValue, useValue } =
+  generateProviders(fetchDocumentsEffect);
+
+export const March13Provider = Provider;
+export const useSetAdobeDoc = useSetValue as () => React.Dispatch<React.SetStateAction<DocContext>>;
+export const useAdobeDocContext = useValue as () => DocContext;

@@ -1,110 +1,142 @@
 import React from "react";
-import { Loading } from "../../components/Loading";
-import { FatalApiError } from "../../components/FatalApiError";
-import assignments from "../../assignments.json";
+import { Text } from "@adobe/react-spectrum";
+import {
+  generateProviders,
+  fetchDocuments,
+  readFromLocalStorage,
+  EffectThunk,
+} from "../util/util";
 
-export interface AdobeApiHandler {
-  locationApis: {
-    gotoLocation: (
-      page: number,
-      xCoordinate: number,
-      yCoordinate: number
-    ) => Promise<void>;
-  };
-  annotationApis: {
-    getAnnotations: () => Promise<Array<unknown>>;
-    addAnnotations: (array: Array<any>) => Promise<void>;
-    selectAnnotation: (annotation: any) => Promise<void>;
-    removeAnnotationsFromPDF: () => Promise<void>;
-  };
-}
-
-type TopicId = string;
-
-type DocumentId = string;
-
-type AnnotationId = string;
-
-export type VIEW_TAB = "HIGHLIGHTS" | "ATTRIBUTIONS";
-
-export interface HasId {
+interface TextAndId {
   id: string;
-  [otherVar: string | number]: any;
-}
-
-export interface ApiAnnotation {
   text: string;
-  annotation: HasId;
 }
 
-interface Document {
+type ResponseRecord = Record<string, boolean | null>;
+
+// TOPIC TASK
+export const TOPIC_TASK_INSTRUCTIONS = (
+  <>
+    <Text marginBottom="16px">
+      Relevant topics characterize the type of document, the type of content
+      discussed in the document or is an important keyword discussed in the
+      document.
+    </Text>
+    <Text>
+      For each topic consider: Is the topic relevant to the content in the
+      document?
+    </Text>
+  </>
+);
+
+// QUESTION TASK
+export const QUESTION_TASK_INSTRUCTIONS = (
+  <>
+    <Text>
+      The follwoing are suggested questions that can be answered by content
+      covered in the document.
+    </Text>
+    <Text>For each question consider:</Text>
+    <ul>
+      <li>Does the question bring up important document content?</li>
+      <li>
+        Does the question bring up document content you find important but had
+        not focused on before?
+      </li>
+    </ul>
+  </>
+);
+
+// STATEMENTS TASK
+export const STATEMENTS_TASK_INSTRUCTIONS = (
+  <>
+    <Text>
+      The following are statements related to content covered in the document.
+    </Text>
+    <Text>For each statement consider:</Text>
+    <ul>
+      <li>Does the statement bring up important document content?</li>
+      <li>
+        Does the statement bring up document content you find important but had
+        not focused on before?
+      </li>
+    </ul>
+  </>
+);
+
+// Q&A TASK
+export const QA_TASK_INSTRUCTIONS = (
+  <Text>
+    The following are question and answer pairs. For each pair, choose all that
+    apply.
+  </Text>
+);
+
+interface QaQuestionPrompt {
+  question: string;
+  answers: TextAndId[];
+}
+
+type QaQuestionResponse = Record<string, boolean | null>;
+
+interface Week20Document {
   pdf_url: string;
   title: string;
-  highlights: Record<TopicId, ApiAnnotation[]>;
-  attributions: Record<
-    TopicId,
-    { statement: string; annotations: ApiAnnotation[] }
-  >;
+  questions: {
+    topicTask: TextAndId[];
+    questionTask: TextAndId[];
+    statementsTask: TextAndId[];
+    qaTask: QaQuestionPrompt[];
+  };
 }
 
-type DocumentCollection = Record<string, Document>;
-
-type UserResponses = Record<
-  DocumentId,
-  Record<TopicId, Record<AnnotationId, boolean | null>>
->;
-
-const fetchDocuments = async (): Promise<DocumentCollection> => {
-  const week: string | null = new URLSearchParams(window.location.search).get(
-    "week"
-  );
-  const res = await window.fetch(
-    `/api/v1/documents${week ? `?week=${week}` : ""}`,
-    { method: "GET" }
-  );
-  const result = await res.json();
-  return result;
-};
-
-export interface DocContext {
+interface Week20Response {
+  topicTask: ResponseRecord;
+  questionTask: ResponseRecord;
+  statementsTask: ResponseRecord;
+  qaTask: QaQuestionResponse;
 }
 
-const AdobeDocContext = React.createContext<DocContext | null>(null);
+type Documents = Record<string, Week20Document>;
 
-const UpdateDocContext = React.createContext<React.Dispatch<
-  React.SetStateAction<DocContext>
-> | null>(null);
+type UserResponses = Record<string, Week20Response>;
 
-export const useSetAdobeDoc = () => {
-  const ctx = React.useContext(UpdateDocContext);
-  if (ctx === null) {
-    throw new Error("Please use the setAdobeDoc inside of its provider.");
-  }
-  return ctx;
+export const userResponsesFromDocuments = (docs: Documents): UserResponses => {
+  const out: UserResponses = {};
+  return out;
 };
 
-export const useAdobeDocContext = (): DocContext => {
-  const ctx = React.useContext(AdobeDocContext);
-  if (ctx === null) {
-    throw new Error("Please use useAdobeDocContext inside of its provider.");
-  }
-  return ctx;
-};
+export interface Week20Context {
+  selectedDocument: string | null;
+  documents: Documents;
+  userResponses: UserResponses;
+}
 
-interface AdobeDocProviderProps {
+interface ProviderProps {
   children: React.ReactNode;
 }
 
-type DocumentState = "LOADING" | "FAILURE" | DocContext;
-
-const getLocalStorageKey = (): string => {
+const fetchDocumentsEffect: EffectThunk<Week20Context> = (setState) => () => {
+  const getDocuments = async () => {
+    try {
+      // TODO: Filter out the documents by the appropriate assignment.
+      const documents: Documents = await fetchDocuments();
+      setState({
+        documents,
+        selectedDocument: null,
+        userResponses:
+          readFromLocalStorage() || userResponsesFromDocuments(documents),
+      });
+    } catch (err) {
+      setState("ERROR");
+    }
+  };
+  getDocuments();
 };
 
-export const saveToLocalStorage = (ctx: DocContext) => {
-};
+const { Provider, useSetValue, useValue } =
+  generateProviders<Week20Context>(fetchDocumentsEffect);
 
-export const readFromLocalStorage = (): UserResponses | null => {
-};
-
-export const March13Provider = (props: AdobeDocProviderProps) => {
-};
+export const March20Provider = Provider;
+export const useSetMarch20 = useSetValue;
+export const useMarch20 = useValue;

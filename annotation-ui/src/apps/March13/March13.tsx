@@ -22,7 +22,7 @@ import {
   DocContext,
   progressFromContext,
 } from "./March13Provider";
-import { saveToLocalStorage } from '../util/util';
+import { saveToLocalStorage, apis } from "../util/util";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import Alert from "@spectrum-icons/workflow/Alert";
@@ -53,7 +53,7 @@ const selectTopic = async (
   ctx: DocContext
 ) => {
   if (ctx.selectedDocument === null) return;
-  const { selectedDocument, apis } = ctx;
+  const { selectedDocument } = ctx;
   try {
     await apis.current?.annotationApis.removeAnnotationsFromPDF();
   } catch (err) {
@@ -132,7 +132,6 @@ const Instructions = () => {
 const Highlights = () => {
   const ctx = useAdobeDocContext();
   const setDoc = useSetAdobeDoc();
-  const { apis } = ctx;
   const annotations = annotationsFromContext(ctx);
   return (
     <>
@@ -491,16 +490,11 @@ const DocumentPickers = () => {
               },
             };
           });
+          apis.current = { annotationApis: manager, locationApis: curApis };
           selectTopic(setDoc, "Generic Highlights", {
             ...ctx,
             selectedDocument: key as string,
             selectedTopic: "Generic Highlights",
-            apis: {
-              current: {
-                annotationApis: manager,
-                locationApis: curApis,
-              },
-            },
           });
         }}
       >
