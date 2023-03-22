@@ -16,7 +16,7 @@ test("We can map a document to questions", () => {
             text: "Reappointment",
           },
           {
-            id: "2",
+            id: "3",
             text: "Employment",
           },
         ],
@@ -40,19 +40,19 @@ test("We can map a document to questions", () => {
             text: "The sky is blue.",
           },
           {
-            id: "6",
+            id: "7",
             text: "Clouds are white.",
           },
         ],
         qaTask: [
           {
-            id: "7",
+            id: "8",
             question:
               "How do teens view the impact of social media on their generation?",
             answer: "Teens have a mixed view.",
           },
           {
-            id: "8",
+            id: "9",
             question: "What are the most popular Ruby frameworks?",
             answer: "Ruby on Rails is very popular. So is Sinatra.",
           },
@@ -64,25 +64,39 @@ test("We can map a document to questions", () => {
   const expected = {
     lease_app: {
       questionTask: {
-        "3": null,
-        "4": null,
+        index: 0,
+        answers: {
+          "3": null,
+          "4": null,
+        },
       },
       statementsTask: {
-        "5": null,
-        "6": null,
+        index: 0,
+        answers: {
+          "5": null,
+          "6": null,
+          "7": null,
+        },
       },
       topicTask: {
-        "1": null,
-        "2": null,
+        index: 0,
+        answers: {
+          "1": null,
+          "2": null,
+          "3": null,
+        },
       },
       qaTask: {
-        "7": {
-          visited: false,
-          answers: [false, false, false, false],
-        },
-        "8": {
-          visited: false,
-          answers: [false, false, false, false],
+        index: 0,
+        answers: {
+          "8": {
+            visited: false,
+            answers: [false, false, false, false],
+          },
+          "9": {
+            visited: false,
+            answers: [false, false, false, false],
+          },
         },
       },
     },

@@ -5,7 +5,7 @@
     "topicTask": [
       { "id": "1", "text": "Content Filters" },
       { "id": "2", "text": "Reappointment" },
-      { "id": "2", "text": "Employment" }
+      { "id": "3", "text": "Employment" }
     ],
     "questionTask": [
       {
@@ -20,16 +20,16 @@
     "statementsTask": [
       { "id": "5", "text": "Apples are red." },
       { "id": "6", "text": "The sky is blue." },
-      { "id": "6", "text": "Clouds are white." }
+      { "id": "7", "text": "Clouds are white." }
     ],
     "qaTask": [
       {
-        "id": "7",
+        "id": "8",
         "question": "How do teens view the impact of social media on their generation?",
         "answer": "Teens have a mixed view."
       },
       {
-        "id": "8",
+        "id": "9",
         "question": "What are the most popular Ruby frameworks?",
         "answer": "Ruby on Rails is very popular. So is Sinatra."
       }

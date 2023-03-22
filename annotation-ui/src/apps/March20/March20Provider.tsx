@@ -12,7 +12,10 @@ interface TextAndId {
   text: string;
 }
 
-type ResponseRecord = Record<string, boolean | null>;
+interface ResponseRecord {
+  index: number;
+  answers: Record<string, boolean | null>;
+}
 
 // TOPIC TASK
 export const TOPIC_TASK_INSTRUCTIONS = (
@@ -78,11 +81,13 @@ interface QaQuestionPrompt {
   answer: string;
 }
 
-type QaQuestionResponse = Record<
-  string,
-  { visited: boolean; answers: [boolean, boolean, boolean, boolean] }
->;
-
+interface QaQuestionResponse {
+  index: number;
+  answers: Record<
+    string,
+    { visited: boolean; answers: [boolean, boolean, boolean, boolean] }
+  >;
+}
 interface Week20Document {
   pdf_url: string;
   title: string;
@@ -106,9 +111,12 @@ type Documents = Record<string, Week20Document>;
 type UserResponses = Record<string, Week20Response>;
 
 export const textIdToResponse = (textId: TextAndId[]): ResponseRecord => {
-  const responses: ResponseRecord = {};
+  const responses: ResponseRecord = {
+    index: 0,
+    answers: {},
+  };
   for (const el of textId) {
-    responses[el.id] = null;
+    responses.answers[el.id] = null;
   }
   return responses;
 };
@@ -116,9 +124,12 @@ export const textIdToResponse = (textId: TextAndId[]): ResponseRecord => {
 export const qaQuestionsToResponse = (
   qaTask: QaQuestionPrompt[]
 ): QaQuestionResponse => {
-  const response: QaQuestionResponse = {};
+  const response: QaQuestionResponse = {
+    index: 0,
+    answers: {},
+  };
   for (const task of qaTask) {
-    response[task.id] = {
+    response.answers[task.id] = {
       visited: false,
       answers: [false, false, false, false],
     };
@@ -148,21 +159,25 @@ export const userResponsesFromDocuments = (docs: Documents): UserResponses => {
 export const TASK_TAB_MAP = {
   TOPIC_TASK: {
     display: "Topics",
+    task: "topicTask",
     instructions: TOPIC_TASK_INSTRUCTIONS,
   },
   QUESTION_TASK: {
     display: "Questions",
+    task: "questionTask",
     instructions: QUESTION_TASK_INSTRUCTIONS,
   },
-  STATEMENT_TASK: {
+  STATEMENTS_TASK: {
     display: "Statements",
+    task: "statementsTask",
     instructions: STATEMENTS_TASK_INSTRUCTIONS,
   },
   QA_TASK: {
     display: "Q&A",
+    task: "qaTask",
     instructions: QA_TASK_INSTRUCTIONS,
   },
-};
+} as const;
 
 export type SelectedTab = keyof typeof TASK_TAB_MAP;
 

@@ -1,11 +1,23 @@
 import React from "react";
-import { Flex, Text, Picker, Tabs, TabList, Item } from "@adobe/react-spectrum";
+import {
+  Flex,
+  Text,
+  Picker,
+  Tabs,
+  TabList,
+  Item,
+  Divider,
+  Button,
+} from "@adobe/react-spectrum";
 import {
   useMarch20,
   useSetMarch20,
   SelectedTab,
   TASK_TAB_MAP,
 } from "./March20Provider";
+import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
+import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
+import produce from "immer";
 import { DEFAULT_VIEW_CONFIG } from "../util/util";
 
 const PDF_ID = "PDF_DOCUMENT";
@@ -82,14 +94,120 @@ export const TaskPicker = () => {
   );
 };
 
+export const TaskForTextAndId = () => {
+  const ctx = useMarch20();
+  console.log(ctx);
+  const { selectedTab, selectedDocument, documents, userResponses } = ctx;
+  const setCtx = useSetMarch20();
+  const questionTask = TASK_TAB_MAP[selectedTab].task as
+    | "topicTask"
+    | "questionTask"
+    | "statementsTask";
+  if (selectedDocument === null) return null;
+  const questions = documents[selectedDocument].questions[questionTask];
+  const curIndex = userResponses[selectedDocument][questionTask].index;
+  const curQuestion = userResponses[selectedDocument][questionTask].index;
+  const numCompleted = Object.values(
+    userResponses[selectedDocument][questionTask].answers
+  ).filter((value) => value !== null).length;
+  const value =
+    userResponses[selectedDocument][questionTask].answers[
+      questions[curQuestion].id
+    ];
+  return (
+    <Flex direction="column" marginY="16px">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        marginBottom="16px"
+      >
+        <Flex>
+          <Text>
+            {numCompleted}/{questions.length} completed
+          </Text>
+        </Flex>
+        <Flex>
+          <Button
+            isDisabled={curIndex === questions.length - 1}
+            variant="secondary"
+            marginEnd="16px"
+            onPress={() => {
+              setCtx((ctx) => {
+                return produce(ctx, (draft) => {
+                  ++draft.userResponses[selectedDocument][questionTask].index;
+                });
+              });
+            }}
+          >
+            Next
+          </Button>
+          <Button
+            isDisabled={curIndex === 0}
+            onPress={() => {
+              setCtx((ctx) => {
+                return produce(ctx, (draft) => {
+                  --draft.userResponses[selectedDocument][questionTask].index;
+                });
+              });
+            }}
+            variant="secondary"
+          >
+            Previous
+          </Button>
+        </Flex>
+      </Flex>
+      <Flex alignItems="center" justifyContent="space-between">
+        <Flex>
+          <Text>{questions[curQuestion].text}</Text>
+        </Flex>
+        <Flex>
+          <Flex marginEnd="16px">
+            <Button
+              onPress={() => {
+                setCtx((ctx) => {
+                  return produce(ctx, (draft) => {
+                    draft.userResponses[selectedDocument][questionTask].answers[
+                      questions[curQuestion].id
+                    ] = true;
+                  });
+                });
+              }}
+              variant={value === true ? "primary" : "secondary"}
+            >
+              <ThumbsUp />
+            </Button>
+          </Flex>
+          <Flex>
+            <Button
+              onPress={() => {
+                setCtx((ctx) => {
+                  return produce(ctx, (draft) => {
+                    draft.userResponses[selectedDocument][questionTask].answers[
+                      questions[curQuestion].id
+                    ] = false;
+                  });
+                });
+              }}
+              variant={value === false ? "primary" : "secondary"}
+            >
+              <ThumbsDown />
+            </Button>
+          </Flex>
+        </Flex>
+      </Flex>
+    </Flex>
+  );
+};
+
 export const TaskCore = () => {
   const { documents, selectedDocument, selectedTab } = useMarch20();
   if (selectedDocument === null) {
     return null;
   }
-  const curDoc = documents[selectedDocument];
-  const { questions } = curDoc;
-  return <h1>Write me</h1>;
+  if (selectedTab !== "QA_TASK") {
+    return <TaskForTextAndId />;
+  }
+  return <p>Write me</p>;
 };
 
 export const Tasks = () => {
@@ -103,6 +221,7 @@ export const Tasks = () => {
       <Flex direction="column" marginY="16px">
         {TASK_TAB_MAP[selectedTab].instructions}
       </Flex>
+      <Divider size="S" />
       <TaskCore />
     </Flex>
   );
