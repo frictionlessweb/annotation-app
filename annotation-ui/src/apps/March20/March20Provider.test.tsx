@@ -1,4 +1,7 @@
-import { userResponsesFromDocuments } from "./March20Provider";
+import {
+  userResponsesFromDocuments,
+  isCompleteRecord,
+} from "./March20Provider";
 
 test("We can map a document to questions", () => {
   const input = {
@@ -102,4 +105,28 @@ test("We can map a document to questions", () => {
     },
   };
   expect(actual).toEqual(expected);
+});
+
+test("We can check if we've completed everything in an annotation record - is complete", () => {
+  const actual = isCompleteRecord({
+    index: 0,
+    answers: {
+      3: true,
+      4: false,
+    },
+  });
+  const expected = true;
+  expect(expected).toEqual(actual);
+});
+
+test("We can check if we've completed everything in an annotation record - not complete", () => {
+  const actual = isCompleteRecord({
+    index: 0,
+    answers: {
+      3: null,
+      4: false,
+    },
+  });
+  const expected = false;
+  expect(expected).toEqual(actual);
 });

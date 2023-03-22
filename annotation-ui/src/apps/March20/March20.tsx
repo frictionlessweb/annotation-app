@@ -257,9 +257,14 @@ export const QaTask = () => {
             <Button
               onPress={() => {
                 const newCtx = produce(ctx, (draft) => {
-                  draft.userResponses[selectedDocument].qaTask.answers[
-                    curQuestion.id
-                  ].visited = true;
+                  const answerKeys = Object.keys(
+                    draft.userResponses[selectedDocument].qaTask.answers
+                  );
+                  for (const answerKey of answerKeys) {
+                    draft.userResponses[selectedDocument].qaTask.answers[
+                      answerKey
+                    ].visited = true;
+                  }
                 });
                 saveToLocalStorage(newCtx);
                 setCtx(newCtx);

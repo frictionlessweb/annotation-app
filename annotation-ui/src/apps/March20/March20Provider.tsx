@@ -227,8 +227,8 @@ export const March20Provider = Provider;
 export const useSetMarch20 = useSetValue;
 export const useMarch20 = useValue;
 
-const isCompleteRecord = (record: ResponseRecord): boolean => {
-  return Object.values(record).every((value) => value !== null);
+export const isCompleteRecord = (record: ResponseRecord): boolean => {
+  return Object.values(record.answers).every((value) => value !== null);
 };
 
 const allQuestionsSeen = (qaTask: QaQuestionResponse): boolean => {
