@@ -5,10 +5,11 @@ import {
   Picker,
   Tabs,
   TabList,
-  Item,
   Divider,
   Button,
   Checkbox,
+  ActionGroup,
+  Item,
 } from "@adobe/react-spectrum";
 import {
   useMarch20,
@@ -183,33 +184,33 @@ export const QaTask = () => {
           </Text>
         </Flex>
         <Flex>
-          <Button
-            isDisabled={curIndex === questions.length - 1}
-            variant="secondary"
-            marginEnd="16px"
-            onPress={() => {
-              setCtx((ctx) => {
-                return produce(ctx, (draft) => {
-                  ++draft.userResponses[selectedDocument].qaTask.index;
+          <Flex>
+            <ActionGroup
+              density="compact"
+              onAction={(key) => {
+                setCtx((ctx) => {
+                  return produce(ctx, (draft) => {
+                    const idx =
+                      draft.userResponses[selectedDocument].qaTask.index;
+                    if (
+                      key === "NEXT" &&
+                      idx <
+                        draft.documents[selectedDocument].questions.qaTask
+                          .length -
+                          1
+                    ) {
+                      draft.userResponses[selectedDocument].qaTask.index += 1;
+                    } else if (key === "PREVIOUS" && idx > 0) {
+                      draft.userResponses[selectedDocument].qaTask.index -= 1;
+                    }
+                  });
                 });
-              });
-            }}
-          >
-            Next
-          </Button>
-          <Button
-            isDisabled={curIndex === 0}
-            onPress={() => {
-              setCtx((ctx) => {
-                return produce(ctx, (draft) => {
-                  --draft.userResponses[selectedDocument].qaTask.index;
-                });
-              });
-            }}
-            variant="secondary"
-          >
-            Previous
-          </Button>
+              }}
+            >
+              <Item key="PREVIOUS">Previous</Item>
+              <Item key="NEXT">Next</Item>
+            </ActionGroup>
+          </Flex>
         </Flex>
       </Flex>
       <Flex direction="column">
@@ -310,37 +311,39 @@ export const TaskForTextAndId = () => {
           </Text>
         </Flex>
         <Flex>
-          <Button
-            isDisabled={curIndex === questions.length - 1}
-            variant="secondary"
-            marginEnd="16px"
-            onPress={() => {
+          <ActionGroup
+            density="compact"
+            onAction={(key) => {
               setCtx((ctx) => {
                 return produce(ctx, (draft) => {
-                  ++draft.userResponses[selectedDocument][questionTask].index;
+                  const idx =
+                    draft.userResponses[selectedDocument][questionTask].index;
+                  if (
+                    key === "NEXT" &&
+                    idx <
+                      draft.documents[selectedDocument].questions[questionTask]
+                        .length -
+                        1
+                  ) {
+                    draft.userResponses[selectedDocument][
+                      questionTask
+                    ].index += 1;
+                  } else if (key === "PREVIOUS" && idx > 0) {
+                    draft.userResponses[selectedDocument][
+                      questionTask
+                    ].index -= 1;
+                  }
                 });
               });
             }}
           >
-            Next
-          </Button>
-          <Button
-            isDisabled={curIndex === 0}
-            onPress={() => {
-              setCtx((ctx) => {
-                return produce(ctx, (draft) => {
-                  --draft.userResponses[selectedDocument][questionTask].index;
-                });
-              });
-            }}
-            variant="secondary"
-          >
-            Previous
-          </Button>
+            <Item key="PREVIOUS">Previous</Item>
+            <Item key="NEXT">Next</Item>
+          </ActionGroup>
         </Flex>
       </Flex>
-      <Flex alignItems="center" justifyContent="space-between">
-        <Flex>
+      <Flex direction="column">
+        <Flex marginBottom="16px">
           <Text>{curQuestion.text}</Text>
         </Flex>
         <Flex>
@@ -383,7 +386,7 @@ export const TaskForTextAndId = () => {
 };
 
 export const TaskCore = () => {
-  const { documents, selectedDocument, selectedTab } = useMarch20();
+  const { selectedDocument, selectedTab } = useMarch20();
   if (selectedDocument === null) {
     return null;
   }
@@ -401,10 +404,10 @@ export const Tasks = () => {
   return (
     <Flex direction="column">
       <TaskPicker />
-      <Flex direction="column" marginY="16px">
+      <Flex direction="column" marginY="32px">
         {TASK_TAB_MAP[selectedTab].instructions}
       </Flex>
-      <Divider size="S" />
+      <Divider size="S" marginBottom="24px" />
       <TaskCore />
     </Flex>
   );
