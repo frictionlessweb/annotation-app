@@ -142,6 +142,19 @@ export function generateProviders<T>(effectThunk: EffectThunk<T>) {
   return { Provider, useValue, useSetValue };
 }
 
+export const downloadJson = (json: object) => {
+  const element = document.createElement("a");
+  const textFile = new Blob([JSON.stringify(json)], {
+    type: "text/plain",
+  });
+  element.href = URL.createObjectURL(textFile);
+  element.download = "annotations.json";
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+};
+
+
 export const DEFAULT_VIEW_CONFIG = {
   embedMode: "FULL_WINDOW",
   showDownloadPDF: false,

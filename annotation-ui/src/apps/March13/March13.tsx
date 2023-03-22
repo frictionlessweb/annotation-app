@@ -22,7 +22,12 @@ import {
   DocContext,
   progressFromContext,
 } from "./March13Provider";
-import { saveToLocalStorage, apis, DEFAULT_VIEW_CONFIG } from "../util/util";
+import {
+  saveToLocalStorage,
+  apis,
+  DEFAULT_VIEW_CONFIG,
+  downloadJson,
+} from "../util/util";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import Alert from "@spectrum-icons/workflow/Alert";
@@ -309,18 +314,6 @@ const AnnotationJudger = () => {
       <Highlights />
     </Flex>
   );
-};
-
-const downloadJson = (json: object) => {
-  const element = document.createElement("a");
-  const textFile = new Blob([JSON.stringify(json)], {
-    type: "text/plain",
-  });
-  element.href = URL.createObjectURL(textFile);
-  element.download = "annotations.json";
-  document.body.appendChild(element);
-  element.click();
-  document.body.removeChild(element);
 };
 
 const Progress = () => {

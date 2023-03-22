@@ -22,7 +22,11 @@ import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import produce from "immer";
 import { ToastQueue } from "@react-spectrum/toast";
-import { DEFAULT_VIEW_CONFIG, saveToLocalStorage } from "../util/util";
+import {
+  DEFAULT_VIEW_CONFIG,
+  saveToLocalStorage,
+  downloadJson,
+} from "../util/util";
 
 const PDF_ID = "PDF_DOCUMENT";
 
@@ -30,21 +34,56 @@ const Progress = () => {
   const ctx = useMarch20();
   const numDocuments = Object.keys(ctx.documents).length;
   const completedDocumentCount: number = countCompletedDocuments(ctx);
+  const [savedCount, setSavedCount] = React.useState(completedDocumentCount);
   React.useEffect(() => {
-    if (completedDocumentCount === 0) return;
-    try {
-      ToastQueue.positive("Progress saved successfully.");
-    } catch (err) {
-      ToastQueue.negative(
-        "An error occurred. Please refresh the page and try again."
-      );
-    }
-  }, [completedDocumentCount]);
+    const handleMessageChange = async () => {
+      if (completedDocumentCount === savedCount) return;
+      try {
+        const user_name = window.location.pathname.split("/").pop();
+        const responses = ctx.userResponses;
+        const requestBodyObject = { user_name, annotations: responses };
+        const body = JSON.stringify(requestBodyObject);
+        const res = await window.fetch("/api/v1/save-session", {
+          method: "POST",
+          body,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        if (res.ok) {
+          ToastQueue.positive("Saved progress successfully.", {
+            timeout: 10,
+          });
+          downloadJson(requestBodyObject);
+          setSavedCount(completedDocumentCount);
+        } else {
+          console.log(res);
+          throw new Error("REQUEST_FAILED");
+        }
+      } catch (err) {
+        ToastQueue.negative(
+          "An error occurred. Please refresh the page and try again.",
+          { timeout: 10 }
+        );
+      }
+    };
+    handleMessageChange();
+  }, [ctx.userResponses, setSavedCount, savedCount, completedDocumentCount]);
   return (
-    <Flex alignItems="end">
-      <Text>{`${countCompletedDocuments(
+    <Flex alignItems="end" marginTop="8px">
+      <Text marginEnd="16px" marginBottom="8px">{`${countCompletedDocuments(
         ctx
       )} / ${numDocuments} documents complete.`}</Text>
+      <Button
+        onPress={() => {
+          saveToLocalStorage(ctx);
+          const user_name = window.location.pathname.split("/").pop();
+          downloadJson({ user_name, annotations: ctx.userResponses });
+        }}
+        variant="primary"
+      >
+        Save Progress as JSON
+      </Button>
     </Flex>
   );
 };
