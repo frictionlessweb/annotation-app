@@ -33,7 +33,7 @@ export const TOPIC_TASK_INSTRUCTIONS = (
 export const QUESTION_TASK_INSTRUCTIONS = (
   <>
     <Text>
-      The follwoing are suggested questions that can be answered by content
+      The following are suggested questions that can be answered by content
       covered in the document.
     </Text>
     <Text>For each question consider:</Text>
@@ -146,10 +146,22 @@ export const userResponsesFromDocuments = (docs: Documents): UserResponses => {
 };
 
 export const TASK_TAB_MAP = {
-  TOPIC_TASK: "Topics",
-  QUESTION_TASK: "Questions",
-  STATEMENT_TASK: "Statements",
-  QA_TASK: "Q&A Task",
+  TOPIC_TASK: {
+    display: "Topics",
+    instructions: TOPIC_TASK_INSTRUCTIONS,
+  },
+  QUESTION_TASK: {
+    display: "Questions",
+    instructions: QUESTION_TASK_INSTRUCTIONS,
+  },
+  STATEMENT_TASK: {
+    display: "Statements",
+    instructions: STATEMENTS_TASK_INSTRUCTIONS,
+  },
+  QA_TASK: {
+    display: "Q&A",
+    instructions: QA_TASK_INSTRUCTIONS,
+  },
 };
 
 export type SelectedTab = keyof typeof TASK_TAB_MAP;

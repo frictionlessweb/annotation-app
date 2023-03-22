@@ -75,7 +75,7 @@ export const TaskPicker = () => {
     >
       <TabList>
         {Object.entries(TASK_TAB_MAP).map(([key, display]) => {
-          return <Item key={key}>{display}</Item>;
+          return <Item key={key}>{display.display}</Item>;
         })}
       </TabList>
     </Tabs>
@@ -93,13 +93,16 @@ export const TaskCore = () => {
 };
 
 export const Tasks = () => {
-  const { selectedDocument } = useMarch20();
+  const { selectedDocument, selectedTab } = useMarch20();
   if (selectedDocument === null) {
     return <Text>Please select a document to begin answering quesitons.</Text>;
   }
   return (
     <Flex direction="column">
       <TaskPicker />
+      <Flex direction="column" marginY="16px">
+        {TASK_TAB_MAP[selectedTab].instructions}
+      </Flex>
       <TaskCore />
     </Flex>
   );
