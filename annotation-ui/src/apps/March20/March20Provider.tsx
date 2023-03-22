@@ -145,8 +145,18 @@ export const userResponsesFromDocuments = (docs: Documents): UserResponses => {
   return out;
 };
 
+export const TASK_TAB_MAP = {
+  TOPIC_TASK: "Topics",
+  QUESTION_TASK: "Questions",
+  STATEMENT_TASK: "Statements",
+  QA_TASK: "Q&A Task",
+};
+
+export type SelectedTab = keyof typeof TASK_TAB_MAP;
+
 export interface Week20Context {
   selectedDocument: string | null;
+  selectedTab: SelectedTab;
   documents: Documents;
   userResponses: UserResponses;
 }
@@ -162,6 +172,7 @@ const fetchDocumentsEffect: EffectThunk<Week20Context> = (setState) => () => {
       const documents: Documents = await fetchDocuments();
       setState({
         documents,
+        selectedTab: "TOPIC_TASK",
         selectedDocument: null,
         userResponses:
           readFromLocalStorage() || userResponsesFromDocuments(documents),
