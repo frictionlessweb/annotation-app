@@ -4,12 +4,20 @@ import json
 
 DIRNAME = path.dirname(path.realpath(__file__))
 
-DOCUMENT_FILENAME_LIST = [
-    Path(file).stem for file in listdir("assets") if file.endswith("json")
-]
 
-DOCUMENTS = {}
+def create_document_json(subdirectory: str = ""):
+    documents = {}
+    subdir = "assets" if subdirectory == "" else path.join("assets", subdirectory)
+    document_filename_list = [
+        Path(file).stem for file in listdir(subdir) if file.endswith("json")
+    ]
+    for document in document_filename_list:
+        with open(path.join(DIRNAME, subdir, f"{document}.json")) as the_document:
+            documents[document] = json.load(the_document)
+    return documents
 
-for document in DOCUMENT_FILENAME_LIST:
-    with open(path.join(DIRNAME, "assets", f"{document}.json")) as the_document:
-        DOCUMENTS[document] = json.load(the_document)
+
+DOCUMENT_MAP = {
+    "MARCH_13": create_document_json(),
+    "MARCH_20": create_document_json("MARCH_20"),
+}

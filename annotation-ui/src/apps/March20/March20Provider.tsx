@@ -73,11 +73,15 @@ export const QA_TASK_INSTRUCTIONS = (
 );
 
 interface QaQuestionPrompt {
+  id: string;
   question: string;
-  answers: TextAndId[];
+  answer: string;
 }
 
-type QaQuestionResponse = Record<string, boolean | null>;
+type QaQuestionResponse = Record<
+  string,
+  { visited: boolean; answers: [boolean, boolean, boolean, boolean] }
+>;
 
 interface Week20Document {
   pdf_url: string;
@@ -101,8 +105,43 @@ type Documents = Record<string, Week20Document>;
 
 type UserResponses = Record<string, Week20Response>;
 
+export const textIdToResponse = (textId: TextAndId[]): ResponseRecord => {
+  const responses: ResponseRecord = {};
+  for (const el of textId) {
+    responses[el.id] = null;
+  }
+  return responses;
+};
+
+export const qaQuestionsToResponse = (
+  qaTask: QaQuestionPrompt[]
+): QaQuestionResponse => {
+  const response: QaQuestionResponse = {};
+  for (const task of qaTask) {
+    response[task.id] = {
+      visited: false,
+      answers: [false, false, false, false],
+    };
+  }
+  return response;
+};
+
 export const userResponsesFromDocuments = (docs: Documents): UserResponses => {
   const out: UserResponses = {};
+  const documentIds = Object.keys(docs);
+  for (const docId of documentIds) {
+    const doc = docs[docId];
+    const {
+      questions: { qaTask, questionTask, statementsTask, topicTask },
+    } = doc;
+    const userResponse: Week20Response = {
+      questionTask: textIdToResponse(questionTask),
+      statementsTask: textIdToResponse(statementsTask),
+      topicTask: textIdToResponse(topicTask),
+      qaTask: qaQuestionsToResponse(qaTask),
+    };
+    out[docId] = userResponse;
+  }
   return out;
 };
 

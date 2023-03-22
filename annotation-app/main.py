@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from documents import DOCUMENTS
+from documents import DOCUMENT_MAP
 from typing import Any
 from database import SessionLocal
 from sqlalchemy.orm import Session
@@ -19,9 +19,7 @@ def read_root():
 
 @app.get("/documents")
 def another_route(week: str = "") -> dict[str, Any]:
-    if week == "":
-        return DOCUMENTS
-    return DOCUMENTS
+    return DOCUMENT_MAP.get(week, DOCUMENT_MAP["MARCH_13"])
 
 
 class SessionState(BaseModel):

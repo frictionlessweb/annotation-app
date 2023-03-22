@@ -141,3 +141,13 @@ export function generateProviders<T>(effectThunk: EffectThunk<T>) {
   };
   return { Provider, useValue, useSetValue };
 }
+
+export const DEFAULT_VIEW_CONFIG = {
+  embedMode: "FULL_WINDOW",
+  showDownloadPDF: false,
+  showFullScreen: false,
+  showPrintPDF: false,
+  enableAnnotationAPIs: true,
+  showCommentsPanel: false,
+  showToolsOnTextSelection: false,
+} as const;

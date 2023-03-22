@@ -22,7 +22,7 @@ import {
   DocContext,
   progressFromContext,
 } from "./March13Provider";
-import { saveToLocalStorage, apis } from "../util/util";
+import { saveToLocalStorage, apis, DEFAULT_VIEW_CONFIG } from "../util/util";
 import ThumbsUp from "@spectrum-icons/workflow/ThumbUpOutline";
 import ThumbsDown from "@spectrum-icons/workflow/ThumbDownOutline";
 import Alert from "@spectrum-icons/workflow/Alert";
@@ -396,16 +396,6 @@ interface AdobeAnnotationSelectedEvent {
   type: "ANNOTATION_SELECTED";
   data: HasId;
 }
-
-const DEFAULT_VIEW_CONFIG = {
-  embedMode: "FULL_WINDOW",
-  showDownloadPDF: false,
-  showFullScreen: false,
-  showPrintPDF: false,
-  enableAnnotationAPIs: true,
-  showCommentsPanel: false,
-  showToolsOnTextSelection: false,
-} as const;
 
 const DocumentPickers = () => {
   const ctx = useAdobeDocContext();

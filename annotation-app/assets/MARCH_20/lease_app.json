@@ -1,0 +1,38 @@
+{
+  "title": "lease_app",
+  "pdf_url": "/api/v1/static/MARCH_20/lease_app.pdf",
+  "questions": {
+    "topicTask": [
+      { "id": "1", "text": "Content Filters" },
+      { "id": "2", "text": "Reappointment" },
+      { "id": "2", "text": "Employment" }
+    ],
+    "questionTask": [
+      {
+        "id": "3",
+        "text": "What is your favorite color?"
+      },
+      {
+        "id": "4",
+        "text": "What is the square root of 4?"
+      }
+    ],
+    "statementsTask": [
+      { "id": "5", "text": "Apples are red." },
+      { "id": "6", "text": "The sky is blue." },
+      { "id": "6", "text": "Clouds are white." }
+    ],
+    "qaTask": [
+      {
+        "id": "7",
+        "question": "How do teens view the impact of social media on their generation?",
+        "answer": "Teens have a mixed view."
+      },
+      {
+        "id": "8",
+        "question": "What are the most popular Ruby frameworks?",
+        "answer": "Ruby on Rails is very popular. So is Sinatra."
+      }
+    ]
+  }
+}
