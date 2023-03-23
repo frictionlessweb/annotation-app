@@ -201,6 +201,7 @@ const fetchDocumentsEffect: EffectThunk<Week20Context> = (setState) => () => {
           readFromLocalStorage() || userResponsesFromDocuments(documents),
       });
     } catch (err) {
+      console.error(err);
       setState("ERROR");
     }
   };
