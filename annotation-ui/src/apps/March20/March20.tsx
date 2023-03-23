@@ -171,6 +171,13 @@ export const QaTask = () => {
   const currentAnswers =
     userResponses[selectedDocument].qaTask.answers[curQuestion.id].answers;
   const onLastQuestion = curIndex === questions.length - 1;
+  const disabledKeys = [];
+  if (curIndex === questions.length - 1) {
+    disabledKeys.push("NEXT");
+  }
+  if (curIndex === 0) {
+    disabledKeys.push("PREVIOUS");
+  }
   return (
     <Flex direction="column" marginY="16px">
       <Flex
@@ -187,6 +194,7 @@ export const QaTask = () => {
           <Flex>
             <ActionGroup
               density="compact"
+              disabledKeys={disabledKeys}
               onAction={(key) => {
                 setCtx((ctx) => {
                   return produce(ctx, (draft) => {
@@ -298,6 +306,13 @@ export const TaskForTextAndId = () => {
   ).filter((value) => value !== null).length;
   const value =
     userResponses[selectedDocument][questionTask].answers[curQuestion.id];
+  const disabledKeys = [];
+  if (curIndex === questions.length - 1) {
+    disabledKeys.push("NEXT");
+  }
+  if (curIndex === 0) {
+    disabledKeys.push("PREVIOUS");
+  }
   return (
     <Flex direction="column" marginY="16px">
       <Flex
@@ -313,6 +328,7 @@ export const TaskForTextAndId = () => {
         <Flex>
           <ActionGroup
             density="compact"
+            disabledKeys={disabledKeys}
             onAction={(key) => {
               setCtx((ctx) => {
                 return produce(ctx, (draft) => {
