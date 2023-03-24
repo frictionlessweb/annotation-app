@@ -149,9 +149,13 @@ export const TaskPicker = () => {
       }}
     >
       <TabList>
-        {Object.entries(TASK_TAB_MAP).map(([key, display]) => {
-          return <Item key={key}>{display.display}</Item>;
-        })}
+        {[...Object.entries(TASK_TAB_MAP)]
+          .sort((a, b) => {
+            return a[1].order < b[1].order ? -1 : 1;
+          })
+          .map(([key, display]) => {
+            return <Item key={key}>{display.display}</Item>;
+          })}
       </TabList>
     </Tabs>
   );

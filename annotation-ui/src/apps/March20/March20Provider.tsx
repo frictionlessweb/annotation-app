@@ -163,21 +163,25 @@ export const TASK_TAB_MAP = {
     display: "Topics",
     task: "topicTask",
     instructions: TOPIC_TASK_INSTRUCTIONS,
+    order: 0,
   },
   STATEMENTS_TASK: {
     display: "Statements",
     task: "statementsTask",
     instructions: STATEMENTS_TASK_INSTRUCTIONS,
+    order: 1,
   },
   QUESTION_TASK: {
     display: "Questions",
     task: "questionTask",
     instructions: QUESTION_TASK_INSTRUCTIONS,
+    order: 2,
   },
   QA_TASK: {
     display: "Q&A",
     task: "qaTask",
     instructions: QA_TASK_INSTRUCTIONS,
+    order: 3,
   },
 } as const;
 
