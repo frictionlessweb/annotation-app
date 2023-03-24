@@ -364,7 +364,17 @@ export const TaskForTextAndId = () => {
       </Flex>
       <Flex direction="column">
         <Flex marginBottom="16px">
-          <Text>{curQuestion.text}</Text>
+          <Text>
+            <pre
+              style={{
+                fontFamily: "inherit",
+                whiteSpace: "pre-wrap",
+                maxWidth: "450px",
+              }}
+            >
+              {curQuestion.text}
+            </pre>
+          </Text>
         </Flex>
         <Flex>
           <Flex marginEnd="16px">
