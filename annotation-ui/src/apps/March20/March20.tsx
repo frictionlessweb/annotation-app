@@ -228,11 +228,27 @@ export const QaTask = () => {
       <Flex direction="column">
         <Text UNSAFE_style={{ fontWeight: "bold" }}>Question</Text>
         <Text UNSAFE_style={{ marginBottom: "16px" }}>
-          {curQuestion.question}
+          <pre
+            style={{
+              fontFamily: "inherit",
+              whiteSpace: "pre-wrap",
+              maxWidth: "450px",
+            }}
+          >
+            {curQuestion.question}
+          </pre>
         </Text>
         <Text UNSAFE_style={{ fontWeight: "bold" }}>Answer</Text>
         <Text UNSAFE_style={{ marginBottom: "16px" }}>
-          {curQuestion.answer}
+          <pre
+            style={{
+              fontFamily: "inherit",
+              whiteSpace: "pre-wrap",
+              maxWidth: "450px",
+            }}
+          >
+            {curQuestion.answer}
+          </pre>
         </Text>
         <Text UNSAFE_style={{ fontWeight: "bold" }}>Choose All That Apply</Text>
         <Flex direction="column">
