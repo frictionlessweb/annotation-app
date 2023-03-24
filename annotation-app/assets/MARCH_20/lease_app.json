@@ -40,7 +40,7 @@
         "system": "gpt_retrieval"
       }
     ],
-    "qaTasl": [
+    "qaTask": [
       {
         "id": 6,
         "question": "What are the different types of accounts that can be established to save money for education?",

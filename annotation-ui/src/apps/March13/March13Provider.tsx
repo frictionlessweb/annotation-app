@@ -3,8 +3,9 @@ import {
   readFromLocalStorage,
   GenericDocumentCollection,
   generateProviders,
+  findRelevantDocuments,
 } from "../util/util";
-import assignments from "../../assignments.json";
+import assignments from "../../march13.json";
 
 declare global {
   interface Window {
@@ -47,19 +48,6 @@ type UserResponses = Record<
   DocumentId,
   Record<TopicId, Record<AnnotationId, boolean | null>>
 >;
-
-const findRelevantDocuments = (
-  user: string,
-  documents: DocumentCollection
-): DocumentCollection => {
-  const assignment = assignments.find((assignment) => assignment.user === user);
-  if (assignment === undefined) return documents;
-  const out: DocumentCollection = {};
-  for (const document of assignment.documents) {
-    out[document] = documents[document];
-  }
-  return out;
-};
 
 export const userResponsesFromDocuments = (
   documents: DocumentCollection
@@ -184,7 +172,7 @@ const fetchDocumentsEffect =
       try {
         const rawDocuments = await fetchDocuments<Document>();
         const userName = window.location.pathname.split("/").pop() || "";
-        const documents = findRelevantDocuments(userName, rawDocuments);
+        const documents = findRelevantDocuments(userName, rawDocuments, assignments);
         setState({
           documents,
           selectedDocument: null,

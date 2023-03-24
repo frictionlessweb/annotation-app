@@ -154,6 +154,24 @@ export const downloadJson = (json: object) => {
   document.body.removeChild(element);
 };
 
+interface Assignment {
+  user: string;
+  documents: string[];
+}
+
+export function findRelevantDocuments<T>(
+  user: string,
+  documents: GenericDocumentCollection<T>,
+  assignments: Assignment[]
+): GenericDocumentCollection<T> {
+  const assignment = assignments.find((assignment) => assignment.user === user);
+  if (assignment === undefined) return documents;
+  const out: GenericDocumentCollection<T> = {};
+  for (const document of assignment.documents) {
+    out[document] = documents[document];
+  }
+  return out;
+}
 
 export const DEFAULT_VIEW_CONFIG = {
   embedMode: "FULL_WINDOW",

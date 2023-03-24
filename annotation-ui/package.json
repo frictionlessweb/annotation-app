@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "test": "jest",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@adobe/react-spectrum": "^3.25.1",

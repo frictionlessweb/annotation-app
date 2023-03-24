@@ -5,7 +5,9 @@ import {
   fetchDocuments,
   readFromLocalStorage,
   EffectThunk,
+  findRelevantDocuments,
 } from "../util/util";
+import assignments from "../../march20.json";
 
 interface TextAndId {
   id: string;
@@ -191,8 +193,13 @@ export interface Week20Context {
 const fetchDocumentsEffect: EffectThunk<Week20Context> = (setState) => () => {
   const getDocuments = async () => {
     try {
-      // TODO: Filter out the documents by the appropriate assignment.
-      const documents: Documents = await fetchDocuments();
+      const rawDocuments = await fetchDocuments<Week20Document>();
+      const userName = window.location.pathname.split("/").pop() || "";
+      const documents = findRelevantDocuments<Week20Document>(
+        userName,
+        rawDocuments,
+        assignments
+      );
       setState({
         documents,
         selectedTab: "TOPIC_TASK",
