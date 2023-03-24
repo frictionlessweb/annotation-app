@@ -164,15 +164,15 @@ export const TASK_TAB_MAP = {
     task: "topicTask",
     instructions: TOPIC_TASK_INSTRUCTIONS,
   },
-  QUESTION_TASK: {
-    display: "Questions",
-    task: "questionTask",
-    instructions: QUESTION_TASK_INSTRUCTIONS,
-  },
   STATEMENTS_TASK: {
     display: "Statements",
     task: "statementsTask",
     instructions: STATEMENTS_TASK_INSTRUCTIONS,
+  },
+  QUESTION_TASK: {
+    display: "Questions",
+    task: "questionTask",
+    instructions: QUESTION_TASK_INSTRUCTIONS,
   },
   QA_TASK: {
     display: "Q&A",
