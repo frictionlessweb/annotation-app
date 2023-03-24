@@ -7,6 +7,8 @@ import {
   Heading,
   View,
   Button,
+  Tabs,
+  TabList,
 } from "@adobe/react-spectrum";
 import { ToastQueue } from "@react-spectrum/toast";
 import {
@@ -14,6 +16,9 @@ import {
   useSetAdobeDoc,
   Annotation as AnnotationObject,
   DocContext,
+  SelectedTab,
+  SELECTED_TAB_MAP,
+  UserSearch,
 } from "./DocumentProvider";
 import produce from "immer";
 import Editor, { ContentEditableEvent } from "react-simple-wysiwyg";
@@ -38,6 +43,66 @@ const sortAnnotations = (a: AnnotationObject, b: AnnotationObject): number => {
   const aPage: number = a.page;
   const bPage: number = b.page;
   return aPage < bPage ? -1 : 1;
+};
+
+interface SearchListProps {
+  currentSearches: UserSearch[];
+  divRef: React.MutableRefObject<HTMLDivElement | null>;
+}
+
+const SearchList = (props: SearchListProps) => {
+  const { currentSearches, divRef } = props;
+  const ctx = useAdobeDocContext();
+  const setCtx = useSetAdobeDoc();
+  return (
+    <div
+      ref={divRef}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        overflowY: "scroll",
+        maxHeight: "550px",
+      }}
+    >
+      {[...currentSearches]
+        .sort((a, b) => (a.id < b.id ? -1 : 1))
+        .map((search) => {
+          const isSelected = search.id === ctx.selectedSearch;
+          return (
+            <div
+              key={search.id}
+              onClick={() => {
+                setCtx((prevCtx) => {
+                  return {
+                    ...prevCtx,
+                    selectedSearch: search.id,
+                  };
+                });
+              }}
+            >
+              <View
+                paddingX="size-100"
+                paddingY="size-25"
+                marginBottom="size-160"
+                borderStartColor={isSelected ? "chartreuse-400" : undefined}
+                borderStartWidth={isSelected ? "thick" : undefined}
+                key={search.id}
+              >
+                <Flex
+                  width="100%"
+                  justifyContent="space-between"
+                  alignItems="end"
+                >
+                  <Flex direction="column">
+                    <p>{search.searchedText}</p>
+                  </Flex>
+                </Flex>
+              </View>
+            </div>
+          );
+        })}
+    </div>
+  );
 };
 
 const AnnotationList = (props: AnnotationListProps) => {
@@ -129,12 +194,62 @@ const AnnotationRouter = (props: HasDivRef) => {
   return <AnnotationList divRef={divRef} annotations={curAnnotations} />;
 };
 
+const SearchRouter = (props: HasDivRef) => {
+  const { divRef } = props;
+  const ctx = useAdobeDocContext();
+  const { selectedDocument, searches } = ctx;
+  if (selectedDocument === null) {
+    return <Text>Please select a document in order to view searches.</Text>;
+  }
+  const curSearches = searches[selectedDocument];
+  if (curSearches.length <= 0) {
+    return <Text>Please search for text.</Text>;
+  }
+  return (
+    <SearchList divRef={divRef} currentSearches={searches[selectedDocument]} />
+  );
+};
+
+const UserInteractionPicker = () => {
+  const ctx = useAdobeDocContext();
+  const setCtx = useSetAdobeDoc();
+  return (
+    <Tabs
+      aria-label="Tabs"
+      selectedKey={ctx.selectedTab}
+      onSelectionChange={(key) => {
+        setCtx((prevCtx) => {
+          return {
+            ...prevCtx,
+            selectedTab: key as SelectedTab,
+          };
+        });
+      }}
+      marginY="16px"
+    >
+      <TabList>
+        {[...Object.entries(SELECTED_TAB_MAP)]
+          .sort((a, b) => {
+            return a[1].order < b[1].order ? -1 : 1;
+          })
+          .map(([key, { display }]) => {
+            return <Item key={key}>{display}</Item>;
+          })}
+      </TabList>
+    </Tabs>
+  );
+};
+
 const AnnotationCollection = (props: HasDivRef) => {
+  const { selectedTab } = useAdobeDocContext();
   const { divRef } = props;
   return (
     <Flex direction="column">
-      <Heading level={3}>Annotations</Heading>
-      <AnnotationRouter divRef={divRef} />
+      <UserInteractionPicker />
+      {selectedTab === "ANNOTATIONS" ? (
+        <AnnotationRouter divRef={divRef} />
+      ) : null}
+      {selectedTab === "SEARCHES" ? <SearchRouter divRef={divRef} /> : null}
     </Flex>
   );
 };
@@ -177,6 +292,14 @@ interface AdobeAnnotationDeletedEvent {
         quadPoints: Array<number>;
       };
     };
+  };
+}
+
+interface AdobeSearchEvent {
+  type: "TEXT_SEARCH";
+  data: {
+    searchedText: string;
+    fileName: string;
   };
 }
 
@@ -328,6 +451,7 @@ const changeDocumentId = async (
               };
               draft.annotations[draft.selectedDocument].push(newAnnotation);
               draft.selectedAnnotation = added.data.id;
+              draft.selectedTab = "ANNOTATIONS";
             });
           });
           divRef.current?.scroll({
@@ -341,12 +465,36 @@ const changeDocumentId = async (
           setDoc((prevDoc) => {
             return produce(prevDoc, (draft) => {
               if (draft.selectedDocument === null) return;
+              draft.selectedTab = "ANNOTATIONS";
               draft.annotations[draft.selectedDocument] = draft.annotations[
                 draft.selectedDocument
               ].filter((annotation) => annotation.id !== deleted.data.id);
             });
           });
           break;
+        }
+        case "TEXT_SEARCH": {
+          const search = event as AdobeSearchEvent;
+          setDoc((prevDoc) => {
+            return produce(prevDoc, (draft) => {
+              if (draft.selectedDocument === null) return;
+              draft.selectedTab = "SEARCHES";
+              const id = draft.searches[draft.selectedDocument].length;
+              draft.searches[draft.selectedDocument].push({
+                id,
+                searchedText: search.data.searchedText,
+              });
+              draft.selectedSearch = id;
+            });
+          });
+          divRef.current?.scroll({
+            top: divRef.current?.scrollHeight,
+            behavior: "smooth",
+          });
+          break;
+        }
+        default: {
+          console.log(event);
         }
       }
     },
@@ -420,7 +568,7 @@ const QuestionResponse = (props: HasDivRef) => {
     (id) => currentResponses[id] === ""
   );
   const saveState = React.useCallback(async () => {
-    const { currentResponses, annotations, documents } = ctx;
+    const { currentResponses, annotations, documents, searches } = ctx;
     if (unfinishedDocuments.length > 0) {
       const nextDoc = unfinishedDocuments[0];
       changeDocumentId(ctx, nextDoc, setDoc, divRef);
@@ -434,6 +582,7 @@ const QuestionResponse = (props: HasDivRef) => {
           documents,
           annotations,
           currentResponses,
+          searches,
         },
       };
       const body = JSON.stringify(requestBodyObject);
@@ -539,7 +688,7 @@ export const Annotations = () => {
                 zIndex: 3,
                 width: "100%",
                 height: "100%",
-                backgroundColor: "rgba(248, 248, 248, 1)",
+                backgroundColor: 'white',
               }}
             >
               <QuestionResponse divRef={divRef} />

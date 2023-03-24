@@ -56,15 +56,36 @@ const fetchDocuments = async (): Promise<DocumentCollection> => {
 
 type STAGE = "CREATING_ANNOTATIONS" | "SUMMARIZING_THOUGHTS";
 
+export const SELECTED_TAB_MAP = {
+  ANNOTATIONS: {
+    order: 0,
+    display: "Annotations",
+  },
+  SEARCHES: {
+    order: 1,
+    display: "Searches",
+  },
+};
+
+export interface UserSearch {
+  id: number;
+  searchedText: string;
+}
+
+export type SelectedTab = keyof typeof SELECTED_TAB_MAP;
+
 export interface DocContext {
   documents: DocumentCollection;
   selectedDocument: string | null;
+  selectedSearch: number | null;
   selectedAnnotation: string | null;
   apis: React.MutableRefObject<AdobeApiHandler | null>;
   currentPage: number;
   annotations: Annotations;
+  searches: Record<string, UserSearch[]>;
   stage: STAGE;
   currentResponses: ResponseMap;
+  selectedTab: SelectedTab;
 }
 
 type DocumentState = "LOADING" | "FAILURE" | DocContext;
@@ -103,10 +124,18 @@ const toAnnotationMap = (documents: DocumentCollection): Annotations => {
   return res;
 };
 
+const toSearchMap = (documents: DocumentCollection): Record<string, UserSearch[]> => {
+  const res: Record<string, UserSearch[]> = {};
+  for (const docId of Object.keys(documents)) {
+    res[docId] = [];
+  }
+  return res;
+};
+
 const toResponseMap = (documents: DocumentCollection): ResponseMap => {
   const res: ResponseMap = {};
   for (const docId of Object.keys(documents)) {
-    res[docId] = '';
+    res[docId] = "";
   }
   return res;
 };
@@ -126,10 +155,13 @@ export const AdobeDocProvider = (props: AdobeDocProviderProps) => {
           documents,
           currentPage: 1,
           selectedDocument: null,
+          selectedSearch: null,
           annotations: toAnnotationMap(documents),
           selectedAnnotation: null,
-          stage: 'CREATING_ANNOTATIONS',
+          stage: "CREATING_ANNOTATIONS",
           currentResponses: toResponseMap(documents),
+          selectedTab: 'ANNOTATIONS',
+          searches: toSearchMap(documents),
         });
       } catch (err) {
         setState("FAILURE");
