@@ -12,6 +12,7 @@ import {
   Cell,
   TableBody,
   Text,
+  Divider,
 } from "@adobe/react-spectrum";
 import Yes from "@spectrum-icons/workflow/CheckmarkCircle";
 import No from "@spectrum-icons/workflow/Cancel";
@@ -21,6 +22,7 @@ import { useLocation } from "wouter";
 import { downloadJson } from "./apps/util/util";
 import MARCH_13 from "./march13.json";
 import MARCH_20 from "./march20.json";
+import { Divide } from "@spectrum-icons/workflow";
 
 const USERS = Array.from(
   new Set(MARCH_13.map((x) => x.user).concat(MARCH_20.map((x) => x.user)))
@@ -132,8 +134,9 @@ export const LogIn = () => {
   }, [name, setLocation, week]);
   return (
     <Flex
+      direction="column"
       width="100%"
-      alignItems="start"
+      alignItems="center"
       justifyContent="center"
       UNSAFE_style={{ padding: "32px" }}
     >
@@ -194,6 +197,7 @@ export const LogIn = () => {
             })}
           </Picker>
         </Flex>
+        <Divider size="S" marginY="32px" />
         {progressUser !== "" ? (
           <Progress user={progressUser} />
         ) : (
