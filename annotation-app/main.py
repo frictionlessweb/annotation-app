@@ -90,13 +90,13 @@ def annotation_week(document_map) -> str | None:
         a_map = document_map[doc_id]
         if not isinstance(a_map, dict):
             return None
-        return "MARCH_13" if "questionTask" in a_map else "MARCH_20"
+        return "MARCH_20" if "questionTask" in a_map else "MARCH_13"
 
 
 def march_20_complete(document_map) -> bool:
     for doc_id in document_map:
         document = document_map[doc_id]
-        print(document)
+
         question_task_complete = complete_record(document["questionTask"])
         if not question_task_complete:
             return False
