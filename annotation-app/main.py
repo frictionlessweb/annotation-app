@@ -77,6 +77,14 @@ def is_march_13(document_map) -> bool:
     return True
 
 
+def complete_record(a_map) -> bool:
+    return all(val == True or val == False for val in a_map["answers"].values())
+
+
+def qa_complete(a_map) -> bool:
+    return all(val["visited"] for val in a_map["answers"].values())
+
+
 def annotation_week(document_map) -> str | None:
     for doc_id in document_map:
         a_map = document_map[doc_id]
@@ -86,7 +94,26 @@ def annotation_week(document_map) -> str | None:
 
 
 def march_20_complete(document_map) -> bool:
-    return False
+    for doc_id in document_map:
+        document = document_map[doc_id]
+
+        question_task_complete = complete_record(document["questionTask"])
+        if not question_task_complete:
+            return False
+
+        statement_task_complete = complete_record(document["statementsTask"])
+        if not statement_task_complete:
+            return False
+
+        topic_task_complete = complete_record(document["topicTask"])
+        if not topic_task_complete:
+            return False
+
+        qa_task_complete = qa_complete(document["qaTask"])
+        if not qa_task_complete:
+            return False
+
+    return True
 
 
 @app.get("/response-by-person")
