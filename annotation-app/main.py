@@ -60,7 +60,7 @@ def get_db():
         db.close()
 
 
-def complete(document_map):
+def march_13_complete(document_map):
     """
     Determine if the document is finished or not.
     """
@@ -106,7 +106,7 @@ def annotation_week(document_map) -> str | None:
         a_map = document_map[doc_id]
         if not isinstance(a_map, dict):
             return None
-    return None
+        return "MARCH_13" if "questionTask" in a_map else "MARCH_20"
 
 
 def is_march_20(document_map) -> bool:
@@ -126,11 +126,23 @@ def user_responses(name: str, db: Session = Depends(get_db)):
     output = []
     responses = db.query(Sessions).filter(Sessions.user_name == name).all()
     for response in responses:
-        print(response.annotations)
-        # if is_march_13(response.annotations) and march_13_complete(response.annotations):
-        #     print("write something")
-        # elif is_march_20(response.annotations):
-        #     print("write something else")
+        week = annotation_week(response.annotations)
+        if week == "MARCH_13":
+            output.append(
+                {
+                    "complete": march_13_complete(response.annotations),
+                    "json": response.annotations,
+                    "week": "March 13th",
+                }
+            )
+        elif week == "MARCH_20":
+            output.append(
+                {
+                    "complete": march_20_complete(response.annotations),
+                    "json": response.annotations,
+                    "week": "March 20th",
+                }
+            )
     return output
 
 
