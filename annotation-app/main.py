@@ -7,31 +7,7 @@ from database import SessionLocal
 from sqlalchemy.orm import Session
 from models import Sessions
 from datetime import datetime
-from uuid import UUID
-
-
-def is_valid_uuid(uuid_to_test, version=4) -> bool:
-    """
-    Check if uuid_to_test is a valid UUID.
-
-     Parameters
-    ----------
-    uuid_to_test : str
-    version : {1, 2, 3, 4}
-
-     Returns
-    -------
-    `True` if uuid_to_test is a valid UUID, otherwise `False`.
-
-     Examples
-    --------
-    """
-    try:
-        uuid_obj = UUID(uuid_to_test, version=version)
-        return True
-    except ValueError:
-        return False
-
+from itertools import groupby
 
 app = FastAPI(root_path="/api/v1")
 app.mount("/static", StaticFiles(directory="assets"), name="static")
@@ -109,40 +85,39 @@ def annotation_week(document_map) -> str | None:
         return "MARCH_13" if "questionTask" in a_map else "MARCH_20"
 
 
-def is_march_20(document_map) -> bool:
-    return False
-
-
-def march_13_complete(document_map) -> bool:
-    return True
-
-
 def march_20_complete(document_map) -> bool:
     return False
 
 
 @app.get("/response-by-person")
 def user_responses(name: str, db: Session = Depends(get_db)):
-    output = []
+    buf = []
     responses = db.query(Sessions).filter(Sessions.user_name == name).all()
     for response in responses:
         week = annotation_week(response.annotations)
         if week == "MARCH_13":
-            output.append(
+            buf.append(
                 {
                     "complete": march_13_complete(response.annotations),
                     "json": response.annotations,
                     "week": "March 13th",
+                    "created_at": response.created_at,
                 }
             )
         elif week == "MARCH_20":
-            output.append(
+            buf.append(
                 {
                     "complete": march_20_complete(response.annotations),
                     "json": response.annotations,
                     "week": "March 20th",
+                    "created_at": response.created_at,
                 }
             )
+    output = []
+    groups = groupby(buf, lambda x: x["week"])
+    for _, group in groups:
+        ordered = sorted(group, key=lambda x: x["created_at"], reverse=True)
+        output.append(ordered[0])
     return output
 
 
