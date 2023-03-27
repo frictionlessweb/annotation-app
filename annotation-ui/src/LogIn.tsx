@@ -83,8 +83,7 @@ const Progress = (props: ProgressProps) => {
     return <FatalApiError />;
   }
   return (
-    <Flex direction="column">
-      <Text marginBottom="16px">Progress for {user}</Text>
+    <Flex direction="column" width={400}>
       {progress.length <= 0 ? (
         <Text>No results.</Text>
       ) : (
@@ -182,6 +181,7 @@ export const LogIn = () => {
           </Button>
         </Flex>
       </Flex>
+      <Divider size="S" marginY="32px" />
       <Flex alignItems="start" height="100%" marginX="32px" direction="column">
         <Heading level={2}>Progress</Heading>
         <Flex marginBottom="32px">
@@ -197,13 +197,12 @@ export const LogIn = () => {
             })}
           </Picker>
         </Flex>
-        <Divider size="S" marginY="32px" />
-        {progressUser !== "" ? (
-          <Progress user={progressUser} />
-        ) : (
-          <Text>Please select a user to see their progress.</Text>
-        )}
       </Flex>
+      {progressUser !== "" ? (
+        <Progress user={progressUser} />
+      ) : (
+        <Text>Please select a user to see their progress.</Text>
+      )}
     </Flex>
   );
 };
