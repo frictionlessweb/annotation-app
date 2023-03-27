@@ -7,6 +7,31 @@ from database import SessionLocal
 from sqlalchemy.orm import Session
 from models import Sessions
 from datetime import datetime
+from uuid import UUID
+
+
+def is_valid_uuid(uuid_to_test, version=4) -> bool:
+    """
+    Check if uuid_to_test is a valid UUID.
+
+     Parameters
+    ----------
+    uuid_to_test : str
+    version : {1, 2, 3, 4}
+
+     Returns
+    -------
+    `True` if uuid_to_test is a valid UUID, otherwise `False`.
+
+     Examples
+    --------
+    """
+    try:
+        uuid_obj = UUID(uuid_to_test, version=version)
+        return True
+    except ValueError:
+        return False
+
 
 app = FastAPI(root_path="/api/v1")
 app.mount("/static", StaticFiles(directory="assets"), name="static")
@@ -66,6 +91,47 @@ def current_database(day: str, db: Session = Depends(get_db)):
         Sessions.created_at < less_than, Sessions.created_at > greater_than
     )
     return results.all()
+
+
+def is_march_13(document_map) -> bool:
+    for doc_id in document_map:
+        a_map = document_map[doc_id]
+        if not isinstance(a_map, dict):
+            return False
+    return True
+
+
+def annotation_week(document_map) -> str | None:
+    for doc_id in document_map:
+        a_map = document_map[doc_id]
+        if not isinstance(a_map, dict):
+            return None
+    return None
+
+
+def is_march_20(document_map) -> bool:
+    return False
+
+
+def march_13_complete(document_map) -> bool:
+    return True
+
+
+def march_20_complete(document_map) -> bool:
+    return False
+
+
+@app.get("/response-by-person")
+def user_responses(name: str, db: Session = Depends(get_db)):
+    output = []
+    responses = db.query(Sessions).filter(Sessions.user_name == name).all()
+    for response in responses:
+        print(response.annotations)
+        # if is_march_13(response.annotations) and march_13_complete(response.annotations):
+        #     print("write something")
+        # elif is_march_20(response.annotations):
+        #     print("write something else")
+    return output
 
 
 @app.post("/save-session")
