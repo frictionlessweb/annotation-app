@@ -1,25 +1,17 @@
 import React from "react";
+import { Flex, Text } from "@adobe/react-spectrum";
 import { Route } from "wouter";
-import { LogIn } from "./LogIn";
-import { AnnotationRouter } from "./apps";
-import { Flex } from "@adobe/react-spectrum";
+import { DocumentRouter } from './DocumentRouter';
 
 export const Router = () => {
   return (
-    <>
+    <Flex direction="column">
       <Route path="/">
-        <LogIn />
+        <Text>Welcome.</Text>
       </Route>
-      <Route path="/:name">
-        <Flex
-          width="100%"
-          direction="column"
-          data-testid="ANNOTATION_APP"
-          height="100%"
-        >
-          <AnnotationRouter />
-        </Flex>
+      <Route path="/:document">
+        <DocumentRouter />
       </Route>
-    </>
+    </Flex>
   );
 };
