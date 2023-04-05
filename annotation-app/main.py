@@ -147,6 +147,10 @@ def user_responses(name: str, db: Session = Depends(get_db)):
         output.append(ordered[0])
     return output
 
+@app.get("/app-responses")
+def all_responses():
+    return Session.query.all()
+
 
 @app.post("/save-session")
 def save_session(state: SessionState, db: Session = Depends(get_db)):
