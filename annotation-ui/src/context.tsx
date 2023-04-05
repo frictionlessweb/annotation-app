@@ -6,22 +6,27 @@ export const STAGE_MAP = {
   INTRO_TASK: {
     order: 0,
     value: "INTRO_TASK",
+    display: "Intro Task",
   },
   INTRO_DOCUMENT: {
     order: 1,
     value: "INTRO_DOCUMENT",
+    display: "Intro Document",
   },
   GENERATED_QUESTIONS: {
     order: 2,
     value: "GENERATED_QUESTIONS",
+    display: "Generated Questions",
   },
   ANSWER_QUALITY: {
     order: 3,
     value: "ANSWER_QUALITY",
+    display: "Answer Quality",
   },
   SUGGESTED_QUESTIONS: {
     order: 4,
     value: "SUGGESTED_QUESTIONS",
+    display: "Suggested Questions",
   },
 } as const;
 
@@ -91,4 +96,20 @@ export const DocumentFetcher = (props: DocumentRouterProps) => {
       );
     }
   }
+};
+
+export const useDocumentContext = (): ApiResult => {
+  const ctx = React.useContext(DocumentContext);
+  if (ctx === null || ctx === "NOT_LOADED" || ctx === "API_ERROR") {
+    throw new Error("Please use useDocumentContext inside its provider.");
+  }
+  return ctx;
+};
+
+export const useSetDoc = () => {
+  const ctx = React.useContext(UpdateDocumentContext);
+  if (ctx === null) {
+    throw new Error("Please use setDocContext inside its provider.");
+  }
+  return ctx;
 };
