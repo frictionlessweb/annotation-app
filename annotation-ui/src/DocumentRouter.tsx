@@ -1,18 +1,8 @@
 import React from "react";
-import {
-  Flex,
-  Button,
-  Picker,
-  Tabs,
-  TabList,
-  Item,
-  Text,
-  Heading,
-  ActionGroup,
-  View,
-} from "@adobe/react-spectrum";
+import { Flex, Text } from "@adobe/react-spectrum";
 import { Loading } from "../src/components/Loading";
 import { FatalApiError } from "../src/components/FatalApiError";
+import { DocumentFetcher } from './context';
 
 export const STAGE_MAP = {
   INTRO_TASK: {
