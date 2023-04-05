@@ -5,14 +5,7 @@ import {
   ProgressBar as SpectrumProgressBar,
 } from "@adobe/react-spectrum";
 import { useDocumentContext, STAGE_MAP } from "../context";
-
-const IntroTask = () => {
-  return (
-    <Flex>
-      <Text>Write me</Text>
-    </Flex>
-  );
-};
+import { IntroTask } from "./IntroTask";
 
 const IntroDocument = () => {
   return (
@@ -46,14 +39,10 @@ const SuggestedQuestions = () => {
   );
 };
 
-const ProgressBar = () => {
-  const ctx = useDocumentContext();
+const Done = () => {
   return (
     <Flex>
-      <SpectrumProgressBar
-        label={STAGE_MAP[ctx.stage].display}
-        value={STAGE_MAP[ctx.stage].order / Object.keys(STAGE_MAP).length}
-      />
+      <Text>You have finished all of the tasks. Thank you!</Text>
     </Flex>
   );
 };
@@ -76,10 +65,27 @@ const StageRouter = () => {
     case "SUGGESTED_QUESTIONS": {
       return <SuggestedQuestions />;
     }
+    case "DONE": {
+      return <Done />;
+    }
     default: {
       throw new Error(`Unexpected stage: ${ctx.stage}`);
     }
   }
+};
+
+const ProgressBar = () => {
+  const ctx = useDocumentContext();
+  return (
+    <Flex maxHeight="30px">
+      <SpectrumProgressBar
+        label={STAGE_MAP[ctx.stage].display}
+        value={
+          100 * (STAGE_MAP[ctx.stage].order / Object.keys(STAGE_MAP).length)
+        }
+      />
+    </Flex>
+  );
 };
 
 export const DocumentForm = () => {
@@ -87,7 +93,9 @@ export const DocumentForm = () => {
     <Flex margin="16px" justifyContent="space-between">
       <ProgressBar />
       <Text>The PDF will go here.</Text>
-      <StageRouter />
+      <Flex maxWidth="400px">
+        <StageRouter />
+      </Flex>
     </Flex>
   );
 };

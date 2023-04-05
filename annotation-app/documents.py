@@ -17,7 +17,4 @@ def create_document_json(subdirectory: str = ""):
     return documents
 
 
-DOCUMENT_MAP = {
-    "MARCH_13": create_document_json(),
-    "MARCH_20": create_document_json("MARCH_20"),
-}
+DOCUMENT_MAP = {}

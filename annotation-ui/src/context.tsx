@@ -4,29 +4,34 @@ import { FatalApiError } from "../src/components/FatalApiError";
 
 export const STAGE_MAP = {
   INTRO_TASK: {
-    order: 0,
+    order: 1,
     value: "INTRO_TASK",
     display: "Intro Task",
   },
   INTRO_DOCUMENT: {
-    order: 1,
+    order: 2,
     value: "INTRO_DOCUMENT",
     display: "Intro Document",
   },
   GENERATED_QUESTIONS: {
-    order: 2,
+    order: 3,
     value: "GENERATED_QUESTIONS",
     display: "Generated Questions",
   },
   ANSWER_QUALITY: {
-    order: 3,
+    order: 4,
     value: "ANSWER_QUALITY",
     display: "Answer Quality",
   },
   SUGGESTED_QUESTIONS: {
-    order: 4,
+    order: 5,
     value: "SUGGESTED_QUESTIONS",
     display: "Suggested Questions",
+  },
+  DONE: {
+    order: 6,
+    value: "DONE",
+    display: "Done",
   },
 } as const;
 
@@ -34,6 +39,13 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
   pdf_url: "",
   image_url: "",
   stage: "INTRO_TASK",
+  user_responses: {
+    INTRO_TASK: {
+      preview_response: "",
+      question_1: "",
+      question_2: "",
+    },
+  },
 };
 
 export type Stage = keyof typeof STAGE_MAP;
@@ -42,6 +54,13 @@ export interface ApiResult {
   pdf_url: string;
   image_url: string;
   stage: Stage;
+  user_responses: {
+    INTRO_TASK: {
+      question_1: string;
+      question_2: string;
+      preview_response: string;
+    };
+  };
 }
 
 export type DocumentState = "NOT_LOADED" | "API_ERROR" | ApiResult;

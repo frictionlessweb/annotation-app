@@ -16,6 +16,9 @@ app.mount("/static", StaticFiles(directory="assets"), name="static")
 def read_root():
     return {"message": "success"}
 
+@app.get("/documents")
+def get_document(id: str):
+    return {}
 
 class SessionState(BaseModel):
     user_name: str
