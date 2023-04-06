@@ -6,22 +6,9 @@ import {
 } from "@adobe/react-spectrum";
 import { useDocumentContext, STAGE_MAP } from "../context";
 import { IntroTask } from "./IntroTask";
-
-const IntroDocument = () => {
-  return (
-    <Flex>
-      <Text>Write me</Text>
-    </Flex>
-  );
-};
-
-const GeneratedQuestions = () => {
-  return (
-    <Flex>
-      <Text>Write me</Text>
-    </Flex>
-  );
-};
+import { IntroDocument } from './IntroDocument';
+import { GeneratedQuestions } from './GeneratedQuestions';
+import { PDF } from './PDF';
 
 const AnswerQuality = () => {
   return (
@@ -92,7 +79,7 @@ export const DocumentForm = () => {
   return (
     <Flex margin="16px" justifyContent="space-between">
       <ProgressBar />
-      <Text>The PDF will go here.</Text>
+      <PDF />
       <Flex maxWidth="400px">
         <StageRouter />
       </Flex>

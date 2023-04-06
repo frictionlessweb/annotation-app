@@ -2,6 +2,49 @@ import React from "react";
 import { Loading } from "../src/components/Loading";
 import { FatalApiError } from "../src/components/FatalApiError";
 
+interface HasId {
+  id: string;
+  [data: string]: unknown;
+}
+
+export const GENERATED_QUESTION_ORDER = [
+  "question_one",
+  "question_two",
+  "question_three",
+] as const;
+
+export interface ApiResult {
+  pdf_url: string;
+  image_url: string;
+  stage: Stage;
+  user_responses: {
+    INTRO_TASK: {
+      question_1: string;
+      question_2: string;
+      preview_response: string;
+    };
+    INTRO_DOCUMENT: {
+      highlights: Array<HasId>;
+    };
+    GENERATED_QUESTIONS: {
+      question_one: {
+        text: string;
+        highlights: HasId[];
+      };
+      question_two: {
+        text: string;
+        highlights: HasId[];
+      };
+      question_three: {
+        text: string;
+        highlights: HasId[];
+      };
+    };
+    current_generated_question: number;
+  };
+  pdfRef: null | any;
+}
+
 export const STAGE_MAP = {
   INTRO_TASK: {
     order: 1,
@@ -36,32 +79,38 @@ export const STAGE_MAP = {
 } as const;
 
 const DEFAULT_DOCUMENT_STATE: ApiResult = {
+  pdfRef: null,
   pdf_url: "",
   image_url: "",
-  stage: "INTRO_TASK",
+  stage: "GENERATED_QUESTIONS",
   user_responses: {
     INTRO_TASK: {
       preview_response: "",
       question_1: "",
       question_2: "",
     },
+    INTRO_DOCUMENT: {
+      highlights: [],
+    },
+    GENERATED_QUESTIONS: {
+      question_one: {
+        text: "Example question one",
+        highlights: [],
+      },
+      question_two: {
+        text: "Example question two",
+        highlights: [],
+      },
+      question_three: {
+        text: "Example question three",
+        highlights: [],
+      },
+    },
+    current_generated_question: 0,
   },
 };
 
 export type Stage = keyof typeof STAGE_MAP;
-
-export interface ApiResult {
-  pdf_url: string;
-  image_url: string;
-  stage: Stage;
-  user_responses: {
-    INTRO_TASK: {
-      question_1: string;
-      question_2: string;
-      preview_response: string;
-    };
-  };
-}
 
 export type DocumentState = "NOT_LOADED" | "API_ERROR" | ApiResult;
 
@@ -90,7 +139,7 @@ export const DocumentFetcher = (props: DocumentRouterProps) => {
             }
           );
           const theJson = await res.json();
-          setDocState({ ...theJson, ...DEFAULT_DOCUMENT_STATE });
+          setDocState({ ...DEFAULT_DOCUMENT_STATE, ...theJson });
         } catch (err) {
           setDocState("API_ERROR");
         }
