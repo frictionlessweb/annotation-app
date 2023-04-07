@@ -13,6 +13,21 @@ export const GENERATED_QUESTION_ORDER = [
   "question_three",
 ] as const;
 
+export const ANSWER_QUALITY_ITEMS = [
+  "Does this answer provide enough information for the question?",
+  "Does this answer provide inaccurate information?",
+  "Does this answer provide information not found in the document?",
+  "Does this answer completely answer the whole question?",
+  "Is it easy to read this answer?",
+  "Relevance  Is this answer relevant to the question?",
+  "Do you feel the answer is wordy?",
+  "Do you believe or trust this answer?",
+  "Do you need more details?",
+  "Are there any new ideas or concepts in this answer that make you somewhat surprised?",
+  "Is this answer useful or helpful to address the question?",
+  "Do you think this answer has been written by an expert?",
+] as const;
+
 export interface ApiResult {
   pdf_url: string;
   image_url: string;
@@ -82,7 +97,7 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
   pdfRef: null,
   pdf_url: "",
   image_url: "",
-  stage: "GENERATED_QUESTIONS",
+  stage: "INTRO_TASK",
   user_responses: {
     INTRO_TASK: {
       preview_response: "",

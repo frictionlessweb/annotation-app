@@ -175,6 +175,41 @@ const GeneratedQuestions = () => {
   return <div style={{ height: "700px", width: "900px" }} id={PDF_ID} />;
 };
 
+const AnswerQuality = () => {
+  const doc = useDocumentContext();
+  const setDoc = useSetDoc();
+  React.useEffect(() => {
+    const renderPdf = async () => {
+      const view = new window.AdobeDC.View({
+        clientId: "955e8a7fbf49409f88e781533a48685d",
+        divId: PDF_ID,
+      });
+      const config = {
+        content: {
+          location: {
+            url: doc.pdf_url,
+          },
+        },
+        metaData: {
+          fileName: "document",
+          id: "1234",
+        },
+      };
+      const preview = await view.previewFile(config, DEFAULT_VIEW_CONFIG);
+      await Promise.all([preview.getAnnotationManager(), preview.getAPIs()]);
+      setDoc((prev) => {
+        if (typeof prev === "string") return prev;
+        return {
+          ...prev,
+          pdfRef: preview,
+        };
+      });
+    };
+    renderPdf();
+  }, [doc.pdf_url, setDoc]);
+  return <div style={{ height: "700px", width: "900px" }} id={PDF_ID} />;
+};
+
 const IntroDocument = () => {
   const doc = useDocumentContext();
   const setDoc = useSetDoc();
@@ -221,7 +256,6 @@ const IntroDocument = () => {
                     added.data
                   );
                 });
-                console.log(res);
                 return res;
               });
               break;
@@ -275,7 +309,7 @@ export const PDF = () => {
       return <GeneratedQuestions />;
     }
     case "ANSWER_QUALITY": {
-      return <p>write me</p>;
+      return <AnswerQuality />;
     }
     case "SUGGESTED_QUESTIONS": {
       return null;

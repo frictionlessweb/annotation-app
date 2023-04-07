@@ -1,10 +1,9 @@
 import React from "react";
 import { Flex, Text, Heading, Button } from "@adobe/react-spectrum";
-import { useDocumentContext, useSetDoc } from "../context";
+import { useSetDoc } from "../context";
 import produce from "immer";
 
 export const IntroDocument = () => {
-  const doc = useDocumentContext();
   const setDoc = useSetDoc();
   return (
     <Flex direction="column">

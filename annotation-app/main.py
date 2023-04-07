@@ -16,9 +16,14 @@ app.mount("/static", StaticFiles(directory="assets"), name="static")
 def read_root():
     return {"message": "success"}
 
+
 @app.get("/documents")
 def get_document(id: str):
-    return {}
+    return {
+        "pdf_url": "/api/v1/static/F46.pdf",
+        "image_url": "/api/v1/static/F46_page-0.png",
+    }
+
 
 class SessionState(BaseModel):
     user_name: str

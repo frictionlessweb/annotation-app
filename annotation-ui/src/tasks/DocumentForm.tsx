@@ -9,14 +9,7 @@ import { IntroTask } from "./IntroTask";
 import { IntroDocument } from './IntroDocument';
 import { GeneratedQuestions } from './GeneratedQuestions';
 import { PDF } from './PDF';
-
-const AnswerQuality = () => {
-  return (
-    <Flex>
-      <Text>Write me</Text>
-    </Flex>
-  );
-};
+import { AnswerQuality } from './AnswerQuality';
 
 const SuggestedQuestions = () => {
   return (
