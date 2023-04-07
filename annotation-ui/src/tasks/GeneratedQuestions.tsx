@@ -44,6 +44,7 @@ export const GeneratedQuestions = () => {
                   GENERATED_QUESTION_ORDER.length;
                 if (moreStagesLeft) {
                   draft.user_responses.current_generated_question += 1;
+                  draft.pdfRef.manager.removeAnnotationsFromPDF();
                 } else {
                   draft.stage = "ANSWER_QUALITY";
                 }

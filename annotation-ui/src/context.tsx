@@ -19,7 +19,7 @@ export const ANSWER_QUALITY_ITEMS = [
   "Does this answer provide information not found in the document?",
   "Does this answer completely answer the whole question?",
   "Is it easy to read this answer?",
-  "Relevance  Is this answer relevant to the question?",
+  "Is this answer relevant to the question?",
   "Do you feel the answer is wordy?",
   "Do you believe or trust this answer?",
   "Do you need more details?",
@@ -27,6 +27,41 @@ export const ANSWER_QUALITY_ITEMS = [
   "Is this answer useful or helpful to address the question?",
   "Do you think this answer has been written by an expert?",
 ] as const;
+
+interface Answer {
+  text: string;
+  overall_rating: number;
+  "Does this answer provide enough information for the question?": string;
+  "Does this answer provide inaccurate information?": string;
+  "Does this answer provide information not found in the document?": string;
+  "Does this answer completely answer the whole question?": string;
+  "Is it easy to read this answer?": string;
+  "Is this answer relevant to the question?": string;
+  "Do you feel the answer is wordy?": string;
+  "Do you believe or trust this answer?": string;
+  "Do you need more details?": string;
+  "Are there any new ideas or concepts in this answer that make you somewhat surprised?": string;
+  "Is this answer useful or helpful to address the question?": string;
+  "Do you think this answer has been written by an expert?": string;
+}
+
+const DEFAULT_ANSWER: Answer = {
+  text: "this is the example answer",
+  overall_rating: 1,
+  "Does this answer provide enough information for the question?": "",
+  "Does this answer provide inaccurate information?": "",
+  "Does this answer provide information not found in the document?": "",
+  "Does this answer completely answer the whole question?": "",
+  "Is it easy to read this answer?": "",
+  "Is this answer relevant to the question?": "",
+  "Do you feel the answer is wordy?": "",
+  "Do you believe or trust this answer?": "",
+  "Do you need more details?": "",
+  "Are there any new ideas or concepts in this answer that make you somewhat surprised?":
+    "",
+  "Is this answer useful or helpful to address the question?": "",
+  "Do you think this answer has been written by an expert?": "",
+};
 
 export interface ApiResult {
   pdf_url: string;
@@ -55,7 +90,29 @@ export interface ApiResult {
         highlights: HasId[];
       };
     };
+    ANSWER_QUALITY: {
+      question_one: {
+        text: string;
+        index: 0;
+        answers: Answer[];
+      };
+      question_two: {
+        text: string;
+        index: number;
+        answers: Answer[];
+      };
+      question_three: {
+        text: string;
+        index: number;
+        answers: Answer[];
+      };
+    };
+    SUGGESTED_QUESTIONS: {
+      question_one: string;
+      question_two: string;
+    };
     current_generated_question: number;
+    current_answer_quality: number;
   };
   pdfRef: null | any;
 }
@@ -97,7 +154,7 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
   pdfRef: null,
   pdf_url: "",
   image_url: "",
-  stage: "INTRO_TASK",
+  stage: "ANSWER_QUALITY",
   user_responses: {
     INTRO_TASK: {
       preview_response: "",
@@ -121,7 +178,29 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
         highlights: [],
       },
     },
+    ANSWER_QUALITY: {
+      question_one: {
+        text: "Example question one",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      },
+      question_two: {
+        text: "Example question two",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      },
+      question_three: {
+        text: "Example question three",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      },
+    },
+    SUGGESTED_QUESTIONS: {
+      question_one: "",
+      question_two: "",
+    },
     current_generated_question: 0,
+    current_answer_quality: 0,
   },
 };
 
