@@ -6,22 +6,15 @@ import {
 } from "@adobe/react-spectrum";
 import { useDocumentContext, STAGE_MAP } from "../context";
 import { IntroTask } from "./IntroTask";
-import { IntroDocument } from './IntroDocument';
-import { GeneratedQuestions } from './GeneratedQuestions';
-import { PDF } from './PDF';
-import { AnswerQuality } from './AnswerQuality';
-
-const SuggestedQuestions = () => {
-  return (
-    <Flex>
-      <Text>Write me</Text>
-    </Flex>
-  );
-};
+import { IntroDocument } from "./IntroDocument";
+import { GeneratedQuestions } from "./GeneratedQuestions";
+import { PDF } from "./PDF";
+import { AnswerQuality } from "./AnswerQuality";
+import { SuggestedQuestions } from './SuggestedQuestions';
 
 const Done = () => {
   return (
-    <Flex>
+    <Flex marginX="32px">
       <Text>You have finished all of the tasks. Thank you!</Text>
     </Flex>
   );
@@ -69,11 +62,16 @@ const ProgressBar = () => {
 };
 
 export const DocumentForm = () => {
+  const { stage } = useDocumentContext();
+  const isLastStage = stage === "DONE" || stage === "SUGGESTED_QUESTIONS";
   return (
-    <Flex margin="16px" justifyContent="space-between">
+    <Flex
+      margin="16px"
+      justifyContent={isLastStage ? "start" : "space-between"}
+    >
       <ProgressBar />
       <PDF />
-      <Flex maxWidth="400px">
+      <Flex maxWidth={isLastStage ? undefined : "400px"}>
         <StageRouter />
       </Flex>
     </Flex>

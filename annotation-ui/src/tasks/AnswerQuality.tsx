@@ -2,22 +2,22 @@ import React from "react";
 import {
   Flex,
   Text,
-  ProgressBar as SpectrumProgressBar,
   Heading,
-  ListView,
   Button,
-  Item,
   Slider,
+  RadioGroup,
+  Radio,
 } from "@adobe/react-spectrum";
-import { useDocumentContext, STAGE_MAP, ANSWER_QUALITY_ITEMS } from "../context";
-import { IntroTask } from "./IntroTask";
-import { IntroDocument } from "./IntroDocument";
-import { GeneratedQuestions } from "./GeneratedQuestions";
-import { PDF } from "./PDF";
+import {
+  ANSWER_QUALITY_ITEMS,
+  useSetDoc,
+} from "../context";
+import produce from 'immer';
 
 export const AnswerQuality = () => {
+  const setDoc = useSetDoc();
   return (
-    <Flex direction="column">
+    <Flex direction="column" maxHeight="300px">
       <Heading level={3}>Instructions</Heading>
       <Text>
         Next you will be asked to rate the quality of answers for each question
@@ -29,15 +29,18 @@ export const AnswerQuality = () => {
       <Text>This is the question</Text>
       <Heading level={4}>Answer</Heading>
       <Text marginBottom="16px">This is the answer</Text>
-      <ListView
-        selectionMode="multiple"
-        aria-label="Static ListView items example"
-        overflowMode="wrap"
-      >
-        {ANSWER_QUALITY_ITEMS.map((anItem) => {
-          return <Item key={anItem}>{anItem}</Item>;
-        })}
-      </ListView>
+      {ANSWER_QUALITY_ITEMS.map((anItem) => {
+        return (
+          <Flex key={anItem} direction="column" marginBottom="16px">
+            <Text>{anItem}</Text>
+            <RadioGroup>
+              <Radio value="YES">Yes</Radio>
+              <Radio value="NO">No</Radio>
+              <Radio value="NOT_SURE">Not Sure</Radio>
+            </RadioGroup>
+          </Flex>
+        );
+      })}
       <Text marginY="16px">
         Overall, how would you rate the quality of the answer to the question?
       </Text>
@@ -49,7 +52,14 @@ export const AnswerQuality = () => {
         step={1}
       />
       <Flex marginTop="16px" justifyContent="end">
-        <Button variant="accent">Next</Button>
+        <Button onPress={() => {
+          setDoc(prev => {
+            return produce(prev, (draft) => {
+              if (typeof draft === 'string') return;
+              draft.stage = 'SUGGESTED_QUESTIONS';
+            });
+          });
+        }} variant="accent">Next</Button>
       </Flex>
     </Flex>
   );
