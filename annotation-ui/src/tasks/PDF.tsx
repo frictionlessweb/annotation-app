@@ -81,7 +81,7 @@ const GeneratedQuestions = () => {
   React.useEffect(() => {
     const renderPdf = async () => {
       const view = new window.AdobeDC.View({
-        clientId: "955e8a7fbf49409f88e781533a48685d",
+        clientId: globalThis?.process?.env?.VITE_PUBLIC_ADOBE_CLIENT_ID || "955e8a7fbf49409f88e781533a48685d",
         divId: PDF_ID,
       });
       const config = {
