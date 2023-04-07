@@ -233,7 +233,14 @@ export const DocumentFetcher = (props: DocumentRouterProps) => {
             }
           );
           const theJson = await res.json();
-          setDocState({ ...DEFAULT_DOCUMENT_STATE, ...theJson });
+          setDocState({
+            ...DEFAULT_DOCUMENT_STATE,
+            ...theJson,
+            user_responses: {
+              ...DEFAULT_DOCUMENT_STATE.user_responses,
+              ...theJson.user_responses,
+            },
+          });
         } catch (err) {
           setDocState("API_ERROR");
         }
