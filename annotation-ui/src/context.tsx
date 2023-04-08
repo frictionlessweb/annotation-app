@@ -154,7 +154,7 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
   pdfRef: null,
   pdf_url: "",
   image_url: "",
-  stage: "INTRO_TASK",
+  stage: "ANSWER_QUALITY",
   user_responses: {
     INTRO_TASK: {
       preview_response: "",
