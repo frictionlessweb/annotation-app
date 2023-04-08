@@ -12,7 +12,7 @@ const DOCUMENTS = [
   "proposal_sales_proposal_F49",
   "agreement_professional_disclosure_statement_DR--256324984",
   "instructions_product_owner_manual_DR--338379095",
-  "report_IBM_Whitepaper_on_AI_&_Business",
+  "report_IBM_Whitepaper_on_AI_and_Business",
   "report_financial_spotify_report",
 ];
 
