@@ -1,11 +1,11 @@
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from documents import DOCUMENT_MAP
 from typing import Any
 from database import SessionLocal
 from sqlalchemy.orm import Session
-from models import Sessions
+from models import DocumentSessions, Sessions
 from datetime import datetime
 import json
 
@@ -20,8 +20,11 @@ def read_root():
 
 @app.get("/documents")
 def get_document(id: str):
-    with open(f"./assets/{id}.json") as the_file:
-        result = json.load(the_file)
+    try:
+        with open(f"./assets/{id}.json") as the_file:
+            result = json.load(the_file)
+    except Exception:
+        raise HTTPException(status_code=404, detail="Document not found")
     return {
         **{
             "pdf_url": f"/api/v1/static/{id}.pdf",
@@ -33,19 +36,27 @@ def get_document(id: str):
     }
 
 
-@app.post("/save-document-session")
-def save_document_session(user_responses: dict):
-    pass
-
-
-class SessionState(BaseModel):
-    user_name: str
-    annotations: dict
-
-
 def get_db():
     db = SessionLocal()
     try:
         yield db
     finally:
         db.close()
+
+
+class DocumentSessionState(BaseModel):
+    user_responses: dict
+    document: str
+
+
+@app.post("/save-document-session")
+def save_document_session(state: DocumentSessionState, db: Session = Depends(get_db)):
+    db_annotation = DocumentSessions(
+        document=state.document,
+        user_responses=state.user_responses,
+        created_at=datetime.now(),
+        updated_at=datetime.now(),
+    )
+    db.add(db_annotation)
+    db.commit()
+    return {"message": "success"}

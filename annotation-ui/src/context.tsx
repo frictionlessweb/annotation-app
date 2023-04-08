@@ -232,6 +232,9 @@ export const DocumentFetcher = (props: DocumentRouterProps) => {
               method: "GET",
             }
           );
+          if (!res.ok) {
+            throw new Error("BAD RESPONSE");
+          }
           const theJson = await res.json();
           setDocState({
             ...DEFAULT_DOCUMENT_STATE,

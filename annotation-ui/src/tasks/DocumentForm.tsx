@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Flex,
-  Text,
   ProgressBar as SpectrumProgressBar,
 } from "@adobe/react-spectrum";
 import { useDocumentContext, STAGE_MAP } from "../context";
@@ -10,15 +9,8 @@ import { IntroDocument } from "./IntroDocument";
 import { GeneratedQuestions } from "./GeneratedQuestions";
 import { PDF } from "./PDF";
 import { AnswerQuality } from "./AnswerQuality";
-import { SuggestedQuestions } from './SuggestedQuestions';
-
-const Done = () => {
-  return (
-    <Flex marginX="32px">
-      <Text>You have finished all of the tasks. Thank you!</Text>
-    </Flex>
-  );
-};
+import { SuggestedQuestions } from "./SuggestedQuestions";
+import { Done } from "./Done";
 
 const StageRouter = () => {
   const ctx = useDocumentContext();

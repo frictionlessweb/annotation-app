@@ -11,6 +11,7 @@ class Sessions(Base):
     created_at = Column(DateTime)
     updated_at = Column(DateTime)
 
+
 class DocumentSessions(Base):
     __tablename__ = "document_sessions"
 
