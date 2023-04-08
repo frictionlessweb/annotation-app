@@ -75,13 +75,16 @@ interface AdobeEvent {
   data: unknown;
 }
 
+const clientId =
+  process.env.VITE_PUBLIC_ADOBE_CLIENT_ID || "955e8a7fbf49409f88e781533a48685d";
+
 const GeneratedQuestions = () => {
   const doc = useDocumentContext();
   const setDoc = useSetDoc();
   React.useEffect(() => {
     const renderPdf = async () => {
       const view = new window.AdobeDC.View({
-        clientId: globalThis?.process?.env?.VITE_PUBLIC_ADOBE_CLIENT_ID || "955e8a7fbf49409f88e781533a48685d",
+        clientId,
         divId: PDF_ID,
       });
       const config = {
@@ -181,7 +184,7 @@ const AnswerQuality = () => {
   React.useEffect(() => {
     const renderPdf = async () => {
       const view = new window.AdobeDC.View({
-        clientId: "955e8a7fbf49409f88e781533a48685d",
+        clientId,
         divId: PDF_ID,
       });
       const config = {
@@ -216,7 +219,7 @@ const IntroDocument = () => {
   React.useEffect(() => {
     const renderPdf = async () => {
       const view = new window.AdobeDC.View({
-        clientId: "955e8a7fbf49409f88e781533a48685d",
+        clientId,
         divId: PDF_ID,
       });
       const config = {

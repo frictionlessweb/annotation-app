@@ -33,6 +33,11 @@ def get_document(id: str):
     }
 
 
+@app.post("/save-document-session")
+def save_document_session(user_responses: dict):
+    pass
+
+
 class SessionState(BaseModel):
     user_name: str
     annotations: dict
