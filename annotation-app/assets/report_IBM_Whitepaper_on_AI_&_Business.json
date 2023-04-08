@@ -1,25 +1,25 @@
 {
   "GENERATED_QUESTIONS": {
     "question_one": {
-      "text": "What is the maximum number of players allowed in a team?",
+      "text": "What are the three main steps to implement AI in a company according to the document?",
       "highlights": []
     },
     "question_two": {
-      "text": "How are wide balls penalized and in which overs do they not incur a penalty?",
+      "text": "What are the four types of machine learning mentioned in the document and how are they different?",
       "highlights": []
     },
     "question_three": {
-      "text": "What is the rule regarding a female bowler bowling to a male batter?",
+      "text": "What are some of the pitfalls to avoid when implementing an AI strategy in a company?",
       "highlights": []
     }
   },
   "ANSWER_QUALITY": {
     "question_one": {
-      "text": "What is the maximum number of players allowed in a team?",
+      "text": "What are the three main steps to implement AI in a company according to the document?",
       "index": 0,
       "answers": [
         {
-          "text": "The maximum number of players allowed in a team is **eight**.",
+          "text": "According to the document, the three main steps to implement AI in a company are: understanding what AI is, where it currently stands, what value it can provide to businesses and how it can be successfully adopted; developing a solid strategy and roadmap, including data governance and warehousing, and implementing proper change management to guide the company; and evaluating how AI can help solve the company's problems, where the company currently stands in terms of capabilities, and what needs to be done before properly implementing AI to address the problems or opportunities.",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -35,7 +35,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "The maximum number of players allowed in a team is **eight**.",
+          "text": "According to the document, the three main steps to implement AI in a company are: developing an AI strategy and roadmap, establishing AI capabilities and skills, and starting small and scaling quickly.",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -51,7 +51,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "The maximum number of players allowed in a team is **eight**.",
+          "text": "The three main steps to implement AI in a company according to the document are:\n\n1. Develop an AI strategy and roadmap2. Establish AI capabilities and skills3. Follow a three-phase process consisting of the \"Think\" phase, the \"Transform\" phase, and the \"Thrive\" phase.END_ANSWER",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -67,7 +67,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "The maximum number of players allowed in a team is **eight**.END_ANSWER",
+          "text": "The three main steps to implement AI in a company according to the document are: \n1. Develop an AI strategy and roadmap2. Start with minimal valuable products (MVPs)3. Establish methods and new ways of working across the enterprise that can last a lifetime.END_ANSWER",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -85,11 +85,11 @@
       ]
     },
     "question_two": {
-      "text": "How are wide balls penalized and in which overs do they not incur a penalty?",
+      "text": "What are the four types of machine learning mentioned in the document and how are they different?",
       "index": 0,
       "answers": [
         {
-          "text": "A \"wide\" or \"leg-side wide\" counts as part of the over and incurs a 2 run penalty unless it is the 4th, 8th, 12th or 16th over. If a deliberate no ball or wide is bowled at any stage of the game, normal penalties are awarded to the batting side plus an extra ball to be bowled. A no ball counts as part of the over and incurs a penalty of two runs which is added to the batting. A leg side wide will be called when the ball after bouncing on the pitch in front of the batting crease, or on the full without bouncing passes outside the intersection of the batting crease and the line marked 30 cm from the striker's leg stump without being touched by his/her person or equipment. If a no ball, leg side or wide is bowled in the last delivery of any innings, the Umpire shall award 2 runs to the batsman and have the ball re-bowled. If by having the ball re-bowled it should be to the batsman's disadvantage the batsman may decline to receive the extra ball. Persistent bowling of a wide or no ball as last ball of innings will be concluded at Umpires discretion in \"the spirit of the game\", taking into account bowler's ability to deliver a good ball. All Wide's, Legside's and No balls bowled in the final over of each batting partnerships will be rebowled. Therefore, wide balls are penalized with a 2 run penalty, except in the 4th, 8th, 12th, or 16th over, and they are rebowled in the final over of each batting partnership.",
+          "text": "There are four types of machine learning mentioned in the sources: supervised, unsupervised, reinforcement, and transfer learning. Supervised learning is the most commonly used type and involves mapping an input to an output using human data and feedback to improve. Unsupervised learning involves finding patterns in data without any human feedback. Reinforcement learning involves an agent learning to make decisions based on rewards and punishments. Transfer learning involves applying knowledge learned from one task to another task.",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -105,7 +105,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "A \"wide\" or \"leg-side wide\" counts as part of the over and incurs a 2 run penalty, except for the 4th, 8th, 12th, or 16th over. All wides, legsides, and no balls bowled in the final over of each batting partnership will be rebowled. If a wide is bowled, the batsmen will be offered to have the ball re-bowled by the umpire.",
+          "text": "The document mentions four types of machine learning: supervised, unsupervised, reinforcement, and transfer. Supervised learning involves mapping an input to an output using human data and feedback to improve. Unsupervised learning occurs when the algorithm is not given a specific \"wrong\" or \"right\" outcome. Reinforcement learning is not given a specific goal, but rather learns from trial and error. Transfer learning involves an algorithm learning to solve one problem, taking information from this problem, and then solving a new problem with that information.",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -121,7 +121,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "Wide balls incur a 2-run penalty, unless they are bowled in the 4th, 8th, 12th, or 16th over. In these overs, the batsmen will be offered to have the ball re-bowled by the umpire.",
+          "text": "The four types of machine learning mentioned in the document are supervised learning, unsupervised learning, reinforcement learning, and transfer learning. \n\nSupervised learning maps an input to an output using human data and feedback to improve, training based on historical data and building rules to predict future problems. Unsupervised learning occurs when the algorithm is not given a specific \"wrong\" or \"right\" outcome and is often used when classifying data without knowing how to do so. Reinforcement learning is a class in and of itself, learning from trial and error without a specific goal, and involves rewarding the algorithm when it comes closer to its goal and penalizing it when it gets stuck or moves away from the completion. Transfer learning occurs when an algorithm learns to solve one problem, takes information from this problem, and then solves a new problem with that information, often using pre-trained neural networks.",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -137,7 +137,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "Wide balls incur a penalty of two runs which is added to the batting, and they do not incur a penalty in the 4th, 8th, 12th or 16th over.END_ANSWER",
+          "text": "The four types of machine learning mentioned in the document are **supervised learning**, **unsupervised learning**, **reinforcement learning**, and **transfer learning**. Supervised learning is a learning method that maps an input to an output using human data and feedback to improve. Unsupervised learning occurs when the algorithm is not given a specific “wrong” or “right” outcome. Reinforcement learning is a class in and of itself; it is not given a specific goal, but rather learns from trial and error. Transfer learning is when your algorithm learns to solve one problem, takes information from this problem and then solves a new problem with that information.END_ANSWER",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -155,11 +155,11 @@
       ]
     },
     "question_three": {
-      "text": "What is the rule regarding a female bowler bowling to a male batter?",
+      "text": "What are some of the pitfalls to avoid when implementing an AI strategy in a company?",
       "index": 0,
       "answers": [
         {
-          "text": "According to source s0, over-arm bowling by male or female to a lady batter is allowed, provided that the delivery is in the \"Spirit of the game\" taking into account the abilities of the bowler/batter. However, source s1 states that when a female bowler is bowling and a male batter is at strike, runs shall only be scored when after striking the ball into a scoring zone net the male and female partner cross. If the male striker does not cross after hitting the ball into a scoring zone net, no runs may be attributed for that shot. Therefore, a female bowler is allowed to bowl to a male batter, but there are specific rules regarding scoring runs.",
+          "text": "When implementing an AI strategy in a company, it is important to have the support of the right people, such as department heads, CxOs or managers, as implementing AI through the organization can be a long process. Employees or other stakeholders not believing in AI or thinking it's a magical box that will quickly solve all the problems can lead to disappointment when an AI project is not delivered in a short timeframe or if it doesn't deliver the expected results, which can eventually diminish the will to implement AI and experience the benefits of its long-term possibilities. Implementing AI should be a carefully thought out process, and companies should evaluate how AI can help solve their problems and where they are in terms of capabilities before properly implementing AI to address the problems they want to solve or the opportunities they want to take. Companies should also avoid the pitfall of wanting to implement machine learning right off the bat, as they need to acquire or outsource their own data science talent and look at their current IT infrastructure.",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -175,7 +175,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "The document does not mention any rule regarding a female bowler bowling to a male batter.",
+          "text": "There are several pitfalls to avoid when implementing an AI strategy in a company. One of the biggest pitfalls is a culture that’s not committed to making data-driven decisions. Another pitfall is the belief that AI is a magical box that will quickly solve all the problems a company has. It is also important to avoid the misconception that high-profile research projects can be applied directly to any business situation. Additionally, it is crucial to take into account transparency and how much data, capabilities, and time the company has, as some algorithms take a long time to run. The \"black box\" problem is another pitfall to avoid, as it is almost impossible to determine why the system came to a certain conclusion. It is important to align the right people before starting an AI project, as implementing AI through the organization can be a long process, and without support of the right people, there’s a higher probability that the project will fail. Many companies want to implement machine learning right off the bat, but it is important to start small and scale quickly. It is also crucial to evaluate the capabilities the company currently has in-house before starting an AI project and then define the cost of acquiring the capabilities needed to close any gaps. Data availability is another pitfall to avoid, as it depends on the company and how it stores data. Finally, there is no one magic algorithm that can solve all the company's problems, so it is important to focus on the problems the company has and how AI can help solve them..",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -191,7 +191,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "In mixed games, over-arm bowling by a male or female to a female batter is allowed, provided that, in the umpire's opinion, the delivery is in the \"Spirit of the game,\" taking into account the abilities of the bowler and batter.",
+          "text": "Some pitfalls to avoid when implementing an AI strategy in a company include:\n\n1. Not having a culture committed to making data-driven decisions.\n2. Overlooking the importance of getting project stakeholders involved and on board.\n3. Unrealistic expectations regarding the timeframe and results of AI projects.\n4. Lack of support from the right people, which can lead to a higher probability of project failure.\n5. Attempting to implement machine learning without proper preparation or understanding of its requirements.\n6. Failing to scale the correct architecture, integration, and employees who know how to use the technology.\n7. Launching a product using machine learning without having enough data.\n8. Not ensuring that the necessary data is properly labeled for the algorithm to work effectively.\n9. Neglecting the ethical considerations and transparency of AI systems.\n10. Failing to implement a data-driven strategy, which can lead to lost market share.\n\nTo properly implement AI, companies should carefully evaluate and plan their approach, focusing on the problems they want to solve and ensuring they have the necessary data and support.",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
@@ -207,7 +207,7 @@
           "Do you think this answer has been written by an expert?": ""
         },
         {
-          "text": "When a female bowler is bowling and a male batter is at strike, runs shall only be scored when after striking the ball into a scoring zone net the male and female partner cross. Additionally, in the opinion of an Umpire, a male bowler should not take advantage of a female batter's abilities by bowling too short and too fast, or in the Umpire's decision outside \"the spirit of the game\".END_ANSWER",
+          "text": "When implementing an AI strategy in a company, there are several pitfalls to avoid. Firstly, it is important to get project stakeholders involved and on board, as well as to ensure that the culture is committed to making data-driven decisions. Additionally, it is important to be aware of the potential for employees or other stakeholders to not believe in AI or think it is a magical box that will quickly solve all the problems. Furthermore, it is important to consider the need for AI education and devote time to considering the right user interface, as well as to take into account transparency and how much data, capabilities and time you have. Additionally, it is important to be aware of the potential for bad-quality data, and to ensure that the right people, such as department heads, CxOs or managers support the project. Moreover, it is important to be aware of the potential for companies to want to implement machine learning right off the bat, as well as to consider data availability depending on the company and how it stores data. Finally, it is important to be aware of the need for the business to know why specific outcomes occur.END_ANSWER",
           "overall_rating": 1,
           "Does this answer provide enough information for the question?": "",
           "Does this answer provide inaccurate information?": "",
