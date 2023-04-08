@@ -9,13 +9,19 @@ export const Done = () => {
     const saveResponse = async () => {
       try {
         const documentName = window.location.pathname.split("/").pop();
-        await window.fetch(`/api/v1/save-document-session`, {
+        const res = await window.fetch(`/api/v1/save-document-session`, {
+          headers: {
+            'Content-Type': 'application/json'
+          },
           method: "POST",
           body: JSON.stringify({
             document: documentName,
             user_responses: ctx.user_responses,
           }),
         });
+        if (!res.ok) {
+          throw new Error('API REQUEST FAILED');
+        }
         ToastQueue.positive("Saved successfully.");
       } catch (err) {
         ToastQueue.negative(

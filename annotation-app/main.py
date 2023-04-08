@@ -1,11 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from documents import DOCUMENT_MAP
-from typing import Any
 from database import SessionLocal
 from sqlalchemy.orm import Session
-from models import DocumentSessions, Sessions
+from models import DocumentSessions
 from datetime import datetime
 import json
 
