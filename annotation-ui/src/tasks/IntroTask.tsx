@@ -8,11 +8,7 @@ import {
   Heading,
   Button,
 } from "@adobe/react-spectrum";
-import {
-  useDocumentContext,
-  useSetDoc,
-  ApiResult,
-} from "../context";
+import { useDocumentContext, useSetDoc, ApiResult } from "../context";
 import produce from "immer";
 
 const VALUES = [
@@ -55,6 +51,7 @@ export const IntroTask = () => {
         marginY="16px"
         width="100%"
         label="Question 2"
+        value={doc.user_responses.INTRO_TASK.question_2}
         onChange={(val) => {
           setDoc((prev) => {
             if (typeof prev === "string") return prev;

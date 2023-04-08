@@ -123,7 +123,7 @@ export const AnswerQuality = () => {
         maxValue={5}
         step={1}
       />
-      <Flex marginTop="16px" justifyContent="end">
+      <Flex marginTop="16px" marginBottom="16px" justifyContent="end">
         <Button
           onPress={() => {
             setDoc((prev) => {

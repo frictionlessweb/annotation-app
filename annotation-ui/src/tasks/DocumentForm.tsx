@@ -13,8 +13,15 @@ import { SuggestedQuestions } from "./SuggestedQuestions";
 import { Done } from "./Done";
 
 const StageRouter = () => {
-  const ctx = useDocumentContext();
-  switch (ctx.stage) {
+  const { stage, user_responses } = useDocumentContext();
+  React.useEffect(() => {
+    const documentName = window.location.pathname.split("/").pop();
+    window.localStorage.setItem(
+      documentName || "",
+      JSON.stringify({ user_responses, stage })
+    );
+  }, [stage, user_responses]);
+  switch (stage) {
     case "INTRO_TASK": {
       return <IntroTask />;
     }
@@ -34,7 +41,7 @@ const StageRouter = () => {
       return <Done />;
     }
     default: {
-      throw new Error(`Unexpected stage: ${ctx.stage}`);
+      throw new Error(`Unexpected stage: ${stage}`);
     }
   }
 };

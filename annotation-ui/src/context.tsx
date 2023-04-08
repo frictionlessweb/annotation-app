@@ -154,7 +154,7 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
   pdfRef: null,
   pdf_url: "",
   image_url: "",
-  stage: "ANSWER_QUALITY",
+  stage: "INTRO_TASK",
   user_responses: {
     INTRO_TASK: {
       preview_response: "",
@@ -223,6 +223,7 @@ export const DocumentFetcher = (props: DocumentRouterProps) => {
   const documentName = window.location.pathname.split("/").pop();
   const [docState, setDocState] = React.useState<DocumentState>("NOT_LOADED");
   React.useEffect(() => {
+    const storedDoc = window.localStorage.getItem(documentName || "");
     const fetchDoc = async () => {
       if (docState === "NOT_LOADED") {
         try {
@@ -239,10 +240,15 @@ export const DocumentFetcher = (props: DocumentRouterProps) => {
           setDocState({
             ...DEFAULT_DOCUMENT_STATE,
             ...theJson,
-            user_responses: {
-              ...DEFAULT_DOCUMENT_STATE.user_responses,
-              ...theJson.user_responses,
-            },
+            stage:
+              storedDoc === null ? "INTRO_TASK" : JSON.parse(storedDoc).stage,
+            user_responses:
+              storedDoc === null
+                ? {
+                    ...DEFAULT_DOCUMENT_STATE.user_responses,
+                    ...theJson.user_responses,
+                  }
+                : JSON.parse(storedDoc).user_responses,
           });
         } catch (err) {
           setDocState("API_ERROR");
