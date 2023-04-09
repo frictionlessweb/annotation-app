@@ -1,7 +1,8 @@
 import React from "react";
-import { Flex, Text } from "@adobe/react-spectrum";
+import { Flex, Text, Button } from "@adobe/react-spectrum";
 import { Route, Link } from "wouter";
 import { DocumentRouter } from "./DocumentRouter";
+import { ToastQueue } from "@react-spectrum/toast";
 
 const DOCUMENTS = [
   "E0CEG1S47",
@@ -16,6 +17,18 @@ const DOCUMENTS = [
   "report_financial_spotify_report",
 ];
 
+const downloadJson = (json: object) => {
+  const element = document.createElement("a");
+  const textFile = new Blob([JSON.stringify(json)], {
+    type: "text/plain",
+  });
+  element.href = URL.createObjectURL(textFile);
+  element.download = "annotations.json";
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+};
+
 export const Router = () => {
   return (
     <Flex direction="column">
@@ -27,7 +40,30 @@ export const Router = () => {
             {DOCUMENTS.map((doc) => {
               return (
                 <li key={doc}>
-                  <Link to={`/${doc}`}>{doc}</Link>
+                  <Flex marginBottom="16px">
+                    <Link to={`/${doc}`}>{doc}</Link>
+                    <Button
+                      onPress={async () => {
+                        const res = await window.fetch(
+                          `/api/v1/latest?document=${doc}`,
+                          {
+                            method: "GET",
+                          }
+                        );
+                        if (!res.ok) {
+                          ToastQueue.negative(
+                            "An error occurred when fetching the latest response."
+                          );
+                          return;
+                        }
+                        const theJson = await res.json();
+                        downloadJson(theJson);
+                      }}
+                      variant="primary"
+                    >
+                      Download
+                    </Button>
+                  </Flex>
                 </li>
               );
             })}
