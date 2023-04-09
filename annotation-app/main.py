@@ -3,6 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from database import SessionLocal
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 from models import DocumentSessions
 from datetime import datetime
 import json
@@ -58,3 +59,13 @@ def save_document_session(state: DocumentSessionState, db: Session = Depends(get
     db.add(db_annotation)
     db.commit()
     return {"message": "success"}
+
+
+@app.get("/latest")
+def latest(document: str, db: Session = Depends(get_db)):
+    return (
+        db.query(DocumentSessions)
+        .where(DocumentSessions.document == document)
+        .order_by(text("updated_at desc"))
+        .first()
+    )

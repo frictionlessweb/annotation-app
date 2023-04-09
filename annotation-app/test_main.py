@@ -27,3 +27,18 @@ def test_save_session():
     )
     assert response.status_code == 200
     assert response.json() is not None
+
+
+def test_get_latest():
+    client.post(
+        "/save-document-session",
+        json={
+            "document": "3",
+            "user_responses": {"x": 3},
+        },
+    )
+    response = client.get(
+        "/latest?document=3",
+    )
+    assert response.status_code == 200
+    assert response.json() is not None
