@@ -30,9 +30,9 @@ export const IntroTask = () => {
     <Flex direction="column">
       <Heading level={3}>Instructions</Heading>
       <Text marginBottom={16}>
-        This is a preview of the first page of a document you will have to read.
+        This is a preview of the first page of a document you will be asked to read.
         Please provide two questions that you might want to answer based on this
-        document’s content.
+        document’s first page and/or content you expect to find in the next pages.
       </Text>
       <TextArea
         width="100%"
