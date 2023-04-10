@@ -16,7 +16,7 @@ export const Done = () => {
           method: "POST",
           body: JSON.stringify({
             document: documentName,
-            user_responses: ctx.user_responses,
+            user_responses: { ...ctx.user_responses, user_name: ctx.user_name },
           }),
         });
         if (!res.ok) {
