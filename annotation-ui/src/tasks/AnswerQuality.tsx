@@ -100,6 +100,7 @@ export const AnswerQuality = () => {
                       (currentAnswer[anItem] as string) = val;
                     });
                   });
+                  setCurItem(curItem === ANSWER_QUALITY_ITEMS.length - 1 ? 0 : curItem + 1);
                 }}
                 value={currentAnswer[anItem] as string}
               >
