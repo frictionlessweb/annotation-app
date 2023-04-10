@@ -124,7 +124,7 @@ const GeneratedQuestions = () => {
               setDoc((prev) => {
                 const res = produce(prev, (draft) => {
                   if (typeof draft === "string") return;
-                  added.data.bodyValue = CURRENT_SELECTION_TEXT
+                  added.data.bodyValue = CURRENT_SELECTION_TEXT;
                   draft.user_responses.GENERATED_QUESTIONS[
                     GENERATED_QUESTION_ORDER[
                       draft.user_responses.current_generated_question
@@ -260,7 +260,7 @@ const IntroDocument = () => {
               setDoc((prev) => {
                 const res = produce(prev, (draft) => {
                   if (typeof draft === "string") return;
-                  added.data.bodyValue = CURRENT_SELECTION_TEXT
+                  added.data.bodyValue = CURRENT_SELECTION_TEXT;
                   draft.user_responses.INTRO_DOCUMENT.highlights.push(
                     added.data
                   );
