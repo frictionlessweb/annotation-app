@@ -16,10 +16,23 @@ import {
   useSetDoc,
   useDocumentContext,
   answerIsComplete,
+  AnswerKey,
 } from "../context";
 import produce from "immer";
 
+/* Randomize array in-place using Durstenfeld shuffle algorithm */
+function shuffleArray<T>(array: Array<T>): Array<T> {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+  return array;
+}
+
 export const AnswerQuality = () => {
+  const [curItem, setCurItem] = React.useState(0);
   const ctx = useDocumentContext();
   const setDoc = useSetDoc();
   const { current_answer_quality } = ctx.user_responses;
@@ -31,7 +44,9 @@ export const AnswerQuality = () => {
   const currentAnswer = currentAnswerMap.answers[currentIndex];
   const currentQuestion = currentAnswerMap.text;
   const nextDisabled = !answerIsComplete(currentAnswer);
-  const [curItem, setCurItem] = React.useState(0);
+  const RENDERING_ANSWER_QUALITY_ITEMS = React.useMemo(() => {
+    return shuffleArray(JSON.parse(JSON.stringify(ANSWER_QUALITY_ITEMS)));
+  }, []);
   return (
     <Flex direction="column">
       <Heading level={3}>Instructions</Heading>
@@ -66,7 +81,7 @@ export const AnswerQuality = () => {
 
       <Flex direction="column" marginBottom="size-200">
         {(() => {
-          const anItem = ANSWER_QUALITY_ITEMS[curItem];
+          const anItem = RENDERING_ANSWER_QUALITY_ITEMS[curItem] as AnswerKey;
           return (
             <Flex key={anItem} direction="column" marginBottom="16px">
               <Text>{anItem}</Text>
@@ -82,11 +97,11 @@ export const AnswerQuality = () => {
                       const currentIndex = currentAnswerMap.index;
                       const currentAnswer =
                         currentAnswerMap.answers[currentIndex];
-                      currentAnswer[anItem] = val;
+                      (currentAnswer[anItem] as string) = val;
                     });
                   });
                 }}
-                value={currentAnswer[anItem]}
+                value={currentAnswer[anItem] as string}
               >
                 <Radio value="YES">Yes</Radio>
                 <Radio value="NO">No</Radio>

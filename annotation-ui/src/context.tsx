@@ -45,6 +45,8 @@ interface Answer {
   "Do you think this answer has been written by an expert?": string;
 }
 
+export type AnswerKey = keyof Answer;
+
 const DEFAULT_ANSWER: Answer = {
   text: "this is the example answer",
   overall_rating: 1,
