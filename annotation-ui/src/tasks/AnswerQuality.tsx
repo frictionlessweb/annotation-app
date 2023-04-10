@@ -181,6 +181,7 @@ export const AnswerQuality = () => {
                 }
               });
             });
+            setCurItem(0);
           }}
           variant="accent"
         >
