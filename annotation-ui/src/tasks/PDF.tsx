@@ -1,5 +1,6 @@
 import React from "react";
-import { Flex, Text } from "@adobe/react-spectrum";
+import { Flex, Text, IllustratedMessage, Heading, Content } from "@adobe/react-spectrum";
+import NotFound from '@spectrum-icons/illustrations/NotFound';
 import {
   useDocumentContext,
   useSetDoc,
@@ -24,10 +25,12 @@ let CURRENT_SELECTION_TEXT = "";
 const IntroImage = () => {
   const doc = useDocumentContext();
   return (
-    <img
-      style={{ maxWidth: "600px", border: "1px solid grey" }}
-      src={doc.image_url}
-    />
+    <Flex direction="column" alignItems="center" width="100%">
+      <img
+        style={{ maxWidth: "600px", border: "1px solid grey" }}
+        src={doc.image_url}
+      />
+    </Flex>
   );
 };
 
@@ -175,7 +178,7 @@ const GeneratedQuestions = () => {
     };
     renderPdf();
   }, [doc.pdf_url, setDoc]);
-  return <div style={{ height: "700px", width: "900px" }} id={PDF_ID} />;
+  return <div style={{ height: "100%", width: "100%" }} id={PDF_ID} />;
 };
 
 const AnswerQuality = () => {
@@ -210,7 +213,7 @@ const AnswerQuality = () => {
     };
     renderPdf();
   }, [doc.pdf_url, setDoc]);
-  return <div style={{ height: "700px", width: "900px" }} id={PDF_ID} />;
+  return <div style={{ height: "100%", width: "100%" }} id={PDF_ID} />;
 };
 
 const IntroDocument = () => {
@@ -296,7 +299,7 @@ const IntroDocument = () => {
     };
     renderPdf();
   }, [doc.pdf_url, setDoc]);
-  return <div style={{ height: "700px", width: "900px" }} id={PDF_ID} />;
+  return <div style={{ height: "100%", width: "100%" }} id={PDF_ID} />;
 };
 
 export const PDF = () => {
@@ -315,7 +318,14 @@ export const PDF = () => {
       return <AnswerQuality />;
     }
     case "SUGGESTED_QUESTIONS": {
-      return null;
+      return (
+        <Flex direction="column" width="100%" alignSelf="start">
+          <IllustratedMessage width="100%" marginY="size-1000">
+            <NotFound />
+            <Content>Answer based on what you recall of the document</Content>
+          </IllustratedMessage>
+        </Flex>
+      );
     }
     case "DONE": {
       return null;

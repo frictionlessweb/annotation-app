@@ -12,11 +12,14 @@ export const SuggestedQuestions = () => {
   return (
     <Flex marginX="32px" direction="column">
       <Heading level={3}>Instructions</Heading>
-      <Text UNSAFE_style={{ maxWidth: "500px", marginBottom: "16px" }}>
+      <Text UNSAFE_style={{ marginBottom: "16px" }}>
         Provide two additional questions that you think are interesting and can
         be answered based on content in the PDF document.
       </Text>
-      <Flex width="300px" marginBottom="16px">
+      <Text UNSAFE_style={{ marginBottom: "16px" }}>
+        <em>No document will be shown. Answer based on what you remember of the document.</em>
+      </Text>
+      <Flex marginBottom="16px">
         <TextArea
           value={doc.user_responses.SUGGESTED_QUESTIONS.question_one}
           onChange={(val) => {
@@ -31,7 +34,7 @@ export const SuggestedQuestions = () => {
           label="Question 1"
         />
       </Flex>
-      <Flex width="300px">
+      <Flex>
         <TextArea
           onChange={(val) => {
             setDoc((prev) => {
@@ -46,7 +49,7 @@ export const SuggestedQuestions = () => {
           label="Question 2"
         />
       </Flex>
-      <Flex marginTop="16px">
+      <Flex marginTop="30px" justifyContent="end">
         <Button
           onPress={() => {
             setDoc((prev) => {

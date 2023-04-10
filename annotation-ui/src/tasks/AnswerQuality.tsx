@@ -14,7 +14,7 @@ import {
   ANSWER_QUALITY_ITEMS,
   GENERATED_QUESTION_ORDER,
   useSetDoc,
-  useDocumentContext,
+  useDocumentContext
 } from "../context";
 import produce from "immer";
 
@@ -31,18 +31,17 @@ export const AnswerQuality = () => {
   const currentQuestion = currentAnswerMap.text;
   const [curItem, setCurItem] = React.useState(0);
   return (
-    <Flex direction="column" maxHeight="300px">
+    <Flex direction="column">
       <Heading level={3}>Instructions</Heading>
       <Text>
-        Next you will be asked to rate the quality of answers for each question
-        provided. For each statement below, provide your assessment of the{" "}
+        For each question and answer pair below, provide your assessment of the{" "}
         {`answer's `}
-        quality. Feel free to refer back to the document (as needed).
+        quality. Refer to the document (as needed).
       </Text>
-      <Heading level={4}>Question</Heading>
-      <Text>{currentQuestion}</Text>
-      <Heading level={4}>Answer</Heading>
-      <Text marginBottom="16px" width="200px">
+      <Heading level={4} marginBottom="size-100">Question</Heading>
+      <Text><em>{currentQuestion}</em></Text>
+      <Heading level={4} marginBottom="size-100">Answer</Heading>
+      <Text marginTop="size-0" marginBottom="16px">
         <pre
           style={{
             font: "inherit",
@@ -50,12 +49,14 @@ export const AnswerQuality = () => {
             width: "400px",
             whiteSpace: "pre-wrap",
             wordWrap: "break-word",
+            margin: "0"
           }}
         >
           {currentAnswer.text.trim()}
         </pre>
       </Text>
-      <Flex direction="column">
+
+      <Flex direction="column" marginBottom="size-200">
         {(() => {
           const anItem = ANSWER_QUALITY_ITEMS[curItem];
           return (
@@ -99,10 +100,14 @@ export const AnswerQuality = () => {
           <Item key="next">Next</Item>
         </ActionGroup>
       </Flex>
+
       <Text marginY="16px">
-        Overall, how would you rate the quality of the answer to the question?
+        Overall, how would you rate the quality of the answer to the question? 
+        <br/>
+        1-Terrible, 2-Poor, 3-Average, 4-Good, 5-Excellent
       </Text>
       <Slider
+        width="90%"
         label="Select Value"
         value={currentAnswer.overall_rating}
         onChange={(val) => {
@@ -123,6 +128,7 @@ export const AnswerQuality = () => {
         maxValue={5}
         step={1}
       />
+
       <Flex marginTop="16px" marginBottom="16px" justifyContent="end">
         <Button
           onPress={() => {

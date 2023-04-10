@@ -1,9 +1,10 @@
 import React from "react";
-import { Flex, Text, Heading, Button } from "@adobe/react-spectrum";
-import { useSetDoc } from "../context";
+import { Flex, Text, Heading, Button, Well } from "@adobe/react-spectrum";
+import { useSetDoc, useDocumentContext } from "../context";
 import produce from "immer";
 
 export const IntroDocument = () => {
+  const numHighlights = useDocumentContext().user_responses.INTRO_DOCUMENT.highlights.length
   const setDoc = useSetDoc();
   return (
     <Flex direction="column">
@@ -13,16 +14,21 @@ export const IntroDocument = () => {
       </Text>
       <ul>
         <li>
-          As you read, highlight any sentences you think are important or
-          interesting.
+          As you read, <b>highlight any sentences you think are important or
+          interesting</b>.
         </li>
-        <li>This task should take no more than 15 minutes. </li>
+        <li>This task should take no more than <b>15 minutes</b>. </li>
       </ul>
       <Text>
         When you are confident and have identified the main topics, please
         continue.
       </Text>
-      <Flex marginTop="16px">
+
+      <Well marginY="size-200">
+        <Text>Number of highlights: {numHighlights}</Text>
+      </Well>
+      
+      <Flex marginTop="16px" justifyContent="end">
         <Button
           onPress={() => {
             setDoc((prev) => {

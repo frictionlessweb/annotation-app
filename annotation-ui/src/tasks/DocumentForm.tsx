@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Flex,
+  Flex, Grid,
   ProgressBar as SpectrumProgressBar,
 } from "@adobe/react-spectrum";
 import { useDocumentContext, STAGE_MAP } from "../context";
@@ -64,15 +64,30 @@ export const DocumentForm = () => {
   const { stage } = useDocumentContext();
   const isLastStage = stage === "DONE" || stage === "SUGGESTED_QUESTIONS";
   return (
-    <Flex
-      margin="16px"
-      justifyContent={isLastStage ? "start" : "space-between"}
-    >
-      <ProgressBar />
-      <PDF />
-      <Flex maxWidth={isLastStage ? undefined : "400px"}>
-        <StageRouter />
-      </Flex>
-    </Flex>
+    <Grid
+      marginEnd="size-200"
+      areas={[
+        'header  header',
+        'pdf form'
+      ]}
+      columns={['4fr', '1.5fr']}
+      rows={['size-675', 'auto']}
+      height="100vh"
+      maxHeight="100vh"
+      gap="size-160">
+        <Flex 
+          gridArea="header"
+          direction="row"  
+          marginX="size-500"
+          alignItems="center">
+          <ProgressBar />
+        </Flex>
+        <Flex gridArea="pdf">
+          <PDF />
+        </Flex>
+        <Flex gridArea="form" margin="size-160">
+          <StageRouter />
+        </Flex>
+    </Grid>
   );
 };

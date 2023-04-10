@@ -84,7 +84,7 @@ export const IntroTask = () => {
           );
         })}
       </RadioGroup>
-      <Flex marginTop="16px">
+      <Flex marginTop="16px" justifyContent="end">
         <Button
           onPress={() => {
             setDoc((prevDoc) => {
