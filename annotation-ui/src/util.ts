@@ -1,3 +1,3 @@
 export const getUserName = (): string => {
-  return '';
-}
+  return "";
+};

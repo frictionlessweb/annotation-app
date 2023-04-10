@@ -4,7 +4,6 @@ on:
   pull_request:
     branches: [main]
 
-
 env:
   POSTGRES_USER: annotation
   POSTGRES_PASSWORD: annotation

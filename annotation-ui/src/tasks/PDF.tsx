@@ -1,6 +1,12 @@
 import React from "react";
-import { Flex, Text, IllustratedMessage, Heading, Content } from "@adobe/react-spectrum";
-import NotFound from '@spectrum-icons/illustrations/NotFound';
+import {
+  Flex,
+  Text,
+  IllustratedMessage,
+  Heading,
+  Content,
+} from "@adobe/react-spectrum";
+import NotFound from "@spectrum-icons/illustrations/NotFound";
 import {
   useDocumentContext,
   useSetDoc,

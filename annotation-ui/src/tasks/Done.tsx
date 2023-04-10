@@ -11,7 +11,7 @@ export const Done = () => {
         const documentName = window.location.pathname.split("/").pop();
         const res = await window.fetch(`/api/v1/save-document-session`, {
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
           method: "POST",
           body: JSON.stringify({
@@ -20,7 +20,7 @@ export const Done = () => {
           }),
         });
         if (!res.ok) {
-          throw new Error('API REQUEST FAILED');
+          throw new Error("API REQUEST FAILED");
         }
         ToastQueue.positive("Saved successfully.");
       } catch (err) {

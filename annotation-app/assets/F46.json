@@ -1,18 +1,4 @@
 {
-  "GENERATED_QUESTIONS": {
-    "question_one": {
-      "text": "What is the revenue potential from financial trading taxes and which financial assets would contribute the most to this revenue?",
-      "highlights": []
-    },
-    "question_two": {
-      "text": "Who are the authors of the paper and what is their affiliation?",
-      "highlights": []
-    },
-    "question_three": {
-      "text": "What is the methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1?",
-      "highlights": []
-    }
-  },
   "ANSWER_QUALITY": {
     "question_one": {
       "text": "What is the revenue potential from financial trading taxes and which financial assets would contribute the most to this revenue?",
@@ -32,7 +18,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_block_retrieval"
         },
         {
           "text": "According to a paper by the Center for Economic and Policy Research, a set of financial transactions taxes could raise $353.8 billion annually based on 2008 trading volumes. The revenue potential from the tax would come mostly from stock transactions, with a tax of 0.5 percent on each stock transaction raising almost $220 billion a year assuming no reductions in trading from the 2008 level. The second largest source of revenue is bond trading, with a tax that was applied at a rate of 0.01 percent for each year to maturity raising $52.4 billion annually assuming no reduction in trading volume. The third largest source of revenue is a tax on trades in swaps, with a tax applied at the rate of 0.01 percent for each year to maturity raising $46.3 billion annually assuming no reduction in trading volume.",
@@ -48,7 +35,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_map_reduce"
         },
         {
           "text": "The revenue potential from financial trading taxes could raise $353.8 billion annually based on 2008 trading volumes. If trading fell by 50 percent in response to the tax, then the tax would raise $176.9 billion. Most of the revenue projected from the tax would come from stock transactions, with a tax of 0.5 percent on each stock transaction raising almost $220 billion a year if there were no reductions in trading from the 2008 level. The second largest source of revenue is bond trading, with a tax applied at a rate of 0.01 percent for each year to maturity raising $52.4 billion annually, assuming no reduction in trading volume. The third largest source of revenue is a tax on trades in swaps.",
@@ -64,7 +52,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-4-8k_map_reduce"
         },
         {
           "text": "According to Table 1, the revenue potential from financial trading taxes is estimated to be $353.8 billion annually based on 2008 trading volumes, with most of the revenue coming from stock transactions. If trading fell back by 50 percent, then the tax would still raise almost $110 billion a year on stock trades. The second largest source of revenue is bond trading, with a tax rate of 0.01 percent for each year to maturity raising $52.4 billion annually. The third largest source of revenue is a tax on trades in swaps, with a tax rate of 0.01 percent for each year to maturity raising $46.3 billion annually. With a 50 percent reduction in trading volume, the revenue would be $23.2 billion.END_ANSWER",
@@ -80,7 +69,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "text-davinci-003_map_reduce"
         }
       ]
     },
@@ -102,7 +92,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_block_retrieval"
         },
         {
           "text": "The authors of the paper are Robert Pollin, Dean Baker, Travis McArthur, and Matt Sherman. Robert Pollin is a professor of economics and co-director of the Political Economy Research Institute at the University of Massachusetts-Amherst, while Dean Baker is an economist and co-director of the Center for Economic and Policy Research in Washington, D.C. Travis McArthur is a Research Intern at CEPR and Matt Sherman is a Research Assistant at CEPR.",
@@ -118,7 +109,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_map_reduce"
         },
         {
           "text": "The authors of the paper are Dean Baker, who is an economist and co-director of the Center for Economic and Policy Research in Washington, D.C., and Robert Pollin, who is a professor of economics and co-director of the Political Economy Research Institute at the University of Massachusetts-Amherst. Travis McArthur is a Research Intern at CEPR and Matt Sherman is a Research Assistant at CEPR.",
@@ -134,7 +126,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-4-8k_map_reduce"
         },
         {
           "text": "The authors of the paper are **Dean Baker**, an economist and co-director of the Center for Economic and Policy Research in Washington, D.C., **Robert Pollin**, a professor of economics and co-director of the Political Economy Research Institute at the University of Massachusetts-Amherst, **Travis McArthur**, a Research Intern at CEPR, and **Matt Sherman**, a Research Assistant at CEPR.END_ANSWER",
@@ -150,7 +143,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "text-davinci-003_map_reduce"
         }
       ]
     },
@@ -172,7 +166,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_block_retrieval"
         },
         {
           "text": "The methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1 is explained in detail in the document. The paper calculates the revenue potential from a set of financial trading taxes, using a similar methodology to an earlier set of calculations. The tax rates selected are explained more fully in that paper. The paper assumes a tax rate of 0.5 percent on each stock transaction, or 0.25 percent on each side, and a tax rate of 0.01 percent for each foreign exchange spot transaction. The data on trading volume for equities are taken from the NASDAQ Monthly Market Summary and NYSE Technologies: Market Data, while data on trading volume in bonds were taken from the Securities Industry and Financial Markets Association’s “Average Daily Trading Volume in the U.S. Bond Market”. The calculations assume an average life to maturity of 1.5 years and therefore a tax rate of 0.015 percent for swaps.",
@@ -188,7 +183,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_map_reduce"
         },
         {
           "text": "The methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1 is based on the level of trading in U.S. financial markets in 2008. The tax rates are applied to various financial assets, such as stocks, bonds, foreign exchange, and derivative assets. The revenue projections are calculated under alternative assumptions as to the responsiveness of trading volume to the tax, with scenarios assuming no change in trading volume, a 25% reduction in trading volume, and a 50% reduction in trading volume. The tax rate structure and sources used for the calculations in Table 1 are further explained and justified in Pollin et al, 2003.",
@@ -204,7 +200,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-4-8k_map_reduce"
         },
         {
           "text": "The methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1 is explained in Pollin et al, 2003. For equities, the tax rate is 0.5 percent on a transaction, or 0.25 percent on each side, and the data on trading volume are taken from the NASDAQ Monthly Market Summary and NYSE Technologies: Market Data. For bonds, the tax rate is 0.01 percent for each year to maturity, and the data on trading volume are taken from the Securities Industry and Financial Markets Association’s “Average Daily Trading Volume in the U.S. Bond Market”. For options, the tax rate is 0.5 percent of the premium price, and the data on trading volume are obtained from the Options Clearing Corporation’s “Monthly Volume Reports”. For foreign exchange spot transactions, the tax rate is 0.01 percent on each transaction, and the data on trading volume are obtained from the Foreign Exchange Volume Survey done by the New York District Federal Reserve Bank. For futures and forwards, the tax rate is 0.02 percent on each transaction, and the data on outstanding volume are obtained from U.S. Commodities Futures Trading Commission’s “Quarterly Index Investment Data” and CME Group, CME Group FTP Data. For swaps, the tax rate is 0.01 percent for each year until maturity, and the data on volume are taken from Bank of International Settlements.END_ANSWER",
@@ -220,10 +217,24 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "text-davinci-003_map_reduce"
         }
       ]
     }
+  },
+  "GENERATED_QUESTIONS": {
+    "question_one": {
+      "text": "What is the revenue potential from financial trading taxes and which financial assets would contribute the most to this revenue?",
+      "highlights": []
+    },
+    "question_two": {
+      "text": "Who are the authors of the paper and what is their affiliation?",
+      "highlights": []
+    },
+    "question_three": {
+      "text": "What is the methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1?",
+      "highlights": []
+    }
   }
 }
-

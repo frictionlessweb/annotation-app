@@ -4,7 +4,8 @@ import { useSetDoc, useDocumentContext } from "../context";
 import produce from "immer";
 
 export const IntroDocument = () => {
-  const numHighlights = useDocumentContext().user_responses.INTRO_DOCUMENT.highlights.length
+  const numHighlights =
+    useDocumentContext().user_responses.INTRO_DOCUMENT.highlights.length;
   const setDoc = useSetDoc();
   return (
     <Flex direction="column">
@@ -14,10 +15,12 @@ export const IntroDocument = () => {
       </Text>
       <ul>
         <li>
-          As you read, <b>highlight any sentences you think are important or
-          interesting</b>.
+          As you read,{" "}
+          <b>highlight any sentences you think are important or interesting</b>.
         </li>
-        <li>This task should take no more than <b>15 minutes</b>. </li>
+        <li>
+          This task should take no more than <b>15 minutes</b>.{" "}
+        </li>
       </ul>
       <Text>
         When you are confident and have identified the main topics, please
@@ -27,7 +30,7 @@ export const IntroDocument = () => {
       <Well marginY="size-200">
         <Text>Number of highlights: {numHighlights}</Text>
       </Well>
-      
+
       <Flex marginTop="16px" justifyContent="end">
         <Button
           onPress={() => {

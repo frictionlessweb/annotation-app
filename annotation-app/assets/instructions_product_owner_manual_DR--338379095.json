@@ -1,18 +1,4 @@
 {
-  "GENERATED_QUESTIONS": {
-    "question_one": {
-      "text": "What is included in the electric heating package?",
-      "highlights": []
-    },
-    "question_two": {
-      "text": "What are the safety symbols used for in the manual?",
-      "highlights": []
-    },
-    "question_three": {
-      "text": "What is the warranty for the sequencer and electric element box?",
-      "highlights": []
-    }
-  },
   "ANSWER_QUALITY": {
     "question_one": {
       "text": "What is included in the electric heating package?",
@@ -32,7 +18,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_block_retrieval"
         },
         {
           "text": "The electric heating package includes **Electric Elements** which come in 3, 6, or 9 depending on the heating package size selected. When connecting the 49.5 kW electric heating package, two sequencers are required. The 49.5 kW heating package is made up of a 33 kW sequencer and 16.5 kW sequencer. A metal conduit must be run from each sequencer to the electric element box. The electric heating function of the GARN® WHS is controlled by the toggle switch on the front of the controller and the dial switch (labeled SW-1) on the PC board. In electric mode, the unit may be fired with wood, but it will also use electric for heating if available.",
@@ -48,7 +35,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_map_reduce"
         },
         {
           "text": "The Complete GARN Electric Heating Package comes standard with the following components: Electric Elements (3, 6, or 9 depending on heating package size selected), Electric Element Junction Box, Electric Element Junction Box Face Gasket, Electric Element Junction Box Cover, Label, and Fasteners, Element Sequencer (powers the elements on one-at-a-time), and the Newest available Processor Chip for the Digital Controller.",
@@ -64,7 +52,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-4-8k_map_reduce"
         },
         {
           "text": "The Complete GARN Electric Heating Package comes standard with the following components: 8 ELECTRIC ELEMENT BOXES, an Element Sequencer (which powers the elements on one-at-a-time), a Newest available Processor Chip for the Digital Controller, Electric Elements made of Incoloy®, a high-grade nickel and chromium alloy, a tank-mounted junction box with a high-temperature insulation gasket, UL/CSA listed box, box cover, fasteners and labels, a 49.5 kW heating package made up of a 33 kW sequencer and 16.5 kW sequencer, a Digital Controller with an ON/OFF toggle switch and a WOOD/ELECTRIC toggle switch, a single high limit switch that protects both sequencers, wiring to the GARN WHS controller with a UPC7115A board that requires a chip with version V1.21 or greater, an input signal from the utility/coop that lets the controller know when off-peak electricity is available, and the option to set a customizable deadband and setpoint by wiring an aquastat in series with the existing controls. Additionally, a record of compliance is required for the warranty to be valid, and no warranty is given in connection with second-hand products and equipment, or products and equipment altered or rebuilt without DECTRA’s knowledge or written approval, regarding the predicted or actual performance of any product manufactured or supplied by DECTRA, for merchantability or fitness for purpose, for local code acceptance or insurance carrier acceptance, or for installation or for heating system parts or performance.END_ANSWER",
@@ -80,7 +69,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "text-davinci-003_map_reduce"
         }
       ]
     },
@@ -102,7 +92,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_block_retrieval"
         },
         {
           "text": "The sources describe different types of safety symbols used in a manual. A notice is used to provide information to make a procedure or process easier or clearer. A caution is used to emphasize where equipment damage might occur. A warning is used to emphasize areas where personal injury or death may occur but is not likely. A danger is used to emphasize areas or procedures where death, serious injury, or property damage is likely if not strictly followed. Therefore, safety symbols are used in the manual to provide information about potential hazards and risks associated with certain procedures or equipment.",
@@ -118,7 +109,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_map_reduce"
         },
         {
           "text": "In the manual, safety symbols are used to call attention to different types of information, such as notices, cautions, warnings, and dangers. These symbols emphasize areas where equipment damage might occur, personal injury or death may occur, or property damage is likely if instructions are not strictly followed.",
@@ -134,7 +126,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-4-8k_map_reduce"
         },
         {
           "text": "Throughout the manual, a series of safety symbols are used to call attention to the following types of information: a **notice** provides a piece of information to make a procedure/process easier or clearer, a **caution** emphasizes where equipment damage might occur, and a **danger** emphasizes areas or procedures where death, serious injury, or property damage is likely if not strictly followed.END_ANSWER",
@@ -150,7 +143,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "text-davinci-003_map_reduce"
         }
       ]
     },
@@ -172,7 +166,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_block_retrieval"
         },
         {
           "text": "The warranty for the sequencer and electric element box is **five years** with regard to materials and workmanship.",
@@ -188,7 +183,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-3.5-turbo_map_reduce"
         },
         {
           "text": "The warranty for the sequencer and electric element box is **five years** with regard to materials and workmanship.",
@@ -204,7 +200,8 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "gpt-4-8k_map_reduce"
         },
         {
           "text": "The warranty for the sequencer and electric element box is **five years** with regard to materials and workmanship.END_ANSWER",
@@ -220,10 +217,24 @@
           "Do you need more details?": "",
           "Are there any new ideas or concepts in this answer that make you somewhat surprised?": "",
           "Is this answer useful or helpful to address the question?": "",
-          "Do you think this answer has been written by an expert?": ""
+          "Do you think this answer has been written by an expert?": "",
+          "system": "text-davinci-003_map_reduce"
         }
       ]
     }
+  },
+  "GENERATED_QUESTIONS": {
+    "question_one": {
+      "text": "What is included in the electric heating package?",
+      "highlights": []
+    },
+    "question_two": {
+      "text": "What are the safety symbols used for in the manual?",
+      "highlights": []
+    },
+    "question_three": {
+      "text": "What is the warranty for the sequencer and electric element box?",
+      "highlights": []
+    }
   }
 }
-

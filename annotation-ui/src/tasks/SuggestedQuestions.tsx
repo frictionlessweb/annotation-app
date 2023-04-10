@@ -17,7 +17,10 @@ export const SuggestedQuestions = () => {
         be answered based on content in the PDF document.
       </Text>
       <Text UNSAFE_style={{ marginBottom: "16px" }}>
-        <em>No document will be shown. Answer based on what you remember of the document.</em>
+        <em>
+          No document will be shown. Answer based on what you remember of the
+          document.
+        </em>
       </Text>
       <Flex marginBottom="16px">
         <TextArea

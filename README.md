@@ -36,6 +36,7 @@ python ./assets/copy_assets.py
 That will analyze the files you've added to the project and copied them into the right place such that one can use them with the project.
 
 ## Deploying
+
 First, you will need to get an API key for the Adobe Embed API. [You can find the instructions to do so here.](https://developer.adobe.com/document-services/docs/overview/pdf-embed-api/). Once you have an API key, create a file called `.env` in the `annotations-ui` directory with the following content:
 
 ```

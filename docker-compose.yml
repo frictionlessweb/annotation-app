@@ -26,7 +26,12 @@ services:
       - 8080:8080
     links:
       - annotation-postgres
-    entrypoint: ["bash", "-c", "sed -i 's/localhost/annotation-postgres/g' alembic.ini && alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8080"]
+    entrypoint:
+      [
+        "bash",
+        "-c",
+        "sed -i 's/localhost/annotation-postgres/g' alembic.ini && alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8080",
+      ]
     depends_on:
       - annotation-postgres
 
