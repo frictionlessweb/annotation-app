@@ -1,9 +1,11 @@
 import React from "react";
 import {
-  Flex, Grid,
+  Flex,
+  Grid,
   ProgressBar as SpectrumProgressBar,
+  TextField,
 } from "@adobe/react-spectrum";
-import { useDocumentContext, STAGE_MAP } from "../context";
+import { useDocumentContext, useSetDoc, STAGE_MAP } from "../context";
 import { IntroTask } from "./IntroTask";
 import { IntroDocument } from "./IntroDocument";
 import { GeneratedQuestions } from "./GeneratedQuestions";
@@ -11,6 +13,7 @@ import { PDF } from "./PDF";
 import { AnswerQuality } from "./AnswerQuality";
 import { SuggestedQuestions } from "./SuggestedQuestions";
 import { Done } from "./Done";
+import produce from "immer";
 
 const StageRouter = () => {
   const { stage, user_responses } = useDocumentContext();
@@ -48,6 +51,7 @@ const StageRouter = () => {
 
 const ProgressBar = () => {
   const ctx = useDocumentContext();
+  const setDoc = useSetDoc();
   return (
     <Flex maxHeight="30px">
       <SpectrumProgressBar
@@ -55,6 +59,19 @@ const ProgressBar = () => {
         value={
           100 * (STAGE_MAP[ctx.stage].order / Object.keys(STAGE_MAP).length)
         }
+      />
+      <TextField
+        marginStart='16px'
+        placeholder="User Name"
+        value={ctx.user_name}
+        onChange={(val) => {
+          setDoc((prev) => {
+            return produce(prev, (draft) => {
+              if (typeof draft === "string") return;
+              draft.user_name = val;
+            });
+          });
+        }}
       />
     </Flex>
   );
@@ -66,28 +83,27 @@ export const DocumentForm = () => {
   return (
     <Grid
       marginEnd="size-200"
-      areas={[
-        'header  header',
-        'pdf form'
-      ]}
-      columns={['4fr', '1.5fr']}
-      rows={['size-675', 'auto']}
+      areas={["header  header", "pdf form"]}
+      columns={["4fr", "1.5fr"]}
+      rows={["size-675", "auto"]}
       height="100vh"
       maxHeight="100vh"
-      gap="size-160">
-        <Flex 
-          gridArea="header"
-          direction="row"  
-          marginX="size-500"
-          alignItems="center">
-          <ProgressBar />
-        </Flex>
-        <Flex gridArea="pdf">
-          <PDF />
-        </Flex>
-        <Flex gridArea="form" margin="size-160">
-          <StageRouter />
-        </Flex>
+      gap="size-160"
+    >
+      <Flex
+        gridArea="header"
+        direction="row"
+        marginX="size-500"
+        alignItems="center"
+      >
+        <ProgressBar />
+      </Flex>
+      <Flex gridArea="pdf">
+        <PDF />
+      </Flex>
+      <Flex gridArea="form" margin="size-160">
+        <StageRouter />
+      </Flex>
     </Grid>
   );
 };

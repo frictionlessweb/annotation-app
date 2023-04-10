@@ -63,10 +63,15 @@ const DEFAULT_ANSWER: Answer = {
   "Do you think this answer has been written by an expert?": "",
 };
 
+export const answerIsComplete = (ans: Answer): boolean => {
+  return ANSWER_QUALITY_ITEMS.every(item => ans[item] !== '');
+}
+
 export interface ApiResult {
   pdf_url: string;
   image_url: string;
   stage: Stage;
+  user_name: string;
   user_responses: {
     INTRO_TASK: {
       question_1: string;
@@ -154,6 +159,7 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
   pdfRef: null,
   pdf_url: "",
   image_url: "",
+  user_name: '',
   stage: "INTRO_TASK",
   user_responses: {
     INTRO_TASK: {

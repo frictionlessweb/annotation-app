@@ -14,7 +14,8 @@ import {
   ANSWER_QUALITY_ITEMS,
   GENERATED_QUESTION_ORDER,
   useSetDoc,
-  useDocumentContext
+  useDocumentContext,
+  answerIsComplete,
 } from "../context";
 import produce from "immer";
 
@@ -29,6 +30,7 @@ export const AnswerQuality = () => {
   const currentIndex = currentAnswerMap.index;
   const currentAnswer = currentAnswerMap.answers[currentIndex];
   const currentQuestion = currentAnswerMap.text;
+  const nextDisabled = !answerIsComplete(currentAnswer);
   const [curItem, setCurItem] = React.useState(0);
   return (
     <Flex direction="column">
@@ -38,9 +40,15 @@ export const AnswerQuality = () => {
         {`answer's `}
         quality. Refer to the document (as needed).
       </Text>
-      <Heading level={4} marginBottom="size-100">Question</Heading>
-      <Text><em>{currentQuestion}</em></Text>
-      <Heading level={4} marginBottom="size-100">Answer</Heading>
+      <Heading level={4} marginBottom="size-100">
+        Question
+      </Heading>
+      <Text>
+        <em>{currentQuestion}</em>
+      </Text>
+      <Heading level={4} marginBottom="size-100">
+        Answer
+      </Heading>
       <Text marginTop="size-0" marginBottom="16px">
         <pre
           style={{
@@ -49,7 +57,7 @@ export const AnswerQuality = () => {
             width: "400px",
             whiteSpace: "pre-wrap",
             wordWrap: "break-word",
-            margin: "0"
+            margin: "0",
           }}
         >
           {currentAnswer.text.trim()}
@@ -102,8 +110,8 @@ export const AnswerQuality = () => {
       </Flex>
 
       <Text marginY="16px">
-        Overall, how would you rate the quality of the answer to the question? 
-        <br/>
+        Overall, how would you rate the quality of the answer to the question?
+        <br />
         1-Terrible, 2-Poor, 3-Average, 4-Good, 5-Excellent
       </Text>
       <Slider
@@ -131,6 +139,7 @@ export const AnswerQuality = () => {
 
       <Flex marginTop="16px" marginBottom="16px" justifyContent="end">
         <Button
+          isDisabled={nextDisabled}
           onPress={() => {
             setDoc((prev) => {
               return produce(prev, (draft) => {
