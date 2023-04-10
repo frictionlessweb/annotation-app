@@ -38,6 +38,7 @@ export const IntroDocument = () => {
               });
             });
           }}
+          isDisabled={numHighlights === 0}
           variant="accent"
         >
           Next

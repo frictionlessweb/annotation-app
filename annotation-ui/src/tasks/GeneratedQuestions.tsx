@@ -12,6 +12,9 @@ export const GeneratedQuestions = () => {
     user_responses: { current_generated_question, GENERATED_QUESTIONS }
   } = useDocumentContext();
   const setDoc = useSetDoc();
+  const numHighlights = GENERATED_QUESTIONS[
+    GENERATED_QUESTION_ORDER[current_generated_question]
+  ].highlights.length
   return (
     <Flex direction="column">
       <Heading level={3}>Instructions</Heading>
@@ -41,11 +44,7 @@ export const GeneratedQuestions = () => {
       </Text>
 
       <Well marginBottom="size-350">
-        <Text>Number of highlights: {
-            GENERATED_QUESTIONS[
-              GENERATED_QUESTION_ORDER[current_generated_question]
-            ].highlights.length
-          }
+        <Text>Number of highlights: {numHighlights}
         </Text>
       </Well>
 
@@ -68,6 +67,7 @@ export const GeneratedQuestions = () => {
             });
           }}
           variant="accent"
+          isDisabled={numHighlights === 0}
         >
           Next
         </Button>
