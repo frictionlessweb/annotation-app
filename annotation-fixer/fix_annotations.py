@@ -18,6 +18,10 @@ def quadpoints_to_bboxes(quadpoints: list[float]) -> list[float]:
     return bboxes
 
 
+def fix_bbox(bbox: list[float], height: int):
+    return [bbox[0], height - bbox[1], bbox[2], height - bbox[3]]
+
+
 def fix_highlight(annotation: dict, pdf: fitz.Document):
     has_text: bool = annotation.get("bodyValue", "") != ""
     if has_text:
@@ -28,7 +32,7 @@ def fix_highlight(annotation: dict, pdf: fitz.Document):
     page_number = annotation["target"]["selector"]["node"]["index"]
     page = pdf[page_number]
     for bbox in bboxes:
-        bbox_text = page.get_textbox(bbox)  # type: ignore
+        bbox_text = page.get_textbox(fix_bbox(bbox, pdf[0].rect.height))  # type: ignore
         output += bbox_text.strip()
     annotation["bodyValue"] = output
 
