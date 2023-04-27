@@ -1,5 +1,6 @@
 # Annotation Fixer
 To use this script, you'll need:
+- Python 3.10+
 - A JSON filled with annotations that may be missing text.
 - A PDF that goes with that JSON.
 
