@@ -1,17 +1,21 @@
 # Annotation Fixer
+
 To use this script, you'll need:
-- Python 3.10+
+
+- NodeJS
 - A JSON filled with annotations that may be missing text.
-- A PDF that goes with that JSON.
+- A JSON filled with annotations from the Extract API.
 
-First, create a virtual environment and run `pip install -r requirements.txt` in this directory.
-
-Next, edit `fix_annotations.py` and in the last line, replace the first argument with the path to the JSON you need to fix and the second argument with the path to the PDF. The third argument should be the file with fixed annotations you want to generate.
-
-From there, 
+From there, you can run:
 
 ```
-python fix_annotations.py
+node ./cli.js <ANNOTATION_RESPONSES_PATH> <EXTRACT_API_PATH> <OUTPUT_PATH>
 ```
 
-Should do the trick.
+For example, if you do:
+
+```
+node cli.js __example__/Q1_highlights.json __example__/extract.json results.json
+```
+
+A file `results.json` with the correct data will be in this directory.
