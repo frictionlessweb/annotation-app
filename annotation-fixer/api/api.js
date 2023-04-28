@@ -33,7 +33,7 @@ export const quadpointsToBoundingBoxes = (quadpoints) => {
       quadpoints[i + 5],
       quadpoints[i + 7]
     );
-    boxes.push({ x1, y1, x2, y2 });
+    boxes.push([x1, y1, x2, y2 ]);
   }
   return boxes;
 };

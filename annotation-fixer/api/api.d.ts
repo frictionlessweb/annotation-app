@@ -2,6 +2,19 @@ import { Bounds } from "../math/math.js";
 
 type ExtractBounds = [number, number, number, number];
 
+export interface Highlight {
+  id: string;
+  target: {
+    selector: {
+      node: {
+        index: number;
+      };
+      quadPoints: number[];
+    };
+  };
+  bodyValue: string;
+}
+
 export interface Element {
   Bounds?: ExtractBounds;
   CharBounds?: ExtractBounds[];
@@ -59,4 +72,6 @@ export const groupCharactersIntoWordGroups: (
 ) => Character[][];
 export const analyzeElements: (api: ExtractResult) => DocumentContext;
 export const fourNumbersToBounds: (nums: ExtractBounds, page: Page) => Bounds;
-export const quadpointsToBoundingBoxes: (quadpoints: number[]) => ExtractBounds[];
+export const quadpointsToBoundingBoxes: (
+  quadpoints: number[]
+) => ExtractBounds[];

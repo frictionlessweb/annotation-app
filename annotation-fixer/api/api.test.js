@@ -3,7 +3,7 @@ import {
   analyzeElements,
   fourNumbersToBounds,
   groupCharactersIntoWordGroups,
-  quadpointsToBoundingBoxes
+  quadpointsToBoundingBoxes,
 } from "./api.js";
 import fs from "fs";
 import path from "path";
@@ -178,25 +178,27 @@ test("Grouping characters into words works on another example", (t) => {
   t.deepEqual(actual, expected);
 });
 
-test('quadpointsToBoundingBoxes returns an empty array for an empty input array', (t) => {
+test("quadpointsToBoundingBoxes returns an empty array for an empty input array", (t) => {
   const input = [];
   const expectedOutput = [];
   const actualOutput = quadpointsToBoundingBoxes(input);
   t.deepEqual(actualOutput, expectedOutput);
 });
 
-test('quadpointsToBoundingBoxes correctly converts a single set of quadpoints into a bounding box', (t) => {
+test("quadpointsToBoundingBoxes correctly converts a single set of quadpoints into a bounding box", (t) => {
   const input = [10, 20, 30, 20, 30, 40, 10, 40];
-  const expectedOutput = [{ x1: 10, y1: 20, x2: 30, y2: 40 }];
+  const expectedOutput = [[10, 20, 30, 40]];
   const actualOutput = quadpointsToBoundingBoxes(input);
   t.deepEqual(actualOutput, expectedOutput);
 });
 
-test('quadpointsToBoundingBoxes correctly converts multiple sets of quadpoints into bounding boxes', (t) => {
-  const input = [10, 20, 30, 20, 30, 40, 10, 40, 50, 60, 70, 60, 70, 80, 50, 80];
+test("quadpointsToBoundingBoxes correctly converts multiple sets of quadpoints into bounding boxes", (t) => {
+  const input = [
+    10, 20, 30, 20, 30, 40, 10, 40, 50, 60, 70, 60, 70, 80, 50, 80,
+  ];
   const expectedOutput = [
-    { x1: 10, y1: 20, x2: 30, y2: 40 },
-    { x1: 50, y1: 60, x2: 70, y2: 80 },
+    [10, 20, 30, 40],
+    [50, 60, 70, 80],
   ];
   const actualOutput = quadpointsToBoundingBoxes(input);
   t.deepEqual(actualOutput, expectedOutput);

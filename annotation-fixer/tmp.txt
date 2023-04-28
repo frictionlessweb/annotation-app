@@ -1,0 +1,3214 @@
+[
+  [
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'U',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: '.',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: '.',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left250.69000244140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'h',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left275.66200256347656width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left298.0780029296875width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'W',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'l',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'l',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'f',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left342.44200134277344width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left382.593994140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top88.76400756835938left147.61000061035156width15.863998413085938height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left147.61000061035156width15.863998413085938height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'Y',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left163.4739990234375width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '2',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '0',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '1',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '6',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left190.4739990234375width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'C',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'p',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left256.13800048828125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'E',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'g',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left321.9340057373047width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'p',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left362.24200439453125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'C',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left433.82200622558594width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'u',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left464.24200439453125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'P',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'j',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left291.093994140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'D',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    ... 2933 more items
+  ],
+  [
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'U',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: '.',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: '.',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left250.69000244140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'h',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left275.66200256347656width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left298.0780029296875width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'W',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'l',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'l',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'f',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left342.44200134277344width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left382.593994140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top88.76400756835938left147.61000061035156width15.863998413085938height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left147.61000061035156width15.863998413085938height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'Y',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left163.4739990234375width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '2',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '0',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '1',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '6',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left190.4739990234375width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'C',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'p',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left256.13800048828125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'E',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'g',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left321.9340057373047width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'p',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left362.24200439453125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'C',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left433.82200622558594width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'u',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left464.24200439453125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'P',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'j',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left291.093994140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'D',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    ... 2933 more items
+  ],
+  [
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'U',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: '.',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: '.',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left250.69000244140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'h',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left275.66200256347656width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left298.0780029296875width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'W',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'l',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'l',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'f',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left342.44200134277344width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left382.593994140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top88.76400756835938left147.61000061035156width15.863998413085938height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left147.61000061035156width15.863998413085938height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'Y',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left163.4739990234375width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '2',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '0',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '1',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '6',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left190.4739990234375width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'C',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'p',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left256.13800048828125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'E',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'g',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left321.9340057373047width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'p',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left362.24200439453125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'C',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left433.82200622558594width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'u',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left464.24200439453125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'P',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'j',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left291.093994140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'D',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    ... 2933 more items
+  ],
+  [
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'U',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: '.',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left229.35400390625width21.33599853515625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: '.',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left250.69000244140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left253.69000244140625width21.899993896484375height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'h',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left275.66200256347656width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left278.66200256347656width19.379989624023438height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left298.0780029296875width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'W',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'l',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'l',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'f',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left301.0780029296875width41.41200256347656height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left342.44200134277344width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left345.44200134277344width37.152008056640625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top74.94000244140625left382.593994140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top74.94000244140625left229.35400390625width156.24000549316406height10.71600341796875'
+    },
+    {
+      id: 'top88.76400756835938left147.61000061035156width15.863998413085938height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left147.61000061035156width15.863998413085938height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'Y',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left163.4739990234375width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '2',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '0',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '1',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left166.4739990234375width24height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: '6',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left190.4739990234375width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'C',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'p',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left193.593994140625width62.54400634765625height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left256.13800048828125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'E',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'g',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left259.13800048828125width62.75999450683594height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left321.9340057373047width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'S',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'p',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left324.9340057373047width37.30809020996094height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left362.24200439453125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'C',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'v',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'a',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'i',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left365.24200439453125width68.57998657226562height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left433.82200622558594width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'F',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'u',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'n',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left436.95399475097656width27.288009643554688height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: 'd',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top88.76400756835938left464.24200439453125width3height10.715988159179688',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top88.76400756835938left147.61000061035156width319.6320037841797height10.715988159179688'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'P',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'r',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'o',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'j',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left253.83399963378906width37.259918212890625height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 't',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left291.093994140625width3height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: ' ',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'D',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'e',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 's',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    {
+      id: 'top102.56399536132812left294.093994140625width63.97209167480469height10.71600341796875',
+      bounds: [Object],
+      page: 0,
+      letter: 'c',
+      word_id: '',
+      paragraph_id: 'top102.56399536132812left253.83399963378906width107.23199462890625height10.71600341796875'
+    },
+    ... 2933 more items
+  ]
+]
