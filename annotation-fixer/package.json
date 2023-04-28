@@ -1,0 +1,17 @@
+{
+  "name": "annotation-fixer",
+  "version": "1.0.0",
+  "description": "To use this script, you'll need: - Python 3.10+ - A JSON filled with annotations that may be missing text. - A PDF that goes with that JSON.",
+  "main": "main.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^5.2.0",
+    "typescript": "^5.0.4"
+  }
+}
