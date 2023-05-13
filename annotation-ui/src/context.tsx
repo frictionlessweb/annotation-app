@@ -14,56 +14,64 @@ export const GENERATED_QUESTION_ORDER = [
 ] as const;
 
 export const ANSWER_QUALITY_ITEMS = [
-  "Does this answer provide enough information for the question?",
-  "Does this answer provide inaccurate information?",
-  "Does this answer provide information not found in the document?",
-  "Does this answer completely answer the whole question?",
-  "Is it easy to read this answer?",
-  "Is this answer relevant to the question?",
-  "Do you feel the answer is wordy?",
-  "Do you believe or trust this answer?",
-  "Do you need more details?",
-  "Are there any new ideas or concepts in this answer that make you somewhat surprised?",
-  "Is this answer useful or helpful to address the question?",
-  "Do you think this answer has been written by an expert?",
+  "The answer provides enough information for the question.",
+  "The answer provides inaccurate information.",
+  "The answer provides information not found in the document.",
+  "The answer completely answers the whole question.",
+  "The answer is relevant to the question.",
+  "The answer is wordy.",
+  "The answer is believable.",
+  "The answer lacks details from the document.",
+  "The answer covers new ideas or concepts that are surprising.",
+  "The answer has been written by an expert.",
+  "The answer contains irrelevant information.",
 ] as const;
 
 interface Answer {
   text: string;
+  system: string;
   overall_rating: number;
-  "Does this answer provide enough information for the question?": string;
-  "Does this answer provide inaccurate information?": string;
-  "Does this answer provide information not found in the document?": string;
-  "Does this answer completely answer the whole question?": string;
-  "Is it easy to read this answer?": string;
-  "Is this answer relevant to the question?": string;
-  "Do you feel the answer is wordy?": string;
-  "Do you believe or trust this answer?": string;
-  "Do you need more details?": string;
-  "Are there any new ideas or concepts in this answer that make you somewhat surprised?": string;
-  "Is this answer useful or helpful to address the question?": string;
-  "Do you think this answer has been written by an expert?": string;
+  "Is an answer provided?": string;
+  "The answer provides enough information for the question.": string;
+  "The answer provides inaccurate information.": string;
+  "The answer provides information not found in the document.": string;
+  "The answer completely answers the whole question.": string;
+  "The answer is relevant to the question.": string;
+  "The answer is wordy.": string;
+  "The answer is believable.": string;
+  "The answer lacks details from the document.": string;
+  "The answer covers new ideas or concepts that are surprising.": string;
+  "The answer has been written by an expert.": string;
+  "The answer contains irrelevant information.": string;
 }
 
 export type AnswerKey = keyof Answer;
 
 const DEFAULT_ANSWER: Answer = {
-  text: "this is the example answer",
+  text: "",
+  system: "",
   overall_rating: 1,
-  "Does this answer provide enough information for the question?": "",
-  "Does this answer provide inaccurate information?": "",
-  "Does this answer provide information not found in the document?": "",
-  "Does this answer completely answer the whole question?": "",
-  "Is it easy to read this answer?": "",
-  "Is this answer relevant to the question?": "",
-  "Do you feel the answer is wordy?": "",
-  "Do you believe or trust this answer?": "",
-  "Do you need more details?": "",
-  "Are there any new ideas or concepts in this answer that make you somewhat surprised?":
-    "",
-  "Is this answer useful or helpful to address the question?": "",
-  "Do you think this answer has been written by an expert?": "",
+  "Is an answer provided?": "",
+  "The answer provides enough information for the question.": "",
+  "The answer provides inaccurate information.": "",
+  "The answer provides information not found in the document.": "",
+  "The answer completely answers the whole question.": "",
+  "The answer is relevant to the question.": "",
+  "The answer is wordy.": "",
+  "The answer is believable.": "",
+  "The answer lacks details from the document.": "",
+  "The answer covers new ideas or concepts that are surprising.": "",
+  "The answer has been written by an expert.": "",
+  "The answer contains irrelevant information.": "",
 };
+
+export const POSSIBLE_ANSWERS = [
+  "Strongly Disagree",
+  "Strongly Agree",
+  "Undecided",
+  "Agree",
+  "Strongly Agree",
+];
 
 export const answerIsComplete = (ans: Answer): boolean => {
   return ANSWER_QUALITY_ITEMS.every((item) => ans[item] !== "");
@@ -207,6 +215,7 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
     SUGGESTED_QUESTIONS: {
       question_one: "",
       question_two: "",
+      question_three: "",
     },
     current_generated_question: 0,
     current_answer_quality: 0,

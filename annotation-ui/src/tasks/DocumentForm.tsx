@@ -24,6 +24,7 @@ const StageRouter = () => {
       JSON.stringify({ user_responses, stage })
     );
   }, [stage, user_responses]);
+  return <AnswerQuality />;
   switch (stage) {
     case "INTRO_TASK": {
       return <IntroTask />;

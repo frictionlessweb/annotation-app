@@ -51,9 +51,8 @@ export const AnswerQuality = () => {
     <Flex direction="column">
       <Heading level={3}>Instructions</Heading>
       <Text>
-        For each question and answer pair below, provide your assessment of the{" "}
-        {`answer's `}
-        quality. Refer to the document (as needed).
+        For each question and answer pair below, please indicate your agreement
+        with each statement. Feel free to refer back to the document as needed.
       </Text>
       <Heading level={4} marginBottom="size-100">
         Question
@@ -78,7 +77,6 @@ export const AnswerQuality = () => {
           {currentAnswer.text.trim()}
         </pre>
       </Text>
-
       <Flex direction="column" marginBottom="size-200">
         {(() => {
           const anItem = RENDERING_ANSWER_QUALITY_ITEMS[curItem] as AnswerKey;
@@ -100,7 +98,11 @@ export const AnswerQuality = () => {
                       (currentAnswer[anItem] as string) = val;
                     });
                   });
-                  setCurItem(curItem === ANSWER_QUALITY_ITEMS.length - 1 ? 0 : curItem + 1);
+                  setCurItem(
+                    curItem === ANSWER_QUALITY_ITEMS.length - 1
+                      ? 0
+                      : curItem + 1
+                  );
                 }}
                 value={currentAnswer[anItem] as string}
               >
@@ -124,7 +126,6 @@ export const AnswerQuality = () => {
           <Item key="next">Next</Item>
         </ActionGroup>
       </Flex>
-
       <Text marginY="16px">
         Overall, how would you rate the quality of the answer to the question?
         <br />

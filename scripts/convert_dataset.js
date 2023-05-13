@@ -10,6 +10,7 @@ const ANSWER_BASE = {
   text: "",
   system: "",
   overall_rating: 1,
+  "Is an answer provided?": "",
   "The answer provides enough information for the question.": "",
   "The answer provides inaccurate information.": "",
   "The answer provides information not found in the document.": "",
