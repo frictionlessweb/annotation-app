@@ -1,0 +1,791 @@
+[
+  {
+    "document_id": "DR--182866691_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the topics of the bills passed by the Oregon Legislative Assembly during the 2007 session?",
+        "answer": [
+          {
+            "answer_text": "Details on the bills passed by the Oregon Legislative Assembly during the 2007 session can be found at http://www.oregonite.org/legs/legs2.php. The given portion of the document only provides the source for finding the information and does not list the topics of the bills.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The topics of the bills passed by the Oregon Legislative Assembly during the 2007 session vary widely, including issues such as expanding the use of photo radar and red light enforcement, various signing requirements, and gates for light rail pedestrian crossings. More details on the bills can be found at http://www.oregonite.org/legs/legs2.php.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Approximately 13 transportation-related bills were passed by the Oregon Legislative Assembly during the 2007 session, covering a wide range of topics such as expanding the use of photo radar and red light enforcement, various signing requirements, and gates for light rail pedestrian crossings  .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the details of the Oregon Section's organizational captain membership program?",
+        "answer": [
+          {
+            "answer_text": "There is no information provided about the Oregon Section's organizational captain membership program.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The membership committee continued its organizational captain membership program over the past year. The program was designed to identify specific individuals within public and private organizations who might be interested in joining ITE or attending ITE functions. The captains also assist with advertising meetings, recruiting new members, and promoting ITE. Unfortunately, there are no further details provided about the program.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The Oregon Section continued its organizational captain membership program over the past year, which was designed to identify specific individuals within public and private organizations who might be interested in joining ITE or attending ITE functions  . No further details are provided about the program.",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the benefits of the Oregon Section's online banking and check card system?",
+        "answer": [
+          {
+            "answer_text": "There is no information provided in the given portion of the document about the benefits of the Oregon Section's online banking and check card system.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The Oregon Section's online banking and check card system allows for faster processing of payments and account inquiries, as well as a significant reduction in the overall number of reimbursement checks. Additionally, the system allows for more routine expenditures to be made using the check card, which may be more convenient for the Section. However, there is no information provided on any other specific benefits of the system.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The Oregon Section uses online banking and check cards for most routine expenditures, which results in faster processing of payments and account inquiries, as well as a significant reduction in the overall number of reimbursement checks  . However, there is no information on any other benefits of this system.",
+            "system": "experiment_5a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--231406771_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the most common sources of prescription drugs for teens?",
+        "answer": [
+          {
+            "answer_text": "According to the given information, the most common source of prescription drugs for teens is their parent's medicine cabinets.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "Over half of teens say that it\u2019s easy to get prescription drugs from their parent\u2019s medicine cabinets. Additionally, 53.7% of individuals who misused prescription opioids obtained them from a friend or relative.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "According to sources  and , over half of teens say that it\u2019s easy to get prescription drugs from their parent\u2019s medicine cabinets, and 53.7% of individuals who misused prescription opioids obtained them from a friend or relative. Therefore, the most common sources of prescription drugs for teens are their parents' medicine cabinets and friends or relatives who have obtained them without a prescription. It is important to properly store and dispose of medications to prevent misuse and abuse     .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the most effective ways to safely store and dispose of medications?",
+        "answer": [
+          {
+            "answer_text": "The most effective ways to safely store and dispose of medications are: \n\n- Store medications safely out of reach of children and pets. Consider a lock box or similar device to store medications safely.\n- Visit TakeMedsBack.org to find a safe disposal location near you. New boxes are being added around the state. If there is not yet a safe disposal box nearby, check back soon.\n- Don't flush pills or liquid medication down the toilet or drain. Flushing pollutes drinking water and could harm aquatic life.\n- Mix medicine with something that cannot be eaten, such as cat litter or coffee grounds, to prevent accidental or intentional misuse of medicine by children or animals.\n- Wrap the mixture in another material, such as newsprint or a paper sack, or place medicine in sealable containers (cans, plastic bags).\n- Throw in the trash on the day your garbage is collected.\n- Place syringes and other injectables in a sturdy, puncture-resistant container with a screw-on cap. Empty laundry detergent bottles work well.\n- Only for used fentanyl or Duragesic pain patches: fold in half, sticky side together, and flush down the toilet. These patches are dangerous if not flushed immediately after use.\n- Take all other unopened patches to a Take-Back location.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The most effective ways to safely store and dispose of medications are:\n\n1. Store medications safely out of reach of children and pets. Consider a lock box or similar device to store medications safely.\n\n2. Visit TakeMedsBack.org to find a safe disposal location near you. If there is not yet a safe disposal box nearby, check back soon.\n\n3. Do not flush pills or liquid medication down the toilet or drain. Flushing pollutes drinking water and could harm aquatic life. Recycle containers if possible or hide them in the trash.\n\n4. Mix medicine with something that cannot be eaten, such as cat litter or coffee grounds, to prevent accidental or intentional misuse of medicine by children or animals. Wrap the mixture in another material, such as newsprint or a paper sack, or place medicine in sealable containers (cans, plastic bags). Throw in the trash on the day your garbage is collected.\n\n5. Take extra care when disposing of syringes and patches. Place syringes and other injectables in a sturdy, puncture-resistant container with a screw-on cap. Empty laundry detergent bottles work well. Place a label/warning on the container (Example: Syringes \u2013 Do Not Recycle). When full, place sealed containers in the trash, not recycling. Or purchase a plastic sharps container at your pharmacy.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The most effective ways to safely store and dispose of medications include storing them safely out of reach of children and pets, considering a lock box or similar device for storage, and using a medication storage cabinet that locks   . When disposing of unused and expired medications, it is important to consider how you dispose of them, as it makes a difference  . One option is to throw most medicines in household trash if you follow certain steps, such as removing medicine from containers and destroying labels to help protect privacy, and wrapping the mixture in another material or placing medicine in sealable containers  . Another option is to visit TakeMedsBack.org to find a safe disposal location near you, or to purchase a plastic sharps container at your pharmacy  . It is important to not flush pills or liquid medication down the toilet or drain, and to be especially careful using and storing pain medication patches, as they are dangerous if used other than prescribed and directed  . Additionally, it is important to take extra care when disposing of syringes and patches, and to mix medicine with something that cannot be eaten, such as cat litter or coffee grounds, to prevent accidental or intentional misuse of medicine by children or animals  . Accepted medicines for disposal include over-the-counter and prescribed medicines, including prescribed controlled substances like Percocet, Oxycontin, Xanax, Ritalin, etc., medication samples, medicated ointments, unused medication patches, and liquid medications (small amounts in non-leaking original container)    . It is important to call 303.692.2903 or visit TakeMedsBack.org to find permanent household medication take-back sites  . Your pharmacy may also sell pre-labeled, mail-back containers, and it is important to place a label/warning on the container (Example: Syringes \u2013 Do Not Recycle)  .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the potential risks of misusing prescription drugs?",
+        "answer": [
+          {
+            "answer_text": "Misusing prescription drugs can lead to addiction, overdose, and death.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "Misusing prescription drugs can lead to a range of potential risks, including addiction, overdose, and death. Prescription drug abuse is the fastest-growing drug problem in the U.S. and over half of teens say that it\u2019s easy to get prescription drugs from their parent\u2019s medicine cabinets. In 2015, the number of prescription opioid-related deaths was higher than alcohol-impaired driving fatalities. Flushing unused or expired medications can pollute drinking water and harm aquatic life. It is important to dispose of unused and expired medications properly. Pain medications obtained for nonmedical use are often obtained from friends or relatives. Safe disposal programs are available for over-the-counter and prescribed medicines, medication samples, medicated ointments, vitamins, pet medications, unused medication patches, and liquid medications. It is important to store medications safely out of reach of children and pets and to consider a lock box or similar device to store medications safely. Syringes and other injectables should be placed in a sturdy, puncture-resistant container with a screw-on cap and sealed containers should be placed in the trash, not recycling.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Misusing prescription drugs can lead to addiction and overdose, as prescription drug abuse is the fastest-growing drug problem in the U.S. . Over half of teens say that it\u2019s easy to get prescription drugs from their parent\u2019s medicine cabinets, and Colorado high school students have taken prescription medications without a doctor\u2019s prescription  . Pain medications obtained for nonmedical use are often obtained from a friend or relative, and unused prescription drugs should be stored safely out of reach of children and pets to prevent accidental or intentional misuse   . Medicines in water supplies have been detected, and it is important to dispose of unused and expired medications properly to prevent environmental contamination  . Pain medication patches are especially dangerous if used other than prescribed and directed, and should be monitored and disposed of properly  . Misusing prescription drugs can also lead to crashes and fatalities, as well as other health risks .",
+            "system": "experiment_5a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--39293534_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the key findings from the inspection of the Rikkyo School in England?",
+        "answer": [
+          {
+            "answer_text": "The given portion of the document provides different sets of key findings from the inspection of the Rikkyo School in England. Therefore, it is not possible to provide a comprehensive answer to this question. However, based on the provided text, some key findings include:\n\n- The boarding school provides effective services that meet the requirements for good.\n- The school has a family approach to communal living, and older students monitor and support their younger peers.\n- The emotional well-being of young people is given priority, and there are plans to develop a counselling service and provide opportunities for staff to update their knowledge of child psychology.\n- The school provides a high standard of healthcare for young people, and there is a robust system for the recording and administration of prescribed medication.\n- The school's areas for development include compliance with the national minimum standards for boarding schools, the roles and responsibilities of external safeguarding professionals, a written policy for responding to young people going missing from the school, the standard of some boarding accommodation, and staff with care responsibilities not receiving practice-related supervision.\n\nIt is important to note that this is not an exhaustive list of all the key findings from the inspection, as the given portion of the document only includes some aspects of the inspection report.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The key findings from the inspection of the Rikkyo School in England are:\n\n- The emotional well-being of young people is given priority and the young people consistently reported that they feel safe at the school.\n- The school has made strong links with local schools and the local community, enhancing young people\u2019s experience of cultural life in the United Kingdom.\n- The senior leadership team quickly identifies weaknesses in the boarding provision, and demonstrates commitment to addressing these.\n- Since the regulator undertook an emergency inspection of the school in February 2016, leaders and managers have taken steps to ensure that young people are protected from bullying.\n- The school\u2019s governing body does not currently take a proactive approach to monitoring the standard of the boarding and welfare provision in the school.\n- Two of the boarding houses do not provide a high standard of accommodation, particularly the boys\u2019 dormitories.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The Rikkyo School in England was established in 1972 and is an independent, co-educational school acknowledged by the Department of Education in Japan . During the inspection, parents had a positive view of how the school supports young people . The school is situated on the West Sussex/Surrey border, close to the village of Rudgwick . The inspectors identified aspects of practice which would benefit from further development, which had already been recognized by the leadership team and are addressed in the school\u2019s development plan . The staff spoken to during this inspection felt well supported and expressed confidence in the ability of the new headteacher and deputy headteachers to make continuous improvements . The young people who spoke to inspectors during this inspection consistently reported that they feel safe at the school . A particular strength of the school is the process for monitoring young people\u2019s progress, in terms of their personal and social development and their academic achievement .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What areas of improvement have been identified for the Rikkyo School in England?",
+        "answer": [
+          {
+            "answer_text": "Several areas of improvement have been identified for the Rikkyo School in England, including the need to develop practice to ensure all young people remain safe and free from bullying, the need to complete risk assessments in relation to bedroom-sharing arrangements in the boarding houses, the need to develop a written policy and procedure for staff to follow if a young person goes missing, the need to strengthen procedures for staff recruitment and obtaining references, and the need to address potential health and safety hazards in two of the boarding houses. Additionally, the designated safeguarding lead and deputy designated safeguarding lead need to have a stronger understanding of the roles and responsibilities of external safeguarding and child protection professionals.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The areas of improvement identified for the Rikkyo School in England are:\n\n1. The school's governing body does not currently take a proactive approach to monitoring the standard of the boarding and welfare provision in the school.\n\n2. Compliance with the national minimum standards for boarding schools.\n\n3. The current staffing arrangements do not always provide sufficient numbers of staff at the weekend to enable young people to visit the nearby town as frequently as they would wish.\n\n4. Some dormitory bedrooms lack sufficient space for the number of young people occupying them and many young people have no access to private study areas within the boarding houses.\n\n5. The boys\u2019 dormitories have no facilities for preparing snacks and hot drinks.\n\n6. The school has identified the need to continue developing practice so that all young people remain safe and free from bullying.\n\n7. The school's governing body and/or proprietor monitors the effectiveness of the leadership, management and delivery of the boarding and welfare provision in the school, and takes appropriate action where necessary.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The inspectors identified aspects of practice which would benefit from further development, and these had already been recognized by the leadership team and are addressed in the school\u2019s development plan . The boarding school\u2019s areas for development include a shortfall in one aspect of security on the school premises, which the headteacher is in the process of assessing how staff rotas could be changed to address  .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What measures have been taken to ensure the emotional well-being of the students at the Rikkyo School in England?",
+        "answer": [
+          {
+            "answer_text": "The given portion of the document does not provide specific information about the measures that have been taken to ensure the emotional well-being of the students at the Rikkyo School in England.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The emotional well-being of young people is given priority at the Rikkyo School in England. The school's case files indicate when staff need to be aware that difficult family circumstances may have a negative impact on a young person's ability to manage social interactions and on their overall progress. There is also recognition that young people who may have experienced bullying will need the support of staff and peers to rebuild their confidence. A restorative approach is taken to resolving unacceptable behavior. Parents are kept informed of young people's progress and are consulted when young people are experiencing difficulties with any aspect of life at the school. The school has made strong links with local schools and the local community. Young people enjoy positive relationships with the staff and frequently name them, and the school's chaplain, as people they would speak to if they had any worries. The school's development plan recognizes the need to continue developing practice so that all young people remain safe and free from bullying.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The emotional well-being of young people is given priority at the Rikkyo School in England  and there has been a strong and effective drive to counteract and prevent bullying since some students raised concerns in February 2016 . The school council has consulted students on issues such as privacy in the boarding houses, and has fed back young people\u2019s views to the leadership team . Young people enjoy positive relationships with the staff and frequently name them, and the school\u2019s chaplain, as people they would speak to if they had any worries . Under the leadership of the new headteacher, who came into post in April 2017, there is a greater recognition of the need to support young people to maintain good mental health . The school's development plan recognizes the need to continue developing practice so that all young people remain safe and free from bullying .",
+            "system": "experiment_5a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--1041147_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the core principles and considerations guiding the Memorandum of Understanding between the Republic of Nauru and the Commonwealth of Australia?",
+        "answer": [
+          {
+            "answer_text": "The core principles guiding the Memorandum of Understanding between the Republic of Nauru and the Commonwealth of Australia include conducting all activities in accordance with relevant domestic laws, treating Transferees with dignity and respect, and establishing a Joint Committee with responsibility for the oversight of practical arrangements required to implement this MOU. \n\nThe considerations guiding the Memorandum of Understanding include the need to combat People Smuggling and Irregular Migration in the Asia-Pacific region, the importance of inter-country cooperation to undermine the People Smuggling industry, and the need to take account of the protection needs of persons who have moved irregularly who may be seeking asylum.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The Memorandum of Understanding between the Republic of Nauru and the Commonwealth of Australia is guided by the core principles of regional cooperation and joint cooperation . The MOU aims to combat people smuggling and irregular migration in the Asia-Pacific region . The Commonwealth of Australia will bear all costs incurred under and incidental to this MOU as agreed between the Participants . The MOU will enable joint cooperation, including the development of enhanced capacity in Nauru, to address these issues .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The core principles guiding the Memorandum of Understanding between the Republic of Nauru and the Commonwealth of Australia are to undermine the People Smuggling model and create disincentives for irregular travel, including through possible transfer and readmission arrangements in appropriate circumstances. The considerations guiding the MOU include the need for practical action to provide a disincentive against Irregular Migration, People Smuggling syndicates and transnational crime and intended to promote orderly migration and humanitarian solutions; the need to take account of the protection needs of persons who have moved irregularly who may be seeking asylum; the impact that an arrangement could have in providing a disincentive for Irregular Migration and creating increased protection opportunities for those in need of international protection; and the need to ensure, so far as is possible, that no benefit is gained through circumventing regular migration arrangements. Additionally, the MOU includes establishing a processing center for Transferees, ensuring that Transferees are treated with dignity and respect and that relevant human rights standards are met, developing special arrangements for vulnerable cases including unaccompanied minors, not expelling or returning a transferee to another country where his or her life or freedom would be threatened, making an assessment of whether or not a transferee is covered by the definition of refugee, not sending a transferee to another country where there is a real risk of torture or cruel treatment, establishing a Joint Committee with responsibility for the oversight of practical arrangements required to implement this MOU, and resolving any differences arising under or in relation to this Memorandum amicably and by consultation.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the responsibilities of the Joint Committee established by the Memorandum of Understanding?",
+        "answer": [
+          {
+            "answer_text": "The Joint Committee established by the Memorandum of Understanding has the responsibility for the oversight of practical arrangements required to implement this MOU including issues relating to the duration of stay of Transferees. The Joint Committee will meet regularly no less than once monthly and will be co-chaired by mutually agreed representatives of the Australian High Commission Nauru and the Republic of Nauru.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The Joint Committee established by the Memorandum of Understanding is responsible for the oversight of practical arrangements required to implement the MOU, including issues relating to the duration of stay of Transferees . The Committee will meet regularly no less than once monthly and will be co-chaired by mutually agreed representatives of the Australian High Commission Nauru and the Republic of Nauru . Participation in the Joint Committee will be as agreed but may include relevant non-government organizations and service providers where appropriate . Any further specific arrangements may be made, as jointly determined to be necessary by the Participants, on more particular aspects of this MOU, for the purpose of giving effect to its objectives .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The Joint Committee established by the Memorandum of Understanding has responsibility for the oversight of practical arrangements required to implement this MOU including issues relating to the duration of stay of Transferees.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the criteria for persons to be transferred to Nauru for processing under the Memorandum of Understanding?",
+        "answer": [
+          {
+            "answer_text": "Persons to be transferred to Nauru for processing under the Memorandum of Understanding are those who have traveled irregularly by sea to Australia or have been intercepted at sea by Australian authorities or rescued in the course of trying to reach Australia by irregular means and are required by Australian law to be transferred to Nauru.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The criteria for persons to be transferred to Nauru for processing under the Memorandum of Understanding are not explicitly stated in the sources provided.",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The document does not provide specific criteria for persons to be transferred to Nauru for processing under the Memorandum of Understanding.",
+            "system": "experiment_4a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--12017753_INTRO",
+    "qa_pairs": []
+  },
+  {
+    "document_id": "DR--287141424_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the main strengths and weaknesses of Elthorne Park High School?",
+        "answer": [
+          {
+            "answer_text": "According to the provided context, the main strengths of Elthorne Park High School are:\n\n- Very good leadership of the headteacher, well supported by a cohesive senior management team and by many talented and effective middle managers.\n- Strong teaching in many subjects that enables most students to make good progress.\n- Good achievement in most subject areas with students reaching GCSE standards above national average.\n- Good value for money.\n- A strong school focus on developing students' spiritual, moral, social and cultural awareness, reflected in a respect and understanding of each other's differences.\n- Good opportunities for students to evaluate and improve their own performance and to provide feedback to their peers.\n- Very good student induction and good care and support for all students in an inclusive school that works hard to meet the needs of the wide range of students that attend the school.\n- Good links with parents and procedures to ensure satisfaction and to deal with any concerns or complaints are good.\n- The involvement of students through seeking, valuing and acting on their views is good.\n- The provision for students' spiritual, moral, social and cultural development is good.\n\nThe main weaknesses of Elthorne Park High School are:\n\n- Accommodation is unsatisfactory.\n- Procedures to ensure that students work in a healthy and safe environment are unsatisfactory.\n- Governance is unsatisfactory.\n- Insufficient curriculum time, especially in years 8 and 9.\n- Results from national tests in 2003 were in line with the national average.\n- There are weaknesses in RE and citizenship provision.\n- Occasionally, targets are over-optimistic.\n- In some lessons, despite the best efforts of good teachers, it is difficult to provide for the needs of all students.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Elthorne Park High School is a good school that has developed well since it was newly established six years ago . It is a very popular 11-16 comprehensive school, newly established on what was a teacher-training and development centre, to provide for the needs of students in that area of the London Borough of Ealing . The main strengths and weaknesses of the school are not specified in the sources, but there are multiple sources that mention \"main strengths and weaknesses\"                      . However, one source mentions that the school's leadership is very good in the way it strikes an effective balance between clear accountability through the school organization and a measure of autonomy at middle management level that encourages initiative and innovation . Additionally, the school actively involves students through seeking, valuing, and acting on their views, and students are given a good level of responsibility .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "Main strengths:\n- Good teaching that contributes well to student achievement\n- Very good contribution to the spiritual, moral, social, and cultural development of students\n- Outstanding leadership and very good management of the subject ensure that students receive a rich curriculum\n- Good achievement of students with special educational needs\n- Very good use of discussion and questioning enables students to express their opinions and form clear judgments about religious and moral issues\n- Excellent subject leadership with a clear sense of purpose and direction\n- Students' achievement in mathematics is good\n- Teachers demonstrate good subject knowledge and good awareness of examination requirements\n- Teachers enjoy positive and supportive relationships with their students\n- There is a clear vision for mathematics as a result of strong leadership and management\n- Provision for learning outside the classroom is very good, including extra help for examinations, well-established trips and exchanges, and opportunities to study Latin and Japanese within the enrichment programme for Years 7 and 8.\n- Teachers have good subject knowledge and relationships with students, which helps to improve standards.\n- Accommodation and resources for ICT have improved significantly and are good.\n- Students use ICT increasingly in other subjects.\n- Good leadership incorporates a strong commitment to improvement.\n- Students behave well, and show good attitudes.\n- Those with special educational needs and the gifted and talented achieve well.\n- Special educational needs students benefit from extra support from the well-briefed classroom assistants.\n- The new team is led by an effective, new, experienced co-ordinator with very good vision.\n- Recent increases in equipment to the nationally expected level and specialist teacher expertise are helping raise standards.\n- There is good capacity for further improvement.\n- Good and very good teaching leads to high achievement, particularly in Years 7-9\n- Attitudes and behaviour are good as a result of the inclusive nature of the school\n- The assessment of pupils' progress is becoming more accurate\n- The new school website works well and is a rapidly expanding source of information\n- Provision in Geography is good with good use of ICT in several subjects including music, geography, design and technology, drama and PE\n- Teaching and learning are good and often very good\n- Lessons are well planned and delivered with enthusiasm and humour\n- Work is constantly reinforced through good questioning and a variety of techniques that keep everyone on task and stretch abilities\n- Expectation of behaviour and endeavour alike is very high\n- The department is very well managed and organised\n- Leadership is energetic and creative; there is a firm commitment to raise standards\n- Dynamic teaching is based on superior planning\n- Lessons are made accessible to students of widely different levels of ability, especially through the provision of very good resource materials\n- Good teaching that contributes well to student achievement\n- The standard of teaching in business studies is very good.\n- The achievement of all students is very good and standards are improving.\n- The curriculum is constantly developing to meet the needs of the students.\n- The school is committed to the provision of citizenship education and sees it as integral to students' personal development.\n- Good planning ensures that the citizenship curriculum requirements are met.\n- The provision in careers education and guidance, the commitment of the newly appointed co-ordinator to improving provision, and the collaboration with local colleges to develop the vocational curriculum.\n\nMain weaknesses:\n- Breaches of statutory requirements in care, welfare, health, and safety, which affect the overall judgement for care, guidance, and support\n- Lack of co-ordination of spiritual, moral, social and cultural activities\n- Weaknesses in RE and citizenship provision\n- Lack of facilities and accommodation detracts from PE provision\n- Curriculum arrangements for modern foreign languages adversely affect end of Year 9 standards\n- Some legal requirements for child protection procedures are not met\n- Arrangements that the school makes for child protection training and health and safety inspections are unsatisfactory\n- Governance is unsatisfactory, with some statutory requirements not being met (RE in Years 10-11, child protection and health and safety procedures, daily act of collective worship)\n- Standards in French and German are well below average overall, particularly in speaking and responding, because they do not have a secure foundation on which to build, so that progress is too slow and students do not achieve as well as expected.\n- Some middle and lower attaining students in French and German struggled due to the lack of focus on speaking and frequent opportunities to practice informally.\n- Staff do not share good practice or strategies across languages sufficiently well to ensure consistency across the whole department.\n- Provision for numeracy, literacy, and ICT is underdeveloped. \n- Taster lessons in each language in Year 7 take up valuable time and slow progress significantly through Years 7-9 and do not allow students to attain expected standards by the end of Year 9.\n- There is not always sufficient match of work or enough support to encourage and help students with lower levels of ability in the subject\n- Marking of students' work is developing in quality, but is inconsistent within the department\n- Whilst higher attaining students achieve well, achievement of lower attaining students is not so good because, despite teachers' understanding of the need, the resources and support are not sufficient to give students time and practice to consolidate their understanding.\n- Standards on entry are below average.\n- Year 11 students who took GNVQ in 2003 attained well below average results, below most other school subjects.\n- In earlier years some tasks are too hard and students' progress is not assessed consistently.\n- Some over-large classes and network problems limit student achievement.\n- Standards are currently still below average in Years 10-11 GCSE (short course) and GNVQ, although students are now achieving satisfactorily from the low levels at the start of Year 10.\n- By the end of Year 9 students do not yet have sufficient skills in measurement and control.\n- Opportunities are often missed to challenge students intellectually in lower years, particularly in over-large classes, which limit students' progress, particularly when tasks are too hard.\n- Assessment data are beginning to be recorded more systematically, although insufficient use is made of them to inform students of progress against National Curriculum levels in Years 7, 8 and 9.\n- The new national strategy is not yet fully in place.\n- Technical support is good but there are still problems with network connections that are being tackled.\n- Provision in religious education is unsatisfactory despite considerable strengths in delivery\n- Limited amount of curriculum time available for students to question or explore their own attitudes in sufficient depth\n- Lack of curriculum provision for fifty per cent of students in Years 10-11 is having a serious impact on standards\n- Provision in citizenship is unsatisfactory.\n- Students do not have sufficient access to information and communication technology.\n- Data on student performance are not used.\n- Not enough use is made of assessment to enable students to know what they need to do to improve.\n- Not enough is done to monitor citizenship education in order to ensure full coverage of the subject requirements.\n- Accommodation for PE is inadequate and creates health and safety problems.\n- The reluctance of some students to maximise their potential impacts adversely on their standards of attainment.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the legal requirements for religious education in Years 10-11?",
+        "answer": [
+          {
+            "answer_text": "The legal requirement for religious education in Years 10-11 is for it to be taught as required by the Education Act. However, according to the inspection findings, the school is failing to meet this requirement. Students only take religious education for one year as a short course GCSE when the requirement is for a two-year programme.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The legal requirements for religious education in Years 10-11 are to teach RE in both Years 10-11 as required by the Education Act . However, the school is failing to meet the statutory requirements of provision in both Years 10 and 11    and provision in religious education is unsatisfactory despite considerable strengths in delivery . Students only take religious education for one year as a short course GCSE when the requirement is for a two-year programme . Currently, there is no specific assessment on learning from religion . Citizenship education has not been fully implemented and not enough is done to monitor citizenship education in order to ensure full coverage of the subject requirements  .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "There is no clear or specific information provided in the given portion of the document about the legal requirements for religious education in Years 10-11. Some parts of the text suggest that there is a legal requirement for students to study RE in both Years 10-11, while others suggest that there is a legal requirement for students to study RE every year. However, the document does not provide any specific details about what those legal requirements are.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the barriers to improvement for Elthorne Park High School?",
+        "answer": [
+          {
+            "answer_text": "One of the barriers to improvement for Elthorne Park High School is the small site that limits development, including the improvement of sports and physical education facilities. Additionally, the school has not managed the implementation of citizenship education sufficiently well, and there are weaknesses in RE and citizenship provision.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "One barrier to improvement for Elthorne Park High School is the small site that limits development, including the improvement of sports and physical education facilities . Additionally, there are insufficient links at present with primary schools and the community . The school also needs to address some of the administration related to health and safety and child protection issues . Finally, the high number of temporary exclusions during the previous year is largely due to the school's unwillingness to tolerate bad behavior .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The given portion of the document provides mixed information about the barriers to improvement for Elthorne Park High School. Some parts of the document do not provide a clear answer to this question, while others mention barriers such as inadequate facilities for physical education, insufficient access to technology for students in business studies, and unsatisfactory provision in citizenship education due to poor leadership and management. Additionally, there are weaknesses in areas such as modern foreign languages, teaching and learning, and governance that may be hindering improvement. However, there is no specific list of barriers to improvement provided in the given portion of the document.",
+            "system": "experiment_4a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--521647139_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the Make Early Diagnosis to Prevent Early Death criteria for determining familial hypercholesterolemia?",
+        "answer": [
+          {
+            "answer_text": "The Make Early Diagnosis to Prevent Early Death (MEDPED) criteria for determining familial hypercholesterolemia (FH) are based on age-specific total cholesterol or LDL-C thresholds (untreated) and have a high correlation to genetically proven FH. The specific thresholds vary by age and sex.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The Make Early Diagnosis to Prevent Early Death (MEDPED) criteria for determining familial hypercholesterolemia (FH) are based on age-specific total cholesterol or LDL-C thresholds (untreated) and have a high correlation to genetically proven FH . Patients presumed to have FH are defined by LDL-C levels that meet MEDPED criteria for FH who are not on lipid-lowering therapy (LLT) or LDL-C levels above a threshold defined by adjusting MEDPED criteria by factoring a 30% reduction in LDL-C for patients adherent to LLT meeting American Heart Association guidelines for moderate- or high-intensity statins .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "Sorry, there is no relevant text in the given portion of the document to answer this question.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the rejection rates for PCSK9 inhibitor prescriptions in patients with familial hypercholesterolemia or atherosclerotic cardiovascular disease?",
+        "answer": [
+          {
+            "answer_text": "The rejection rates for PCSK9 inhibitor prescriptions in patients with familial hypercholesterolemia or atherosclerotic cardiovascular disease are high. For example, 63.3% of prescriptions for PCSK9 inhibitors were rejected in presumptive FH patients who had an LDL-C value >190 mg/dL despite evidence of statin-based LLT. Similarly, 57.5% of PCSK9 inhibitor prescriptions were rejected in ASCVD patients who had an LDL-C value >100 mg/dL despite evidence of high-intensity or moderate-intensity statin.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "High-risk patients with presumptive familial hypercholesterolemia (FH) or atherosclerotic cardiovascular disease (ASCVD) have high rates of rejection for PCSK9 inhibitor (PCSK9i) prescriptions, with 63.3% of prescriptions for PCSK9 inhibitors being rejected in FH patients with an LDL-C value >190 mg/dL despite evidence of statin-based LLT, and 57.5% of PCSK9 inhibitor prescriptions being rejected in patients with established ASCVD who had an LDL-C value >100 mg/dL despite evidence of being treated with appropriate LLT  . Sensitivity analyses showed similar rejection rates for PCSK9 inhibitors in those with LDL-C >130 or >160 mg/dL (57.7% and 57.8%, respectively) . Of PCSK9 inhibitor prescriptions that were ultimately approved for either the presumptive FH patients or those with ASCVD, 34% were approved within 30 days, whereas approval took >2 months for 40% of prescriptions . The FOCUS study (FH Optimal Care of the US) was designed by The FH Foundation to assess current treatment patterns of FH patients, and allowed us to assess rejection rates of PCSK9 inhibitors in those with FH or ASCVD .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The rejection rates for PCSK9 inhibitor prescriptions in patients with familial hypercholesterolemia who had an LDL-C value >190 mg/dL despite evidence of statin-based LLT was 63.3%. For patients with presumptive FH who had an LDL-C value >190 mg/dL despite evidence of being treated with appropriate LLT, 69.7% of PCSK9 inhibitor prescriptions were rejected. For patients with established ASCVD who had an LDL-C value >100 mg/dL despite evidence of being treated with appropriate LLT, 57.5% of PCSK9 inhibitor prescriptions were rejected.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the potential challenges in operationalizing the results of the FOURIER trial?",
+        "answer": [
+          {
+            "answer_text": "The FOCUS data indicate that high-risk patients, including those with presumptive FH or ASCVD, have high rates of rejection for PCSK9i prescriptions even when there is sufficient evidence that they have inadequately controlled LDL-C despite concurrent appropriate statin-based LLT. This suggests that access to nonstatin LLTs has been a challenge for FH patients, although this has not been systematically evaluated. These data highlight potential challenges in operationalizing the results of the FOURIER trial.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The potential challenges in operationalizing the results of the FOURIER trial include high rates of rejection for PCSK9 inhibitor prescriptions, even in high-risk patients with inadequately controlled LDL-C despite concurrent appropriate statin-based lipid-lowering therapy   . The rejection rates for PCSK9 inhibitors were higher than those for ezetimibe  . However, of the PCSK9 inhibitor prescriptions that were ultimately approved, 34% were approved within 30 days, whereas approval took over two months for 40% of prescriptions . These findings were based on the FOCUS study (FH Optimal Care of the US) designed by The FH Foundation to assess current treatment patterns of FH patients .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The first sentence states that the article does not provide information on the potential challenges in operationalizing the results of the FOURIER trial. The second sentence contradicts this by saying that the data highlight potential challenges, but it does not specify what those challenges are. Therefore, it is unclear what the potential challenges are in operationalizing the results of the FOURIER trial.",
+            "system": "experiment_4a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--30823528_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What is the relationship between decreasing sea ice in the Arctic and increased amplification of the jet stream off the west coast of the United States?",
+        "answer": [
+          {
+            "answer_text": "Based on the research presented in the document, there is evidence to suggest that decreasing sea ice in the Arctic could lead to increased amplification of the jet stream off the west coast of the United States. The study found that there is a link between an increasing ridge and decreasing sea ice, which could be important for forecasting purposes, especially long term when issuing seasonal forecasts. The research suggests that years like the amplification seen in 2013 will become more frequent, and that jet stream amplification is not just confined to the colder seasons. However, it is unclear how much more the wave pattern will be affected when the Arctic becomes ice-free frequently during the summer occurring sometime in the next 2 to 4 decades.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "New evidence suggests that decreasing sea ice in the Arctic is causing an increased amplification of the jet stream off the west coast of the United States. There is a statistically significant relationship between sea ice north of Alaska and geopotential height anomalies during the following winter and spring months. The focus of this research is on linking diminishing sea ice concentration in the Arctic to planetary wave amplification across much of the Northern Hemisphere. The increased ridging off of the West Coast of the United States not only affects the climate regions adjacent to that location but also has downstream impacts on precipitation.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "There is evidence to suggest that decreasing sea ice in the Arctic is causing an increased amplification of the jet stream off the west coast of the United States         . This amplification is regional, seasonal, and varies yearly based on background atmospheric and surface conditions . The Arctic may be acting as an amplifier of jet amplification rather than the cause, and there is still uncertainty about the direct connections between sea ice concentrations and regional precipitation over the United States  . However, there is a connection between sea ice concentration north of Alaska in the late summer months with the following winter and spring height anomalies . The link between sea ice and increased ridging in the Pacific could be an important link to connecting Arctic Amplification with precipitation patterns .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "How does the decrease in sea ice concentration in the Beaufort and Chukchi Seas north of Alaska affect geopotential height anomalies during the following winter and spring months?",
+        "answer": [
+          {
+            "answer_text": "There is no clear answer to this question based on the given portion of the document.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "According to the research presented, there is a statistically significant relationship between decreasing sea ice concentration in the Beaufort and Chukchi Seas north of Alaska and geopotential height anomalies during the following winter and spring months. The research suggests that as sea ice concentration trends continue to move towards a more ice-free area north of Alaska, a more persistent ridge will form in areas adjacent to this location and affect storm track to the continental United States.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The decrease in sea ice concentration in the Beaufort and Chukchi Seas north of Alaska is linked to geopotential height anomalies during the following winter and spring months       . This decrease in sea ice concentration causes higher upper level heights in the North Pacific, which affects storm track to the continental United States   . The height anomalies cause more persistent precipitation patterns to certain regions of the United States . The strongest significance to wave patterns occur in late winter and the beginning of meteorological spring . Even when the effect of ocean cycles, such as PDO and SOI, are empirically reduced, a robust climate signal of increasing height anomalies is still being observed  .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the impacts of increased atmospheric wave amplification on regional precipitation patterns?",
+        "answer": [
+          {
+            "answer_text": "The given portions of the document do not provide a clear answer to this question.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The increased atmospheric wave amplification can result in a more amplified jet stream, which tends to result in more regional weather extremes, such as an increase in the frequency of precipitation anomalies and extreme temperatures. The amplification of the wave pattern affects storm tracks across the CONUS, and the semi-persistent height anomalies cause more persistent precipitation patterns to certain regions of the United States. The increased ridging off of the West Coast of the United States not only affects the climate regions adjacent to that location but also has downstream impacts on precipitation. The teleconnections of recent trends in height anomalies across the eastern Pacific Ocean with regional precipitation are examined, and the results suggest that this ridge is also increasing at a confidence level of 99% and that, coupled with the ridge off the West Coast, is further strengthening the teleconnections to rainfall in the Upper Midwest.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Increased atmospheric wave amplification can lead to more regional weather extremes, such as an increase in frequency of precipitation anomalies and extreme temperatures . This amplification can cause more persistent precipitation patterns in certain regions of the United States, leading to multi-month periods of changing precipitation and increased potential for long-term floods and droughts . The increased ridging off the West Coast of the United States not only affects the climate regions adjacent to that location but also has downstream impacts on precipitation, which has major hydrological implications on the ongoing drought in the West Coast . The impacts of increased atmospheric wave amplification on regional precipitation patterns are of great concern, especially for California, because the majority of their precipitation usually falls during late winter and early spring and is vital for water in the region . The primary concern with the findings of this research would be for the water deficit in the West, and there are significant results, especially for the Upper Midwest climate region  .",
+            "system": "experiment_5a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--230018376_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the estimated costs for the Hangar 2 project?",
+        "answer": [
+          {
+            "answer_text": "Based on the information provided in the document, the estimated cost of building the Hangar 2 project is between $4,500,000 to $6,000,000. However, this is not a final cost and the complete Concept and Budget Report (CBR) which will include project costs will be ready for Board review and potential approval at the January 24, 2018 Board of Directors meeting.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "Based on current bids received and actual construction costs, staff estimates the approximate cost of building to be between $4,500,000 to $6,000,000. The programming and building design phase will cost $150,000, and the final 100% plans and bidding costs are estimated at an additional $250,000 (still to be determined based on final building design).",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The estimated cost of building Hangar 2 is between $4,500,000 to $6,000,000 based on current bids and construction costs . The programming and building design phase will cost $150,000 . Final 100% plans and bidding costs are estimated at an additional $250,000 . Input received at the November 29th Board Meeting will be used to assist in the preparation of the complete Concept and Budget Report (CBR) which will include project costs .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the potential advantages of moving the restaurant to the new Hangar?",
+        "answer": [
+          {
+            "answer_text": "According to the extracted text, the potential advantages of moving the restaurant to the new Hangar include better restaurant space, a larger kitchen, and the possibility of providing a dinner menu. Additionally, the current restaurant space could be repurposed for offices and a transient terminal for various operators.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "According to the context, some of the potential advantages of moving the restaurant (Red Truck) to the new Hangar include better restaurant space, a larger kitchen, and the possibility of providing a dinner menu. This would allow the current restaurant space to be repurposed to offices and a transient terminal for membership-based operators such as Surf Air, Wheels Up, Jet Suites, Blackbird, or other operators.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Moving the restaurant to the new Hangar would allow for better restaurant space and a larger kitchen, potentially providing a dinner menu . If the restaurant is not moved, a transient terminal for membership-based operators such as Surf Air and Wheels Up would need to be incorporated into the new Hangar . Repurposing the current restaurant space to offices and a transient terminal for various operators would be possible if the restaurant is moved . The hangar and office space may also be available for community use .",
+            "system": "experiment_5a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the potential benefits of closing off the taxilane between Hangar 1 and the old Hangar 2 site?",
+        "answer": [
+          {
+            "answer_text": "Eliminating the taxilane between Hangar 1 and the old Hangar 2 site will allow for more design options to be considered. It will also enhance safety by eliminating many of the non-aviation drivers utilizing the Airport Operations Area.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "According to the context, the taxilane between Hangar 1 and the old Hangar 2 site is not necessary for full utilization of the Jet Ramp, and eliminating it will allow for more design options to be considered. This will allow the current offices built into the hangar to be removed, thereby providing space for an additional 3 aircraft to fit in Hangar 1. Additionally, this option is substantially cheaper than constructing a new Hangar or leasing Sierra Aero Hangar A9.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Closing off the taxilane between Hangar 1 and the old Hangar 2 site is being considered as part of a project to provide more design options for the Jet Ramp  . This could potentially allow for the relocation of the restaurant to the new Hangar, providing better restaurant space and a larger kitchen with the possibility of providing a dinner menu . Removing the current offices built into Hangar 1 would also provide space for an additional 3 aircraft to fit in the hangar . The hangar would not be used for aircraft maintenance, but instead, staff indicated a strong desire for the hangar and office space to be available for community use .",
+            "system": "experiment_5a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--14627260_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the key differences between online and traditional media functions that contribute to the prevalence of online workplace-related sexual and sex-based harassment?",
+        "answer": [
+          {
+            "answer_text": "There appear to be clear differences in the impacts of interaction with the readership between online and traditional media functions, which may contribute to the prevalence of online workplace-related sexual and sex-based harassment . Maurice Blackburn is concerned about the impacts that online workplace-related sexual and sex-based harassment is having on many Australians under the current, mostly unregulated online environment . However, the sources do not provide specific information on the key differences between online and traditional media functions that contribute to the prevalence of online workplace-related sexual and sex-based harassment.",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "According to the given portion of the document, the key differences between online and traditional media functions that contribute to the prevalence of online workplace-related sexual and sex-based harassment include anonymity, immediacy, and the perception that \"the rules are different online.\" Anonymity is a determining factor in whether online input is threatening, abusive, or personal, and the ability to hide behind anonymity may be an enabler of online sexual harassment. Responding to online media does not encourage introspection or the tempering of language or behavior. Threats or harassment made online seem to be held to a different standard of accountability than if they were made via any other mechanism.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "According to the context provided, there are clear differences in the impacts of interaction with the readership between online and traditional media functions. Journalists are frequently expected by their employers to participate in online discussions that emanate from their story. Some employees have reported that employers expect them to express personal opinions in relation to online stories. These \u2018forced\u2019 interactions are exposing media professionals to online workplace-related sexual and sex-based harassment. Additionally, anonymity and immediacy are factors that contribute to the prevalence of online workplace-related sexual and sex-based harassment. Reports suggest that anonymity may be a determining factor in whether online input is threatening, abusive or personal. It seems probable that the ability to hide behind anonymity might be an enabler of online sexual harassment. Threats or harassment made online seem to be held to a different standard of accountability than if they were made via any other mechanism. Responding to online media does not encourage introspection or the tempering of language or behavior.",
+            "system": "experiment_1e"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the proposed legislative reforms to secure justice for victims of sexual harassment?",
+        "answer": [
+          {
+            "answer_text": "The sources suggest several proposed legislative reforms to secure justice for victims of sexual harassment. These include making it clear that regulators are required to investigate sexual harassment complaints , amending the SDA so that in addition to compensation, penalties are also payable by respondents who are found liable for sexual harassment   , and seeking injunctive relief and damages from the perpetrators of online sexual harassment  . Other proposed reforms include appropriately resourcing State and Territory WHS authorities to investigate and prosecute risks to health and safety arising from sexual harassment  , obtaining better settlement data to compensate victims of sexual harassment for the hurt, humiliation, distress, and financial losses they have suffered , and encouraging other authorities such as State and Territory Work, Health and Safety regulators, along with trade unions and consumer advocates, to have a greater role in addressing and stamping out workplace sexual harassment . However, the sources do not provide a comprehensive list of all proposed legislative reforms.",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "There are several proposed legislative reforms to secure justice for victims of sexual harassment, including:\n\n- Appropriately resourcing State and Territory WHS authorities to investigate and prosecute risks to health and safety arising from sexual harassment.\n- Granting trade unions the authority to prosecute for health and safety breaches reinstated where such rights have been removed.\n- Recommending a process for formally requiring that reporting of sexual harassment claims and statistics be made to the board of the defined entity and to an external organization by the AHRC.\n- Requiring businesses to report on the number of reported incidents of sexual harassment, as part of their reporting requirements to WGEA.\n- Repealing the Human Rights Legislation Amendment Bill (2017) and amending the time for making complaints to 6 years in line with other discrimination jurisdictions.\n- Abolishing the time limit imposed by s46PH(b) of the AHRC Act, especially with respect to sexual harassment complaints.\n- Exploring the insertion of statutory criteria to be taken into account by the Courts when determining an award of damages by the AHRC.\n- Amending the SDA so that in addition to compensation, penalties are also payable by respondents who are found liable for sexual harassment.\n- Expressly prescribing time frames for the scheduling of mediation conferences and making it mandatory for respondents to attend the mediation conference and to file a reply document within a specified period of time by amending the AHRC Act.\n- Properly funding and fully staffing the AHRC in order to fulfill its statutory objectives.\n- Considering the establishment of a victim advocate role within the AHRC to conduct mediations for those who cannot achieve access to justice.\n- Giving a complainant the right to elect to bypass the AHRC and proceed straight to court.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "Maurice Blackburn proposes several legislative reforms to secure justice for victims of sexual harassment, including:\n\n1. Positive obligation on employers to take all reasonable steps to prevent sexual harassment occurring in the workplace, whether an incident has occurred or not.\n\n2. Expanding company reporting requirements to report on the number of reported incidents of sexual harassment, as part of their reporting requirements to Workplace Gender Equality Agency (\u2018WGEA\u2019).\n\n3. Repealing the Human Rights Legislation Amendment Bill (2017) and amending the time for making complaints to 6 years in line with other discrimination jurisdictions.\n\n4. Abolishing the time limit imposed by s46PH(b) of the AHRC Act, especially with respect to sexual harassment complaints.\n\n5. Criminalizing particularly nefarious behaviors related to online sexual harassment and providing the relevant police and regulatory services with the resources to successfully prosecute people engaging in sexual harassment through online platforms.\n\n6. Allowing complainants to elect to bypass the AHRC and proceed straight to court.\n\n7. Inserting statutory criteria to be taken into account by the Courts when determining an award of damages.\n\n8. Amending the Sex Discrimination Act 1984 (Cth) so that in addition to compensation, penalties are also payable by respondents who are found liable for sexual harassment.\n\n9. Requiring businesses to report on the number of reported incidents of sexual harassment, as part of their reporting requirements to WGEA.\n\n10. Granting trade unions the authority to prosecute for health and safety breaches reinstated where such rights have been removed.\n\n11. Recommending a process for formally requiring that reporting of sexual harassment claims and statistics be made to the board of the defined entity and to an external organization.\n\n12. Appropriately resourcing State and Territory Work, Health and Safety regulators to investigate and prosecute risks to health and safety arising from sexual harassment.",
+            "system": "experiment_1e"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the resources needed to successfully prosecute people engaging in sexual harassment through online platforms?",
+        "answer": [
+          {
+            "answer_text": "To successfully prosecute people engaging in sexual harassment through online platforms, it will be necessary to criminalize particularly nefarious behaviors and provide relevant police and regulatory services with the resources to do so .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "There is no relevant text in the given portion of the document that provides information on the resources needed to successfully prosecute people engaging in sexual harassment through online platforms. Therefore, it is not possible to provide an answer to this question based on the given information.",
+            "system": "experiment_4a"
+          },
+          {
+            "answer_text": "The relevant police and regulatory services need to be provided with the resources to successfully prosecute people engaging in sexual harassment through online platforms. Additionally, changes to the regulatory environment in relation to online workplace-related sexual and sex-based harassment must include enforceable sanctions against employers who fail in their duty to provide a safe workplace for their employees. Maurice Blackburn also recommends seeking injunctive relief and damages from the perpetrators of online sexual harassment and from the providers and facilitators of online forums where the provider or facilitator has failed to discharge a duty to monitor and protect users.",
+            "system": "experiment_1e"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--491573508_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the main challenges that InsurTechs face when trying to collaborate with traditional insurers?",
+        "answer": [
+          {
+            "answer_text": "InsurTechs face several challenges when trying to collaborate with traditional insurers. One of the biggest challenges is the cultural differences between the two. Traditional insurers have been around for hundreds of years and have a more risk-averse culture, while InsurTechs are more agile and have a \"try and see\" approach. Another challenge is the differences in technology and workforce. InsurTechs have cutting-edge technologies, while many insurers still use legacy platforms that are not compatible with InsurTechs' technologies. InsurTechs also need to understand the insurance industry deeply to demonstrate their value proposition and make tangible impacts quickly. Finally, InsurTechs need to be patient and flexible in their partnering approach and recognize that traditional insurers will need to embark on their own cultural and technological journeys.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "InsurTechs face challenges when trying to collaborate with traditional insurers, including the need for insurers to integrate their InsurTech approach into their broader innovation agendas , determining where the solution and business boundaries between InsurTech and insurer sit , and the risk of stifling innovative behavior in other parts of their organizations if they engage with innovation only via self-contained programs . Additionally, InsurTech culture does not truly understand the insurance culture, and startups can become frustrated by the sheer size of insurance organizations and their risk-adverse cultures . However, there is a growing recognition among insurers that InsurTech ultimately represents more of an opportunity than a threat, and that they should seek to collaborate more closely with this latest breed of technology-fueled startups . Many insurers are already leveraging design thinking and other techniques to solve business problems in-house , and partnerships between insurers, startups, and other collaborators should be built on a win-win basis .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "InsurTechs face challenges in collaborating with traditional insurers due to differences in culture, risk aversion, and technology. The 300-year-old insurance culture can clash with the agile and risk-taking approach of InsurTechs. Additionally, InsurTechs face challenges in demonstrating their value proposition and making tangible impacts quickly, recruiting people who can cope with the slow pace of the insurance industry, dealing with slow decision-making and fast execution simultaneously, and finding win-win propositions that ultimately benefit the customer. The legacy platforms of traditional insurers can also be difficult to integrate with the cutting-edge technologies of InsurTechs.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the key areas of common ground between traditional insurance and InsurTech?",
+        "answer": [
+          {
+            "answer_text": "The key areas of common ground between traditional insurance and InsurTech are data and the customer. Insurers also recognize the need to improve customer experience to keep pace with other industries. However, the reality is more challenging than it sounds in theory due to the differences in approach between a 300-year-old insurer and a 300-day-old InsurTech.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "There are two key areas of common ground between traditional insurance and InsurTech: data and the customer . Traditional insurers can learn much from the way InsurTechs operate, and from partnering with them, especially in terms of data and customer focus . However, there are also differences in approach between a 300-year-old insurer and a 300-day-old InsurTech, and InsurTech culture does not truly understand the insurance culture . It will be vital to determine where the solution and business boundaries between InsurTech and insurer sit, and to be flexible on the partnering approach .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "According to the given portion of the document, the key areas of common ground between traditional insurance and InsurTech are data and the customer. Both recognize the importance of new technologies such as the IoT, advanced analytics, AI, and Big Data in driving new offerings, as well as the need to improve customer experience to keep pace with other industries. Additionally, both are interested in improving customer engagement and delivering greater value.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the benefits of insurers investing in startups from outside the InsurTech space?",
+        "answer": [
+          {
+            "answer_text": "Insurers have routinely funded startups dealing with payments, analytics, data protection, and healthcare, for example. Accenture\u2019s global analysis of investments made in 2016 by 75 leading insurers revealed that only 17 percent of deals related to InsurTech companies; the other 83% related to startups from outside the InsurTech space, but often with a focus on technologies that hold potential for the insurance industry in the future. These startups can bring new and innovative technologies that can be applied to the insurance industry, leading to enhanced customer value, propositions, and operations.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Insurers are investing significantly larger amounts in other types of startups, which might greatly benefit from access to a subset of the insurer\u2019s customer base to test out its propositions and capabilities  . There is a growing recognition among insurers that InsurTech ultimately represents more of an opportunity than a threat, and that they should seek to collaborate more closely with this latest breed of technology-fuelled startups . Insurers have routinely funded startups dealing with payments, analytics, data protection, and healthcare, for example, and as InsurTech becomes ever more established, a greater number of insurers will likely channel more of their funding activities there, and drive further growth in the InsurTech space  .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "There is no information provided in the given portion of the document about the benefits of insurers investing in startups from outside the InsurTech space.",
+            "system": "experiment_4a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--327389138_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the objectives of the FAO Economics and Policy Innovations for Climate-Smart Agriculture (EPIC) Programme?",
+        "answer": [
+          {
+            "answer_text": "The objectives of the FAO Economics and Policy Innovations for Climate-Smart Agriculture (EPIC) Programme are to close critical gaps in the knowledge of how to enhance and manage the trade-offs between food security, livelihood, and environmental goals in the face of a changing climate, develop and evaluate options for adapting to a changing climate to inform agricultural development, food security policy, and donor investment strategies, provide an evidence base for identifying, developing, and implementing practices, policies, and investments for climate-smart agriculture, develop a country-owned strategic framework to guide action and investment on CSA, formulate climate-smart agriculture investment proposals and identify possible financing sources, and build capacity to plan, implement, and finance climate-smart agriculture on the basis of the results above.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The objectives of the FAO Economics and Policy Innovations for Climate-Smart Agriculture (EPIC) Programme are to develop tools, knowledge, and partnerships to support countries in achieving climate-smart agriculture . The program works together with NOMAFSI to organize Climate Smart Agriculture (CSA) investment proposals and policy recommendations for Vietnam, based on future climate and socio-economic scenarios . The program aims to provide an evidence base for identifying, developing, and implementing practices, policies, and investments for climate-smart agriculture . Additionally, the program aims to build capacity to plan, implement, and finance climate-smart agriculture . Finally, the program aims to expand the evidence base produced through econometric analysis indicators of food security, mitigation, and adaptation by running simulations on these same indicators under the various scenarios identified .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The given portion of the document does not provide a direct answer to this question.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the main challenges for the CGIAR Research Program on Climate Change, Agriculture and Food Security (CCAFS) in Southeast Asia?",
+        "answer": [
+          {
+            "answer_text": "The critical challenges for CCAFS in Southeast Asia are associated with the increasingly complex and stressed agricultural landscape due to increasing climatic unpredictability, pollution, population, water supply and quality, energy, livelihoods, and issues around sustainability. The project aims to enable and assist farmers, policymakers, researchers, and donors to continually monitor, assess, and adjust their actions in response to observed and anticipated changes in climate. The project also aims to develop and evaluate options for adapting to a changing climate to inform agricultural development, food security policy, and donor investment strategies.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The main challenges for the CGIAR Research Program on Climate Change, Agriculture and Food Security (CCAFS) in Southeast Asia are associated with the increasingly complex and stressed agricultural landscape . Increasing climatic unpredictability exacerbates all pressures on the agricultural production systems of Southeast Asia . Food security is challenged by the low and dramatically falling cultivated land per capita, especially in the most productive areas of the region . To address these challenges, CCAFS has initiated activities in South Asia, East Africa, and West Africa . The program is collaborating with the International Center for Tropical Agriculture (CIAT) and all 15 CGIAR research centers, as well as with other CGIAR thematic research programs . The FAO Economics and Policy Innovations for Climate-Smart Agriculture (EPIC) Programme and the CCAFS are working together with NOMAFSI to organize Climate Smart Agriculture (CSA) investment proposals and policy recommendations for Vietnam, based on future climate and socio-economic scenarios . The FAO/CCAFS scenarios process has focused on contextual drivers of change for Climate Smart Agriculture \u2013 climate change and socio-economic changes . In South East Asia, socio-economic and climate scenarios have been developed at the subcontinental level up to 2050 . To meaningfully assess the feasibility of Climate Smart Agriculture investment proposals, these have to be examined in the context of multiple scenarios representing diverse future socio-economic and climate developments .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The given portion of the document does not provide a clear answer to this question.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "How can scenarios be used as a policy tool for adaptation planning?",
+        "answer": [
+          {
+            "answer_text": "Scenarios can be used as a policy tool for adaptation planning by representing multiple plausible directions that future drivers of change may take. Rather than attempting to forecast a single future, scenarios allow for the capturing of uncertainties and systems complexity in a coherent and plausible yet surprising and challenging fashion. The development and use of scenarios functions as a platform for the exchange and application of knowledge and experience between researchers and policy makers, private sectors, NGOs and other societal actors. Scenarios also allow for the capturing of uncertainties and systems complexity in a coherent and plausible yet surprising and challenging fashion. By using scenarios to test investment proposals, actors can engage in a dialogue about future uncertainties which results in an active, critical understanding of the proposals, and therefore leads to co-ownership of these plans and will make it more likely that they are truly informed by regional perspectives.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Scenarios can be used as a policy tool for adaptation planning by generating shared engagement, building relationships, commitments, and new ideas, which enhances adaptive capacity and sustainable policies . The development and use of scenarios can function as a platform for the exchange and application of knowledge and experience between researchers and policy makers, private sectors, NGOs, and other societal actors . Scenarios can be used to test investment proposals, engage actors in a dialogue about future uncertainties, and result in an active, critical understanding of the proposals, leading to co-ownership of these plans and making it more likely that they are truly informed by regional perspectives . Scenarios can also be used to contextualize drivers of change for Climate Smart Agriculture, such as climate change and socio-economic changes, and to develop and evaluate options for adapting to a changing climate to inform agricultural development, food security policy, and donor investment strategies  . Scenarios can be combined with multiple climate scenarios and vice versa, and can be used to review and revise Climate Smart Agriculture investment proposals for feasibility, discuss enabling policy conditions, and quantify through two global partial equilibrium models   .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "Scenarios can be used as a policy tool for adaptation planning by representing multiple plausible directions that future drivers of change may take, allowing for the capturing of uncertainties and systems complexity in a coherent and plausible yet surprising and challenging fashion. Scenarios are an excellent tool for generating shared engagement, building relationships, commitments, and new ideas, building greater capacity for collaborative governance to enhance adaptive capacity and sustainable policies. The development and use of scenarios function as a platform for the exchange and application of knowledge and experience between researchers and policymakers, private sectors, NGOs, and other societal actors. Ultimately, using scenarios as a policy tool for adaptation planning can inform regional perspectives and increase the likelihood of informed and effective decision-making.",
+            "system": "experiment_4a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--276543213_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the rights of individuals with respect to their protected health information?",
+        "answer": [
+          {
+            "answer_text": "Individuals have the right to inspect and copy their protected health information, request a restriction of their protected health information, request to receive confidential communications from healthcare providers by alternative means or at an alternative location, and obtain a paper copy of the Notice of Privacy Practices. They also have the right to have their physician amend their protected health information, receive an accounting of certain disclosures made of their protected health information, and file a complaint if they believe their privacy rights have been violated.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Individuals have the right to access and control their protected health information . They also have the right to request a restriction of their protected health information , inspect and copy their protected health information , and receive an accounting of certain disclosures made of their protected health information . Individuals may also request that any part of their protected health information not be disclosed to family members or friends who may be involved in their care . Additionally, individuals have the right to have their physician amend their protected health information , and to complain to the Secretary of Health and Human Services if they believe their privacy rights have been violated . Under federal law, individuals may not inspect or copy certain records, such as psychotherapy notes . Protected health information may be used and disclosed for treatment, payment, and healthcare operations, as well as other purposes permitted or required by law . Individuals have the right to use another healthcare professional if they do not agree with the use and disclosure of their protected health information .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "Individuals have the right to inspect and copy their protected health information, request a restriction of their protected health information, request to receive confidential communications from healthcare providers by alternative means or at an alternative location, obtain a paper copy of the HIPAA Notice of Privacy Practices, request an amendment to their protected health information, file a statement of disagreement if their request for amendment is denied, receive an accounting of certain disclosures made of their protected health information, object or withdraw if there are changes to the notice, and file a complaint if they believe their privacy rights have been violated. They also have the right to speak with the HIPAA Compliance Officer if they have objections to the notice.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the permitted and required uses and disclosures of protected health information?",
+        "answer": [
+          {
+            "answer_text": "Permitted and required uses and disclosures of protected health information include situations required by law, public health issues, communicable diseases, health oversight, abuse or neglect, food and drug administration requirements, legal proceedings, law enforcement, coroners, funeral directors, and organ donation, research, criminal activity, military activity and national security, workers' compensation, and inmates.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "Protected health information may be used and disclosed by physicians, office staff, and others involved in a patient's care for the purpose of providing healthcare services, paying healthcare bills, and supporting the operation of the physician's practice, as well as for any other use required by law . Other permitted and required uses and disclosures include situations required by law, public health issues, communicable diseases, health oversight, abuse or neglect, food and drug administration requirements, legal proceedings, law enforcement, coroners, funeral directors, and organ donation, research, criminal activity, military activity and national security, workers' compensation, and inmates  . Patients have the right to request a restriction of their protected health information, and may also request that any part of their protected health information not be disclosed to family members or friends who may be involved in their care or for notification purposes . Patients also have the right to receive an accounting of certain disclosures made of their protected health information, and may have the right to have their physician amend their protected health information  . Patients may complain to their healthcare provider or to the Secretary of Health and Human Services if they believe their privacy rights have been violated .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The permitted and required uses and disclosures of protected health information are listed in the provided text, which includes treatment, payment, healthcare operations, public health issues, communicable diseases, health oversight, abuse or neglect, FDA requirements, legal proceedings, law enforcement, coroners/funeral directors/organ donation, research, criminal activity, military activity and national security, workers' compensation, inmates, and required uses and disclosures.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the consequences of revoking an authorization for the use or disclosure of protected health information?",
+        "answer": [
+          {
+            "answer_text": "If you revoke an authorization for the use or disclosure of protected health information, the physician or physician's practice will no longer be able to use or disclose your information for the purposes specified in the authorization. However, if the physician or physician's practice has already taken action in reliance on the use or disclosure indicated in the authorization, they may not be able to undo those actions.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "If a patient revokes their authorization for the use or disclosure of their protected health information, the physician or physician's practice must stop using or disclosing the information, except to the extent that they have already taken action in reliance on the authorization .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The given portion of the document does not provide information about the consequences of revoking an authorization for the use or disclosure of protected health information.",
+            "system": "experiment_4a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--479830708_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What is the dispute between TechCrunch, CrunchPad, and Fusion Garage concerning their joint venture to create the world's first tablet computer?",
+        "answer": [
+          {
+            "answer_text": "The dispute between TechCrunch, CrunchPad, and Fusion Garage centers on their joint venture to create the world's first tablet computer, the CrunchPad . Starting in the fall of 2008, TechCrunch, Fusion Garage, and CrunchPad worked together to develop and market the CrunchPad . However, Fusion Garage secretly planned to hijack the joint venture in violation of its fiduciary duties to TechCrunch and CrunchPad . Fusion Garage led TechCrunch and CrunchPad to believe that the three were collaborators working earnestly on a common joint venture, but instead, Fusion Garage engaged in a six-month \"guerrilla marketing\" campaign as \"TabCo\" and relaunched a new version of the CrunchPad/JooJoo as the \"Grid10\" in 2011  .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The dispute between TechCrunch, CrunchPad, and Fusion Garage concerns Fusion Garage's secret plan in 2008-2009 to hijack the CrunchPad joint venture in violation of its fiduciary duties to TechCrunch and CrunchPad. Fusion Garage led TechCrunch and CrunchPad to believe that the three were collaborators working earnestly on a common joint venture. In fact, by September 2009 Fusion Garage had secretly decided to \"divorce\" itself from its co-venturers and appropriate the entire value of the CrunchPad project for itself.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The dispute concerns the ownership and control of the CrunchPad project, as Fusion Garage secretly decided to appropriate the entire value of the project for itself and pulled out of the partnership with TechCrunch and CrunchPad. There is also a disagreement over the existence and nature of a joint venture agreement, with Fusion Garage claiming that there was no written agreement and seeking evidence about Jason Calacanis to challenge Michael Arrington's statements about the joint venture. Additionally, Fusion Garage is seeking broad discovery into a transaction and subsequent lawsuit involving Calacanis, and every document generated in the course of AOL's acquisition of TechCrunch, which TechCrunch argues is irrelevant and an exercise in frivolity.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What evidence exists to support the idea that Fusion Garage secretly planned to hijack the CrunchPad joint venture in violation of its fiduciary duties?",
+        "answer": [
+          {
+            "answer_text": "There is evidence to support the idea that Fusion Garage secretly planned to hijack the CrunchPad joint venture in violation of its fiduciary duties. Fusion Garage led TechCrunch and CrunchPad to believe that the three were collaborators working earnestly on a common joint venture . However, by September 2009, Fusion Garage had secretly decided to \"divorce\" itself from its co-venturers and appropriate the entire value . In emails to the public relations firm it had secretly hired to orchestrate the divorce, Fusion Garage acknowledged that it had \"strung along\" TechCrunch and CrunchPad, confided that it was getting harder to \"play along,\" and predicted \"a massive blowup\" when it finally revealed its scheme to CrunchPad's and TechCrunch's principals .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The Court has already concluded that a joint venture likely existed and the associated fiduciary duties were breached. Fusion Garage led TechCrunch and CrunchPad to believe that the three were collaborators working earnestly on a common joint venture. In fact, by September 2009 Fusion Garage had secretly decided to \u201cdivorce\u201d itself from its co-venturers and appropriate the entire value of the CrunchPad project for itself. In emails to the public relations firm (McGrath Powers) it had secretly hired to orchestrate the divorce, Fusion Garage acknowledged that it had \u201cstrung along\u201d TechCrunch and CrunchPad, confided that it was getting harder to \u201cplay along,\u201d and predicted \u201ca massive blowup\u201d when it finally revealed its scheme to CrunchPad\u2019s and TechCrunch\u2019s principals, Heather Harde and Michael Arrington.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The given portion of the document states that \"The Court already has concluded that a joint venture likely existed and the associated fiduciary duties were breached.\" This suggests that there is evidence to support the idea that Fusion Garage secretly planned to hijack the CrunchPad joint venture in violation of its fiduciary duties, but the specific evidence is not mentioned in this particular excerpt.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What is the purpose of Fusion Garage's document requests concerning Jason Calacanis and how are they related to the dispute between TechCrunch, CrunchPad, and Fusion Garage?",
+        "answer": [
+          {
+            "answer_text": "Fusion Garage has requested documents related to Jason Calacanis in order to challenge Michael Arrington's statements about the nature of the joint venture in the case  . However, TechCrunch argues that these requests are at odds with Fusion Garage's theory that Arrington purposely kept his agreements verbal in order to exercise additional leverage at a later date . The purpose of these requests is to litigate Michael Arrington's personality rather than the dispute between TechCrunch, CrunchPad, and Fusion Garage .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "Fusion Garage's document requests concerning Jason Calacanis are irrelevant to the dispute between TechCrunch, CrunchPad, and Fusion Garage. Fusion Garage seeks to compel discovery into a transaction and subsequent lawsuit involving Jason Calacanis, who has nothing to do with this case. Fusion Garage argues that evidence about Mr. Calacanis could be used to challenge Mr. Arrington's statements about the nature of the joint venture in this case, but this argument is not supported by any factual basis. The case is about Fusion Garage's secret plan in 2008-2009 to hijack the CrunchPad joint venture in violation of its fiduciary duties to TechCrunch and CrunchPad.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The purpose of Fusion Garage's document requests concerning Jason Calacanis is irrelevant to the dispute between TechCrunch, CrunchPad, and Fusion Garage. The requests are aimed at establishing a broader pattern and practice of TechCrunch's Mr. Arrington avoiding written contracts, but even if that were true, there is no way that a preference for verbal contracts over written ones supports the inference that TechCrunch had a plan or scheme to enter into agreements while harboring the specific intent to breach them. Additionally, Mr. Calacanis had nothing whatsoever to do with the CrunchPad project, so it is unclear how the contours of any agreement with Mr. Calacanis would be relevant to showing the contours of the agreement in this case. Fusion Garage seeks these documents, if they exist, as impermissible character evidence. Therefore, the document requests are entirely unrelated to the joint venture between TechCrunch and Fusion Garage.",
+            "system": "experiment_4a"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "document_id": "DR--176841814_INTRO",
+    "qa_pairs": [
+      {
+        "question_text": "What are the requirements and expectations for students in the Honors Degree Program?",
+        "answer": [
+          {
+            "answer_text": "The requirements and expectations for students in the Honors Degree Program are outlined in the Honors College Handbook . Students must register for and complete at least twelve hours of solid academic courses each long semester . During their first two years, students are required to attend one of the Honors College\u2019s educational enrichment activities per semester . Students are expected to plan ahead so that they can take advantage of as many Honors core courses as possible . Honors classes are limited to a maximum of around twenty-five students and are often smaller, and they tend to be conducted more along the lines of an upper-level seminar  . The Honors College offers Honors sections of most core courses, special Honors seminars, as well as a number of upper-level Honors options  . Students will receive up to six hours of Honors credit . Students will either complete 15 hours of Honors core courses or 12 hours of Honors core courses and a sophomore three-hour Honors Seminar . Until completion of the 15-hour Honors Core, in order to remain an active member of the Honors College, students must complete at least one honors course each semester or receive special permission to be excused from this requirement from the director . The requirement for remaining in the Honors Core is an overall Tarleton GPA of 3.0 or higher and a 3.0 or higher in the Honors classes . Honors classes are typically taught by distinguished senior faculty, and they emphasize discussion and student participation, primary sources and monographs over textbooks, special lab equipment, student projects and research, and essay exams over multiple choice  . The Honors Degree Program offers a number of $4,000 and $1,000 scholarships, which are awarded on a competitive basis . After their first semester, students are not required to be advised by the Honors Office, but they are required to take at least one honors course each semester until they complete the 15-hour Honors Core . The Honors College hosts several educational enrichment activities each semester . The Honors College provides many opportunities for cultural and educational enrichment . Eligible students include students who have completed Tarleton\u2019s Honors Core, students who have completed a lower-division Honors component comparable to Tarleton\u2019s Honors Core at a community college or another four-year institution, or students with a 3.2 or higher overall GPA (transfer students or continuing Tarleton students) . Generally speaking, Honors classes don\u2019t require a greater quantity of work, but the work is more challenging and intellectually stimulating . Students are expected to make a contribution to the Honors community and to the academic excellence of the University .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The requirements and expectations for students in the Honors Degree Program are outlined in the Honors College Handbook. Honors Core students must maintain a Tarleton overall GPA of 3.0 or higher and a 3.0 or higher in their Honors courses while Upper-Level Honors students must maintain a Tarleton overall GPA of 3.2 or higher. Students must complete at least one honors course each semester until they complete the 15-hour Honors Core. They are also required to attend one of the Honors College\u2019s educational enrichment activities per semester during their first two years. Additionally, students are expected to participate in a significant number of program events, maintain communication with donors when applicable, and maintain a Tarleton e-mail account and check it every day. Students are also expected to maintain academic and personal integrity and participate in campus and community service.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "The requirements and expectations for students in the Honors Degree Program include maintaining a 3.0 overall Tarleton GPA and a 3.0 GPA in their Honors classes, completing at least one honors course each semester until completion of the 15-hour Honors Core, attending PHP functions, providing assistance with the program, responding promptly to requests for information, demonstrating leadership and service, and meeting expectations of academic and personal integrity. Upper-Level Honors students must maintain a Tarleton overall GPA of 3.2 or higher. The probation and expulsion policy applies to these expectations with the same force that it applies to the grade point requirement.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What are the benefits of participating in the Honors Degree Program?",
+        "answer": [
+          {
+            "answer_text": "The benefits of participating in the Honors Degree Program are outlined in the Honors College Handbook and include opportunities for cultural and educational enrichment , special Honors sections of most core courses, special Honors seminars, and a number of upper-level Honors options  . Honors classes emphasize discussion and student participation, projects and research, and essay exams  . The Honors Degree Program offers a number of scholarships on a competitive basis . Graduates of the Honors College are recognized at a reception each fall and during Honors Week each April . Living in the Honors Hall enables students to interact more with other students in the College and creates a stronger sense of an Honors community .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The benefits of participating in the Honors Degree Program include an elevated core curriculum designed to challenge academically talented students, intellectually challenging material, innovative approaches to the subject, increased opportunities for honing critical thinking and writing skills, and the opportunity to interact closely with other academically talented students. Additionally, Honors classes emphasize discussion and student participation, primary sources and monographs over textbooks, special lab equipment, student projects and research, and essay exams over multiple choice. The Honors Degree Program also offers a number of scholarships, early registration, special housing assignments, graduation recognition, opportunities for study abroad in Urbino, Italy, and opportunities for cultural enrichment.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "According to the text, some of the benefits of participating in the Honors Degree Program include special housing assignments, graduation recognition, opportunities for study abroad in Urbino, Italy, opportunities for cultural enrichment, and participation in an elevated core curriculum designed to challenge academically talented students.",
+            "system": "experiment_4a"
+          }
+        ]
+      },
+      {
+        "question_text": "What is the history of the Honors College and the two Honors programs?",
+        "answer": [
+          {
+            "answer_text": "The Honors Programs have a long history, and in the fall of 2013, they transitioned into the Honors College . Tarleton State University has two programs within the Honors College: the Honors Degree Program and the Presidential Honors Program . The Honors Degree Program offered its first Honors core course in 1990 with twenty-five students . Now, over 900 students participate in the Honors Degree Program, and the Honors College offers Honors sections of most core courses, special Honors seminars, as well as a number of upper-level Honors options . The Honors College usually offers the same courses every year, and typically, the Honors classes emphasize discussion and student participation, projects and research, and essay exams   . The Honors College offers special Honors sections of most core courses, including English, mathematics, political science, history, chemistry, geology, biology, physics, speech, psychology, philosophy, sociology, economics, and fine art . The Honors Degree Program offers a number of $4,000 and $1,000 scholarships, which are awarded on a competitive basis . During your first two years, students are required to attend one of the Honors College\u2019s educational enrichment activities per semester . The Honors College hosts several educational enrichment activities each semester, and now sponsors numerous cultural and academic enrichment events that are open to students in both Honors programs   . Graduates of the Honors College are recognized at a reception each fall and during Honors Week each April . All Honors courses are designated on your transcript, and students will receive up to six hours of Honors credit  . Honors Degree Program students must register for and complete at least twelve hours of solid academic courses each long semester . The Honors College provides many opportunities for cultural and educational enrichment, and also hosts an Honors College Alumni Day each fall, which is a great opportunity for current honors students to network with honors graduates . The Honors College Student Association is also available for students to join .",
+            "system": "experiment_5a"
+          },
+          {
+            "answer_text": "The Honors Programs transitioned into the Honors College in the fall of 2013, but both programs have a long history. The Presidential Honors Program started in the fall of 1985 with fifteen students, and the curriculum consisted of two special Honors seminars. The size of the program has gradually increased to its current size of around sixty students, and the curriculum now includes Honors core courses, three Honors seminars, and a senior research project. The Honors Degree Program offered its first Honors core course in 1990, one section of English 112 with twenty-five students. Now over 900 students participate in the Honors Degree Program, and the Honors College offers Honors sections of most core courses, special Honors seminars, as well as a number of upper-level Honors options.",
+            "system": "experiment_1e"
+          },
+          {
+            "answer_text": "There is no relevant text in the given portion of the document that provides information about the history of the Honors College and the two Honors programs.",
+            "system": "experiment_4a"
+          }
+        ]
+      }
+    ]
+  }
+]
+
