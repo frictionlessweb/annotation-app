@@ -10,19 +10,17 @@ const ANSWER_BASE = {
   text: "",
   system: "",
   overall_rating: 1,
-  "Does this answer provide enough information for the question?": "",
-  "Does this answer provide inaccurate information?": "",
-  "Does this answer provide information not found in the document?": "",
-  "Does this answer completely answer the whole question?": "",
-  "Is it easy to read this answer?": "",
-  "Is this answer relevant to the question?": "",
-  "Do you feel the answer is wordy?": "",
-  "Do you believe or trust this answer?": "",
-  "Do you need more details?": "",
-  "Are there any new ideas or concepts in this answer that make you somewhat surprised?":
-    "",
-  "Is this answer useful or helpful to address the question?": "",
-  "Do you think this answer has been written by an expert?": "",
+  "The answer provides enough information for the question.": "",
+  "The answer provides inaccurate information.": "",
+  "The answer provides information not found in the document.": "",
+  "The answer completely answers the whole question.": "",
+  "The answer is relevant to the question.": "",
+  "The answer is wordy.": "",
+  "The answer is believable.": "",
+  "The answer lacks details from the document.": "",
+  "The answer covers new ideas or concepts that are surprising.": "",
+  "The answer has been written by an expert.": "",
+  "The answer contains irrelevant information.": "",
 };
 
 const BASE = {
@@ -64,14 +62,12 @@ for (const el of dataset) {
     map.ANSWER_QUALITY[question] = {};
     map.ANSWER_QUALITY[question].text = questionMap.question_text;
     map.ANSWER_QUALITY[question].index = 0;
-    map.ANSWER_QUALITY[question].answers = questionMap.answer.map(
-      (qaPair) => {
-        const base = deepClone(ANSWER_BASE);
-        base.text = qaPair.answer_text;
-        base.system = qaPair.system;
-        return base;
-      }
-    );
+    map.ANSWER_QUALITY[question].answers = questionMap.answer.map((qaPair) => {
+      const base = deepClone(ANSWER_BASE);
+      base.text = qaPair.answer_text;
+      base.system = qaPair.system;
+      return base;
+    });
   };
 
   setAnswerQuality(el.qa_pairs[0], "question_one", answer);
