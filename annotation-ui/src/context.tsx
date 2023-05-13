@@ -117,6 +117,7 @@ export interface ApiResult {
     SUGGESTED_QUESTIONS: {
       question_one: string;
       question_two: string;
+      question_three: string;
     };
     current_generated_question: number;
     current_answer_quality: number;
