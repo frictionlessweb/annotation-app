@@ -9,10 +9,12 @@ import {
   Radio,
   ActionGroup,
   Item,
+  Divider,
 } from "@adobe/react-spectrum";
 import {
   ANSWER_QUALITY_ITEMS,
   GENERATED_QUESTION_ORDER,
+  POSSIBLE_ANSWERS,
   useSetDoc,
   useDocumentContext,
   answerIsComplete,
@@ -77,7 +79,56 @@ export const AnswerQuality = () => {
           {currentAnswer.text.trim()}
         </pre>
       </Text>
+      <Flex width="100%" justifyContent="center">
+        <Flex
+          width="80%"
+          height="2px"
+          marginBottom="16px"
+          UNSAFE_style={{ backgroundColor: "lightgrey" }}
+        >
+          {" "}
+        </Flex>
+      </Flex>
       <Flex direction="column" marginBottom="size-200">
+        <Text>
+          Is an answer provided? Indicate whether the answer has a response with
+          facts or is not able to produce an answer.
+        </Text>
+        <RadioGroup
+          onChange={(val) => {
+            setDoc((prev) => {
+              return produce(prev, (draft) => {
+                if (typeof draft === "string") return;
+                const currentAnswerMap =
+                  draft.user_responses.ANSWER_QUALITY[
+                    GENERATED_QUESTION_ORDER[current_answer_quality]
+                  ];
+                const currentIndex = currentAnswerMap.index;
+                currentAnswerMap.answers[currentIndex][
+                  "Is an answer provided?"
+                ] = val;
+              });
+            });
+          }}
+          value={
+            currentAnswerMap.answers[currentIndex]["Is an answer provided?"]
+          }
+        >
+          <Radio value="Yes, there is an answer.">
+            Yes, there is an answer.
+          </Radio>
+          <Radio
+            value={`No, the answer says "I don't know" or similar (e.g., insufficient context)`}
+          >
+            No, the answer says {`"I don't know"`} or similar (e.g.,
+            insufficient context).
+          </Radio>
+        </RadioGroup>
+      </Flex>
+      <Flex direction="column" marginBottom="size-200">
+        <Text marginBottom="8px">
+          Please indicate your agreement with the following statements:
+        </Text>
         {(() => {
           const anItem = RENDERING_ANSWER_QUALITY_ITEMS[curItem] as AnswerKey;
           return (
@@ -106,9 +157,13 @@ export const AnswerQuality = () => {
                 }}
                 value={currentAnswer[anItem] as string}
               >
-                <Radio value="YES">Yes</Radio>
-                <Radio value="NO">No</Radio>
-                <Radio value="NOT_SURE">Not Sure</Radio>
+                {POSSIBLE_ANSWERS.map((answer) => {
+                  return (
+                    <Radio key={answer} value={answer}>
+                      {answer}
+                    </Radio>
+                  );
+                })}
               </RadioGroup>
             </Flex>
           );
@@ -153,7 +208,6 @@ export const AnswerQuality = () => {
         maxValue={5}
         step={1}
       />
-
       <Flex marginTop="16px" marginBottom="16px" justifyContent="end">
         <Button
           isDisabled={nextDisabled}
