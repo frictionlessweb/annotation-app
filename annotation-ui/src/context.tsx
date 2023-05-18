@@ -67,7 +67,7 @@ const DEFAULT_ANSWER: Answer = {
 
 export const POSSIBLE_ANSWERS = [
   "Strongly Disagree",
-  "Strongly Agree",
+  "Disagree",
   "Undecided",
   "Agree",
   "Strongly Agree",
