@@ -6,6 +6,7 @@ import {
   TextArea,
   Button,
   TextField,
+  Divider,
 } from "@adobe/react-spectrum";
 import Alert from "@spectrum-icons/workflow/Alert";
 import { useDocumentContext, useSetDoc } from "../context";
@@ -77,8 +78,17 @@ export const SuggestedQuestions = () => {
           label="Question 3"
         />
       </Flex>
-      <Flex>
+      
+      <Divider size="M" marginTop="size-300"/>
+
+      <Flex direction="column" gap="size-100" marginTop="size-200">
+        {/* <Alert aria-label="Default Alert" /> */}
+        <Text UNSAFE_style={{ marginBottom: "16px" }}>
+          Enter your user name to record your submission:
+        </Text>
+
         <TextField
+          width="100%"
           placeholder="User Name"
           value={doc.user_name}
           onChange={(val) => {
@@ -90,13 +100,7 @@ export const SuggestedQuestions = () => {
             });
           }}
         />
-      </Flex>
-      <Flex direction="row" gap="size-200" marginTop="size-200">
-        <Alert aria-label="Default Alert" />
-        <Text UNSAFE_style={{ marginBottom: "16px" }}>
-          If you have not entered your user name, you will not be able to submit
-          your answers.
-        </Text>
+
       </Flex>
 
       <Flex marginTop="30px" justifyContent="end">
