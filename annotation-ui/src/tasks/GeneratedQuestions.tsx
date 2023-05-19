@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Text, Heading, Button, Well } from "@adobe/react-spectrum";
+import { Flex, Text, Heading, Button, Well, Divider } from "@adobe/react-spectrum";
 import {
   useDocumentContext,
   GENERATED_QUESTION_ORDER,
@@ -24,14 +24,19 @@ export const GeneratedQuestions = () => {
       </Text> */}
       <Text UNSAFE_style={{ marginBottom: "15px" }}>
         Read the question below and <b>highlight key sentences</b> in the document that help you
-        formulate an answer to the question. <br /><br />
-
-        If you think an answer cannot be provided based on this document, do not create any highlights.
+        formulate an answer to the question shown below. <br /><br />
+        <ul>
+          <li>When deciding what to highlight, think of each of your highlights as a necessary source to your answer. </li>
+          <li>Select the smallest amount of complete sentences that contain all of the information required to answer the question.</li>
+          <li>If you believe the question can not be answered, don’t highlight any part of the document.</li>
+        </ul>
       </Text>
 
       <Text UNSAFE_style={{ marginBottom: "15px" }}>
         Once you are confident with your answer, continue.
       </Text>
+
+      <Divider size="M" />
 
       <Heading level={4} marginBottom="size-100">Question</Heading>
 

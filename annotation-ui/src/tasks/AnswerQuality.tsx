@@ -79,7 +79,7 @@ export const AnswerQuality = () => {
           {currentAnswer.text.trim()}
         </pre>
       </Text>
-      <Flex width="100%" justifyContent="center">
+      {/* <Flex width="100%" justifyContent="center">
         <Flex
           width="80%"
           height="2px"
@@ -88,7 +88,9 @@ export const AnswerQuality = () => {
         >
           {" "}
         </Flex>
-      </Flex>
+      </Flex> */}
+
+      <Divider size="M" marginBottom="size-300"/>
 
       <Flex direction="column" marginBottom="size-300">
         <Text>
