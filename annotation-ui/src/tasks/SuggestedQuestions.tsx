@@ -1,6 +1,13 @@
 import React from "react";
-import { Flex, Text, Heading, TextArea, Button } from "@adobe/react-spectrum";
-import Alert from '@spectrum-icons/workflow/Alert';
+import {
+  Flex,
+  Text,
+  Heading,
+  TextArea,
+  Button,
+  TextField,
+} from "@adobe/react-spectrum";
+import Alert from "@spectrum-icons/workflow/Alert";
 import { useDocumentContext, useSetDoc } from "../context";
 import produce from "immer";
 
@@ -70,12 +77,26 @@ export const SuggestedQuestions = () => {
           label="Question 3"
         />
       </Flex>
-      
+      <Flex>
+        <TextField
+          placeholder="User Name"
+          value={doc.user_name}
+          onChange={(val) => {
+            setDoc((prev) => {
+              return produce(prev, (draft) => {
+                if (typeof draft === "string") return;
+                draft.user_name = val;
+              });
+            });
+          }}
+        />
+      </Flex>
       <Flex direction="row" gap="size-200" marginTop="size-200">
         <Alert aria-label="Default Alert" />
         <Text UNSAFE_style={{ marginBottom: "16px" }}>
-        If you have not entered your user name, you will not be able to submit your answers.
-      </Text>
+          If you have not entered your user name, you will not be able to submit
+          your answers.
+        </Text>
       </Flex>
 
       <Flex marginTop="30px" justifyContent="end">

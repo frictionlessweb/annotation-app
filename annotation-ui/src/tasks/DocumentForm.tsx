@@ -3,7 +3,6 @@ import {
   Flex,
   Grid,
   ProgressBar as SpectrumProgressBar,
-  TextField,
 } from "@adobe/react-spectrum";
 import { useDocumentContext, useSetDoc, STAGE_MAP } from "../context";
 import { IntroTask } from "./IntroTask";
@@ -13,7 +12,6 @@ import { PDF } from "./PDF";
 import { AnswerQuality } from "./AnswerQuality";
 import { SuggestedQuestions } from "./SuggestedQuestions";
 import { Done } from "./Done";
-import produce from "immer";
 
 const StageRouter = () => {
   const { stage, user_responses } = useDocumentContext();
@@ -59,19 +57,6 @@ const ProgressBar = () => {
         value={
           100 * (STAGE_MAP[ctx.stage].order / Object.keys(STAGE_MAP).length)
         }
-      />
-      <TextField
-        marginStart="16px"
-        placeholder="User Name"
-        value={ctx.user_name}
-        onChange={(val) => {
-          setDoc((prev) => {
-            return produce(prev, (draft) => {
-              if (typeof draft === "string") return;
-              draft.user_name = val;
-            });
-          });
-        }}
       />
     </Flex>
   );
