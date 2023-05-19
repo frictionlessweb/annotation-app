@@ -1,0 +1,189 @@
+{
+  "ANSWER_QUALITY": {
+    "question_one": {
+      "text": "What are the topics of the bills passed by the Oregon Legislative Assembly during the 2007 session?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "Details on the bills passed by the Oregon Legislative Assembly during the 2007 session can be found at http://www.oregonite.org/legs/legs2.php. The given portion of the document only provides the source for finding the information and does not list the topics of the bills.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "The topics of the bills passed by the Oregon Legislative Assembly during the 2007 session vary widely, including issues such as expanding the use of photo radar and red light enforcement, various signing requirements, and gates for light rail pedestrian crossings. More details on the bills can be found at http://www.oregonite.org/legs/legs2.php.",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "Approximately 13 transportation-related bills were passed by the Oregon Legislative Assembly during the 2007 session, covering a wide range of topics such as expanding the use of photo radar and red light enforcement, various signing requirements, and gates for light rail pedestrian crossings  .",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    },
+    "question_two": {
+      "text": "What are the details of the Oregon Section's organizational captain membership program?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "There is no information provided about the Oregon Section's organizational captain membership program.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "The membership committee continued its organizational captain membership program over the past year. The program was designed to identify specific individuals within public and private organizations who might be interested in joining ITE or attending ITE functions. The captains also assist with advertising meetings, recruiting new members, and promoting ITE. Unfortunately, there are no further details provided about the program.",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "The Oregon Section continued its organizational captain membership program over the past year, which was designed to identify specific individuals within public and private organizations who might be interested in joining ITE or attending ITE functions  . No further details are provided about the program.",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    },
+    "question_three": {
+      "text": "What are the benefits of the Oregon Section's online banking and check card system?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "There is no information provided in the given portion of the document about the benefits of the Oregon Section's online banking and check card system.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "The Oregon Section's online banking and check card system allows for faster processing of payments and account inquiries, as well as a significant reduction in the overall number of reimbursement checks. Additionally, the system allows for more routine expenditures to be made using the check card, which may be more convenient for the Section. However, there is no information provided on any other specific benefits of the system.",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "The Oregon Section uses online banking and check cards for most routine expenditures, which results in faster processing of payments and account inquiries, as well as a significant reduction in the overall number of reimbursement checks  . However, there is no information on any other benefits of this system.",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    }
+  },
+  "GENERATED_QUESTIONS": {
+    "question_one": {
+      "text": "What are the topics of the bills passed by the Oregon Legislative Assembly during the 2007 session?",
+      "highlights": []
+    },
+    "question_two": {
+      "text": "What are the details of the Oregon Section's organizational captain membership program?",
+      "highlights": []
+    },
+    "question_three": {
+      "text": "What are the benefits of the Oregon Section's online banking and check card system?",
+      "highlights": []
+    }
+  }
+}

@@ -8,23 +8,29 @@ interface HasId {
 }
 
 export const GENERATED_QUESTION_ORDER = [
-  "question_one",
-  "question_two",
-  "question_three",
+  "q1",
+  "q2",
+  "q3",
+  "q4",
+  "q5",
+  "q6",
+  "q7",
+  "q8"
 ] as const;
 
 export const ANSWER_QUALITY_ITEMS = [
-  "The answer provides enough information for the question.",
-  "The answer provides inaccurate information.",
-  "The answer provides information not found in the document.",
-  "The answer completely answers the whole question.",
-  "The answer is relevant to the question.",
-  "The answer is wordy.",
-  "The answer is believable.",
-  "The answer lacks details from the document.",
-  "The answer covers new ideas or concepts that are surprising.",
+  "The answer is relevant to the question (regardless of whether the details are correct or not).",
+  "This answer is useful and helpful to address this question.",
+  "The answer contains enough information for the question.",
+  "The answer completely answers the whole question (e.g., it covers every aspect of the question).",
+  "The answer is missing specific details from the document.",
+  "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).",
+  "The answer is easy to read and comprehend.",
+  "The answer contains inaccurate information (e.g., information that is made up or not true).",
+  "The answer contains information not found in the document (e.g., information that does not exist in this document).",
+  "The answer contains irrelevant information (e.g., information that is irrelevant).",
   "The answer has been written by an expert.",
-  "The answer contains irrelevant information.",
+  "I can trust this answer",
 ] as const;
 
 interface Answer {
@@ -32,17 +38,18 @@ interface Answer {
   system: string;
   overall_rating: number;
   "Is an answer provided?": string;
-  "The answer provides enough information for the question.": string;
-  "The answer provides inaccurate information.": string;
-  "The answer provides information not found in the document.": string;
-  "The answer completely answers the whole question.": string;
-  "The answer is relevant to the question.": string;
-  "The answer is wordy.": string;
-  "The answer is believable.": string;
-  "The answer lacks details from the document.": string;
-  "The answer covers new ideas or concepts that are surprising.": string;
+  "The answer is relevant to the question (regardless of whether the details are correct or not).": string;
+  "This answer is useful and helpful to address this question.": string;
+  "The answer contains enough information for the question.": string;
+  "The answer completely answers the whole question (e.g., it covers every aspect of the question).": string;
+  "The answer is missing specific details from the document.": string;
+  "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": string;
+  "The answer is easy to read and comprehend.": string;
+  "The answer contains inaccurate information (e.g., information that is made up or not true).": string;
+  "The answer contains information not found in the document (e.g., information that does not exist in this document).": string;
+  "The answer contains irrelevant information (e.g., information that is irrelevant).": string;
   "The answer has been written by an expert.": string;
-  "The answer contains irrelevant information.": string;
+  "I can trust this answer": string;
 }
 
 export type AnswerKey = keyof Answer;
@@ -52,17 +59,18 @@ const DEFAULT_ANSWER: Answer = {
   system: "",
   overall_rating: 1,
   "Is an answer provided?": "",
-  "The answer provides enough information for the question.": "",
-  "The answer provides inaccurate information.": "",
-  "The answer provides information not found in the document.": "",
-  "The answer completely answers the whole question.": "",
-  "The answer is relevant to the question.": "",
-  "The answer is wordy.": "",
-  "The answer is believable.": "",
-  "The answer lacks details from the document.": "",
-  "The answer covers new ideas or concepts that are surprising.": "",
+  "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+  "This answer is useful and helpful to address this question.": "",
+  "The answer contains enough information for the question.": "",
+  "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+  "The answer is missing specific details from the document.": "",
+  "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+  "The answer is easy to read and comprehend.": "",
+  "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+  "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+  "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
   "The answer has been written by an expert.": "",
-  "The answer contains irrelevant information.": "",
+  "I can trust this answer": "",
 };
 
 export const POSSIBLE_ANSWERS = [
@@ -92,35 +100,80 @@ export interface ApiResult {
       highlights: Array<HasId>;
     };
     GENERATED_QUESTIONS: {
-      question_one: {
+      q1: {
         text: string;
         highlights: HasId[];
-      };
-      question_two: {
+      },
+      q2: {
         text: string;
         highlights: HasId[];
-      };
-      question_three: {
+      },
+      q3: {
         text: string;
         highlights: HasId[];
-      };
+      },
+      q4: {
+        text: string;
+        highlights: HasId[];
+      },
+      q5: {
+        text: string;
+        highlights: HasId[];
+      },
+      q6: {
+        text: string;
+        highlights: HasId[];
+      },
+      q7: {
+        text: string;
+        highlights: HasId[];
+      },
+      q8: {
+        text: string;
+        highlights: HasId[];
+      }
     };
     ANSWER_QUALITY: {
-      question_one: {
+      q1: {
         text: string;
         index: 0;
         answers: Answer[];
-      };
-      question_two: {
+      },
+      q2: {
         text: string;
         index: number;
         answers: Answer[];
-      };
-      question_three: {
+      },
+      q3: {
         text: string;
         index: number;
         answers: Answer[];
-      };
+      },
+      q4: {
+        text: string;
+        index: number;
+        answers: Answer[];
+      },
+      q5: {
+        text: string;
+        index: number;
+        answers: Answer[];
+      },
+      q6: {
+        text: string;
+        index: number;
+        answers: Answer[];
+      },
+      q7: {
+        text: string;
+        index: number;
+        answers: Answer[];
+      },
+      q8: {
+        text: string;
+        index: number;
+        answers: Answer[];
+      }
     };
     SUGGESTED_QUESTIONS: {
       question_one: string;
@@ -182,35 +235,80 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
       highlights: [],
     },
     GENERATED_QUESTIONS: {
-      question_one: {
-        text: "Example question one",
+      q1: {
+        text: "Example question",
         highlights: [],
       },
-      question_two: {
-        text: "Example question two",
+      q2: {
+        text: "Example question",
         highlights: [],
       },
-      question_three: {
-        text: "Example question three",
+      q3: {
+        text: "Example question",
         highlights: [],
       },
+      q4: {
+        text: "Example question",
+        highlights: [],
+      },
+      q5: {
+        text: "Example question",
+        highlights: [],
+      },
+      q6: {
+        text: "Example question",
+        highlights: [],
+      },
+      q7: {
+        text: "Example question",
+        highlights: [],
+      },
+      q8: {
+        text: "Example question",
+        highlights: [],
+      }
     },
     ANSWER_QUALITY: {
-      question_one: {
+      q1: {
         text: "Example question one",
         answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
         index: 0,
       },
-      question_two: {
-        text: "Example question two",
-        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER, DEFAULT_ANSWER],
-        index: 0,
-      },
-      question_three: {
-        text: "Example question three",
+      q2: {
+        text: "Example question one",
         answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
         index: 0,
       },
+      q3: {
+        text: "Example question one",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      },
+      q4: {
+        text: "Example question one",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      },
+      q5: {
+        text: "Example question one",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      },
+      q6: {
+        text: "Example question one",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      },
+      q7: {
+        text: "Example question one",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      },
+      q8: {
+        text: "Example question one",
+        answers: [DEFAULT_ANSWER, DEFAULT_ANSWER],
+        index: 0,
+      }
     },
     SUGGESTED_QUESTIONS: {
       question_one: "",

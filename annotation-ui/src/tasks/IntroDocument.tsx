@@ -19,7 +19,8 @@ export const IntroDocument = () => {
           <b>highlight any sentences you think are important or interesting</b>.
         </li>
         <li>
-          This task should take no more than <b>15 minutes</b>.{" "}
+          No need to read line-by-line, just skim and try to understand the gist of the document.
+          {/* This task should take no more than <b>15 minutes</b>.{" "} */}
         </li>
       </ul>
       <Text>

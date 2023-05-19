@@ -53,8 +53,8 @@ export const AnswerQuality = () => {
     <Flex direction="column">
       <Heading level={3}>Instructions</Heading>
       <Text>
-        For each question and answer pair below, please indicate your agreement
-        with each statement. Feel free to refer back to the document as needed.
+        For each question and answer pair below, provide your ratings for the three items below. 
+        Feel free to refer back to the document as needed.
       </Text>
       <Heading level={4} marginBottom="size-100">
         Question
@@ -89,8 +89,10 @@ export const AnswerQuality = () => {
           {" "}
         </Flex>
       </Flex>
-      <Flex direction="column" marginBottom="size-200">
+
+      <Flex direction="column" marginBottom="size-300">
         <Text>
+          <b>Part 1: </b>
           Is an answer provided? Indicate whether the answer has a response with
           facts or is not able to produce an answer.
         </Text>
@@ -125,8 +127,10 @@ export const AnswerQuality = () => {
           </Radio>
         </RadioGroup>
       </Flex>
-      <Flex direction="column" marginBottom="size-200">
+
+      <Flex direction="column" marginBottom="size-300">
         <Text marginBottom="8px">
+          <b>Part 2: </b>
           Please indicate your agreement with the following statements:
         </Text>
         {(() => {
@@ -182,6 +186,7 @@ export const AnswerQuality = () => {
         </ActionGroup>
       </Flex>
       <Text marginY="16px">
+        <b>Part 3: </b>
         Overall, how would you rate the quality of the answer to the question?
         <br />
         1-Terrible, 2-Poor, 3-Average, 4-Good, 5-Excellent

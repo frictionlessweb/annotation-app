@@ -12,8 +12,8 @@ import { useDocumentContext, useSetDoc, ApiResult } from "../context";
 import produce from "immer";
 
 const VALUES = [
-  "I can easily understand and retell in my own words",
-  "I can barely understand what this document is about",
+  "Yes, I can understand what type of document this is and what it's generally about",
+  "No, I can barely understand what type of document this is or what it's about",
 ];
 
 const finishedTaskOne = (doc: ApiResult) => {
@@ -62,7 +62,7 @@ export const IntroTask = () => {
         }}
       />
       <Text>
-        Based on this preview, select your understanding of the document:
+        Based on this preview, how would you describe your understanding of this document?
       </Text>
       <RadioGroup
         value={doc?.user_responses?.INTRO_TASK?.preview_response}
@@ -74,7 +74,7 @@ export const IntroTask = () => {
             });
           });
         }}
-        label="Your Understanding"
+        // label="Your Understanding"
       >
         {VALUES.map((value) => {
           return (

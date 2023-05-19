@@ -24,7 +24,9 @@ export const GeneratedQuestions = () => {
       </Text> */}
       <Text UNSAFE_style={{ marginBottom: "15px" }}>
         Read the question below and <b>highlight key sentences</b> in the document that help you
-        formulate an answer to the question. 
+        formulate an answer to the question. <br /><br />
+
+        If you think an answer cannot be provided based on this document, do not create any highlights.
       </Text>
 
       <Text UNSAFE_style={{ marginBottom: "15px" }}>
@@ -67,7 +69,7 @@ export const GeneratedQuestions = () => {
             });
           }}
           variant="accent"
-          isDisabled={numHighlights === 0}
+          // isDisabled={numHighlights === 0}
         >
           Next
         </Button>

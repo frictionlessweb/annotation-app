@@ -11,31 +11,52 @@ const ANSWER_BASE = {
   system: "",
   overall_rating: 1,
   "Is an answer provided?": "",
-  "The answer provides enough information for the question.": "",
-  "The answer provides inaccurate information.": "",
-  "The answer provides information not found in the document.": "",
-  "The answer completely answers the whole question.": "",
-  "The answer is relevant to the question.": "",
-  "The answer is wordy.": "",
-  "The answer is believable.": "",
-  "The answer lacks details from the document.": "",
-  "The answer covers new ideas or concepts that are surprising.": "",
+  "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+  "This answer is useful and helpful to address this question.": "",
+  "The answer contains enough information for the question.": "",
+  "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+  "The answer is missing specific details from the document.": "",
+  "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+  "The answer is easy to read and comprehend.": "",
+  "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+  "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+  "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
   "The answer has been written by an expert.": "",
-  "The answer contains irrelevant information.": "",
+  "I can trust this answer": "",
 };
 
 const BASE = {
   ANSWER_QUALITY: {},
   GENERATED_QUESTIONS: {
-    question_one: {
+    q1: {
       text: "What is the revenue potential from financial trading taxes and which financial assets would contribute the most to this revenue?",
       highlights: [],
     },
-    question_two: {
+    q2: {
       text: "Who are the authors of the paper and what is their affiliation?",
       highlights: [],
     },
-    question_three: {
+    q3: {
+      text: "What is the methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1?",
+      highlights: [],
+    },
+    q4: {
+      text: "What is the methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1?",
+      highlights: [],
+    },
+    q5: {
+      text: "What is the methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1?",
+      highlights: [],
+    },
+    q6: {
+      text: "What is the methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1?",
+      highlights: [],
+    },
+    q7: {
+      text: "What is the methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1?",
+      highlights: [],
+    },
+    q8: {
       text: "What is the methodology used to calculate the tax rate structure and sources for the revenue projections in Table 1?",
       highlights: [],
     },
@@ -55,9 +76,11 @@ for (const el of dataset) {
     map.GENERATED_QUESTIONS[question].text = questionMap.question_text;
   };
 
-  setQuestionText(el.qa_pairs[0], "question_one", answer);
-  setQuestionText(el.qa_pairs[1], "question_two", answer);
-  setQuestionText(el.qa_pairs[2], "question_three", answer);
+  for(let i=1;i<=8;i++)
+  {
+    text = "q" + i.toString()
+    setQuestionText(el.qa_pairs[i-1], "q" + i.toString(), answer);
+  }
 
   const setAnswerQuality = (questionMap, question, map) => {
     map.ANSWER_QUALITY[question] = {};
@@ -71,9 +94,11 @@ for (const el of dataset) {
     });
   };
 
-  setAnswerQuality(el.qa_pairs[0], "question_one", answer);
-  setAnswerQuality(el.qa_pairs[1], "question_two", answer);
-  setAnswerQuality(el.qa_pairs[2], "question_three", answer);
+  for(let i=1;i<=8;i++)
+  {
+    text = "q" + i.toString()
+    setAnswerQuality(el.qa_pairs[i-1], "q" + i.toString(), answer);
+  }
   const finalFilePath = `${el.document_id}.json`;
   const finalJson = JSON.stringify(answer);
   fs.writeFileSync(finalFilePath, finalJson, { encoding: "utf-8" });

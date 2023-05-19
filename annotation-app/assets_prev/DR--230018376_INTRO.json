@@ -1,0 +1,189 @@
+{
+  "ANSWER_QUALITY": {
+    "question_one": {
+      "text": "What are the estimated costs for the Hangar 2 project?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "Based on the information provided in the document, the estimated cost of building the Hangar 2 project is between $4,500,000 to $6,000,000. However, this is not a final cost and the complete Concept and Budget Report (CBR) which will include project costs will be ready for Board review and potential approval at the January 24, 2018 Board of Directors meeting.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "Based on current bids received and actual construction costs, staff estimates the approximate cost of building to be between $4,500,000 to $6,000,000. The programming and building design phase will cost $150,000, and the final 100% plans and bidding costs are estimated at an additional $250,000 (still to be determined based on final building design).",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "The estimated cost of building Hangar 2 is between $4,500,000 to $6,000,000 based on current bids and construction costs . The programming and building design phase will cost $150,000 . Final 100% plans and bidding costs are estimated at an additional $250,000 . Input received at the November 29th Board Meeting will be used to assist in the preparation of the complete Concept and Budget Report (CBR) which will include project costs .",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    },
+    "question_two": {
+      "text": "What are the potential advantages of moving the restaurant to the new Hangar?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "According to the extracted text, the potential advantages of moving the restaurant to the new Hangar include better restaurant space, a larger kitchen, and the possibility of providing a dinner menu. Additionally, the current restaurant space could be repurposed for offices and a transient terminal for various operators.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "According to the context, some of the potential advantages of moving the restaurant (Red Truck) to the new Hangar include better restaurant space, a larger kitchen, and the possibility of providing a dinner menu. This would allow the current restaurant space to be repurposed to offices and a transient terminal for membership-based operators such as Surf Air, Wheels Up, Jet Suites, Blackbird, or other operators.",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "Moving the restaurant to the new Hangar would allow for better restaurant space and a larger kitchen, potentially providing a dinner menu . If the restaurant is not moved, a transient terminal for membership-based operators such as Surf Air and Wheels Up would need to be incorporated into the new Hangar . Repurposing the current restaurant space to offices and a transient terminal for various operators would be possible if the restaurant is moved . The hangar and office space may also be available for community use .",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    },
+    "question_three": {
+      "text": "What are the potential benefits of closing off the taxilane between Hangar 1 and the old Hangar 2 site?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "Eliminating the taxilane between Hangar 1 and the old Hangar 2 site will allow for more design options to be considered. It will also enhance safety by eliminating many of the non-aviation drivers utilizing the Airport Operations Area.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "According to the context, the taxilane between Hangar 1 and the old Hangar 2 site is not necessary for full utilization of the Jet Ramp, and eliminating it will allow for more design options to be considered. This will allow the current offices built into the hangar to be removed, thereby providing space for an additional 3 aircraft to fit in Hangar 1. Additionally, this option is substantially cheaper than constructing a new Hangar or leasing Sierra Aero Hangar A9.",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "Closing off the taxilane between Hangar 1 and the old Hangar 2 site is being considered as part of a project to provide more design options for the Jet Ramp  . This could potentially allow for the relocation of the restaurant to the new Hangar, providing better restaurant space and a larger kitchen with the possibility of providing a dinner menu . Removing the current offices built into Hangar 1 would also provide space for an additional 3 aircraft to fit in the hangar . The hangar would not be used for aircraft maintenance, but instead, staff indicated a strong desire for the hangar and office space to be available for community use .",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    }
+  },
+  "GENERATED_QUESTIONS": {
+    "question_one": {
+      "text": "What are the estimated costs for the Hangar 2 project?",
+      "highlights": []
+    },
+    "question_two": {
+      "text": "What are the potential advantages of moving the restaurant to the new Hangar?",
+      "highlights": []
+    },
+    "question_three": {
+      "text": "What are the potential benefits of closing off the taxilane between Hangar 1 and the old Hangar 2 site?",
+      "highlights": []
+    }
+  }
+}

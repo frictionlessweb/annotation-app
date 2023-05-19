@@ -1,0 +1,189 @@
+{
+  "ANSWER_QUALITY": {
+    "question_one": {
+      "text": "What are the most common sources of prescription drugs for teens?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "According to the given information, the most common source of prescription drugs for teens is their parent's medicine cabinets.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "Over half of teens say that it’s easy to get prescription drugs from their parent’s medicine cabinets. Additionally, 53.7% of individuals who misused prescription opioids obtained them from a friend or relative.",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "According to sources  and , over half of teens say that it’s easy to get prescription drugs from their parent’s medicine cabinets, and 53.7% of individuals who misused prescription opioids obtained them from a friend or relative. Therefore, the most common sources of prescription drugs for teens are their parents' medicine cabinets and friends or relatives who have obtained them without a prescription. It is important to properly store and dispose of medications to prevent misuse and abuse     .",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    },
+    "question_two": {
+      "text": "What are the most effective ways to safely store and dispose of medications?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The most effective ways to safely store and dispose of medications are: \n\n- Store medications safely out of reach of children and pets. Consider a lock box or similar device to store medications safely.\n- Visit TakeMedsBack.org to find a safe disposal location near you. New boxes are being added around the state. If there is not yet a safe disposal box nearby, check back soon.\n- Don't flush pills or liquid medication down the toilet or drain. Flushing pollutes drinking water and could harm aquatic life.\n- Mix medicine with something that cannot be eaten, such as cat litter or coffee grounds, to prevent accidental or intentional misuse of medicine by children or animals.\n- Wrap the mixture in another material, such as newsprint or a paper sack, or place medicine in sealable containers (cans, plastic bags).\n- Throw in the trash on the day your garbage is collected.\n- Place syringes and other injectables in a sturdy, puncture-resistant container with a screw-on cap. Empty laundry detergent bottles work well.\n- Only for used fentanyl or Duragesic pain patches: fold in half, sticky side together, and flush down the toilet. These patches are dangerous if not flushed immediately after use.\n- Take all other unopened patches to a Take-Back location.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "The most effective ways to safely store and dispose of medications are:\n\n1. Store medications safely out of reach of children and pets. Consider a lock box or similar device to store medications safely.\n\n2. Visit TakeMedsBack.org to find a safe disposal location near you. If there is not yet a safe disposal box nearby, check back soon.\n\n3. Do not flush pills or liquid medication down the toilet or drain. Flushing pollutes drinking water and could harm aquatic life. Recycle containers if possible or hide them in the trash.\n\n4. Mix medicine with something that cannot be eaten, such as cat litter or coffee grounds, to prevent accidental or intentional misuse of medicine by children or animals. Wrap the mixture in another material, such as newsprint or a paper sack, or place medicine in sealable containers (cans, plastic bags). Throw in the trash on the day your garbage is collected.\n\n5. Take extra care when disposing of syringes and patches. Place syringes and other injectables in a sturdy, puncture-resistant container with a screw-on cap. Empty laundry detergent bottles work well. Place a label/warning on the container (Example: Syringes – Do Not Recycle). When full, place sealed containers in the trash, not recycling. Or purchase a plastic sharps container at your pharmacy.",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "The most effective ways to safely store and dispose of medications include storing them safely out of reach of children and pets, considering a lock box or similar device for storage, and using a medication storage cabinet that locks   . When disposing of unused and expired medications, it is important to consider how you dispose of them, as it makes a difference  . One option is to throw most medicines in household trash if you follow certain steps, such as removing medicine from containers and destroying labels to help protect privacy, and wrapping the mixture in another material or placing medicine in sealable containers  . Another option is to visit TakeMedsBack.org to find a safe disposal location near you, or to purchase a plastic sharps container at your pharmacy  . It is important to not flush pills or liquid medication down the toilet or drain, and to be especially careful using and storing pain medication patches, as they are dangerous if used other than prescribed and directed  . Additionally, it is important to take extra care when disposing of syringes and patches, and to mix medicine with something that cannot be eaten, such as cat litter or coffee grounds, to prevent accidental or intentional misuse of medicine by children or animals  . Accepted medicines for disposal include over-the-counter and prescribed medicines, including prescribed controlled substances like Percocet, Oxycontin, Xanax, Ritalin, etc., medication samples, medicated ointments, unused medication patches, and liquid medications (small amounts in non-leaking original container)    . It is important to call 303.692.2903 or visit TakeMedsBack.org to find permanent household medication take-back sites  . Your pharmacy may also sell pre-labeled, mail-back containers, and it is important to place a label/warning on the container (Example: Syringes – Do Not Recycle)  .",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    },
+    "question_three": {
+      "text": "What are the potential risks of misusing prescription drugs?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "Misusing prescription drugs can lead to addiction, overdose, and death.",
+          "system": "experiment_4a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "Misusing prescription drugs can lead to a range of potential risks, including addiction, overdose, and death. Prescription drug abuse is the fastest-growing drug problem in the U.S. and over half of teens say that it’s easy to get prescription drugs from their parent’s medicine cabinets. In 2015, the number of prescription opioid-related deaths was higher than alcohol-impaired driving fatalities. Flushing unused or expired medications can pollute drinking water and harm aquatic life. It is important to dispose of unused and expired medications properly. Pain medications obtained for nonmedical use are often obtained from friends or relatives. Safe disposal programs are available for over-the-counter and prescribed medicines, medication samples, medicated ointments, vitamins, pet medications, unused medication patches, and liquid medications. It is important to store medications safely out of reach of children and pets and to consider a lock box or similar device to store medications safely. Syringes and other injectables should be placed in a sturdy, puncture-resistant container with a screw-on cap and sealed containers should be placed in the trash, not recycling.",
+          "system": "experiment_1e",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        },
+        {
+          "text": "Misusing prescription drugs can lead to addiction and overdose, as prescription drug abuse is the fastest-growing drug problem in the U.S. . Over half of teens say that it’s easy to get prescription drugs from their parent’s medicine cabinets, and Colorado high school students have taken prescription medications without a doctor’s prescription  . Pain medications obtained for nonmedical use are often obtained from a friend or relative, and unused prescription drugs should be stored safely out of reach of children and pets to prevent accidental or intentional misuse   . Medicines in water supplies have been detected, and it is important to dispose of unused and expired medications properly to prevent environmental contamination  . Pain medication patches are especially dangerous if used other than prescribed and directed, and should be monitored and disposed of properly  . Misusing prescription drugs can also lead to crashes and fatalities, as well as other health risks .",
+          "system": "experiment_5a",
+          "overall_rating": 1,
+          "Is an answer provided?": "",
+          "The answer provides enough information for the question.": "",
+          "The answer provides inaccurate information.": "",
+          "The answer provides information not found in the document.": "",
+          "The answer completely answers the whole question.": "",
+          "The answer is relevant to the question.": "",
+          "The answer is wordy.": "",
+          "The answer is believable.": "",
+          "The answer lacks details from the document.": "",
+          "The answer covers new ideas or concepts that are surprising.": "",
+          "The answer has been written by an expert.": "",
+          "The answer contains irrelevant information.": ""
+        }
+      ]
+    }
+  },
+  "GENERATED_QUESTIONS": {
+    "question_one": {
+      "text": "What are the most common sources of prescription drugs for teens?",
+      "highlights": []
+    },
+    "question_two": {
+      "text": "What are the most effective ways to safely store and dispose of medications?",
+      "highlights": []
+    },
+    "question_three": {
+      "text": "What are the potential risks of misusing prescription drugs?",
+      "highlights": []
+    }
+  }
+}
