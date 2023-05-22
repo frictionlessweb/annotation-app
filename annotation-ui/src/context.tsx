@@ -20,15 +20,15 @@ export const GENERATED_QUESTION_ORDER = [
 
 export const ANSWER_QUALITY_ITEMS = [
   "The answer is relevant to the question (regardless of whether the details are correct or not).",
+  "The answer contains inaccurate information (e.g., information that is made up or not true).",
+  "The answer contains information not found in the document (e.g., information that does not exist in this document).",
+  "The answer contains irrelevant information (e.g., information that is irrelevant).",
   "This answer is useful and helpful to address this question.",
   "The answer contains enough information for the question.",
   "The answer completely answers the whole question (e.g., it covers every aspect of the question).",
   "The answer is missing specific details from the document.",
   "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).",
   "The answer is easy to read and comprehend.",
-  "The answer contains inaccurate information (e.g., information that is made up or not true).",
-  "The answer contains information not found in the document (e.g., information that does not exist in this document).",
-  "The answer contains irrelevant information (e.g., information that is irrelevant).",
   "The answer has been written by an expert.",
   "I can trust this answer",
 ] as const;
@@ -37,17 +37,20 @@ interface Answer {
   text: string;
   system: string;
   overall_rating: number;
+  confidence_rating: number;
+  inaccurate_text: string;
+  external_text: string;
   "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": string;
   "The answer is relevant to the question (regardless of whether the details are correct or not).": string;
+  "The answer contains inaccurate information (e.g., information that is made up or not true).": string;
+  "The answer contains information not found in the document (e.g., information that does not exist in this document).": string;
+  "The answer contains irrelevant information (e.g., information that is irrelevant).": string;
   "This answer is useful and helpful to address this question.": string;
   "The answer contains enough information for the question.": string;
   "The answer completely answers the whole question (e.g., it covers every aspect of the question).": string;
   "The answer is missing specific details from the document.": string;
   "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": string;
   "The answer is easy to read and comprehend.": string;
-  "The answer contains inaccurate information (e.g., information that is made up or not true).": string;
-  "The answer contains information not found in the document (e.g., information that does not exist in this document).": string;
-  "The answer contains irrelevant information (e.g., information that is irrelevant).": string;
   "The answer has been written by an expert.": string;
   "I can trust this answer": string;
 }
@@ -58,17 +61,20 @@ const DEFAULT_ANSWER: Answer = {
   text: "",
   system: "",
   overall_rating: 1,
+  confidence_rating: 1,
+  inaccurate_text: "",
+  external_text: "",
   "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
   "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+  "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+  "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+  "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
   "This answer is useful and helpful to address this question.": "",
   "The answer contains enough information for the question.": "",
   "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
   "The answer is missing specific details from the document.": "",
   "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
   "The answer is easy to read and comprehend.": "",
-  "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
-  "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
-  "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
   "The answer has been written by an expert.": "",
   "I can trust this answer": "",
 };
