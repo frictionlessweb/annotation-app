@@ -311,6 +311,41 @@ const IntroDocument = () => {
   return <div style={{ height: "100%", width: "100%" }} id={PDF_ID} />;
 };
 
+const SuggestedQuestions = () => {
+  const doc = useDocumentContext();
+  const setDoc = useSetDoc();
+  React.useEffect(() => {
+    const renderPdf = async () => {
+      const view = new window.AdobeDC.View({
+        clientId,
+        divId: PDF_ID,
+      });
+      const config = {
+        content: {
+          location: {
+            url: doc.pdf_url,
+          },
+        },
+        metaData: {
+          fileName: "document",
+          id: "1234",
+        },
+      };
+      const preview = await view.previewFile(config, DEFAULT_VIEW_CONFIG);
+      await Promise.all([preview.getAnnotationManager(), preview.getAPIs()]);
+      setDoc((prev) => {
+        if (typeof prev === "string") return prev;
+        return {
+          ...prev,
+          pdfRef: preview,
+        };
+      });
+    };
+    renderPdf();
+  }, [doc.pdf_url, setDoc]);
+  return <div style={{ height: "100%", width: "100%" }} id={PDF_ID} />;
+};
+
 export const PDF = () => {
   const doc = useDocumentContext();
   switch (doc.stage) {
@@ -328,12 +363,13 @@ export const PDF = () => {
     }
     case "SUGGESTED_QUESTIONS": {
       return (
-        <Flex direction="column" width="100%" alignSelf="start">
-          <IllustratedMessage width="100%" marginY="size-1000">
-            <NotFound />
-            <Content>Answer based on what you recall of the document</Content>
-          </IllustratedMessage>
-        </Flex>
+        <SuggestedQuestions />
+        // <Flex direction="column" width="100%" alignSelf="start">
+        //   <IllustratedMessage width="100%" marginY="size-1000">
+        //     <NotFound />
+        //     <Content>Answer based on what you recall of the document</Content>
+        //   </IllustratedMessage>
+        // </Flex>
       );
     }
     case "DONE": {

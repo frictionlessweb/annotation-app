@@ -82,7 +82,7 @@ export const DocumentForm = () => {
         alignItems="center"
         gap="size-300"
       >
-        <Text>v2</Text>
+        <Text>v2.5</Text>
         <ProgressBar />
       </Flex>
       <Flex gridArea="pdf">
