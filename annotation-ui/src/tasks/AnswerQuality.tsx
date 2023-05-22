@@ -194,7 +194,8 @@ export const AnswerQuality = () => {
               });
             }}
             width="100%"
-            label="What part(s) of the answer are inaccurate? Copy specific sentences or phrases from the answer that are inaccurate."
+            label="What part(s) of the answer are inaccurate? 
+            Copy specific sentences or phrases from the answer that are inaccurate. If there are multiple phrases, separate by a comma."
           />
         )}
 
@@ -215,7 +216,9 @@ export const AnswerQuality = () => {
               });
             }}
             width="100%"
-            label="What part(s) of the answer are not found in the document? Copy specific sentences or phrases from the answer that are not found in the documet."
+            label="What part(s) of the answer are not found in the document? 
+            Copy specific sentences or phrases from the answer 
+            that are not found in the documet. If there are multiple phrases, separate by a comma."
           />
         )}
 
