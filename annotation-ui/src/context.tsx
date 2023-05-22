@@ -176,9 +176,11 @@ export interface ApiResult {
       }
     };
     SUGGESTED_QUESTIONS: {
-      question_one: string;
-      question_two: string;
-      question_three: string;
+      question_easy: string;
+      question_medium: string;
+      question_hard: string;
+      question_external: string;
+      question_unrelated: string;
     };
     current_generated_question: number;
     current_answer_quality: number;
@@ -311,9 +313,11 @@ const DEFAULT_DOCUMENT_STATE: ApiResult = {
       }
     },
     SUGGESTED_QUESTIONS: {
-      question_one: "",
-      question_two: "",
-      question_three: "",
+      question_easy: "",
+      question_medium: "",
+      question_hard: "",
+      question_external: "",
+      question_unrelated: ""
     },
     current_generated_question: 0,
     current_answer_quality: 0,

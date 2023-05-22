@@ -16,9 +16,11 @@ export const SuggestedQuestions = () => {
   const doc = useDocumentContext();
   const setDoc = useSetDoc();
   const isDisabled =
-    doc.user_responses.SUGGESTED_QUESTIONS.question_one === "" ||
-    doc.user_responses.SUGGESTED_QUESTIONS.question_two === "" ||
-    doc.user_responses.SUGGESTED_QUESTIONS.question_three === "" ||
+    doc.user_responses.SUGGESTED_QUESTIONS.question_easy === "" ||
+    doc.user_responses.SUGGESTED_QUESTIONS.question_medium === "" ||
+    doc.user_responses.SUGGESTED_QUESTIONS.question_hard === "" ||
+    doc.user_responses.SUGGESTED_QUESTIONS.question_external === "" ||
+    doc.user_responses.SUGGESTED_QUESTIONS.question_unrelated === "" ||
     doc.user_name === "";
   return (
     <Flex marginX="32px" direction="column">
@@ -28,17 +30,17 @@ export const SuggestedQuestions = () => {
       </Text>
       <Flex marginBottom="16px">
         <TextArea
-          value={doc.user_responses.SUGGESTED_QUESTIONS.question_one}
+          value={doc.user_responses.SUGGESTED_QUESTIONS.question_easy}
           onChange={(val) => {
             setDoc((prev) => {
               return produce(prev, (draft) => {
                 if (typeof draft === "string") return;
-                draft.user_responses.SUGGESTED_QUESTIONS.question_one = val;
+                draft.user_responses.SUGGESTED_QUESTIONS.question_easy = val;
               });
             });
           }}
           width="100%"
-          label="Question 1"
+          label="Easy question: the answer can be found in exactly one paragraph or sentence on a single page"
         />
       </Flex>
       <Flex marginBottom="16px">
@@ -47,30 +49,63 @@ export const SuggestedQuestions = () => {
             setDoc((prev) => {
               return produce(prev, (draft) => {
                 if (typeof draft === "string") return;
-                draft.user_responses.SUGGESTED_QUESTIONS.question_two = val;
+                draft.user_responses.SUGGESTED_QUESTIONS.question_medium = val;
               });
             });
           }}
-          value={doc.user_responses.SUGGESTED_QUESTIONS.question_two}
+          value={doc.user_responses.SUGGESTED_QUESTIONS.question_medium}
           width="100%"
-          label="Question 2"
+          label="Medium question: the answer can be found in more than one paragraph or sentence on a single page"
         />
       </Flex>
       <Flex marginBottom="16px">
         <TextArea
-          value={doc.user_responses.SUGGESTED_QUESTIONS.question_three}
+          value={doc.user_responses.SUGGESTED_QUESTIONS.question_hard}
           onChange={(val) => {
             setDoc((prev) => {
               return produce(prev, (draft) => {
                 if (typeof draft === "string") return;
-                draft.user_responses.SUGGESTED_QUESTIONS.question_three = val;
+                draft.user_responses.SUGGESTED_QUESTIONS.question_hard = val;
               });
             });
           }}
           width="100%"
-          label="Question 3"
+          label="Hard question: the answer can be found in more than one paragraph or sentence across multiple pages"
         />
       </Flex>
+
+      <Flex marginBottom="16px">
+        <TextArea
+          value={doc.user_responses.SUGGESTED_QUESTIONS.question_external}
+          onChange={(val) => {
+            setDoc((prev) => {
+              return produce(prev, (draft) => {
+                if (typeof draft === "string") return;
+                draft.user_responses.SUGGESTED_QUESTIONS.question_external = val;
+              });
+            });
+          }}
+          width="100%"
+          label="External question: a question that is related to the document content but it's answer is not covered anywhere in the document"
+        />
+      </Flex>
+
+      <Flex marginBottom="16px">
+        <TextArea
+          value={doc.user_responses.SUGGESTED_QUESTIONS.question_unrelated}
+          onChange={(val) => {
+            setDoc((prev) => {
+              return produce(prev, (draft) => {
+                if (typeof draft === "string") return;
+                draft.user_responses.SUGGESTED_QUESTIONS.question_unrelated = val;
+              });
+            });
+          }}
+          width="100%"
+          label="Unrelated question: a question that is completely unrelated to the document content."
+        />
+      </Flex>
+
       
       <Divider size="M" marginTop="size-300"/>
 
