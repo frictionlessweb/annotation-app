@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Flex,
-  Grid,
+  Grid, Text,
   ProgressBar as SpectrumProgressBar,
 } from "@adobe/react-spectrum";
 import { useDocumentContext, useSetDoc, STAGE_MAP } from "../context";
@@ -80,7 +80,9 @@ export const DocumentForm = () => {
         direction="row"
         marginX="size-500"
         alignItems="center"
+        gap="size-300"
       >
+        <Text>v2</Text>
         <ProgressBar />
       </Flex>
       <Flex gridArea="pdf">
