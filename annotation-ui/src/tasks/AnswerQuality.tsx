@@ -95,8 +95,7 @@ export const AnswerQuality = () => {
       <Flex direction="column" marginBottom="size-300">
         <Text>
           <b>Part 1: </b>
-          Is an answer provided? Indicate whether the answer has a response with
-          facts or is not able to produce an answer.
+          Does any part of the answer say 'I don’t know' or that there is 'insufficient context' to provide an answer?
         </Text>
         <RadioGroup
           onChange={(val) => {
@@ -109,23 +108,22 @@ export const AnswerQuality = () => {
                   ];
                 const currentIndex = currentAnswerMap.index;
                 currentAnswerMap.answers[currentIndex][
-                  "Is an answer provided?"
+                  "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?"
                 ] = val;
               });
             });
           }}
           value={
-            currentAnswerMap.answers[currentIndex]["Is an answer provided?"]
+            currentAnswerMap.answers[currentIndex]["Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?"]
           }
         >
-          <Radio value="Yes, there is an answer.">
-            Yes, there is an answer.
+          <Radio value="Yes, the answer contains 'I don’t know' or there is 'insufficient context'">
+            Yes, the answer contains 'I don’t know' or there is 'insufficient context'
           </Radio>
           <Radio
-            value={`No, the answer says "I don't know" or similar (e.g., insufficient context)`}
+            value={`No, the answer does not contain any of these phrases`}
           >
-            No, the answer says {`"I don't know"`} or similar (e.g.,
-            insufficient context).
+            No, the answer does not contain any of these phrases
           </Radio>
         </RadioGroup>
       </Flex>

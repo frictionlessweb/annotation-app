@@ -37,7 +37,7 @@ interface Answer {
   text: string;
   system: string;
   overall_rating: number;
-  "Is an answer provided?": string;
+  "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": string;
   "The answer is relevant to the question (regardless of whether the details are correct or not).": string;
   "This answer is useful and helpful to address this question.": string;
   "The answer contains enough information for the question.": string;
@@ -58,7 +58,7 @@ const DEFAULT_ANSWER: Answer = {
   text: "",
   system: "",
   overall_rating: 1,
-  "Is an answer provided?": "",
+  "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
   "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
   "This answer is useful and helpful to address this question.": "",
   "The answer contains enough information for the question.": "",

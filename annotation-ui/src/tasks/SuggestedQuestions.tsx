@@ -24,14 +24,7 @@ export const SuggestedQuestions = () => {
     <Flex marginX="32px" direction="column">
       <Heading level={3}>Instructions</Heading>
       <Text UNSAFE_style={{ marginBottom: "16px" }}>
-        Provide three additional questions that you think are interesting and
-        can be answered based on content in the PDF document.
-      </Text>
-      <Text UNSAFE_style={{ marginBottom: "16px" }}>
-        <em>
-          No document will be shown. Answer based on what you remember of the
-          document.
-        </em>
+        Provide five additional questions based on content in the PDF document. 
       </Text>
       <Flex marginBottom="16px">
         <TextArea
