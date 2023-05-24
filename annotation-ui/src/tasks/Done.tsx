@@ -9,6 +9,9 @@ export const Done = () => {
     const saveResponse = async () => {
       try {
         const documentName = window.location.pathname.split("/").pop();
+        if (ctx.user_name === "" || typeof ctx.user_name !== "string") {
+          throw new Error("Invalid user name");
+        }
         const res = await window.fetch(`/api/v1/save-document-session`, {
           headers: {
             "Content-Type": "application/json",
