@@ -1,0 +1,255 @@
+{
+  "ANSWER_QUALITY": {
+    "q1": {
+      "text": "What are the Laws that apply to the Collaboration Agreement?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The Laws that apply to the Collaboration Agreement are the laws of the State of California, USA.",
+          "system": "demo",
+          "overall_rating": 1,
+          "confidence_rating": 1,
+          "inaccurate_text": "",
+          "external_text": "",
+          "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
+          "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+          "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+          "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+          "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
+          "This answer is useful and helpful to address this question.": "",
+          "The answer contains enough information for the question.": "",
+          "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+          "The answer is missing specific details from the document.": "",
+          "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+          "The answer is easy to read and comprehend.": "",
+          "The answer has been written by an expert.": "",
+          "I can trust this answer": ""
+        }
+      ]
+    },
+    "q2": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The scope of the Collaboration Agreement is outlined in Section 7 of the Agreement, which states that the Agreement covers all Work to be performed by Vendor while the Agreement remains in effect. Additionally, Section 184 of the Agreement states that the Agreement is the entire agreement between the Parties. The Agreement also outlines the responsibilities of each Party, including the requirement that Vendor not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the US Foreign Corrupt Practices Act and all applicable anticorruption laws. Furthermore, the Agreement outlines the terms of the collaboration, including that Vendor shall not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the standards and requirements set forth in the SISR.",
+          "system": "demo",
+          "overall_rating": 1,
+          "confidence_rating": 1,
+          "inaccurate_text": "",
+          "external_text": "",
+          "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
+          "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+          "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+          "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+          "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
+          "This answer is useful and helpful to address this question.": "",
+          "The answer contains enough information for the question.": "",
+          "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+          "The answer is missing specific details from the document.": "",
+          "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+          "The answer is easy to read and comprehend.": "",
+          "The answer has been written by an expert.": "",
+          "I can trust this answer": ""
+        }
+      ]
+    },
+    "q3": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The scope of the Collaboration Agreement is outlined in Section 7 of the Agreement, which states that the Agreement covers all Work to be performed by Vendor while the Agreement remains in effect. Additionally, Section 184 of the Agreement states that the Agreement is the entire agreement between the Parties. The Agreement also outlines the responsibilities of each Party, including the requirement that Vendor not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the US Foreign Corrupt Practices Act and all applicable anticorruption laws. Furthermore, the Agreement outlines the terms of the collaboration, including that Vendor shall not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the standards and requirements set forth in the SISR.",
+          "system": "demo",
+          "overall_rating": 1,
+          "confidence_rating": 1,
+          "inaccurate_text": "",
+          "external_text": "",
+          "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
+          "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+          "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+          "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+          "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
+          "This answer is useful and helpful to address this question.": "",
+          "The answer contains enough information for the question.": "",
+          "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+          "The answer is missing specific details from the document.": "",
+          "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+          "The answer is easy to read and comprehend.": "",
+          "The answer has been written by an expert.": "",
+          "I can trust this answer": ""
+        }
+      ]
+    },
+    "q4": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The scope of the Collaboration Agreement is outlined in Section 7 of the Agreement, which states that the Agreement covers all Work to be performed by Vendor while the Agreement remains in effect. Additionally, Section 184 of the Agreement states that the Agreement is the entire agreement between the Parties. The Agreement also outlines the responsibilities of each Party, including the requirement that Vendor not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the US Foreign Corrupt Practices Act and all applicable anticorruption laws. Furthermore, the Agreement outlines the terms of the collaboration, including that Vendor shall not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the standards and requirements set forth in the SISR.",
+          "system": "demo",
+          "overall_rating": 1,
+          "confidence_rating": 1,
+          "inaccurate_text": "",
+          "external_text": "",
+          "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
+          "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+          "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+          "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+          "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
+          "This answer is useful and helpful to address this question.": "",
+          "The answer contains enough information for the question.": "",
+          "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+          "The answer is missing specific details from the document.": "",
+          "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+          "The answer is easy to read and comprehend.": "",
+          "The answer has been written by an expert.": "",
+          "I can trust this answer": ""
+        }
+      ]
+    },
+    "q5": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The scope of the Collaboration Agreement is outlined in Section 7 of the Agreement, which states that the Agreement covers all Work to be performed by Vendor while the Agreement remains in effect. Additionally, Section 184 of the Agreement states that the Agreement is the entire agreement between the Parties. The Agreement also outlines the responsibilities of each Party, including the requirement that Vendor not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the US Foreign Corrupt Practices Act and all applicable anticorruption laws. Furthermore, the Agreement outlines the terms of the collaboration, including that Vendor shall not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the standards and requirements set forth in the SISR.",
+          "system": "demo",
+          "overall_rating": 1,
+          "confidence_rating": 1,
+          "inaccurate_text": "",
+          "external_text": "",
+          "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
+          "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+          "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+          "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+          "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
+          "This answer is useful and helpful to address this question.": "",
+          "The answer contains enough information for the question.": "",
+          "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+          "The answer is missing specific details from the document.": "",
+          "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+          "The answer is easy to read and comprehend.": "",
+          "The answer has been written by an expert.": "",
+          "I can trust this answer": ""
+        }
+      ]
+    },
+    "q6": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The scope of the Collaboration Agreement is outlined in Section 7 of the Agreement, which states that the Agreement covers all Work to be performed by Vendor while the Agreement remains in effect. Additionally, Section 184 of the Agreement states that the Agreement is the entire agreement between the Parties. The Agreement also outlines the responsibilities of each Party, including the requirement that Vendor not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the US Foreign Corrupt Practices Act and all applicable anticorruption laws. Furthermore, the Agreement outlines the terms of the collaboration, including that Vendor shall not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the standards and requirements set forth in the SISR.",
+          "system": "demo",
+          "overall_rating": 1,
+          "confidence_rating": 1,
+          "inaccurate_text": "",
+          "external_text": "",
+          "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
+          "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+          "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+          "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+          "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
+          "This answer is useful and helpful to address this question.": "",
+          "The answer contains enough information for the question.": "",
+          "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+          "The answer is missing specific details from the document.": "",
+          "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+          "The answer is easy to read and comprehend.": "",
+          "The answer has been written by an expert.": "",
+          "I can trust this answer": ""
+        }
+      ]
+    },
+    "q7": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The scope of the Collaboration Agreement is outlined in Section 7 of the Agreement, which states that the Agreement covers all Work to be performed by Vendor while the Agreement remains in effect. Additionally, Section 184 of the Agreement states that the Agreement is the entire agreement between the Parties. The Agreement also outlines the responsibilities of each Party, including the requirement that Vendor not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the US Foreign Corrupt Practices Act and all applicable anticorruption laws. Furthermore, the Agreement outlines the terms of the collaboration, including that Vendor shall not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the standards and requirements set forth in the SISR.",
+          "system": "demo",
+          "overall_rating": 1,
+          "confidence_rating": 1,
+          "inaccurate_text": "",
+          "external_text": "",
+          "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
+          "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+          "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+          "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+          "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
+          "This answer is useful and helpful to address this question.": "",
+          "The answer contains enough information for the question.": "",
+          "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+          "The answer is missing specific details from the document.": "",
+          "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+          "The answer is easy to read and comprehend.": "",
+          "The answer has been written by an expert.": "",
+          "I can trust this answer": ""
+        }
+      ]
+    },
+    "q8": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "index": 0,
+      "answers": [
+        {
+          "text": "The scope of the Collaboration Agreement is outlined in Section 7 of the Agreement, which states that the Agreement covers all Work to be performed by Vendor while the Agreement remains in effect. Additionally, Section 184 of the Agreement states that the Agreement is the entire agreement between the Parties. The Agreement also outlines the responsibilities of each Party, including the requirement that Vendor not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the US Foreign Corrupt Practices Act and all applicable anticorruption laws. Furthermore, the Agreement outlines the terms of the collaboration, including that Vendor shall not allow any of the Services under the Agreement to be performed or provided by any Restricted Entity, and that Vendor and its Subcontractors comply with the standards and requirements set forth in the SISR.",
+          "system": "demo",
+          "overall_rating": 1,
+          "confidence_rating": 1,
+          "inaccurate_text": "",
+          "external_text": "",
+          "Does any part of the answer say 'I don’t know' or that there’s 'insufficient context' to provide an answer?": "",
+          "The answer is relevant to the question (regardless of whether the details are correct or not).": "",
+          "The answer contains inaccurate information (e.g., information that is made up or not true).": "",
+          "The answer contains information not found in the document (e.g., information that does not exist in this document).": "",
+          "The answer contains irrelevant information (e.g., information that is irrelevant).": "",
+          "This answer is useful and helpful to address this question.": "",
+          "The answer contains enough information for the question.": "",
+          "The answer completely answers the whole question (e.g., it covers every aspect of the question).": "",
+          "The answer is missing specific details from the document.": "",
+          "The answer is wordy (e.g., unnecessarily long or contains unnecessary words).": "",
+          "The answer is easy to read and comprehend.": "",
+          "The answer has been written by an expert.": "",
+          "I can trust this answer": ""
+        }
+      ]
+    }
+  },
+  "GENERATED_QUESTIONS": {
+    "q1": {
+      "text": "What are the Laws that apply to the Collaboration Agreement?",
+      "highlights": []
+    },
+    "q2": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "highlights": []
+    },
+    "q3": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "highlights": []
+    },
+    "q4": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "highlights": []
+    },
+    "q5": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "highlights": []
+    },
+    "q6": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "highlights": []
+    },
+    "q7": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "highlights": []
+    },
+    "q8": {
+      "text": "What is the scope of the Collaboration Agreement?",
+      "highlights": []
+    }
+  }
+}
+

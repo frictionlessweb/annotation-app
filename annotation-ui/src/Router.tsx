@@ -5,25 +5,7 @@ import { DocumentRouter } from "./DocumentRouter";
 import { ToastQueue } from "@react-spectrum/toast";
 
 const DOCUMENTS = [
-  "DR--1041147_INTRO",
-  "DR--12017753_INTRO",
-  "DR--12305738_INTRO",
-  "DR--14627260_INTRO",
-  "DR--18139179_INTRO",
-  "DR--23210832_INTRO",
-  "DR--39293534_INTRO",
-  "DR--48730943_INTRO",
-  "DR--176841814_INTRO",
-  "DR--182866691_INTRO",
-  "DR--185549702_INTRO",
-  "DR--208236624_INTRO",
-  "DR--230018376_INTRO",
-  "DR--231406771_INTRO",
-  "DR--276543213_INTRO",
-  "DR--327389138_INTRO",
-  "DR--479830708_INTRO",
-  "DR--491573508_INTRO",
-  "DR--521647139_INTRO"
+  "Collab-Agreement"
 ];
 
 const downloadJson = (json: object) => {
